@@ -1,0 +1,891 @@
+@media only screen and (max-width: 767px) {
+  .socialvisionbx .clientdata {
+    margin-top: 50px;
+    margin-left: 0;
+    background: url(../images/csr/socialvision.jpg) no-repeat;
+    background-position: top left;
+    background-position: 70% 10%;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 25px;
+    min-height: auto;
+    width: 100%;
+  }
+  .socialvisionbx .clientdata .heading32 {
+    text-align: center;
+    margin-left: 5%;
+  }
+  .socialvisionbx .clientdata p {
+    text-align: center;
+    margin-left: 5%;
+  }
+  .Csr_Contribution {
+    height: auto;
+  }
+  .Csr_Contribution .panel {
+    height: auto;
+    text-align: center;
+  }
+  .csrimg {
+    float: none;
+    padding-bottom: 25px;
+  }
+  .Commitment {
+    /* background: url(../images/right-angle1.png) no-repeat; */
+    background-color: #ff8d39;
+    width: 100%;
+    padding-bottom: 25px;
+  }
+  .Commitment .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    flex-wrap: wrap;
+    height: auto;
+    align-content: center;
+  }
+  .Commitment .panel .CommitmentRightsolbox {
+    margin-left: 0;
+    color: #fff;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .CommitmentRightsolbox h3 {
+    color: #fff;
+  }
+  .Commitment .panel .letfsolboxnew img {
+    width: 100%;
+    display: block;
+  }
+  .Commitment .panel .CommitmentContent {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Commitment .panel .CommitmentContent .Meet {
+    font-size: 20px;
+  }
+  .right_trangle {
+    visibility: hidden;
+  }
+  .para_section {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Standard_Quality {
+    margin-top: -149px;
+    /* background: url(../images/about_redbg-left1.png) no-repeat; */
+    background-color: #db373f;
+    width: 100%;
+  }
+  .Standard_Quality .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 800px;
+    padding-top: 200px;
+  }
+  .Standard_Quality .panel .letfsolbox {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 40px;
+  }
+  .Standard_Quality .panel .letfsolbox img {
+    width: 100%;
+    display: block;
+    max-width: 100%;
+  }
+  .Standard_Quality .panel .Standard_QualityContent {
+    width: 100%;
+    display: inline-block;
+    border: 0 solid #ff0;
+    padding-top: 102px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .Standard_Quality .panel .Standard_QualityContent .Meet {
+    font-size: 20px;
+  }
+  .visionbx {
+    z-index: 0;
+  }
+  .visionbx .clientdata {
+    margin-top: 500px;
+    margin-left: 00px;
+    background: #edeff1;
+    background: url(../images/about-us/visionbg.png) no-repeat;
+    background-position: center center;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+  }
+  .visionbx .clientdata .heading32 {
+    text-align: center;
+  }
+  .visionbx .clientdata p {
+    text-align: center;
+    color: #000;
+  }
+  .Award_Recognition {
+    margin-top: 849px;
+    /* background: url(../images/right-angle1.png) no-repeat; */
+    background-color: #ff8d39;
+    width: 100%;
+  }
+  .Award_Recognition .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 800px;
+  }
+  .Award_Recognition .panel .Rightsolboxnew {
+    margin-left: 5%;
+    padding-top: 00px;
+    width: 50%;
+    max-width: 50%;
+    height: auto;
+    border: 0 solid #ff0;
+  }
+  .Award_Recognition .panel .Rightsolboxnew img {
+    width: 100%;
+  }
+  .Award_Recognition .panel .letfsolboxnew img {
+    width: 100%;
+    display: block;
+  }
+  .Award_Recognition .panel .Award_RecognitionContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px;
+    max-width: 100%;
+  }
+  .Award_Recognition .panel .Award_RecognitionContent .Meet {
+    font-size: 20px;
+  }
+  .Testimonials {
+    margin-top: 200px;
+    background: url(../images/about_redbg-left.png) no-repeat;
+    background-position: left top;
+    width: 100%;
+  }
+  .Testimonialsbx {
+    z-index: 0;
+    position: absolute;
+  }
+  .Testimonialsbx .clientdata {
+    margin-top: 525px;
+    margin-left: 00px;
+    background: #fff;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 15px;
+    width: 200%;
+    max-width: 100%;
+    clear: both;
+  }
+  .Testimonialsbx .pageContainer {
+    width: 100%;
+  }
+  .Testimonialsbx .clientdata .heading32 {
+    text-align: center;
+  }
+  .alliancesflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .alliancesflex > div {
+    margin: 20px;
+    text-align: left;
+    width: 100%;
+  }
+  .alliancesflex > div .img_div {
+    display: block;
+    border: 0 solid #cecece;
+    float: none;
+    margin: 0 20px auto 00px;
+    width: auto;
+    text-align: center;
+  }
+  .alliancesflex > div .content_div {
+    display: block;
+    border: 0 solid #cecece;
+    float: none;
+    width: 100%;
+  }
+  .Bankingvisionbx {
+    z-index: 9;
+    position: relative;
+  }
+  .Bankingvisionbx .clientdata {
+    margin-top: 125px;
+    margin-left: 35px;
+    /* background: url(../images/banking/whoweserve1.jpg) no-repeat; */
+    background-color: #ff8d39;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+    min-height: auto;
+  }
+  .Bankingvisionbx .clientdata .heading32 {
+    text-align: center;
+    margin-left: 0;
+  }
+  .Bankingvisionbx .clientdata p {
+    text-align: center;
+    margin-left: 00%;
+  }
+  .BankingSolution {
+    margin-top: 00px;
+    background: url(../images/redbg-left.jpg) no-repeat;
+    background-position: left bottom;
+    background-position: 215% 62%;
+    width: 100%;
+    height: 450px;
+  }
+  .BankingSolution .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 900px;
+  }
+  .BankingSolution .panel .Bankingletfsolbox {
+    padding-top: 50px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    color: #fff;
+  }
+  .BankingSolution .panel .Bankingletfsolbox img {
+    width: 70%;
+    display: block;
+  }
+  .BankingSolution .panel .BankingContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px 0;
+    margin-left: 00%;
+    max-width: 100%;
+  }
+  .BankingSolution .panel .BankingContent .Meet {
+    font-size: 20px;
+  }
+  .Banking_casestudy {
+    /* background: url(../images/right-angle.png) no-repeat; */
+    background-position: right bottom;
+    background-position: 100% 173%;
+    width: 100%;
+  }
+  .Banking_casestudy .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 1200px;
+  }
+  .Banking_casestudy .panel .Banking_casestudyRightsolboxnew {
+    margin-left: 5%;
+    padding-top: 100px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .Banking_casestudy.panel .Banking_casestudyletfsolboxnew img {
+    width: 100%;
+    display: block;
+  }
+  .Banking_casestudy .panel .Banking_casestudyContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px 0;
+    max-width: 100%;
+  }
+  .Banking_casestudy .panel .Banking_casestudyContent .Meet {
+    font-size: 20px;
+  }
+  .clientbx {
+    z-index: 9;
+    position: relative;
+  }
+  .clientbx .clientdata {
+    margin-top: 595px;
+    background: #fff;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+  }
+  .clientbx .clientdata p {
+    text-align: center;
+  }
+  .clientbx .pageContainer img {
+    width: 100%;
+  }
+  .blogbox {
+    margin-top: 49px;
+    background-image: linear-gradient(#fff, #fff, #fff, #fcf0d1);
+    width: 100%;
+    height: auto;
+    z-index: 9;
+    position: relative;
+  }
+  .bloginner_detailsbox {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .bloginner_detailsbox > div {
+    padding: 8px;
+  }
+  .bloginner_detailsbox > div:nth-child(1) {
+    width: 100%;
+    margin-right: 0;
+  }
+  .bloginner_detailsbox > div:nth-child(2) {
+    width: 100%;
+  }
+  .bloginner_detailsbox > div h1 {
+    font-weight: 700;
+  }
+  .bloginner_section {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(#fff, #fff, #fff, #fcf0d1);
+  }
+  .bloginner_section .page_top_text {
+    padding-top: 70px;
+  }
+  .Carrersvisionbx {
+    z-index: 9;
+    position: relative;
+  }
+  .Carrersvisionbx .clientdata {
+    margin-top: 125px;
+    margin-left: 00px;
+    background: url(../images/carrers/carrervision_bg.png) no-repeat;
+    background-position: top left;
+    background-position: 100% 120%;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+    min-height: auto;
+  }
+  .Carrersvisionbx .clientdata .heading32 {
+    text-align: center;
+    margin-left: 0;
+  }
+  .Carrersvisionbx .clientdata p {
+    text-align: center;
+    margin-left: 0;
+  }
+  .Carrer_Contribution {
+    margin-top: 00px;
+    background: url(../images/csr/contribution.png) no-repeat left top,
+      linear-gradient(#fffcf3, #fff6de);
+    width: 100%;
+    height: 845px;
+  }
+  .Carrer_Contribution .panel {
+    padding-top: 50px;
+    height: 300px;
+  }
+  .Carrers_celebration {
+    /* background: url(../images/right-angle1.png) no-repeat; */
+    background-color: #ff8d39;
+    width: 100%;
+  }
+  .Carrers_celebration .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 800px;
+  }
+  .Carrers_celebration .panel .Carrers_celebrationRightsolboxnew {
+    margin-left: 00%;
+    padding-top: 100px;
+    width: 100%;
+    max-width: 570px;
+    height: auto;
+  }
+  .Carrers_celebration .panel .Carrers_celebrationletfsolboxnew img {
+    width: 100%;
+    display: block;
+  }
+  .Carrers_celebration .panel .Carrers_celebrationContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px 0;
+    width: 100%;
+  }
+  .Carrers_celebration .panel .Carrers_celebrationContent .Meet {
+    font-size: 20px;
+  }
+  .Carrers_points {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Carrers_points > div {
+    margin: 10px;
+    text-align: left;
+    width: 80%;
+  }
+  .Carrers_points > div h1 {
+    font-weight: 700;
+  }
+  .Carrers_points_imgdiv {
+    text-align: left;
+    width: 58px;
+    height: 58px;
+    float: left;
+    margin-right: 10px;
+    display: block;
+    margin-bottom: 40px;
+  }
+  .casestudyflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .casestudyflex > div {
+    margin: 20px;
+    text-align: left;
+    width: 100%;
+  }
+  .casestudyflex > div .img_div {
+    display: block;
+    border: 0 solid #cecece;
+    float: none;
+    margin: 0 20px auto 00px;
+    width: auto;
+    -webkit-box-shadow: 3px 2px 30px 3px rgba(219, 212, 219, 1);
+    -moz-box-shadow: 3px 2px 30px 3px rgba(219, 212, 219, 1);
+    box-shadow: 3px 2px 30px 3px rgba(219, 212, 219, 1);
+    height: auto;
+  }
+  .casestudyflex > div .img_div img {
+    width: 100%;
+    height: 100%;
+  }
+  .casestudyflex > div .content_div {
+    display: block;
+    border: 0 solid #cecece;
+    float: none;
+    width: 100%;
+  }
+  .casestudyflex > div p {
+    text-align: left;
+  }
+  .casestudyflex > div h1 {
+    font-weight: 700;
+  }
+  .casestudyflex_imgdiv {
+    display: block;
+    border: 1px solid #cecece;
+    float: left;
+  }
+  .JobDetails {
+    border: 1px solid #c2c2c2;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .JobDetails > div {
+    margin: 3px;
+    text-align: left;
+  }
+  .JobDetails > div:nth-child(1) {
+    width: 45%;
+  }
+  .JobDetails > div:nth-child(2) {
+    width: 45%;
+  }
+  .JobDetails > div:nth-child(3) {
+    width: 45%;
+  }
+  .JobDetails > div:nth-child(4) {
+    width: 48%;
+  }
+  .JobDetails > div:nth-child(5) {
+    width: 70%;
+  }
+  .JobDetails > div h1 {
+    font-weight: 700;
+  }
+  .JobDetails_imgdiv {
+    text-align: left;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 5px;
+    display: block;
+  }
+  .Currentopeningdetailsbox {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .Currentopeningdetailsbox > div {
+    padding: 8px;
+  }
+  .Currentopeningdetailsbox > div:nth-child(1) {
+    width: 100%;
+  }
+  .Currentopeningdetailsbox > div:nth-child(2) {
+    width: 100%;
+  }
+  .Currentopeningdetailsbox > div:nth-child(3) {
+    width: 100%;
+  }
+  .Currentopeningdetailsbox > div:nth-child(4) {
+    width: 100%;
+  }
+  .Currentopeningdetailsbox > div h1 {
+    font-weight: 700;
+  }
+  .Currentopeningbox {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .Currentopeningbox > div {
+    width: 80%;
+    margin: 10px 10px 20px 0;
+    text-align: left;
+    border: 0 solid #5a090b;
+  }
+  .Currentopeningbox > div h1 {
+    font-weight: 700;
+  }
+  .DXbx {
+    z-index: 0;
+    position: relative;
+  }
+  .DXbx .clientdata {
+    margin-top: 100px;
+    background: #fff;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+  }
+  .DXbx .clientdata .heading32 {
+    text-align: center;
+  }
+  .DXbx .clientdata p {
+    text-align: left;
+  }
+  .dex3bx {
+    z-index: 0;
+    position: relative;
+  }
+  .dex3bx .clientdata {
+    margin-top: 500px;
+    margin-left: 00px;
+    background: #fff;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+  }
+  .dex3bx .pageContainer {
+    width: 100%;
+    padding: 10px;
+  }
+  .Dex_Quality {
+    margin-top: 815px;
+    background: url(../images/dex/dex_redbg-left.png) no-repeat;
+    background-position: left bottom;
+    width: 100%;
+  }
+  .Dex_Quality .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 550px;
+  }
+  .Dex_Quality .panel .Dex_Qualityletfsolbox {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .Dex_Quality .panel .Dex_Qualityletfsolbox img {
+    width: 100%;
+    display: block;
+    max-width: 100%;
+  }
+  .Dex_Quality .panel .Dex_QualityContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px 0;
+    margin-left: 00%;
+    max-width: 100%;
+  }
+  .Dex_Quality .panel .Dex_QualityContent .Meet {
+    font-size: 20px;
+  }
+  .financevisionbx {
+    z-index: 9;
+    position: relative;
+  }
+  .financevisionbx .clientdata {
+    margin-top: 125px;
+    margin-left: 0;
+    background: url(../images/finance/whoweserve.jpg) no-repeat;
+    background-position: top left;
+    background-position: 120% 100%;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+    min-height: auto;
+  }
+  .financevisionbx .clientdata .heading32 {
+    text-align: center;
+    margin-left: 00%;
+  }
+  .financevisionbx .clientdata p {
+    text-align: center;
+    margin-left: 00%;
+  }
+  .Insurancevisionbx {
+    z-index: 9;
+    position: relative;
+  }
+  .Insurancevisionbx .clientdata {
+    margin-top: 125px;
+    margin-left: 35px;
+    background: url(../images/insurance/ins_vision.jpg) no-repeat;
+    background-position: top left;
+    background-position: 120% 100%;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+    min-height: 430px;
+    background-color: #fff;
+  }
+  .Insurancevisionbx .clientdata .heading32 {
+    text-align: center;
+    margin-left: 00%;
+  }
+  .Insurancevisionbx .clientdata p {
+    text-align: center;
+    margin-left: 00%;
+  }
+  .InsuranceSolution {
+    margin-top: 149px;
+    background: url(../images/redbg-left.jpg) no-repeat;
+    background-position: left bottom;
+    background-position: 120% 100%;
+    width: 100%;
+  }
+  .InsuranceSolution .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 400px;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox {
+    padding-top: 100px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    color: #fff;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox img {
+    width: 70%;
+    display: block;
+  }
+  .InsuranceSolution .panel .InsuranceContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px 0;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .InsuranceSolution .panel .InsuranceContent .Meet {
+    font-size: 20px;
+  }
+  .Insurance_casestudy {
+    /* background: url(../images/right-angle1.png) no-repeat; */
+    background-color: #ff8d39;
+    width: 100%;
+  }
+  .Insurance_casestudy .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 600px;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyRightsolboxnew {
+    margin-left: 0;
+    padding-top: 100px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .Insurance_casestudy.panel .Insurance_casestudyletfsolboxnew img {
+    width: 100%;
+    display: block;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px 0;
+    max-width: 100%;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyContent .Meet {
+    font-size: 20px;
+  }
+  .MT {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .MT > div {
+    margin: 10px;
+    text-align: left;
+    width: 100%;
+  }
+  .MT > div h1 {
+    font-weight: 700;
+  }
+  .Partners {
+    margin-top: 121px;
+    /* background: url(../images/leadership/partnership_bg.jpg) no-repeat; */
+    background-position: left top;
+    background-position: -32% -5%;
+    background-color: #e22028;
+    width: 100%;
+  }
+  .Partners .panel {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 1800px;
+  }
+  .Partners .panel .Partnersletfsolbox {
+    padding-top: 50px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    text-align: justify;
+  }
+  .Partnersletfsolbox h3 {
+    color: #fff;
+  }
+  .Partnersletfsolbox p {
+    color: #fff;
+  }
+  .Partners .panel .Partnersletfsolbox img {
+    width: 100%;
+    display: block;
+    max-width: 100%;
+  }
+  .Partners .panel .PartnersContent {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 42px 0;
+    margin-left: 0;
+    max-width: 100%;
+    background-color: #fff;
+  }
+  .PartnersContent {
+    margin-top: 200px;
+  }
+  .Partnersbox {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .Partnersbox > div {
+    width: 45%;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+    border: 0 solid #5a090b;
+  }
+  .Partners .panel .PartnersContent .Meet {
+    font-size: 20px;
+  }
+  .Testimonials {
+    margin-top: 200px;
+    background: url(../images/about_redbg-left.png) no-repeat;
+    background-position: left top;
+    width: 100%;
+  }
+  .Testimonialsbx {
+    z-index: 0;
+    position: relative;
+  }
+  .Testimonialsbx .clientdata {
+    margin-top: 00px;
+    background: #fff;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+  }
+  .Testimonialsbx .clientdata .heading32 {
+    text-align: center;
+  }
+  .Testflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Testflex > div {
+    margin: 20px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .Testflex > div p {
+    text-align: center;
+  }
+  .Testflex > div h1 {
+    font-weight: 700;
+  }
+  .Testflex_imgdiv {
+    margin: auto;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    border: 1px solid #cecece;
+  }
+}

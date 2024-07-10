@@ -1,0 +1,25 @@
+.readmoreRed1 {
+  color: #483773;
+  font-weight: bolder;
+  display: inline-block;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-family: Roboto;
+}
+
+.readmoreRed1:hover {
+  color: white;
+  font-weight: 200;
+}
+
+.heading32 {
+  color: #028074;
+  font-family: roboto;
+  font-weight: 400;
+}
+.heading24 {
+  color: #fff;
+  font-family: roboto;
+
+  font-weight: 400;
+}

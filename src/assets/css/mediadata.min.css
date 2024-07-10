@@ -1,0 +1,5742 @@
+/*.bannerBtn_orange:hover{background:#e86f24}*/
+.banner_text {
+  max-width: 645px;
+}
+.commons-slider .owl-stage {
+  display: inline-flex;
+}
+.commons-slider .owl-nav {
+  text-align: center;
+  font-size: 40px;
+  padding: 0 10px;
+  color: #000;
+  line-height: 34px;
+}
+.commons-slider .owl-nav .owl-prev {
+  padding: 0 5px;
+  margin: 5px;
+}
+.commons-slider .owl-nav .owl-next {
+  padding: 0 5px;
+  margin: 5px;
+}
+.clientbx .clientdata .box .img img {
+  width: auto;
+  text-align: center;
+}
+.pagination li:first-child {
+  font-weight: 800;
+}
+.clentbox-slider .item .img img {
+  width: auto;
+  text-align: center;
+}
+.owl-dots .owl-dot {
+  background: #c4c0d7 !important;
+}
+.cyber-security-slider .item .box {
+  width: auto !important;
+  margin: 20px auto 10px;
+  min-width: auto;
+  min-width: 390px;
+}
+.pb80 {
+  margin-bottom: 35px;
+}
+.pb80 .rightimg img {
+  width: 100%;
+  float: none;
+}
+ul#pgbar {
+  padding-bottom: 35px;
+}
+.cyber-security-slider .owl-nav button span {
+  display: none;
+}
+.owl-theme .owl-dots .owl-dot span {
+  display: none;
+}
+.marginblogs {
+  margin-top: 160px;
+}
+.blogbox .tab_content .card-body .card-text p {
+  /*margin-bottom:10px*/
+}
+@media only screen and (max-width: 1366px) {
+  .bloginner_detailsbox > div:nth-child(1) {
+    width: 65%;
+  }
+  .aboutpage .right_trangle {
+    top: 114px;
+  }
+  .Csr_Contribution .pageContainer {
+    padding-top: 100px;
+  }
+  .Banking_casestudy .panel .Banking_casestudyletfsolbox {
+    width: 50%;
+    max-width: 470px;
+  }
+  .Banking_casestudyletfsolbox .item img {
+    -webkit-clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%);
+  }
+  .testimonialSection .panel .testimonleft {
+    width: 50%;
+    max-width: 470px;
+  }
+  .cyber-security-slider .item .box {
+    width: auto !important;
+    margin: 20px 7px;
+    min-width: 390px;
+  }
+  .industrySolution.whynSeit .nseitContent {
+    max-width: 535px;
+  }
+  .Dex_zonedata li {
+    width: 100px;
+  }
+  .contactBtn {
+    right: -7px;
+  }
+  .contactBtn img {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .grey-bg.capability.digitaltrans {
+    padding-top: 22%;
+  }
+  .want-card {
+    margin-top: 0;
+  }
+  .card-body p.pchatf {
+    min-height: 72px;
+  }
+  .blogbox .card-custom .card-body .card-text {
+    font-size: 15px;
+  }
+  .heading40.width75 {
+    width: auto;
+  }
+  .heading24.width60 {
+    width: auto;
+  }
+  .grey-bg .card-body p.pia {
+    height: 72px;
+    min-height: auto;
+  }
+  .menu-content a {
+    font-size: 1.05rem;
+  }
+  .exp-img svg {
+    width: 100%;
+  }
+  .Csr_Contribution .pageContainer {
+    padding-top: 100px;
+  }
+  .digitalpage .right_trangle img {
+    max-width: 500px;
+  }
+  .alliancesflex > div .img_div {
+    margin: 0 20px auto -6px;
+  }
+  .valueSection .panel .rightValuetxt {
+    padding-top: 35px;
+  }
+  .industrySolution .panel .letfsolbox {
+    padding-top: 0px;
+  }
+  .testimonialSection.caseStudyright .testimonleft {
+    padding-top: 200px;
+    margin-bottom: 50px;
+  }
+  .cyber-security-slider .item .box {
+    min-width: 150px;
+  }
+  .Banking_casestudy {
+    margin-top: -55px;
+  }
+  .testimonialSection .panel {
+    height: 800px;
+  }
+  #sync2,
+  .Rightsolboxnew .owl-item .item {
+    width: 500px;
+  }
+  .Award_Recognition .panel .Rightsolboxnew {
+    max-width: 500px;
+    margin-left: 18%;
+  }
+  .Banking_casestudy .panel {
+    height: 754px;
+  }
+  .digitalpage .digitaltxt {
+    max-width: 650px;
+  }
+  .aboutpage .right_trangle img {
+    max-width: 500px;
+    display: none;
+  }
+  .heading40,
+  .heading40 p,
+  .digitalpage .digitaltxt .heading40 p,
+  .casestudy-banner .mwr .heading40 p,
+  .aboutpage .abouttxt .heading40 p,
+  .casestudy-banner.aboutpage .abouttxt .heading40 p {
+    font-size: 32px;
+  }
+  .testimonialSection {
+    margin-top: -90px;
+  }
+  .Standard_Quality .panel .letfsolbox {
+    max-width: 500px;
+  }
+  .Standard_Quality .panel .letfsolbox img {
+    width: 95%;
+  }
+  .Award_Recognition {
+    background-position: top center;
+  }
+  .wethink .whitebxbg .categorybx .bx {
+    margin-right: 35px;
+  }
+  #Cloud .boxleft-img img {
+    width: 80%;
+  }
+  .industrySolution.whynSeitApplication {
+    background-position: 20% 100%;
+  }
+  .cyber-security-slider .item .box {
+    min-height: 420px;
+  }
+  .industrySolution .panel .industryContent {
+    padding: 17px 20px 0;
+  }
+  .homepage .sliderHome /*.img_right{max-width:300px}*/.clientbx .clientdata .box .img img {
+    max-width: 100%;
+  }
+  .BankingSolution .panel .BankingContent {
+    margin-top: 80px;
+  }
+  .industrySolution .panel .industryContent {
+    margin-left: 12%;
+  }
+  .Dex_zonedata {
+    margin-left: 12%;
+  }
+  .testimonialSection .panel .testimon {
+    margin-left: 17%;
+  }
+  .Standard_Quality .panel .Standard_QualityContent {
+    margin-left: 12%;
+  }
+  .Partners .panel .PartnersContent {
+    margin-left: 12%;
+  }
+  .Dex_zonedata h4 {
+    font-size: 13px;
+  }
+  .financevisionbx .clientdata .contentsdv {
+    max-width: 456px;
+  }
+  .Partnersletfsolbox p {
+    padding-right: 50px;
+  }
+  .Carrersvisionbxs_celebration .bx .Carrers_celebra {
+    max-width: 400px;
+  }
+}
+.Partners {
+  background-position: center center;
+  background-size: cover;
+}
+.Commitment {
+  background-size: cover;
+  background-position: top center;
+}
+.Partners .panel .PartnersContent .Partnersbox img {
+  width: 100%;
+}
+.Award_Recognition .panel .Rightsolboxnew img {
+  width: 100%;
+}
+.Partnersletfsolbox p {
+  padding-right: 30px;
+}
+.Partnersletfsolbox p {
+  width: 90%;
+}
+.alliancesflex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.alliancesflex > div {
+  margin: 20px;
+  text-align: left;
+  width: 100%;
+}
+.alliancesflex > div .img_div {
+  width: 180px;
+  margin-right: 10px;
+  float: left;
+}
+.alliancesflex > div .content_div {
+  width: calc(100% - 200px);
+  width: -webkit-calc(100% - 200px);
+  width: -moz-calc(50% - 200px);
+  float: right;
+}
+.ContactInfo {
+  background-position: center center;
+  background-size: cover;
+}
+.ContactInfo .panel .ContactInfoContent iframe {
+  width: 100%;
+}
+.Carrers_points {
+  margin-left: -20px;
+}
+.Carrers_points div {
+  margin: 10px;
+  width: calc(50% - 20px);
+  width: -webkit-calc(50% - 20px);
+  width: -moz-calc(50% - 20px);
+}
+.Carrersvisionbxs_celebration {
+  background-position: top center;
+}
+.Testflex > div {
+  width: calc(33% - 30px);
+  width: -webkit-calc(33% - 30px);
+  width: -moz-calc(33% - 30px);
+}
+.locationbxCont ul {
+  max-width: 90%;
+}
+.cyber-security-slider .item .box {
+  margin: 20px 7px;
+}
+.testimonialSection {
+  background-position: top center;
+}
+.wethink .whitebxbg .categorybx .bx {
+  width: calc(33% - 35px);
+  width: -webkit-calc (33% - 35px);
+  width: -moz-calc(33% - 35px);
+}
+.wethink .security .rghtsecurity {
+  width: auto;
+}
+.w200 {
+  width: 200px;
+}
+.Dex_Quality_Image img:hover {
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+  height: 115px;
+  opacity: 1;
+}
+figcaption {
+  color: #fff;
+}
+.Dex_Quality_Image .ReginTab div {
+  margin-top: 30px;
+  text-align: center;
+  margin-right: 15px;
+}
+.Dex_Quality_Image .ReginTab div figcaption {
+  padding-top: 5px;
+}
+.Dex_Quality_Image .ReginTab a.active {
+  border: 1px solid #fff;
+  border-radius: 11px;
+  -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+  opacity: 1;
+}
+@media only screen and (max-width: 1025px) {
+  .Dex_zonedata h4 {
+    font-size: 15px;
+    width: 120px;
+  }
+  .Dex_zonedata li {
+    font-size: 14px;
+    width: 120px;
+  }
+  .Dex_zonedata .col {
+    display: inline-block !important;
+    width: 100px;
+    padding: 5px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .addbullets {
+    margin-bottom: 30px;
+  }
+  .wethink .whitebxbg .categorybx .bx .titilehead h3 {
+    margin-right: 50px;
+  }
+  .testimonialSection .panel .testimon {
+    padding: 100px 0 10px;
+  }
+  .digitalpage .right_trangle img {
+    max-width: 350px;
+  }
+  .sevicesbox .Servicbx .box h3 {
+    font-size: 18px;
+  }
+  .sevicesbox .Servicbx .box p {
+    font-size: 14px;
+  }
+  .addbullets li {
+    margin-bottom: 3px;
+  }
+  .boxleft-img .img img {
+    width: 140px !important;
+  }
+  .Bankingvisionbx .clientdata ul {
+    padding-right: 50px;
+  }
+  .contentsdv {
+    max-width: 456px;
+  }
+  .financevisionbx .clientdata {
+    background-position: top center;
+  }
+  .Csr_Contribution .pageContainer {
+    padding-top: 100px;
+  }
+  .Banking_points {
+    margin-left: 60px;
+  }
+  .Banking_points div p {
+    font-size: 14px;
+  }
+  .contenbank {
+    padding-left: 100px;
+  }
+  .aboutpage .right_trangle {
+    max-width: 350px;
+  }
+  .Csr_Contribution .pageContainer .leftcsr {
+    padding-right: 50px; /*text-align:justify*/
+  }
+  .Commitment {
+    background-size: cover;
+    background-position: center center;
+  }
+  .Commitment .panel .CommitmentContent img {
+    width: 100%;
+  }
+  .Award_Recognition .panel .Rightsolboxnew img {
+    display: block;
+    width: 100%;
+  }
+  .digitalpage .digitaltxt p {
+    font-size: 20px;
+  }
+  .Button {
+    padding: 5px 18px;
+    font-size: 14px;
+  }
+  .tablocation .location {
+    padding: 5px 18px;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .Standard_Quality .Standard_QualityContent .certificatebox div img {
+    width: 100%;
+  }
+  .Insurancevisionbx .clientdata {
+    background-position: center;
+  } /*.MTbx .clientdata p{text-align:justify;padding-right:30px}*/
+  .PartnersContent .Partnersbox div img {
+    width: 100%;
+  }
+  .Bankingvisionbx .clientdata .contentsdv {
+    left: 45%;
+  }
+  .Carrersvisionbxs_celebration
+    .Carrers_celebra
+    .successContent
+    .commons-slider
+    .item
+    img {
+    width: 100%;
+  }
+  .tablocation {
+    max-width: 350px;
+  }
+  .Dex_zonedata h4 {
+    font-size: 12px;
+  }
+  .digitalpage .smallbanner img {
+    width: 100%;
+    display: block; /*height:300px*/
+  }
+  .Dex_Quality {
+    margin-top: -75px;
+  }
+  .Dex_Quality .panel {
+    padding-top: 180px;
+  }
+  .DXbx .clientdata p {
+    text-align: left;
+    padding-left: 75px;
+    font-size: 12px;
+  }
+  .Dex_Quality_Image {
+    margin-top: 0;
+  }
+  .heading32 {
+    font-size: 25px;
+  }
+  .dexp {
+    color: #fff;
+    font-size: 14px;
+  }
+  .pageContainer {
+    padding: 0 40px;
+  }
+  .contentsdv {
+    max-width: 456px;
+  }
+  .Banking_casestudy .panel .Banking_casestudyletfsolbox {
+    max-width: 440px;
+  }
+  .testimonialSection {
+    background-size: cover;
+  }
+  .Bankingvisionbx .clientdata {
+    background-position: center;
+  }
+  .Bankingvisionbx .clientdata .contentsdv {
+    max-width: 500px;
+    left: 45%;
+  }
+  .Bankingvisionbx .clientdata .heading32 {
+    margin-left: 45%;
+  }
+  .Bankingvisionbx .clientdata p {
+    margin-left: 45%;
+  }
+  .Bankingvisionbx .clientdata ul {
+    padding-right: 70px;
+  }
+  .Banking_points_imgdiv {
+    width: 40px;
+    height: 40px;
+  }
+  .BankingSolution .img_boxhover .contenbank h1 {
+    font-size: 14px;
+  }
+  .BankingSolution .img_boxhover .contenbank {
+    padding-left: 50px;
+  }
+  .cyber-security-slider .owl-nav .owl-prev {
+    background: url(../images/prev.png) no-repeat !important;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    top: 47%;
+  }
+  .cyber-security-slider .owl-nav .owl-next {
+    background: url(../images/next.png) no-repeat !important;
+    width: 32px;
+    height: 32px;
+    right: 0;
+    position: absolute;
+    top: 47%;
+  }
+  .sevicesbox .Servicbx .box {
+    width: 100%;
+    float: none;
+    display: block;
+    margin-left: 0;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin: 15px auto 10px !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .testimonialSection .panel .testimonleft img {
+    width: 95%;
+  }
+  .blogbanner .abouttxt {
+    top: 100px;
+  }
+  .blogbox .card-custom .card-body .card-text {
+    font-size: 14px;
+    min-height: 75px;
+  }
+  .blog_title,
+  .blog_title p {
+    font-size: 35px;
+    line-height: 1;
+  }
+  .heading35,
+  .heading35 p {
+    font-size: 28px;
+  }
+  .contactBtn {
+    display: none !important;
+  }
+  .share-blog-fill li {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .aboutpage .smallbanner img.desktop-img {
+    display: none;
+  }
+  .aboutpage .smallbanner img.ipad-img {
+    display: block;
+    height: 222px;
+  }
+  .aboutpage.casestudy-banner .smallbanner img {
+    height: 222px;
+  }
+  .casestudy-banner,
+  .casestudy-banner.casestudy-main {
+    height: 260px;
+  }
+  .casestudy-banner.aboutpage .abouttxt p {
+    font-size: 20px;
+  }
+  .heading40 {
+    font-size: 30px;
+  }
+  .banner_text {
+    max-width: 100%;
+  }
+  .casestudy-banner {
+    display: flex;
+    align-items: center;
+  }
+  .casestudy-banner + .page-top,
+  .casestudy-banner + .para_section .page_top_text,
+  .casestudy-banner + .alliance .page_top_text,
+  .page-top.casestudy-inner {
+    padding-top: 0 !important;
+  }
+  .casestudy-banner .smallbanner {
+    position: absolute;
+    top: 0;
+  }
+  .casestudy-banner.banner-top .abouttxt,
+  .casestudy-banner .abouttxt,
+  .casestudy-banner.aboutpage .abouttxt.casetxt {
+    left: auto !important;
+    right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: auto !important;
+    z-index: 1;
+  }
+  .casestudy-cards h6 {
+    font-size: 1.3rem;
+  }
+  .case-study-form {
+    margin-left: 0;
+  }
+  .impact-col {
+    padding: 15px;
+    margin-bottom: 0;
+  }
+  .cross-sell {
+    line-height: 30px;
+  }
+  .resources_case_studies.blogbox .card-custom {
+    min-height: auto;
+  }
+  .bg-orange p {
+    font-size: 1rem;
+    min-height: 120px;
+  }
+  .casestudy-top .tab_content .card-body .card-text p {
+    min-height: 63px;
+    margin-bottom: 0 !important;
+    font-size: 14px;
+  }
+  .impact-col {
+    padding: 15px;
+    margin-bottom: 0;
+  }
+  .inner-impact svg {
+    width: 60px;
+    height: 60px;
+  }
+  .impact-txt p {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .impact-txt span {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  .mwr {
+    max-width: 100% !important;
+  }
+  .aboutpage .abouttxt p {
+    width: 100%;
+    max-width: 100%;
+  }
+  #clockdiv > div {
+    padding: 1px 8px;
+  }
+  .stepaway {
+    font-size: 22px;
+  }
+  .covid span {
+    line-height: 0.9;
+  }
+  .right-txt {
+    width: 53%;
+  }
+  .right-txt h6 {
+    font-size: 1.25rem;
+  }
+  .headerMenu .white_headertxt {
+    font-size: 1.7rem;
+  }
+  .menu-content h4 {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 2;
+  }
+  .menu-content a {
+    font-size: 14px;
+  }
+  .headerMenu {
+    padding: 3.5rem 2rem;
+  }
+  .headerMenu .col-sm-3 {
+    margin-bottom: 20px;
+  }
+  .headerMenu .bannerBtn_orange {
+    width: 180px;
+    height: 43px;
+    font-size: 1rem;
+    line-height: 2.5;
+  }
+  .header.active .middle-menu {
+    display: none;
+  }
+  .pageContainer.video-bg {
+    padding: 0 15px 40px;
+  }
+  .webinar-popup .modal-lg {
+    max-width: 90%;
+  }
+  .speaker-div h4 {
+    font-size: 1.3rem;
+  }
+  .speaker-div p {
+    font-size: 1rem;
+  }
+  .userSlider {
+    margin-left: 0;
+  }
+  .capability .card-custom-img {
+    background-size: 100% 100%;
+    height: 150px;
+    min-height: 150px;
+  }
+  .modalText .abc {
+    height: 400px;
+  }
+  .MT.leadersdetails p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .plpr:hover .overlay div {
+    padding: 20px 10px 0px 10px;
+  }
+  .gray-bg .card {
+    font-size: 18px;
+  }
+  .exp-img {
+    width: 70px;
+    height: 70px;
+    padding: 7px 14px;
+  }
+  .alliancesflex > div .img_div img {
+    position: static;
+    transition: none;
+  }
+  .small-txt .mt-4 {
+    margin-top: 1rem !important;
+  }
+  .blogbox .tab_content .card-body .card-text p {
+    min-height: 90px;
+    margin-bottom: 10px;
+  }
+  .bloginner_detailsbox > div:nth-child(1) {
+    width: 63%;
+  }
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  .Dex_Quality {
+    background: #e22028;
+    background: linear-gradient(
+      90deg,
+      rgba(226, 32, 40, 1) 52%,
+      rgba(255, 255, 255, 1) 52%
+    );
+  }
+  .Bankingvisionbx .clientdata ul {
+    padding-right: 0;
+  }
+  .bankingdata {
+    font-size: 13px;
+  }
+  .digitalpage .right_trangle img {
+    max-width: 350px;
+  }
+  .Csr_Contribution {
+    margin-top: 45px;
+  }
+  .Csr_Contribution .pageContainer .leftcsr {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Csr_Contribution .pageContainer .eco-img {
+    width: 30%;
+    max-width: 100%;
+    padding: 50px 0 20px;
+  }
+  .homepage .sliderHome .owl-item {
+    transition: all 5s ease-in-out;
+    position: relative;
+    min-height: 1px;
+    float: left;
+    visibility: hidden;
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition-duration: 3s, 3s;
+    transition-delay: 0s, 3s;
+  }
+  .homepage .sliderHome .owl-item.active {
+    visibility: visible;
+    -webkit-transition: ease 3s all;
+    -moz-transition: ease 3s all;
+    transition: ease 3s all;
+    opacity: 1;
+    transition-duration: 2s, 2s;
+    transition-delay: 0s, 2s;
+  }
+  .heading32,
+  .heading32 p,
+  .news-para .heading32 p {
+    font-size: 25px;
+  }
+  .nseit_cse_box {
+    top: 15px !important;
+  }
+  .testimonialSection {
+    margin-top: -40px;
+    background-position: top center;
+  }
+  .valueSection .panel .leftCommitext {
+    width: 45%;
+  }
+  .sevicesbox .Servicbx {
+    padding-top: 10px !important;
+  }
+  .wethink .security {
+    margin-top: 175px;
+  }
+  .wethink .security .rghtsecurity {
+    padding-top: 50px;
+  }
+  .Award_Recognition .panel .Award_RecognitionContent p {
+    font-size: 16px;
+  }
+  .financevisionbx .clientdata {
+    margin-left: 0;
+  }
+  .digitalpage .digitaltxt p {
+    font-size: 20px;
+  }
+  .industrySolution {
+    margin-top: -100px;
+  }
+  .wethink.wethinkimg {
+    height: auto;
+  }
+  .industrySolution.whynSeitApplication {
+    height: 735px;
+  }
+  .Dex_Quality_Image .ReginTab div {
+    margin-right: 15px;
+  } /*.blogbox .card-custom{min-height:375px}*/
+  .homepage:after {
+    height: 1250px;
+  }
+  .banner_heading {
+    font-size: 32px;
+  }
+  .homepage {
+    position: relative;
+  }
+  .homepage .sliderHome {
+    height: 560px;
+  }
+  .homepage .sliderHome .item {
+    position: relative;
+  }
+  .homepage .sliderHome .item img {
+    display: block;
+    width: 100%;
+  }
+  .homepage .sliderHome .bannercont_left {
+    position: absolute;
+    left: 50px;
+    top: 90px;
+    right: 4px;
+    margin: 0 auto;
+  }
+  .homepage .sliderHome .img_right {
+    width: 70%;
+  } /*.homepage .sliderHome .img_right img{width:290px;height:350px}*/
+  .Button {
+    padding: 5px 18px;
+    font-size: 14px;
+  }
+  .smallbanner img {
+    height: 222px;
+  }
+  .right_trangle {
+    display: none;
+  }
+  .Standard_Quality {
+    margin-top: -180px;
+    background-position: center center;
+    background-size: contain;
+  }
+  .Award_Recognition {
+    background-size: contain;
+    background-position: center center;
+  }
+  .Award_Recognition .panel .Rightsolboxnew img {
+    display: block;
+    width: 100%;
+  }
+  .sevicesbox .Servicbx .box {
+    padding: 15px;
+  }
+  .sevicesbox .Servicbx .box h3 {
+    font-size: 20px;
+  }
+  .industrySolution.whynSeit {
+    background-size: cover;
+    height: 675px;
+  }
+  .industrySolution.whynSeit .industryContent.nseitConpadd {
+    padding-left: 18px;
+    margin-top: 135px;
+  }
+  .Carrer_Contribution .panel .Carrers_points div {
+    width: 47%;
+  }
+  .Carrersvisionbxs_celebration {
+    background-position: center center;
+    background: 0 0;
+  }
+  .ContactInfo {
+    background-position: left center;
+    background-size: cover;
+  }
+  .footerSection .nseColorflow {
+    overflow: hidden;
+  }
+  .footerSection .nseColorflow img {
+    display: block;
+    width: 100%;
+  }
+  .header {
+    display: inline-table;
+    padding: 7px 0;
+  }
+  .Csr_Contribution .eco-img {
+    text-align: center;
+  }
+  .Csr_Contribution .eco-img img {
+    margin: 0 auto;
+  }
+  .Commitment {
+    background-size: cover;
+    background-position: center;
+  }
+  .Carrers_points > div {
+    margin: 10px;
+    text-align: left;
+    width: 47%;
+  }
+  .Dex_Quality {
+    background-position: center center;
+    background-size: cover;
+  }
+  .Carrersvisionbxs_celebration .Carrers_celebra .successContent img {
+    display: block;
+    width: 100%;
+  }
+  .Carrersvisionbxs_celebration .Carrers_celebra .successContent .nextbx img {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .wethink .whitebxbg {
+    padding: 20px;
+  }
+  .wethink .whitebxbg .categorybx .bx {
+    margin-right: 20px;
+  }
+  .wethink .whitebxbg .categorybx .bx ul li {
+    margin-bottom: 10px;
+  }
+  .wethink .security {
+    padding-bottom: 30px;
+  }
+  .wethink .security .rghtsecurity img {
+    width: 100%;
+    height: auto;
+  }
+  .Partners {
+    background-position: top center;
+    background-size: cover;
+  }
+  .Testimonialsbx .clientdata {
+    padding: 25px;
+  }
+  .valueSection .panel .leftCommitext {
+    top: 80px;
+  }
+  .sevicesbox {
+    margin-top: 135px;
+  }
+  .sevicesbox .Servicbx .box {
+    padding: 15px;
+  }
+  .industrySolution {
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+  }
+  .Currentopeningvisionbx .clientdata {
+    margin-left: 0;
+  }
+  .Currentopeningvisionbx .Currentopeningbox div {
+    width: 48%;
+  }
+  .Dex_zonedata h4 {
+    font-size: 13px;
+    width: 120px !important;
+  }
+  .Dex_zonedata li {
+    font-size: 12px;
+    width: 120px;
+  }
+  .Dex_zonedata .col {
+    display: inline-block !important;
+    width: 90px;
+    padding: 5px;
+  }
+  .Dex_zonedata .col {
+    width: 50%;
+    float: left;
+  }
+  .northAreawidth {
+    width: 100%;
+    display: block;
+  }
+  .Dex_zonedata .tab_contentregion {
+    margin-left: 25px;
+  }
+  .Dex_zonedata {
+    margin-left: 3%;
+  }
+  .homepage .sliderHome .bannercont_left {
+    margin-left: 0 !important;
+    top: 115px;
+  }
+  .cyber-security-slider .item .box {
+    min-width: 280px;
+  }
+  .industrySolution .panel .industryContent {
+    margin-left: 10%;
+  }
+  .valueSection .panel .rightValuetxt {
+    padding-top: 60px;
+  }
+  .industrySolution .panel .industryContent {
+    padding: 10px 20px 0;
+  }
+  .testimonialSection .panel .testimon {
+    padding: 30px 0 10px;
+  }
+  .testimonialSection .panel .testimonleft {
+    padding-top: 50px;
+  }
+  .testimonialSection .panel {
+    height: 700px;
+  }
+  .testimonialSection {
+    background-size: cover;
+  }
+  .cyber-security-slider .item .box {
+    min-width: 280px;
+  }
+  .wethink .whitebxbg .categorybx .bx ul {
+    margin-left: 46px;
+  }
+  .wethink .whitebxbg .categorybx .bx ul li {
+    font-size: 14px;
+  }
+  .Insurancevisionbx .clientdata {
+    background-position: center;
+  }
+  .clientdata .contentsdv {
+    left: 37%;
+  }
+  .Bankingvisionbx .clientdata {
+    background-position: center;
+  }
+  .Bankingvisionbx .clientdata p {
+    margin-left: 40%;
+  }
+  .Bankingvisionbx .clientdata .contentsdv {
+    left: 40%;
+  }
+  .financevisionbx .clientdata {
+    background-position: center;
+  }
+  .financevisionbx .clientdata .contentsdv {
+    left: 40%;
+  }
+  .financevisionbx .clientdata .heading32 {
+    margin-left: 40%;
+  }
+  .financevisionbx .clientdata p {
+    margin-left: 40%;
+  }
+  .Testflex > div {
+    width: 29%;
+  }
+  .testimonialSection .testimonleft .caseStudySlider .heading24 {
+    font-size: 20px;
+  }
+  .cyber-security-slider .item .box {
+    min-width: 280px;
+  }
+  .certificatebox > div {
+    margin: 2%;
+  }
+  .ContactInfo {
+    background-position: center;
+  }
+  .cyber-security-slider .item .box {
+    min-height: 315px;
+  }
+  .Carrersvisionbx .clientdata .contentsdv {
+    left: 40%;
+  }
+  .industrySolution.whynSeit .nseitContent .text p {
+    font-size: 14px;
+  }
+  .industrySolution.whynSeit .nseitContent .text h4 {
+    font-size: 16px;
+  }
+  .industrySolution .panel {
+    height: 550px;
+  }
+  .clientbx .clientdata {
+    margin-top: -140px;
+  }
+  .boxleft-img .img img {
+    width: 125px !important;
+  }
+  .industrySolution.whynSeitApplication {
+    background-position: top center;
+  }
+  .industrySolution .panel {
+    padding: 50px 0 0;
+  }
+  .industrySolution .panel .industryContent {
+    padding: 100px 20px 0;
+  }
+  .industrySolution .panel .letfsolbox {
+    padding-top: 0;
+  }
+  .Dexbox .Dexbx .box {
+    padding: 10px;
+  }
+  .pageContainer {
+    padding: 0 20px;
+  }
+  .sevicesbox.cyber-secContent .cyber-security-slider .owl-nav .owl-next {
+    right: 0;
+  }
+  .sevicesbox.cyber-secContent .cyber-security-slider .owl-nav .owl-prev {
+    left: -20px;
+  }
+  .aboutpage .abouttxt {
+    left: 20px;
+  }
+  .testimonialSection.caseStudyright .testimonleft {
+    margin-bottom: 0;
+  }
+  .para_section {
+    max-width: 100%;
+  }
+  .digitalpage .digitaltxt {
+    left: 20px;
+  }
+  .Banking_points > div {
+    width: 42%;
+  }
+  .clientbx .clientdata {
+    margin-top: -50px;
+  }
+  .Banking_casestudy {
+    background-position: 38% 100%;
+    background-size: cover;
+  }
+  .banner_textwhitess {
+    width: 100%;
+  }
+  .Award_Recognition {
+    background-size: cover;
+  }
+  .PartnersContent .Partnersbox div img {
+    width: 100%;
+  }
+  .Partnersletfsolbox p {
+    width: 85%;
+  }
+  .Partners .panel .PartnersContent {
+    max-width: 500px;
+  }
+  .alliancesflex > div .img_div {
+    margin: 0 10px auto -6px;
+  }
+  .socialvisionbx .clientdata {
+    margin-top: 85px;
+    background-position: top center;
+  }
+  .Csr_Contribution .eco-img img {
+    margin: 0 50px 0 30px;
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .tablocation .location {
+    padding: 5px 12px;
+  }
+  .locationbxCont ul {
+    max-width: 88%;
+  }
+  .Bankingvisionbx .clientdata .contentsdv {
+    max-width: 460px;
+  }
+  .banner_textwhitess {
+    max-width: 100%;
+  }
+  .contenbank {
+    padding-left: 100px;
+  }
+  .visionbx .clientdata .heading24 {
+    font-size: 20px;
+  }
+  .Standard_Quality .panel .Standard_QualityContent {
+    margin-top: 20px;
+  }
+  .Carrersvisionbx .clientdata {
+    background-position: center left -140px;
+  } /*.MTbx .MT div{width:100%}.blogbox .card-custom{min-height:400px}*/
+  .Dex_Quality {
+    background: #e22028;
+    background: linear-gradient(
+      90deg,
+      rgba(226, 32, 40, 1) 52%,
+      rgba(255, 255, 255, 1) 52%
+    );
+  }
+  .Dex_Quality .panel {
+    padding-top: 160px;
+  }
+  .DXbx .clientdata p {
+    text-align: left;
+    padding-left: 75px;
+    font-size: 12px;
+  }
+  .heading22 {
+    font-size: 20px;
+  }
+  .img_right {
+    display: none;
+  }
+  .Menubx {
+    display: none;
+  }
+  .testimonialSection .testimonleft .caseStudySlider .heading24 {
+    font-size: 17px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .Csr_Contribution .pageContainer .leftcsr {
+    padding-right: 0;
+  }
+  h1.heading32.white-color {
+    color: #3b2e7e;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 46%;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 45%;
+  }
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 47%;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 36%;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 36%;
+  }
+  .grey-bg .casecardbox .card-body p.pchat {
+    min-height: 46%;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech {
+    min-height: 25%;
+  }
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 57%;
+  }
+  .grey-bg .casecardbox .card-body p.psaas {
+    min-height: 47%;
+  }
+  .share-img img {
+    margin-top: -30px !important;
+  }
+  .mobileFirst {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .ButtonSearch {
+    padding: 2px 15px;
+  }
+  .search {
+    width: 75% !important;
+  }
+  .search .btn {
+    border-radius: 0;
+  }
+  .form-control {
+    border-radius: 0;
+  }
+  #sres {
+    font-size: 1.3rem !important;
+    visibility: hidden;
+    color: #000;
+  }
+  .search input {
+    width: 365px;
+    padding: 2px 3px;
+  }
+  .searchresult p a p {
+    text-align: justify;
+  }
+  .Dex_Quality_Image {
+    display: block;
+  }
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  .Banking_points div {
+    width: 46%;
+  }
+  .nseit_cse_box {
+    position: absolute;
+    right: 62px !important;
+    top: 13px;
+  }
+  .home_slider .owl-nav .owl-next {
+    display: none;
+  }
+  .home_slider .owl-nav .owl-prev {
+    display: none;
+  }
+  .gsib_a {
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  .gsc-input-box {
+    padding-top: 2px !important;
+    padding-bottom: 5px !important;
+    border-top-left-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
+    width: 150px !important;
+    float: right;
+  }
+  .industrySolution.whynSeit {
+    height: 800px;
+  }
+  .Partnersletfsolbox p {
+    width: 100%;
+  }
+  .tabbox ul li.servimgthree {
+    margin-right: 0;
+  }
+  .financevisionbx .clientdata {
+    padding: 20px;
+  }
+  .testimonialSection .panel .testimon .readmoreRed {
+    color: #e86f24;
+  }
+  .sliderValue .owl-dots {
+    text-align: center;
+  }
+  .bloginner_detailsbox > div:nth-child(1) {
+    margin-right: 0;
+    width: 100%;
+  }
+  .industrySolution.whynSeit .industryContent.nseitConpadd {
+    margin-top: 5px;
+  }
+  .bloginner_detailsbox > div:nth-child(2) {
+    width: 100%;
+  }
+  .banner_textwhitess {
+    width: 100%;
+    max-width: 100%;
+  } /*.clientbx .clientdata .heading32{text-align:center}*/
+  .industrySolution.whynSeitApplication {
+    background: 0 0;
+  }
+  .ReginTab {
+    padding-top: 40px;
+  }
+  .DXbx .clientdata .heading32 {
+    text-align: center;
+  }
+  .Partners.leadershipart .panel .PartnersContent {
+    margin: 0;
+  }
+  .cyber-security-slider .item .box {
+    margin: 20px auto 0;
+  }
+  .sevicesbox.cyber-secContent .cyber-security-slider .item .box {
+    margin: 15px auto 10px;
+  }
+  .sevicesbox.businessTransform {
+    margin-bottom: 0;
+  }
+  .pb80 {
+    width: 100%;
+    margin-bottom: 35px;
+    margin: 0 auto;
+    border-bottom: solid 1px #ddd;
+    padding-bottom: 30px;
+  }
+  .pb80 div {
+    width: 100%;
+    display: block;
+  }
+  .pb80 .rightimg img {
+    width: 100%;
+    display: block;
+  }
+  .DXbx .clientdata {
+    margin-top: 45px !important;
+  }
+  .DXbx .clientdata .Carrers_points div {
+    margin: 10px;
+    text-align: left;
+    width: 100%;
+  }
+  .Dexbox {
+    height: auto;
+    padding-bottom: 45px;
+  }
+  .Dex_Quality {
+    background: 0 0;
+  }
+  .Dex_Quality .panel {
+    display: block;
+  }
+  .Dex_Quality .panel .Dex_Qualityletfsolbox {
+    width: 100%;
+    max-width: 570px;
+    height: auto;
+    padding-top: 75px;
+  }
+  .Dex_Quality .panel .Dex_QualityContent {
+    width: 100%;
+    max-width: 570px;
+    padding-top: 75px;
+  }
+  .Dex_Quality .panel .Dex_Quality_Image {
+    max-width: 100%;
+  }
+  .Dex_Quality .panel .Dex_Quality_Image .dexp {
+    color: #888 !important;
+  }
+  .Dex_Quality .panel .Dex_Quality_Image figcaption {
+    color: #666;
+  }
+  .Dex_Quality .panel .Dex_Quality_Image div {
+    margin: 0 auto;
+  }
+  .Dex_Quality .panel .Dex_zonedata {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .dex3bx .clientdata {
+    margin-top: 90px;
+  }
+  .Currentopeningvisionbx .clientdata {
+    margin-top: 45px;
+  }
+  .Currentopeningvisionbx .Currentopeningbox div {
+    width: 100%;
+  }
+  .Currentopening {
+    background: 0 0;
+  }
+  .Banking_points_imgdiv {
+    margin-bottom: 28px;
+  }
+  .alliancesflex div .img_div {
+    width: 100%;
+    text-align: center;
+    float: none;
+  }
+  .alliancesflex div .content_div {
+    width: 100%;
+    float: none;
+  }
+  .alliancesflex div .content_div p {
+    text-align: justify;
+  }
+  .Testimonials {
+    margin-top: 120px;
+    background: url(../images/about_redbg-left.png) no-repeat;
+    background-position: left top;
+    width: 100%;
+  }
+  .Testimonials .Testimonialsbx .clientdata {
+    margin-top: 00px;
+    margin-left: 0;
+    background: #fff;
+    -webkit-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 15px 0 rgba(0, 0, 0, 0.75);
+    padding: 35px;
+  }
+  .Testflex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0 !important;
+  }
+  .Testflex > div {
+    margin: 10px 0;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .Testflex > div p {
+    text-align: justify;
+  }
+  .Testflex > div h1,
+  .Testflex > div h1 p {
+    font-weight: 700;
+  }
+  .Testflex > div h1 p {
+    font-family: Roboto-Light;
+    color: #000000;
+    text-align: center;
+  }
+  .Testflex_imgdiv {
+    margin: auto;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    border: 1px solid #cecece;
+  }
+  .banner_heading {
+    font-size: 32px;
+  }
+  .para_section {
+    max-width: 100%;
+  }
+  .para_section .page_top_text {
+    padding-top: 45px;
+  }
+  .blogbox {
+    margin-top: 35px !important;
+  }
+  .page_top_text {
+    padding-top: 50px !important;
+  }
+  .page_top_text .Currentopeningdetailsbox .JobDetails div {
+    width: 32.05% !important;
+    margin-bottom: 15px;
+  }
+  .page_top_text .Currentopeningdetailsbox div {
+    width: 100% !important;
+  }
+  .Currentopening_jobvisionbx .clientdata {
+    margin-top: 50px;
+  }
+  .row.pb80 {
+    margin-bottom: 58px;
+  }
+  .col-sm-3.rightimg {
+    margin-top: 20px;
+  }
+  .Carrersvisionbx .clientdata {
+    height: auto;
+    background: 0 0;
+    margin-top: 50px;
+  }
+  .Carrersvisionbx .clientdata .contentsdv {
+    left: 0;
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+  }
+  .Carrersvisionbx .clientdata .contentsdv .tabbox {
+    padding: 25px 0 25px;
+  }
+  .Carrersvisionbx .clientdata .contentsdv .tabboxContent p {
+    text-align: justify;
+  }
+  .financevisionbx .clientdata {
+    margin-top: 50px !important;
+    margin-left: 0;
+    min-height: auto;
+    background: 0 0;
+  }
+  .financevisionbx .clientdata .heading32 {
+    margin-left: 0;
+    text-align: center;
+  }
+  .financevisionbx .clientdata p {
+    margin-left: 0;
+  }
+  .BankingSolution {
+    height: auto;
+    margin-top: 45px;
+  }
+  .BankingSolution .panel {
+    display: block;
+    height: auto;
+  }
+  .BankingSolution .panel .Bankingletfsolbox {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 0 !important;
+    text-align: center;
+  }
+  .BankingSolution .panel .Bankingletfsolbox h3 {
+    color: #3b2e7e;
+  }
+  .BankingSolution .panel .Bankingletfsolbox p {
+    color: #212529 !important;
+  }
+  .BankingSolution .panel .Bankingletfsolbox img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    clip-path: none;
+  }
+  .BankingSolution .panel .BankingContent {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 30px !important;
+    margin-top: 0;
+  }
+  .Banking_casestudy {
+    background: 0 0;
+    margin-top: 45px;
+  }
+  .Banking_casestudy .panel {
+    display: block;
+    height: auto;
+  }
+  .Banking_casestudy .panel .Banking_casestudyletfsolbox {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Banking_casestudy .panel .Banking_casestudyletfsolbox h3 {
+    text-align: center;
+  }
+  .Banking_casestudy .panel .Banking_casestudyletfsolbox img {
+    display: block;
+    width: auto;
+    height: auto;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+  .Banking_casestudy .panel .Banking_casestudyletfsolbox .ownerbox {
+    text-align: center;
+  }
+  .Banking_casestudy .panel .Insurance_casestudyRightsolboxnew {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin: 35px auto 30px;
+  }
+  .Banking_casestudy .panel .Insurance_casestudyRightsolboxnew img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .contenbank {
+    padding-left: 0;
+  }
+  .pageContainer {
+    padding: 0 15px;
+  }
+  .header {
+    display: inline-table;
+    padding: 7px 0;
+  }
+  .heading40 {
+    font-size: 38px;
+  }
+  .heading32 {
+    font-size: 25px;
+  }
+  .heading24 {
+    font-size: 22px;
+  }
+  .heading22 {
+    font-size: 16px;
+  }
+  .heading18 {
+    font-size: 16px;
+  }
+  .heading16 {
+    font-size: 16px;
+  }
+  .bannerBtn_orange {
+    width: 100%;
+    display: block;
+    max-width: 140px;
+    margin: 25px auto;
+    margin-left: 0;
+  }
+  .img_right {
+    display: none;
+  }
+  .homepage {
+    position: relative;
+  }
+  .homepage .sliderHome {
+    height: 460px;
+  }
+  .homepage .sliderHome .item {
+    position: relative;
+  }
+  .homepage .sliderHome .item img {
+    display: block;
+    width: 100%;
+    height: 500px;
+  }
+  .homepage .sliderHome .bannercont_left {
+    position: absolute;
+    left: 40px;
+    top: 90px;
+    right: 4px;
+    margin: 0 auto;
+  }
+  .homepage:after {
+    content: "";
+    /* background: url(../images/bg_img_lock-new.png) no-repeat; */
+    background-position: center center;
+    background-size: cover;
+    height: 460px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+  .valueSection {
+    position: relative;
+  }
+  .valueSection .angle_img_rights {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .valueSection .panel {
+    display: block;
+  }
+  .valueSection .panel .leftCommitext {
+    max-width: 100%;
+    width: 100%;
+  } /*.valueSection .panel .leftCommitext h2{text-align:center}*/
+  .valueSection .panel .leftCommitext p {
+    text-align: justify;
+  }
+  .valueSection .panel .leftCommitext .readmoreRed {
+    /*text-align:center;*/
+    display: block;
+  }
+  .valueSection .panel .leftCommitext .img img {
+    text-align: center;
+  }
+  .valueSection .panel .rightValuetxt {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 120px;
+    margin-left: 1px;
+    /* background: url(../images/mobile-img/company-value-bg.jpg) no-repeat; */
+    background-size: cover;
+    height: 100;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+  }
+  .valueSection .panel .rightValuetxt .sliderValue {
+    text-align: center;
+    width: 100%;
+  }
+  .valueSection .panel .rightValuetxt .sliderValue .item img {
+    display: inline-block;
+    width: auto;
+  }
+  .valueSection .panel .rightValuetxt .sliderValue .owl-dots {
+    left: 0;
+    right: 0;
+  }
+  .valueSection .panel .rightValuetxt .ownerbox {
+    text-align: center;
+  }
+  .sliderValue .owl-dots {
+    left: 0;
+    right: 0;
+  }
+  .sevicesbox {
+    margin-top: 45px;
+  }
+  .sevicesbox p {
+    text-align: left;
+  }
+  .sevicesbox h5 {
+    text-align: left;
+  }
+  .sevicesbox .Servicbx {
+    display: block !important;
+  }
+  .sevicesbox .Servicbx .box {
+    width: 100%;
+    float: none;
+    display: block;
+    margin-left: 0;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin: 15px auto 10px !important;
+  }
+  .industrySolution {
+    margin-top: 50px;
+    background-size: contain;
+    background-position: center center;
+    background: 0 0;
+  }
+  .industrySolution .panel {
+    height: auto;
+    display: block;
+    padding-top: 0 !important;
+  }
+  .industrySolution .panel .letfsolbox {
+    padding-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .industrySolution .panel .letfsolbox img {
+    width: auto;
+    margin: 0 auto;
+  }
+  .industrySolution .panel .industryContent {
+    width: 100%;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .industrySolution .panel .industryContent .ownerbox h3 {
+    /*text-align:center;*/
+    font-size: 22px;
+  } /*.industrySolution .panel .industryContent .ownerbox .txtowner{text-align:center}*/
+  .industrySolution .panel .industryContent.nseitContent {
+    padding-left: 0;
+  }
+  .industrySolution
+    .panel
+    .industryContent.nseitContent
+    .whynse_slider
+    .item
+    img {
+    display: inline-block;
+    width: auto;
+  }
+  .industrySolution
+    .panel
+    .industryContent.nseitContent
+    .whynse_slider
+    .owl-dots {
+    left: 0;
+    right: 0;
+  }
+  .Award_Recognition .panel .Rightsolboxnew img {
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
+  img {
+    clip-path: none;
+    -webkit-clip-path: none !important;
+  }
+  .item img {
+    clip-path: none;
+    -webkit-clip-path: none !important;
+  }
+  .visionbx {
+    position: relative;
+    margin-top: 25px;
+  }
+  .visionbx .clientdata h5 {
+    font-size: 20px;
+  }
+  .clientdata .contentsdv {
+    left: 0;
+    max-width: 100%;
+  }
+  .cyber-security-slider .owl-nav .owl-prev {
+    background: url(../images/prev.png) no-repeat !important;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    top: 47%;
+  }
+  .cyber-security-slider .owl-nav .owl-next {
+    background: url(../images/next.png) no-repeat !important;
+    width: 32px;
+    height: 32px;
+    right: 0;
+    position: absolute;
+    top: 47%;
+  }
+  .financevisionbx .clientdata .contentsdv {
+    left: 0;
+    max-width: 100%;
+  }
+  .digitalpage .digitaltxt p {
+    font-size: 18px;
+  }
+  .BankingSolution {
+    background: 0 0;
+  }
+  .BankingSolution .panel .Bankingletfsolbox p {
+    color: #212529;
+    text-align: justify;
+  }
+  .Bankingvisionbx .clientdata {
+    background: 0 0;
+    margin-left: 0;
+    margin-top: 65px;
+    background-color: none;
+    padding: 5px !important;
+    margin-top: 40px !important;
+  }
+  .Bankingvisionbx .clientdata p {
+    margin-left: 0;
+    text-align: center;
+  }
+  .Bankingvisionbx .clientdata h3 {
+    text-align: center !important;
+    margin-left: 0 !important;
+  }
+  .Bankingvisionbx .clientdata .contentsdv {
+    left: 0;
+    max-width: 100%;
+  }
+  .Bankingvisionbx .clientdata .contentsdv .tabbox {
+    padding: 25px 0 20px;
+  }
+  .Testimonials {
+    height: auto !important;
+  }
+  .Insurancevisionbx .clientdata {
+    margin-left: 0;
+    margin-top: 50px !important;
+    background-color: none;
+    background: 0 0;
+  }
+  .Insurancevisionbx .clientdata .contentsdv {
+    left: 0;
+    max-width: 100%;
+  }
+  .Insurancevisionbx .clientdata .contentsdv .tabbox {
+    padding: 25px 0 20px;
+  }
+  .Banking_points {
+    margin-top: 10px;
+  }
+  .testimonialSection {
+    background: 0 0;
+    margin-top: 0;
+  }
+  .testimonialSection .panel {
+    display: block;
+    height: auto;
+  }
+  .testimonialSection .panel .testimonleft {
+    padding-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 40px;
+  } /*.testimonialSection .panel .testimonleft h3{text-align:center}*/
+  .testimonialSection .panel .testimonleft p {
+    text-align: left;
+  }
+  .testimonialSection .panel .testimonleft .readmoreRed {
+    /*text-align:center;*/
+    display: block;
+  }
+  .testimonialSection .panel .testimonleft .caseStudySlider .item img {
+    display: inline-block;
+    width: auto;
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+  .testimonialSection .panel .testimonleft .caseStudySlider .item h3 {
+    text-align: center;
+  }
+  .testimonialSection .panel .testimonleft .caseStudySlider .owl-dots {
+    left: 0;
+    right: 0;
+  }
+  .testimonialSection .panel .testimon {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0 0;
+    margin-top: 40px;
+    margin-left: 0;
+    background: 0 0;
+    background-position: right bottom;
+    width: 100%;
+    background-size: cover; /*text-align:center*/
+  }
+  .testimonialSection .panel .testimon p {
+    padding: 10px 0;
+  }
+  .testimonialSection .panel .testimon img {
+    width: auto;
+    max-width: 300px;
+  }
+  .testimonialSection.caseStudyright {
+    background: 0 0;
+  }
+  .footerSection .footerbx .box {
+    width: 50%;
+  }
+  .digitalpage .digitaltxt {
+    top: 100px;
+    left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .Contactformbx .clientdata {
+    margin-top: 45px;
+  }
+  .Contactformbx .clientdata .captchamargin {
+    border: none;
+  }
+  .Contactformbx .clientdata .captchamargin .box {
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  .Contactformbx .clientdata .captchamargin .box .divrelative {
+    margin-left: 0;
+  }
+  .socialvisionbx .clientdata {
+    background: 0 0;
+    margin-top: 50px;
+    min-height: auto;
+  }
+  .socialvisionbx .clientdata .contentsdv {
+    padding-top: 0 !important;
+    max-width: 100%;
+  }
+  .socialvisionbx .clientdata .contentsdv p {
+    /*text-align:justify*/
+  }
+  .ContactInfo {
+    background: 0 0;
+  }
+  .ContactInfo .panel {
+    height: auto;
+    display: block;
+    padding-top: 180px;
+  }
+  .ContactInfo .panel .ContactInfoletfsolbox {
+    /* background: url(../images/mobile-img/contactbg-mobile.png) no-repeat; */
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+    margin-top: 0;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  .ContactInfo .panel .ContactInfoContent {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+    max-width: 100%;
+  }
+  .ContactInfo .panel .ContactInfoContent iframe {
+    width: 100%;
+  }
+  .contactus {
+    padding: 50px 0;
+    background: url(../images/mobile-image/contact-us-bg.jpg) no-repeat;
+    background-size: cover;
+  }
+  .contactus .contactbx {
+    text-align: left;
+  }
+  .contactus .bannerBtn_white {
+    text-align: center;
+    width: 100%;
+    max-width: 140px;
+  }
+  .right_trangle {
+    display: none;
+  }
+  .leadershippage .leadershiptxt {
+    top: 90px;
+    left: 28px;
+  } /*.bod_section .bodbox div{width:45%}.bod_section .bod_top_text{padding-top:0}.MTbx .clientdata{padding:43px}.Management_team{height:auto;padding-bottom:40px}/*.Management_team .MT div{width:100%}*/ /*.Management_team .MT.leadersdetails .imgdiv{display:block;float:none;text-align:center;width:100%;max-width:100px;margin:0 auto 10px}*/
+  .Management_team .MT.leadersdetails .contsdv {
+    padding-left: 0;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #f1f1f1;
+    text-align: center;
+  }
+  .Management_team .MT.leadersdetails .contsdv h1 {
+    text-align: center;
+  }
+  .Management_team .MT.leadersdetails .contsdv .details {
+    text-align: center;
+  }
+  .Management_team .MT.leadersdetails .contsdv p {
+    text-align: justify;
+  }
+  .Partners {
+    background: 0 0;
+  }
+  .Partners .panel {
+    height: auto;
+    display: block;
+  }
+  .Partners.leadershipart .panel {
+    height: auto;
+    display: block;
+  }
+  .Partners .panel .PartnersContent {
+    margin-left: 0;
+  }
+  .Partners .panel .Partnersletfsolbox {
+    display: block;
+    width: 100%;
+    padding: 0 10px 30px;
+    max-width: 100%;
+    margin-top: 45px;
+    background: 0 0;
+    background-size: cover;
+    width: 100%;
+  }
+  .Partnersletfsolbox h3 {
+    color: #666 !important;
+  }
+  .Partnersletfsolbox p {
+    color: #666 !important;
+  }
+  .Partners .panel .Partnersletfsolbox img {
+    margin: 0 auto;
+  }
+  .Partners .panel .Partnersletfsolbox h3 {
+    padding-top: 20px !important;
+  }
+  .Partners .panel .PartnersContent {
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    max-width: 100%;
+  }
+  .Partners .panel .PartnersContent .Partnersbox {
+    padding-top: 20px;
+  }
+  .Partners .panel .PartnersContent .Partnersbox div {
+    width: 47%;
+    margin-right: 1px;
+  }
+  .aboutpage .abouttxt {
+    top: 100px; /*left:30px*/
+  }
+  .wethink .whitebxbg {
+    padding: 15px;
+    margin-top: 165px;
+  }
+  .wethink .whitebxbg .categorybx .bx {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .wethink .whitebxbg .categorybx .bx ul {
+    padding-top: 12px;
+  }
+  .wethink .whitebxbg .categorybx .bx ul li {
+    margin-left: 7px;
+  }
+  .wethink .whitebxbg .thinktab ul li {
+    padding: 5px 9px;
+    margin-left: 7px;
+  }
+  .wethink .whitebxbg p {
+    line-height: 26px;
+    font-size: 18px;
+  }
+  .wethink .whitebxbg.security {
+    margin-top: 165px;
+  }
+  .wethink .whitebxbg.security .box {
+    display: block !important;
+  }
+  .wethink .whitebxbg.security .box .leftsecurity {
+    width: 100%;
+  }
+  .wethink .whitebxbg.security .box .rghtsecurity {
+    width: 100%;
+  }
+  .wethink .whitebxbg.security .box .secContent {
+    width: 100%;
+  }
+  .wethink.wethinkimg {
+    height: auto;
+    padding-bottom: 35px;
+  }
+  .wethink.cyber-security {
+    padding-bottom: 45px;
+  }
+  .wethink.data_analytis .leftAnalytistxt {
+    width: 100% !important;
+  }
+  .wethink.data_analytis .leftAnalytistxt .titilehead h3 {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .wethink.data_analytis .Analytis_img {
+    width: 80% !important;
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .wethink.data_analytis .Analytis_img img {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .wethink.data_analytis .rightAnalytistxt {
+    width: 100% !important;
+    margin-top: 25px;
+  }
+  .wethink.data_analytis .rightAnalytistxt .titilehead h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .wethink.data_analytis #Testing img {
+    width: 100%;
+  }
+  .clientbx .clientdata {
+    margin-top: 30px;
+  }
+  .clientbx .clientdata .box .img img {
+    width: auto;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+  .industrySolution.whynSeitApplication {
+    height: auto;
+  }
+  .industrySolution.data-analy {
+    padding-top: 15px;
+  }
+  .industrySolution.whynSeit {
+    height: auto;
+    background: 0 0;
+    margin-top: 45px;
+    padding-top: 0;
+  }
+  .industrySolution.whynSeit .nseitContent {
+    max-width: 100%;
+    padding-left: 0;
+  }
+  .industrySolution.whynSeit .nseitContent .whynse_slider h4 {
+    text-align: center;
+  }
+  .industrySolution.whynSeit .nseitContent .whynse_slider p {
+    text-align: justify;
+  }
+  .industrySolution.whynSeit .letfsolbox {
+    clip-path: none;
+    -webkit-clip-path: none;
+    padding: 5px 0;
+  }
+  .Button {
+    padding: 5px 18px;
+    font-size: 14px;
+  }
+  .smallbanner img {
+    height: 222px;
+  }
+  .testiHeight {
+    height: auto;
+  }
+  .Testimonials {
+    background: 0 0;
+    padding-top: 15px;
+  }
+  .Testimonials .Testimonialsbx .Testflex div {
+    width: 100%;
+  }
+  .Testimonials .Testimonialsbx .clientdata {
+    margin-top: -215px;
+    padding: 15px;
+  }
+  .wethink .security .rghtsecurity img {
+    width: auto;
+    height: 390px;
+  }
+  .Carrer_Contribution {
+    height: auto;
+  }
+  .Carrer_Contribution .panel {
+    height: auto;
+    padding-top: 280px;
+  }
+  .Carrer_Contribution .Carrers_points div {
+    margin: 10px;
+    text-align: left;
+    width: 100% !important;
+  }
+  .Carrersvisionbxs_celebration {
+    background: 0 0;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .Carrersvisionbxs_celebration .bx {
+    display: block;
+    align-items: normal;
+  }
+  .Carrersvisionbxs_celebration .bx .Carrers_cel {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Carrersvisionbxs_celebration .bx .Carrers_celebra {
+    width: 100%;
+    padding: 10px 0;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .Carrersvisionbxs_celebration .bx .Carrers_celebra .successContent {
+    padding-top: 0;
+  }
+  .Carrersvisionbxs_celebration
+    .bx
+    .Carrers_celebra
+    .successContent
+    .ripples
+    img {
+    display: block; /*width:80%;*/
+    margin: auto;
+  }
+  .Carrersvisionbxs_celebration
+    .bx
+    .Carrers_celebra
+    .successContent
+    .ripples
+    .nextbx
+    img {
+    width: auto;
+    text-align: center;
+  }
+  .Csr_Contribution {
+    height: auto;
+    padding: 30px 0;
+  }
+  .Csr_Contribution .pageContainer {
+    display: block;
+    padding-top: 0;
+  }
+  .Csr_Contribution .pageContainer .leftcsr {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Csr_Contribution .pageContainer .eco-img {
+    width: 100%;
+    max-width: 100%;
+    padding: 50px 0 20px;
+  }
+  .Csr_Contribution .pageContainer .eco-img img {
+    margin: 0 auto;
+    display: block;
+    float: none;
+  }
+  .Commitment {
+    background: 0 0;
+  }
+  .Commitment .panel {
+    display: block;
+    height: auto;
+  }
+  .Commitment .panel .CommitmentContent {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  .Commitment .panel .CommitmentContent img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Commitment .panel .CommitmentContent .readmoreRed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Commitment .panel .CommitmentContent .readmoreRed img {
+    margin-right: 10px;
+  }
+  .Commitment .panel .CommitmentRightsolbox {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    background-size: cover;
+    width: 100%;
+    padding: 10px 10px 35px;
+  }
+  .Commitment .panel .CommitmentRightsolbox h3 {
+    color: #666;
+  }
+  .Commitment .panel .CommitmentRightsolbox p {
+    color: #666;
+  }
+  .InsuranceSolution {
+    background: 0 0;
+    margin-top: 45px;
+  }
+  .InsuranceSolution .panel {
+    display: block;
+    height: auto;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox {
+    width: 100%;
+    padding: 20px 0;
+    max-width: 100%;
+    margin-top: 40px;
+    background: 0 0;
+    width: 100%;
+    background-size: cover;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox img {
+    width: 100%;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox #industrySlider {
+    text-align: center;
+    width: 100%;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox #industrySlider .item img {
+    display: inline-block;
+    width: auto;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox #industrySlider .owl-dots {
+    left: 0;
+    right: 0;
+  }
+  .InsuranceSolution .panel .InsuranceContent {
+    width: 100%;
+    padding: 20px 0;
+    margin-left: 0;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  .Insurance_casestudy {
+    background: 0 0;
+    margin-top: 0;
+  }
+  .Insurance_casestudy .panel {
+    display: block;
+    height: auto;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyContent {
+    width: 100%;
+    padding: 20px 0;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyContent h3 {
+    text-align: center;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyContent img {
+    width: 100%;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyContent .caseStudySlider {
+    text-align: center;
+    width: 100%;
+  }
+  .Insurance_casestudy
+    .panel
+    .Insurance_casestudyContent
+    .caseStudySlider
+    .item
+    img {
+    display: inline-block;
+    width: auto;
+  }
+  .Insurance_casestudy
+    .panel
+    .Insurance_casestudyContent
+    .caseStudySlider
+    .owl-dots {
+    left: 0;
+    right: 0;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyRightsolboxnew {
+    /* background: url(../images/right-angle.png) no-repeat; */
+    background-position: right bottom;
+    width: 100%;
+    width: 100%;
+    padding: 20px 0;
+    margin-left: 0;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyRightsolboxnew img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+  .card-custom-img:after {
+    width: 100%;
+  }
+  .Standard_Quality {
+    background: 0 0;
+    margin-top: 35px;
+  }
+  .Standard_Quality .panel {
+    height: auto;
+    display: block;
+    padding-top: 25px;
+  }
+  .Standard_Quality .panel .letfsolbox {
+    width: 100%;
+    padding: 20px 0;
+    max-width: 100%;
+    margin: 0 auto;
+    background: url(../images/about_redbg-left.png) no-repeat;
+    background-position: left center;
+  }
+  .Standard_Quality .panel .letfsolbox img {
+    margin: 0 auto;
+  }
+  .Standard_Quality .panel .Standard_QualityContent {
+    width: 100%;
+    padding: 0 0;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 45px;
+  }
+  .visionbx .clientdata {
+    margin-top: 5px;
+  }
+  .Award_Recognition {
+    background: 0 0;
+    margin-top: 9px;
+    height: auto !important;
+  }
+  .Award_Recognition .panel {
+    height: auto;
+    display: block;
+    padding-top: 15px;
+  }
+  .Award_Recognition .panel .Award_RecognitionContent {
+    width: 100%;
+    padding: 8px 0;
+    max-width: 100%;
+    margin: 0 auto !important;
+  }
+  .Award_Recognition .panel .Award_RecognitionContent .heading22 {
+    padding-top: 20px !important;
+  }
+  .Award_Recognition .panel .Rightsolboxnew {
+    width: 100%;
+    padding: 20px 0;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* background: url(../images/mobile-img/award-bg-mob.jpg) no-repeat; */
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+  }
+  .Award_Recognition .panel .Rightsolboxnew img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .footerSection .nseColorflow {
+    overflow: hidden;
+  }
+  .footerSection .nseColorflow img {
+    display: block;
+    width: 100%;
+  }
+  .footerSection .textndlink {
+    display: block;
+  }
+  .footerSection .footerlink {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .footerSection .txtCopy {
+    text-align: center;
+  }
+  .Testimonials .Testimonialsbx .clientdata {
+    margin-top: -90px;
+  }
+  .sliderValue .ownerbox .txtowner {
+    padding: 5px 8px;
+  }
+  .sliderValue .ownerbox .txtowner p {
+    text-align: left;
+  }
+  .heading40 {
+    font-size: 26px;
+  }
+  .heading32 {
+    font-size: 24px;
+    text-align: left;
+  }
+  .heading24 {
+    font-size: 20px;
+    text-align: left;
+  }
+  .sevicesbox .Servicbx .box p {
+    text-align: center;
+  }
+  .contactPopup .clientdata {
+    width: 300px;
+    margin: 20px 0;
+  }
+  .sliderValue .ownerbox .txtowner.whitestxt p {
+    color: #666 !important;
+  }
+  .industrySolution .panel .industryContent {
+    padding: 40px 20px 0;
+  }
+  .contactPopup.active {
+    width: 360px;
+  }
+  .captchamargin {
+    border: 0 solid #ced4da;
+  }
+  .captchamargin .box {
+    padding-top: 0;
+  }
+  .captchamargin {
+    height: 75px;
+  }
+  .chat-container {
+    width: 302px;
+    display: none;
+    height: 500px;
+    right: 30px;
+    border-radius: 5px 5px 0 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 9999999999;
+    bottom: 0;
+    border: 1px solid #a2a2a2;
+  }
+  .contactBtn {
+    display: none;
+  }
+  .sevicesbox.cyber-secContent .cyber-security-slider .owl-nav .owl-prev {
+    background: url(../images/prev.png) no-repeat;
+    left: 0;
+  }
+  .sevicesbox.cyber-secContent .cyber-security-slider .owl-nav .owl-next {
+    background: url(../images/next.png) no-repeat;
+    right: 0;
+  }
+  .Dex_zonedata h4 {
+    font-size: 15px;
+    width: 185px;
+    margin-left: 25px;
+  }
+  .Dex_zonedata li {
+    font-size: 14px;
+    margin-left: 25px;
+  }
+  .Dex_zonedata .col {
+    display: inline-block !important;
+    width: 25%;
+    padding: 5px;
+  }
+  .Testflex_imgdiv {
+    padding-top: 25px;
+  }
+  .Insurance_casestudy .panel .Insurance_casestudyRightsolboxnew {
+    background: 0 0;
+    margin-top: 0;
+  }
+  #Cloud .boxleft-img {
+    width: 100%;
+    text-align: center;
+  }
+  #Cloud .contentCloud .boxCloud {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 20px;
+  }
+  #Cloud .contentCloud {
+    width: 100%;
+  }
+  .cloudbbx p {
+    padding-right: 0 !important;
+  }
+  .wethink .whitebxbg.security {
+    width: 100%;
+  }
+  .wethink.data_analytis #Testing img {
+    width: 90%;
+  }
+  .Carrersvisionbx .clientdata .contentsdv {
+    max-width: 100%;
+  }
+  .pb80 .rightimg img {
+    margin-top: 20px;
+  }
+  .Insurancevisionbx .clientdata {
+    padding: 15px;
+  }
+  .testimonialSection .panel .testimonleft .caseStudySlider .item img {
+    width: 100%;
+  }
+  .Insurance_casestudy
+    .panel
+    .Insurance_casestudyContent
+    .caseStudySlider
+    .item
+    img {
+    width: 100%;
+  }
+  .testimonialSection .panel .testimon {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .heading30 {
+    font-size: 24px;
+  }
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  .Dex_zonedata .col {
+    display: inline-block !important;
+    width: 50%;
+    padding: 5px;
+  }
+  .Banking_points {
+    margin-left: 0;
+  }
+  .Banking_points div {
+    width: 44%;
+  }
+  .gsc-input-box {
+    width: 130px !important;
+  }
+  .nseit_cse_box {
+    top: 15px !important;
+  }
+  .sevicesbox.cyber-secContent .cyber-security-slider {
+    margin: 20px auto 10px;
+  }
+  .headerMenu .Menubx .menuContent p {
+    font-size: 12px;
+    display: none;
+  }
+  .headerMenu .Menubx .right_menu_box {
+    display: none;
+  }
+  .InsuranceSolution .panel .Insuranceletfsolbox #industrySlider .item img {
+    width: 90%;
+  }
+  .Bankingvisionbx .clientdata {
+    background: 0 0;
+    margin-left: 0;
+    margin-top: 65px;
+  }
+  .Bankingvisionbx .clientdata p {
+    margin-left: 0;
+    text-align: justify;
+  }
+  .footerSection .footerbx .box {
+    width: 50%;
+  }
+  .page_top_text .Currentopeningdetailsbox .JobDetails div {
+    width: 48.05% !important;
+  }
+  .page_top_text .Currentopeningdetailsbox div {
+    width: 100%;
+    text-align: justify;
+  }
+  .Carrer_Contribution .panel .Carrers_points div {
+    width: 100%;
+  }
+  .Carrers_points div {
+    width: 100%;
+  }
+  .cyber-security-slider .item .box {
+    width: auto !important;
+    min-width: auto;
+  }
+  .locationbxCont ul li {
+    margin-right: 7px;
+  }
+  .Button {
+    padding: 5px 15px;
+    font-size: 13px;
+  }
+  .bannerBtn_orange {
+    margin-top: 50px;
+  }
+  .heading40 {
+    font-size: 34px;
+  }
+  .heading32 {
+    font-size: 24px;
+    margin-left: -40px;
+    text-align: left;
+    margin-left: 0;
+  }
+  .heading24 {
+    font-size: 20px;
+  }
+  .digitalpage .digitaltxt {
+    top: 110px;
+  }
+  .banner_heading {
+    font-size: 30px;
+  }
+  .homepage {
+    position: relative;
+  }
+  .homepage .sliderHome {
+    height: 460px;
+  }
+  .homepage .sliderHome .item {
+    position: relative;
+  }
+  .homepage .sliderHome .item img {
+    display: block;
+    width: 100%;
+    height: 460px;
+  }
+  .homepage .sliderHome .img_right {
+    display: none;
+  }
+  .homepage .sliderHome .bannercont_left {
+    position: absolute;
+    left: 25px;
+    top: 100px;
+    right: 4px;
+    margin: 0 auto;
+  }
+  .Dex_Quality .panel {
+    display: block;
+    height: auto;
+  }
+  .Dex_Quality .panel .Dex_Qualityletfsolbox {
+    width: 100%;
+    max-width: 570px;
+    height: auto;
+    padding-top: 75px;
+  }
+  .Dex_Quality .panel .Dex_QualityContent {
+    width: 100%;
+    max-width: 570px;
+    height: auto;
+    padding-top: 75px;
+  }
+  .aboutpage .abouttxt p {
+    font-size: 18px;
+    text-align: left;
+  }
+  .Testimonials .Testimonialsbx .clientdata {
+    margin-top: -90px;
+  }
+  .tabbox ul li.insuimgone {
+    margin-right: 10px;
+  }
+  .tabbox ul li.insuimgtwo {
+    margin-right: 10px;
+  }
+  .bannerBtn_orange {
+    padding: 5px 5px;
+    width: 100px;
+    font-size: 14px;
+    height: 35px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  .industrySolution.whynSeit {
+    height: auto !important;
+  }
+  .Carrersvisionbx .clientdata {
+    padding: 10px;
+  }
+  .sevicesbox .Servicbx .box {
+    margin: 15px auto 10px !important;
+  }
+  .tabbox ul li {
+    margin-right: 3px !important;
+  }
+  .Insurancevisionbx .clientdata {
+    padding: 10px;
+  }
+  .tabbox.icon-seperate-mob li {
+    display: block;
+    float: left;
+    margin-bottom: 10px;
+  }
+  .tabbox.icon-seperate-mob ul {
+    display: block !important;
+  }
+  .Banking_points {
+    margin-top: 0;
+  }
+  .cyber-security-slider .owl-nav .owl-prev {
+    top: 38%;
+  }
+  .cyber-security-slider .owl-nav .owl-next {
+    top: 38%;
+  }
+  .clentbox-slider .item .img img {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .Banking_points .Banking_points_imgdiv {
+    margin-bottom: 50px;
+  }
+  .Banking_points .Banking_points_imgdiv:last-child {
+    margin-bottom: 0;
+  }
+  .visionbx .clientdata {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .box {
+    width: 100%;
+  }
+  .Banking_points > div {
+    margin: 0;
+    width: 100%;
+  }
+  .Banking_points {
+    margin-top: 10px;
+  }
+  .Banking_points_imgdiv {
+    height: 49px;
+  }
+  .heading40 {
+    font-size: 32px;
+  }
+  .heading32,
+  .heading32 p,
+  .new-para .heading32 p {
+    font-size: 25px;
+  }
+  .heading24 {
+    font-size: 20px;
+  }
+  .banner_text {
+    font-size: 16px !important;
+    padding-right: 10px;
+  }
+  .banner_heading {
+    font-size: 24px;
+  }
+  .wethink.data_analytis .box {
+    flex-direction: column-reverse;
+  }
+  .wethink.data_analytis .leftAnalytistxt {
+    width: 100%;
+  }
+  .wethink.data_analytis .leftAnalytistxt .titilehead h3 {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .wethink.data_analytis .Analytis_img {
+    width: 100%;
+  }
+  .wethink.data_analytis .rightAnalytistxt {
+    width: 100%;
+  }
+  .wethink.data_analytis .rightAnalytistxt .titilehead h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .Standard_Quality .panel .Standard_QualityContent .certificatebox {
+    display: block;
+  }
+  .Standard_Quality .panel .Standard_QualityContent .certificatebox div {
+    width: 100%;
+    margin: 4% 0;
+  }
+  .tabbox ul li {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .tabbox ul li.active {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .tabbox ul li:hover {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .bloginner_section div h2,
+  .bloginner_section div h2 p {
+    font-size: 23px;
+  } /*.main-div-blog div p {font-size:18px;}*/
+  .bloginner_section div h3 {
+    font-size: 23px;
+  }
+  .main-div-blog div h4 {
+    font-size: 18px;
+  }
+  .bloginner_section ul.pl-5.mt-3,
+  .bloginner_section .pl-5.mb-5 {
+    padding-left: 1rem !important;
+  }
+  .mb-3 .pl-5 {
+    padding-left: 1.5rem !important;
+  }
+  .textleft p {
+    padding-left: 25px;
+    font-size: 28px !important;
+  }
+  .pl-5 {
+    padding-left: 1rem !important;
+  }
+  .padleft p {
+    margin-left: 0 !important;
+  }
+  .share-blog-fill li,
+  .share-blog-fill li a {
+    /*width:32px;height:29px;*/
+  }
+  .share-blog-fill li {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .share-blog-fill li a {
+    line-height: 1.5;
+    padding: 4px 7px;
+  }
+  .share-blog-fill li a i[class^="flaticon-"]:before {
+    font-size: 12px;
+  }
+  .padtop::first-letter {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1290px) {
+  /* .grey-bg .casecardbox .card-body p.pcompliance {
+        min-height: 17%;
+    } */
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 30%;
+  }
+  .card-body h6 {
+    font-size: 1.25rem;
+  }
+  .gray-bg .card {
+    font-size: 19px;
+  }
+  .exp-img {
+    width: 80px;
+    margin-right: 20px;
+    height: 80px;
+    padding: 12px;
+  }
+  .MT.leadersdetails p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .overlay .readmoreRed {
+    margin-top: 1rem !important;
+  }
+  .speaker-div h4 {
+    font-size: 1.5rem;
+  }
+  .speaker-div p {
+    font-size: 1.1rem;
+  }
+  .impact-txt p {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+  }
+  .bg-orange p,
+  .impact-txt span {
+    font-size: 1rem;
+  }
+  .bg-orange p.p-height {
+    font-size: 1.125rem;
+  }
+  .casestudy-cards h6 {
+    font-size: 1.75rem;
+  }
+  .impact-col {
+    padding: 25px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1250px) {
+  .header .middle-menu {
+    width: 75%;
+  }
+  .middle-menu ul li a {
+    font-size: 1.1rem;
+  }
+  .middle-menu ul li {
+    margin-left: 20px;
+  }
+  .middle-menu .bannerBtn_orange {
+    width: 120px;
+  }
+  .right-txt {
+    width: 53%;
+  }
+  .right-txt h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+  .card-body h6 {
+    font-size: 1rem;
+  }
+  .resources_case_studies.blogbox .card-custom .card-body .card-text {
+    height: 75px;
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  .whyWebinar li li::before {
+    font-size: 24px;
+  }
+  .whyWebinar li li span {
+    padding-left: 8px;
+    display: table;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 600px) {
+  /* .capability .card-webinar.card-custom{margin-bottom: 30px;} */
+  .sevicesbox .Servicbx .card-body p {
+    min-height: 36px;
+  }
+  .readmoreRed.readmorerc {
+    font-size: 13px !important;
+  }
+  .grey-bg .card-body p.pia {
+    height: 76px !important;
+    min-height: auto;
+  }
+  .news-inner.capability .card-custom-img {
+    height: 300px;
+    min-height: 300px;
+  }
+  .webinar-card p.card-web {
+    min-height: 88px !important;
+  }
+  .news-inner.capability .card-custom-img {
+    height: 300px;
+    min-height: 300px;
+  }
+  .capability .card-custom-img {
+    height: 120px;
+    min-height: 120px;
+  }
+  .capability .col-sm-6 .card-custom-img,
+  .capability .col-md-6 .card-custom-img {
+    height: 150px;
+    min-height: 150px;
+  }
+  .aboutpage .abouttxt p {
+    font-size: 19px;
+  }
+  .news-pages .col-sm-8,
+  .alliance .col-sm-7,
+  .speaker-bg .col-sm-7,
+  .devops-row .col-sm-8,
+  .casestudy-inner .chatbot-content,
+  .webinar-txt .col-sm-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .news-pages .col-sm-4,
+  .alliance .col-sm-5,
+  .speaker-bg .col-sm-5,
+  .devops-row .col-sm-4,
+  .casestudy-inner .col-sm-5 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .case-study-form,
+  .technology {
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+  .help-span {
+    font-size: 1rem;
+  }
+  .gray-bg .card .regular,
+  .gray-bg.camunda-bg .card .regular {
+    line-height: inherit;
+    font-size: 13px;
+  }
+  .exp-img {
+    padding: 0 10px;
+    margin-right: 10px;
+    width: 52px;
+    height: 52px;
+  }
+  .exp-img svg {
+    width: 90%;
+  }
+  .exp-section .tab-content {
+    margin-bottom: 1rem;
+  }
+  .antworks + .heading32,
+  .AutomationAnywhere + .heading32 {
+    text-align: left;
+  }
+  .aboutpage .abouttxt p,
+  .aboutpage .abouttxt h2,
+  .aboutpage .abouttxt h2 p {
+    font-size: 19px;
+  }
+  .exp-section .heading32 {
+    margin-bottom: 30px;
+  }
+  .Management_team .plpr {
+    width: 275px;
+    margin: 0 auto 10px;
+  }
+  .speaker-bg .col-sm-5,
+  .devops-row .col-sm-4 {
+    margin-top: 30px;
+  }
+  .speaker-bg .card-custom {
+    height: auto;
+  }
+  .video-txt {
+    padding: 1rem;
+  }
+  .video-frame,
+  .video-frame iframe {
+    height: 140px;
+  }
+  .webinar-txt .col-sm-4 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .webinar-txt .col-sm-4 .col-lg-12 {
+    width: 50%;
+  }
+  .web-share,
+  .share-web:hover .web-share {
+    background-size: 70% 25px;
+    height: 25px;
+  }
+  .case-study-form .col-lg-6 {
+    width: 50%;
+  }
+  .success-msg {
+    position: absolute;
+    font-size: 12px;
+    bottom: 5px;
+  }
+  .casestudy-top .card-custom-img {
+    height: 120px;
+    min-height: 120px;
+  }
+  .casestudy-top .card-body {
+    padding: 1rem;
+  }
+  .capability .col-sm-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .tech-col img.w-auto {
+    width: 60% !important;
+  }
+  .casestudy-row .card-custom-img:after {
+    display: none;
+  }
+  .casestudy-top .tab_content .card-body .card-text p {
+    min-height: 79px !important;
+    font-size: 13px;
+  }
+  .gray-bg,
+  .white-bg {
+    padding: 50px 0;
+  }
+  .white-bg .card-body p,
+  .gray-bg .card-body p,
+  .readmoreRed.readmorerc,
+  .sevicesbox .Servicbx .card-body p,
+  .grey-bg .casecardbox .card-body p,
+  .grey-bg .card-body p {
+    font-size: 13px;
+  }
+  .white-bg .card-body p.pdrive {
+    height: 90px;
+    min-height: auto;
+  }
+  .power-capability .card-body h6 {
+    height: 35px;
+  }
+  .capability .card-custom-img {
+    height: 120px;
+    min-height: 120px;
+  }
+  .casestudy-banner.aboutpage .abouttxt p {
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+  }
+  .clock-txt,
+  .home-popup .bannerBtn_orange {
+    margin-top: 40px;
+  }
+  .gray-bg .item .card {
+    padding: 1rem !important;
+  }
+  .gray-bg .card-img {
+    margin: -86px auto 30px;
+  }
+  .gray-bg .antworkSlider .card {
+    min-height: 230px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .casestudy-banner .heading40,
+  .casestudy-banner.aboutpage .abouttxt h1.heading40 p,
+  .casestudy-banner.aboutpage .abouttxt h3.heading40 p,
+  .casestudy-banner.aboutpage .abouttxt.mwr h3 p,
+  .heading40 p,
+  .aboutpage .abouttxt .heading40 p {
+    font-size: 27px;
+  }
+  .share-outline.webinar-share-outline.webinar-sn {
+    margin: -30px 24px 0;
+  }
+  .grey-bg .card-body p {
+    font-size: 13px !important;
+  } /*.white-bg .card-body p, */
+  .news-inner-detail-box > div:nth-child(1) {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .news-inner-detail-box > div:nth-child(2) {
+    width: 100%;
+  }
+  .clientbx .clientdata .box .item {
+    width: auto !important;
+  }
+  .imgdivmodal {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 42%;
+  }
+  .modalText .abc {
+    padding-bottom: 40px;
+    height: 330px;
+  }
+  .modalText p {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  .breadcrumb {
+    width: 35%;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .modal-open .modal {
+    max-height: 97vh;
+  }
+  .headerMenu {
+    padding: 90px 15px;
+  }
+  .headerMenu .Menubx .menuContent {
+    width: 100%;
+  }
+  .menu-content h4 {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+  .headerMenu .col-sm-3 {
+    max-height: 170px;
+  }
+  .impact-slider .pl-0 {
+    padding-left: 15px !important;
+  }
+
+  .owl-carousel.impact-slider .owl-nav .owl-next {
+    background: url(../../assets/images/drupal/right.png) no-repeat;
+    right: -1%;
+  }
+  .owl-carousel.impact-slider .owl-nav .owl-prev {
+    background: url(../../assets/images/drupal/left.png) no-repeat;
+    left: -1%;
+  }
+  .owl-carousel.impact-slider .owl-nav .owl-next,
+  .owl-carousel.impact-slider .owl-nav .owl-prev {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-size: 100% 100% !important;
+    top: 45%;
+    border: none;
+    font-size: 0;
+  }
+  .mwr {
+    max-width: 100% !important;
+  }
+  .small-popup.home-popup {
+    overflow-y: hidden;
+  }
+  .home-popup {
+    overflow-y: scroll;
+  }
+  .popup-txt {
+    margin-bottom: 1.25rem;
+  }
+  .home-popup .modal-lg {
+    max-width: 90%;
+    margin: 5% auto;
+  }
+  .blue-bg #clockdiv div span {
+    width: 30px;
+    font-size: 22px;
+  }
+  .user-img {
+    width: 70px;
+  }
+  .user-desc {
+    width: 100px;
+    height: 70px;
+  }
+  .user-desc h6 {
+    font-size: 12.2px;
+  }
+  /* .video-div {
+        height:auto;
+    } */
+}
+
+@media only screen and (max-width: 900px) {
+  .impact-slider .col {
+    height: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .owl-carousel.impact-slider .owl-stage {
+    display: flex;
+  }
+  .impact-slider.owl-carousel .owl-item img {
+    width: auto;
+    margin: auto;
+  }
+}
+
+/***************** Management Team CSS (Monika) start here ********************/
+
+@media only screen and (max-width: 1024px) {
+  .exp-img img {
+    margin-top: 10px;
+  }
+  .overlay {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+  .wethink.cloudbbx .apimgmtright.rightAnalytistxt {
+    margin-left: 26px !important;
+  }
+}
+@media (max-width: 1023px) and (min-width: 600px) {
+  .Management_team .plpr {
+    width: 275px;
+    margin: 0 auto 10px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* .MTbx .clientdata p{text-align:justify;padding-right:30px} */
+  .modalText h1 {
+    font-size: 33px;
+  }
+  .modalText h2 {
+    font-size: 20px;
+  }
+  .modalText h1,
+  .modalText h2 {
+    text-align: center;
+  }
+  .bodbox > div h2 {
+    text-align: left;
+  }
+  .automationSlider.owl-carousel.helpSlider .owl-nav.disabled {
+    display: block;
+  }
+  .mwr {
+    max-width: 100% !important;
+  }
+  .contactBtn {
+    display: none !important;
+  }
+  .news-images iframe {
+    height: 420px;
+  }
+  .right-txt {
+    width: 44%;
+  }
+  .right-txt h6 {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .webinar-txt .heading32 {
+    text-align: left;
+  }
+  .grey-bg.capability .heading32 {
+    text-align: left;
+  }
+  .aboutpage .abouttxt .heading24 {
+    text-align: left;
+  }
+  /* .pmodern{min-height:72px !important;} */
+  .grey-bg .card-body p {
+    font-size: 13px !important;
+  } /*.white-bg .card-body p*/
+  .share-outline.webinar-share-outline.webinar-sn {
+    margin: -15px 24px 0;
+  }
+  .bodbox > div {
+    margin: 10px 10px 20px 10px;
+  }
+  .news-pages {
+    margin-top: 0 !important;
+  }
+
+  .news-pages .page_top_text {
+    padding-top: 30px !important;
+  }
+
+  .news-images {
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+  }
+  .news-images iframe {
+    width: 100%;
+    /* height:auto; */
+  }
+  .mb-2rm {
+    margin-bottom: 1rem;
+  }
+  .overlay {
+    width: 100% !important;
+  }
+  /* .simple-pagination {
+        float:none;
+        text-align: center;
+    } */
+  .webinar-txt .alliance-head p {
+    text-align: center;
+  }
+
+  .video-row {
+    min-height: auto;
+  }
+  .share-button {
+    bottom: 10px;
+  }
+  .share-webinar::before {
+    left: 10%;
+    bottom: 68px;
+  }
+  .share-webinar {
+    padding: 15px;
+  }
+  .WebinarContent .heading32 {
+    text-align: left;
+  }
+  .covid-txt .w-75 {
+    width: 100% !important;
+  }
+  .covid-txt .page_top_text {
+    padding-top: 0 !important;
+  }
+  .left-img {
+    width: 50%;
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+  .right-txt {
+    width: 47%;
+  }
+  .inner-page .box h5 {
+    font-size: 20px;
+  }
+  .card-body h6,
+  .white-bg .card-body h6 p,
+  .capability .card-body h6 p {
+    font-size: 1rem;
+  }
+  .Bankingvisionbx .clientdata h3 {
+    text-align: left !important;
+    margin-left: 10px !important;
+  }
+  .Bankingvisionbx .clientdata p {
+    text-align: left;
+    margin-left: 10px;
+  }
+  .Bankingvisionbx .clientdata .contentsdv {
+    left: 3px;
+  }
+  .covidcapa.grey-bg .card-body p {
+    min-height: 70px;
+  }
+  .inner-page .box .heading32 {
+    text-align: left;
+  }
+  .header.active .middle-menu {
+    display: none !important;
+  }
+  .casestudy-top .card-custom {
+    min-height: auto;
+  }
+
+  .casestudy-top .tab_content .card-custom-img:after {
+    display: none;
+  }
+  .cross-sell {
+    width: auto;
+    margin-left: auto;
+  }
+  .head-40,
+  .web-popup .head-40,
+  .head-40 p,
+  .web-popup .head-40 p {
+    font-size: 27px;
+  }
+  .head-30 {
+    font-size: 25px;
+    margin-bottom: 1.75rem;
+    line-height: 1;
+  }
+  .pb-75 {
+    padding-bottom: 50px;
+  }
+  /* .inner-box h2 {
+        font-size:37px;
+    } */
+  .popup-txt h4 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .home-popup .modal-lg {
+    max-width: 90%;
+    margin: 5% auto;
+  }
+  .casestudy-cards svg {
+    width: 60px;
+    height: 60px;
+  }
+  .Rightsolboxnew .width90 {
+    width: 100%;
+  }
+  .Carrersvisionbx .recentjobs .mt-3,
+  .Carrersvisionbx .recentjobs .pt-2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .Currentopeningdetailsbox .ml-3 {
+    margin-left: 0 !important;
+  }
+  #sync3 {
+    width: 100%;
+  }
+  #sync2 {
+    margin: 0 auto;
+  }
+  .Rightsolboxnew .owl-item .item {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .Rightsolboxnew .owl-item .item img {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    height: auto;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .gray-bg .card-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    margin: -65px auto 30px;
+    padding: 11px;
+  }
+  .gray-bg .card-inner {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    padding: 14px;
+  }
+  .gray-bg .card-img .card-inner svg {
+    height: 45px;
+    width: 45px;
+  }
+  .sevicesbox .Servicbx .card-body p.pdata {
+    min-height: 46%;
+  }
+  .sevicesbox .Servicbx .card-body p.pbustrans {
+    min-height: 46%;
+  }
+  .heading24rbi {
+    text-align: left !important;
+  }
+  .heading-rbi {
+    font-size: 30px !important;
+  }
+  .mwr {
+    max-width: 100% !important;
+  }
+  .mhm {
+    min-height: 98px !important;
+  }
+  .h11 {
+    padding: 1.125rem 0.5rem;
+  }
+  .bg-3 p {
+    min-height: 161px !important;
+  }
+  .share-outline.webinar-share-outline.webinar-sn {
+    margin: -15px 24px 0;
+  }
+  /*RC*/
+
+  .grey-bg .card-body p.pmodern {
+    min-height: 72px;
+  }
+  .card-body p.prbif {
+    min-height: 75px;
+  }
+
+  .webinar-card .card-body {
+    padding: 1rem;
+  }
+  .webinar-card p {
+    min-height: 63px;
+    font-size: 13.4px;
+  }
+  .covidcapa .card-body h6 {
+    min-height: 30px;
+  }
+  .tech-col {
+    height: 60px;
+  }
+  .card-body p.pmodernfin {
+    min-height: 92px;
+  }
+
+  .tradingsolution-whynseit.industrySolution {
+    height: 646px !important;
+  }
+  .nbfc .news-images iframe {
+    height: 415px !important;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 17%;
+  }
+  .resource-news .capability .card-custom,
+  .resource-blogs .capability .card-custom {
+    margin-bottom: 0;
+  }
+  .readmoreRed.readmorerc {
+    font-size: 13px;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 28%;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 29%;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 28%;
+  }
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 130%;
+  }
+  .capability .card-custom-img {
+    height: 190px;
+    min-height: 190px;
+  }
+  .heading34 {
+    font-size: 24px;
+  }
+  .heading42 {
+    font-size: 30px;
+  }
+  .devops-row {
+    position: relative;
+  }
+  .devops-content {
+    position: static;
+  }
+  .devops-row .webinarForm {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .devops-row .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .linkedin {
+    top: 5px;
+    right: 5px;
+    width: 7%;
+  }
+  /* .bloginner_section .left-section .vl p {line-height: 35px;}   */
+  .date-div {
+    margin-top: 1rem;
+  }
+  .blog_title,
+  .blog_title p {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .main-div-blog11 .col-lg-8 {
+    padding: 0 !important;
+  }
+  .blog_share,
+  .blog_share p {
+    margin-top: 0;
+    font-size: 17px;
+  }
+  .bloginner_section_new div h2,
+  .bloginner_section_new div h2 p {
+    font-size: 30px;
+  }
+  .bloginner_section_new div h3,
+  .bloginner_section_new div h3 p {
+    font-size: 23px;
+  }
+  .vl {
+    /*margin-left:-20px;*/
+    padding-left: 10px;
+    font-size: 24px;
+  }
+  .main-div-blog-new div p {
+    font-size: 18px;
+  }
+  .main-div-blog {
+    margin: 0;
+    padding: 0 10px;
+  }
+  .bloginner_section .main-div-blog {
+    margin: 0 0 2rem;
+    padding: 0;
+  }
+  .bloginner_section .main-div-blog + .mt-3 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  /*elastic css start here*/
+  .want-card {
+    margin-left: 0;
+    width: 100%;
+  }
+  .want-card .heading40 {
+    font-size: 30px;
+  }
+
+  .elastic-img,
+  .antworks-img,
+  .automation-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60% !important;
+  }
+  .exp-section .heading32 {
+    margin-bottom: 20px;
+  }
+  .exp-nav {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .exp-img {
+    margin-right: 10px;
+    padding: 0 10px;
+    width: 50px;
+    height: 50px;
+  }
+  .gray-bg {
+    padding: 2rem 0;
+  }
+  .gray-bg .card {
+    font-size: 18px;
+  }
+  .helpSlider .item .col-sm-4 {
+    margin-bottom: 60px;
+  }
+  .exp-nav li a {
+    margin-bottom: 20px;
+  }
+  .small-img {
+    float: left;
+    width: 30%;
+  }
+  .small-txt {
+    float: right;
+    width: 70%;
+    font-size: 14px;
+  }
+  .small-txt .mt-4 {
+    margin-top: 5px !important ;
+  }
+  .gray-bg .card-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    margin: -90px auto 30px;
+    padding: 11px;
+  }
+
+  .gray-bg .card-inner {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    padding: 14px;
+  }
+  .sharetext {
+    margin-top: 0px;
+  }
+  .alliancesflex div .content_div p {
+    text-align: left;
+  }
+  .alliancesflex > div {
+    margin: 20px 0;
+  }
+  .Testimonials .Testimonialsbx .clientdata {
+    padding: 20px;
+  }
+  .Testimonials .pageContainer {
+    padding: 0 10px;
+  }
+  .news-para p {
+    text-align: left;
+  }
+  .exp-img svg {
+    margin-top: -5px;
+  }
+  /*elastic css ends here*/
+  .linkedin {
+    top: 5px;
+    right: 5px;
+    width: 7%;
+  }
+  .date-div {
+    margin-top: 1rem;
+  }
+  .clientbx .clientdata .box .img img {
+    max-width: 80%;
+  }
+  .modalText .abc {
+    height: 310px;
+  }
+  .contactBtn {
+    display: none !important;
+  }
+  /* .video-div {
+        height:280px;
+    }
+    .webinar-pg .video-div{
+        height:320px;
+    } */
+
+  .speaker-bg .card-custom {
+    height: auto;
+  }
+  .owl-carousel.userSlider .owl-nav .owl-next {
+    background: url(../../assets/images/drupal/right.png) no-repeat;
+    right: -15%;
+  }
+  .owl-carousel.userSlider .owl-nav .owl-prev {
+    background: url(../../assets/images/drupal/left.png) no-repeat;
+    left: -15%;
+  }
+  .owl-carousel.userSlider .owl-nav .owl-next,
+  .owl-carousel.userSlider .owl-nav .owl-prev {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-size: 100% 100% !important;
+    top: 35%;
+    border: none;
+    font-size: 0;
+  }
+  .userSlider {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .content-scroll {
+    padding-bottom: 10px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .web-para .mt-5 {
+    margin-top: 1.5rem !important;
+  }
+  .webinar-txt iframe {
+    height: 250px;
+  }
+  .webinar-popup img {
+    width: 45%;
+    margin: 0 auto;
+  }
+  .video-txt {
+    padding: 1rem;
+  }
+  .alliance-carousel.qualitiaCarousel {
+    height: 220px;
+  }
+  .digital-bg h4 {
+    font-size: 2rem;
+  }
+
+  .web-share,
+  .share-web:hover .web-share {
+    background-size: 50% 20px;
+    height: 20px;
+  }
+  .share-button {
+    bottom: 5px;
+  }
+  .share-webinar::before {
+    bottom: 48px;
+  }
+  .share-webinar .share-blog-fill li {
+    width: auto;
+    height: auto;
+  }
+  .web-popup .head-40 {
+    line-height: 1.2;
+    font-size: 27px;
+  }
+  .case-study-form .col-lg-6:nth-child(odd) {
+    padding-right: 15px;
+  }
+  .case-study-form .col-lg-6:nth-child(odd) .form-group {
+    margin-bottom: 1rem !important;
+  }
+  .casestudy-top.blogbox.resources_case_studies .card-custom,
+  .resource-overview .capability .card-custom,
+  .capability.webinar-capability .card-custom,
+  .webinar-pg.capability .card-custom {
+    margin-bottom: 0;
+  }
+  .capability .flex-container,
+  .capability .col-sm-4,
+  .capability .casestudy-row .col-sm-4.video-item,
+  .capability .casestudy-row .col-sm-4:last-child,
+  .resource-overview .capability .flex-container:last-child {
+    margin-bottom: 1.875rem;
+  }
+  .capability .flex-container:last-child,
+  .client-row .col-sm-2:last-child .tech-col,
+  .capability .col-sm-4:last-child {
+    margin-bottom: 0;
+  }
+  .technology,
+  .case-study-form {
+    margin-bottom: 2rem;
+  }
+  .card-body h6,
+  .white-bg .card-body h6 p,
+  .capability .card-body h6 p {
+    font-size: 1.2rem;
+  }
+  .casestudy-banner,
+  .casestudy-banner.casestudy-main {
+    justify-content: center;
+    height: 340px;
+  }
+  .casestudy-banner .abouttxt,
+  .aboutpage .abouttxt.casetxt {
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    z-index: 1;
+  }
+  .casestudy-banner .smallbanner {
+    background: url("../images/drupal/top-banners_18.jpg") no-repeat scroll
+      center center transparent;
+    height: 300px;
+    background-size: cover;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  .casestudy-banner .smallbanner img.ipad-img {
+    display: none;
+  }
+  .casestudy-banner.casestudy-main .smallbanner {
+    background: url("../images/drupal/top-banners_19.jpg") no-repeat scroll
+      center center transparent;
+    background-size: cover;
+  }
+  .casestudy-banner .smallbanner img {
+    display: none;
+  }
+  .casestudy-banner + .page-top {
+    padding-top: 0;
+  }
+  .client-row .col-sm-2 {
+    float: left;
+    width: calc(50% - 8px);
+  }
+  .client-row .col-sm-2:nth-child(odd) {
+    margin-right: 15px;
+  }
+  .tech-col {
+    padding: 1.5rem 0;
+    margin-bottom: 15px;
+    height: 80px;
+  }
+  .tech-col img {
+    width: 60%;
+  }
+  .tech-col img.w-50,
+  .tech-col img.w-75 {
+    width: 30% !important;
+  }
+  .tech-col img.w-50.jsp {
+    width: 20% !important;
+  }
+  .client-row .pl-0 {
+    padding-left: 15px !important;
+  }
+  .mr-15 {
+    margin-right: 0;
+  }
+  .casestudy-banner h3 {
+    font-size: 32px;
+    line-height: 1.2;
+    /* margin-bottom: 5px; */
+  }
+  .casestudy-cards .col-sm-3 {
+    width: 25%;
+  }
+  .casestudy-cards .col-sm-9 {
+    width: 70%;
+    margin-left: 10px;
+  }
+  .client-div {
+    padding-left: 1rem;
+    width: 80%;
+  }
+  /* .impact-slider {
+        height:29vh;
+    }
+    .impact-col,.power-impact .impact-col,.scriptless .impact-col {
+        margin-bottom: 0;
+        height:29vh;
+    } */
+  .inner-impact {
+    margin: auto;
+    width: 100%;
+  }
+  .card-table svg {
+    width: 50px;
+    height: 50px;
+  }
+  .card.card-table {
+    width: 100%;
+  }
+  .mwr {
+    max-width: 100% !important;
+  }
+  .mwmr {
+    max-width: 100% !important;
+  }
+  .heading-rbi {
+    font-size: 20px !important;
+  }
+  .heading24rbi,
+  .heading24rbi p {
+    font-size: 16px !important;
+  }
+  .heading-neaps {
+    font-size: 20px !important;
+  }
+  .heading-drive {
+    font-size: 24px !important;
+  }
+  .casestudy-top .tab_content .card-body .card-text p {
+    min-height: auto !important;
+  }
+  .white-bg .card-body p {
+    min-height: auto !important;
+  }
+  .lhai {
+    line-height: 1.2 !important;
+  }
+  .digitalpage .digitaltxt .heading40 {
+    font-size: 26px;
+  }
+
+  /* .pop-speakers .user-div {
+        float:none;
+        width:100%;
+        height:85px;
+    }
+    .pop-speakers .user-div:first-child {
+        margin-bottom:1.25rem;
+    }
+    .pop-speakers .user-div::after {
+        content:'';
+        clear: both;
+    }
+    .blue-bg #clockdiv div span {
+        font-size:30px;      
+    }
+    .blue-bg #clockdiv div {
+        padding:0 2.5% 0 0;
+    }
+    .blue-bg h3  {
+        font-size:30px;
+    } 
+    .home-popup .head-40 {
+        font-size:20px;
+    }
+    .inner-box h2 {
+        font-size:22px;
+        line-height:1.5rem;
+    }
+    .blue-bg h4 {
+        font-size:18px;
+    }
+    .blue-bg h5 {
+        font-size:17px;
+    }
+    .blue-bg h3 sup {
+        font-size:19px;
+    }
+    .home-popup button.modal-close-button {
+        top:1.5%;
+    }
+    .pop-speakers {
+        padding:7px;
+    }
+    .user-desc {
+        width:57%;
+        margin-left:5px;
+    }
+    .user-desc h6 {
+        font-size:14px;
+    }
+    .user-desc p {
+        font-size:12px;
+    }
+    .clock-txt,.home-popup .bannerBtn_orange {
+        margin-top:35px;
+    }*/
+  .popup-txt h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .user-desc {
+    width: 70%;
+  }
+  .pop-speakers .user-div {
+    width: 100%;
+  }
+  .blogbox .card-custom .card-body .card-text p {
+    min-height: auto !important;
+  }
+  .digitalpage.insurance-banner .digitaltxt {
+    top: 80px;
+  }
+  .recent_posts + a {
+    font-size: 13px;
+    margin-top: 2px !important;
+  }
+  .smallbanner img {
+    height: 300px;
+  }
+  .recent_posts {
+    line-height: 1;
+  }
+  .page_top_text {
+    padding-top: 2rem !important;
+  }
+  /* .award-slider.sliderValue .owl-dots {
+        bottom:-30px;
+    }   */
+  #sync2 {
+    width: 250px !important;
+  }
+  .Rightsolboxnew .owl-item .item {
+    width: 250px !important;
+    margin: 0 auto !important;
+  }
+  .Rightsolboxnew .owl-item .item img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-bg {
+    width: 100%;
+    max-width: 95%;
+  }
+  .modal-bg .txt-bg h5 {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+  }
+  .modal-bg .modal-body {
+    width: 80%;
+  }
+  .modal-inner {
+    width: 100%;
+  }
+  .wethink.cloudbbx .apimgmtright.rightAnalytistxt {
+    margin-left: 0px !important;
+  }
+  .apificationviewmore {
+    margin-top: -27px;
+  }
+  .digitalpage .digitaltxt .heading40 p {
+    font-size: 31px;
+  }
+  .frauddetectionwhynseit.industrySolution {
+    height: 667px !important;
+  }
+  .tradingsolution-whynseit.industrySolution {
+    height: 1009px !important;
+  }
+  .apificationwhynseit.industrySolution {
+    height: auto !important;
+  }
+  .news-images iframe {
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .mob {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .wethink.cloudbbx .apimgmtright.rightAnalytistxt {
+    margin-left: 0px !important;
+  }
+  .apificationviewmore {
+    margin-top: -27px;
+  }
+  .frauddetectionwhynseit.industrySolution {
+    height: 722px !important;
+  }
+  .tradingsolution-whynseit.industrySolution {
+    height: 894px !important;
+  }
+  .apificationwhynseit.industrySolution {
+    height: auto !important;
+  }
+}
+@media (min-width: 560px) and (max-width: 610px) {
+  .home-popup .col-sm-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .home-popup .col-sm-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .pop-speakers .user-div {
+    width: 50%;
+  }
+  .blue-bg #clockdiv .smalltext.mb-2 {
+    font-size: 9px !important;
+  }
+  .blue-bg h4 {
+    font-size: 13px !important;
+  }
+  .user-desc {
+    width: 62% !important;
+  }
+  .inner-box .user-desc h6 {
+    font-size: 11px;
+  }
+  .user-desc p {
+    font-size: 10px;
+  }
+  .clock-txt,
+  .home-popup .bannerBtn_orange {
+    margin: 25px auto 0 !important;
+  }
+  .wethink.cloudbbx .apimgmtright.rightAnalytistxt {
+    margin-left: 0px !important;
+  }
+  .frauddetectionwhynseit.industrySolution {
+    height: 722px !important;
+  }
+  .apificationviewmore {
+    margin-top: -27px;
+  }
+  .apificationwhynseit.industrySolution {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .footerSection.webinar-footer .footerbx .box:first-child {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .footerSection.webinar-footer .footerbx .box {
+    width: 50%;
+  }
+  .left-img {
+    float: none;
+    border-right: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-bottom: 1.25rem;
+    width: auto;
+  }
+  .left-img img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  .right-txt {
+    float: none;
+    width: 100%;
+  }
+  .right-txt h6 {
+    min-height: auto;
+    margin-bottom: 10px;
+  }
+  .insurance-txt .col-sm-6:last-child {
+    margin-top: 1.25rem;
+  }
+  .covidcapa.grey-bg .card-body p {
+    min-height: auto;
+  }
+  .digitalpage.insurance-banner .digitaltxt {
+    /* top:75px; */
+    max-width: 100%;
+    /* padding-right:20px; */
+  }
+
+  .headerMenu {
+    overflow-y: auto;
+  }
+  .button_container,
+  .button_container.active {
+    width: auto;
+  }
+  .button_container p,
+  .button_container.active p:last-child {
+    display: none;
+  }
+  .headerMenu .white_headertxt {
+    font-size: 1.3rem;
+  }
+  .menu-content {
+    margin-top: 40px;
+  }
+  .menu-content h4 {
+    font-size: 1rem;
+    margin-left: 5px;
+    /* border-bottom:0; */
+  }
+  .headerMenu .col-sm-3 {
+    max-height: none;
+  }
+  .headerMenu hr {
+    display: none;
+  }
+  .overflow .header,
+  .overflow .header.active {
+    position: fixed;
+    background: #3b2e7e;
+  }
+  .casestudy-cards h6,
+  .casestudy-cards h6 p {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  .gray-bg,
+  .white-bg,
+  .contactus,
+  .footerSection .footerbx {
+    padding: 2rem 0;
+  }
+  .pb-75 {
+    padding-bottom: 2rem;
+  }
+  .casestudy-cards {
+    padding: 15px;
+    margin-bottom: 2rem;
+  }
+  .case-study-form {
+    padding: 15px;
+  }
+  .technology,
+  .case-study-form {
+    margin-bottom: 2rem;
+  }
+  .blogbox {
+    margin-top: 2rem !important;
+  }
+  .enhance-capability p.prbif {
+    min-height: 96px;
+  }
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+  .Button {
+    font-size: 12px;
+  }
+  .simple-pagination li a,
+  .simple-pagination li span {
+    margin-top: 0;
+  }
+  .simple-pagination li {
+    height: 13px;
+  }
+  .leadersdetails img {
+    width: 100%;
+  }
+
+  /* home page popup*/
+  .popup-txt {
+    margin: 15px;
+  }
+  .home-popup .head-40 {
+    font-size: 18px;
+    padding-bottom: 8px !important;
+  }
+  .blue-bg {
+    padding: 15px;
+  }
+  .pop-calendar {
+    margin-bottom: 0;
+    display: none;
+  }
+  .inner-box h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .popup-txt h4 {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  /* .popup-txt{padding:15px;} */
+  .pop-speakers {
+    padding: 5px;
+  }
+  .txt-bg {
+    margin: 5px auto 10px;
+  }
+  .blue-bg .pb-3 {
+    padding-bottom: 8px;
+  }
+  .inner-box h6.mt-5 {
+    margin-top: 10px !important;
+  }
+  .inner-box h6 {
+    font-size: 14px;
+  }
+  .pop-speakers .user-div {
+    height: 44px;
+  }
+  .pop-speakers .user-div:first-child {
+    margin-bottom: 5px;
+  }
+  .user-img {
+    width: 44px;
+  }
+  .user-desc {
+    height: 44px;
+  }
+  .user-desc {
+    width: 68%;
+    margin-left: 7px;
+  }
+  .blue-bg h5 {
+    font-size: 15px;
+    padding-bottom: 8px !important;
+  }
+  .blue-bg h3 sup {
+    font-size: 13px;
+  }
+  .blue-bg h3 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  .clock-txt,
+  .home-popup .bannerBtn_orange {
+    margin: 15px auto 0;
+    height: auto;
+  }
+  .home-popup .bannerBtn_orange {
+    font-size: 13px;
+  }
+  .blue-bg h4 {
+    font-size: 14px;
+    padding-top: 8px;
+  }
+  .blue-bg #clockdiv div {
+    padding: 0 0 0 0;
+  }
+  .blue-bg #clockdiv div span {
+    font-size: 20px;
+    width: 20px;
+  }
+  .blue-bg #clockdiv {
+    margin-top: 0px;
+  }
+  .blue-bg #clockdiv .smalltext.mb-2 {
+    margin-bottom: 0px !important;
+    font-size: 11px;
+  }
+  .home-popup .modal-lg {
+    margin: 3% auto;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .apificationviewmore {
+    margin-top: -21px;
+  }
+  .capability .card-custom-img {
+    height: 100px;
+    min-height: 100px;
+  }
+  .capability .col-sm-6 .card-custom-img,
+  .capability .col-md-6 .card-custom-img {
+    height: 150px;
+    min-height: 150px;
+  }
+  .news-inner.capability .card-custom-img {
+    height: 300px;
+    min-height: 300px;
+  }
+  .bg-orange {
+    border: 1px solid #fff;
+  }
+  /* .bg-orange p {
+        min-height:130px;
+    } */
+  .view-more,
+  .view-more:hover {
+    width: 25px;
+    height: 25px;
+    background-size: 100% auto !important;
+  }
+  .tech-col {
+    height: 50px;
+  }
+  .tech-col img.w-auto {
+    width: 60% !important;
+  }
+  .bg-orange h6 {
+    font-size: 1rem;
+  }
+  .mwr {
+    width: 100% !important;
+  }
+  .casetxt .heading40 {
+    font-size: 22px;
+  }
+  .casetxt .col-sm-9 {
+    max-width: 100%;
+  }
+  .content-scroll {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+  }
+  .webinar-popup .modalText h1,
+  .webinar-popup .modalText h2 {
+    text-align: left;
+  }
+  .webinar-popup .modalText h1 {
+    font-size: 22px;
+  }
+  .webinar-popup .modalText h2 {
+    font-size: 15px;
+  }
+  .webinar-popup .modalText p {
+    padding-left: 0;
+  }
+  .insurance-txt .col-sm-6 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .insurance-txt .col-sm-6 img {
+    width: 100%;
+  }
+  .covidcapa .card-body h6 {
+    min-height: 40px;
+  }
+  /* .covidcapa.grey-bg .card-body p {
+        min-height:120px !important;
+    } */
+  .covidcapa.grey-bg .card-body p {
+    min-height: 94px;
+  }
+  .casestudy-banner,
+  .casestudy-banner.casestudy-main {
+    height: 192px;
+  }
+  .casestudy-banner .smallbanner img.ipad-img {
+    display: none;
+  }
+  .aboutpage.casestudy-banner .smallbanner img {
+    height: 152px;
+  }
+  .casestudy-banner .smallbanner img.mobile-img {
+    display: block;
+    height: 152px;
+  }
+  .casestudy-banner .smallbanner {
+    width: 100%;
+  }
+  .casestudy-banner + .page-top {
+    padding-top: 0;
+  }
+  .card-body p.pchatf {
+    min-height: auto;
+    height: 88px;
+  }
+  .casestudy-banner .heading40,
+  .casestudy-banner .heading40 p {
+    font-size: 20px !important;
+    line-height: 1.1 !important;
+  }
+  .casestudy-banner.aboutpage .abouttxt p {
+    font-size: 14px;
+  }
+  .casestudybtn .Button {
+    font-size: 12px;
+    padding: 5px 12px;
+    margin-bottom: 0;
+  }
+  .heading32,
+  .heading32 p,
+  .news-para .heading32 p {
+    font-size: 20px;
+    line-height: 1;
+  }
+  .heading32.pb-3 {
+    padding-bottom: 0.5rem !important;
+  }
+  .header .logo img {
+    width: 80px;
+  }
+  .header .right_menu a,
+  .menu-button {
+    width: 20px;
+    height: 20px;
+  }
+  .header .right_menu a img {
+    padding-top: 5px;
+    width: 40%;
+  }
+  .button_container span {
+    width: 10px;
+    height: 1px;
+  }
+  .head-40,
+  .head-40 p {
+    font-size: 20px;
+  }
+  .casestudy-cards .head-40,
+  .casestudy-cards .head-40 p {
+    margin-bottom: 0.4rem;
+  }
+  .casestudy-cards svg {
+    width: 45px;
+    height: 45px;
+  }
+  .white-bg .card-body p.pdrive {
+    height: 125px;
+    min-height: auto;
+  }
+  .white-bg .card-body p.pdrive.ppower {
+    height: 130px;
+  }
+  .white-bg .card-body p.penhance {
+    height: 60px;
+    min-height: auto;
+  }
+  .enhance-capability .card-body h6 {
+    height: 50px;
+  }
+  .clock-txt,
+  .home-popup .bannerBtn_orange {
+    margin: 25px auto 0;
+  }
+  .resource-overview .resources_blogs .card-text {
+    min-height: 85px;
+  }
+}
+@media (max-width: 799px) and (min-width: 641px) {
+  .grey-bg .casecardbox .card-body p.pblock {
+    min-height: 52%;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 52%;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 41%;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 46%;
+  }
+}
+@media only screen and (max-device-width: 780px) and (min-device-width: 411px) and (orientation: portrait) {
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 120% !important;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 91% !important;
+  }
+}
+@media (max-width: 768px) and (min-width: 768px) {
+  .grey-bg .casecardbox .card-body p.pecb {
+    min-height: 30%;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech {
+    min-height: 47%;
+  }
+  .grey-bg .casecardbox .card-body p.pblock {
+    min-height: 33%;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 47% !important;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 52%;
+  }
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 57% !important;
+  }
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 47% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pchat {
+    min-height: 52%;
+  }
+}
+
+@media only screen and (min-device-width: 412px) and (max-device-width: 823px) and (-webkit-device-pixel-ratio: 3.5) and (orientation: landscape) {
+  .brochure3_mr {
+    position: relative;
+    top: -238px !important;
+    right: -332px !important;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 47%;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 35% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pecb {
+    min-height: 27%;
+  }
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 47%;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 40%;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 40%;
+  }
+  /* .grey-bg .casecardbox .card-body p.pcompliance {
+        min-height: 37% !important;
+    } */
+  /* .grey-bg .casecardbox .card-body p.pfintech {
+        min-height: 47% !important;
+    } */
+  .sevicesbox .Servicbx .card-body p.pdata {
+    min-height: 46% !important;
+  }
+  .sevicesbox .Servicbx .card-body p.pbustrans {
+    min-height: 46% !important;
+  }
+  .capability .card-webinar.card-custom {
+    margin-bottom: 0 !important;
+  }
+  p.card-case.card-text.pb-3 {
+    min-height: auto !important;
+  }
+  .blogbox .tab_content .card-body .card-blog.card-text {
+    min-height: 63px !important;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  .brochure3_mr {
+    position: relative !important;
+    top: -238px !important;
+    right: -332px !important;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 46%;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 35% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pecb {
+    min-height: 27%;
+  }
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 47%;
+  }
+  .grey-bg .casecardbox .card-body p.pmonitor {
+    min-height: 38%;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 40%;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 40%;
+  }
+  /* .grey-bg .casecardbox .card-body p.pcompliance {
+        min-height: 37% !important;
+    } */
+  .grey-bg .casecardbox .card-body p.pfintech {
+    min-height: 47% !important;
+  }
+  .grey-bg .casecardbox .card-body p.psaas {
+    min-height: 46% !important;
+  }
+  .sevicesbox .Servicbx .card-body p.pdata {
+    min-height: 54px !important;
+  }
+  .sevicesbox .Servicbx .card-body p.pbustrans {
+    min-height: 54px;
+  }
+  .capability .card-webinar.card-custom {
+    margin-bottom: 0 !important;
+  }
+  .grey-bg .card-body p.pia {
+    height: 54px !important;
+    min-height: auto;
+  }
+  .blogbox .tab_content .card-body .card-blog.card-text {
+    min-height: 63px !important;
+  }
+  p.card-case.card-text.pb-3 {
+    min-height: auto !important;
+  }
+  .content-scroll {
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+  }
+  .webinar-popup .modalText h1,
+  .webinar-popup .modalText h2 {
+    text-align: left;
+  }
+  .webinar-popup .modalText h1 {
+    font-size: 22px;
+  }
+  .webinar-popup .modalText h2 {
+    font-size: 15px;
+  }
+  .webinar-popup .modalText p {
+    padding-left: 0;
+  }
+}
+@media only screen and (min-device-width: 411px) and (max-device-width: 780px) and (orientation: landscape) {
+  .grey-bg .casecardbox .card-body p.pblock {
+    min-height: 30%;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 57% !important;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 52% !important;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 46% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pecb {
+    min-height: 18% !important;
+  }
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 47% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 40% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pchat {
+    min-height: 57% !important;
+  }
+  /* .grey-bg .casecardbox .card-body p.pcompliance {
+        min-height: 29% !important;
+    } */
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 55%;
+  }
+  .sevicesbox .Servicbx .card-body p.pdata {
+    min-height: 46% !important;
+  }
+  .sevicesbox .Servicbx .card-body p.pbustrans {
+    min-height: 52% !important;
+  }
+  .capability .card-webinar.card-custom {
+    margin-bottom: 0 !important;
+  }
+  .grey-bg .card-body p.pia {
+    height: 56px !important;
+    min-height: auto;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  .grey-bg .casecardbox .card-body p.pecb {
+    min-height: 24% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 37% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 47% !important;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 57% !important;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 52% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pchat {
+    min-height: 47% !important;
+  }
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 64%;
+  }
+  .sevicesbox .Servicbx .card-body p.pdata {
+    min-height: 53% !important;
+  }
+  .capability .card-webinar.card-custom {
+    margin-bottom: 0 !important;
+  }
+  .webinar-card p.card-web {
+    min-height: 112px !important;
+  }
+
+  .blogbox .card-custom .card-body .card-elastic.card-text {
+    min-height: 88px;
+  }
+  .blogbox .tab_content .card-body .card-blog.card-text {
+    min-height: 88px !important;
+  }
+  .blogbox .tab_content .card-body .card-blog.card-blog1.card-text {
+    min-height: 63px !important;
+  }
+  .grey-bg .card-body p.pia {
+    height: 76px !important;
+    min-height: auto;
+  }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation: landscape) {
+  .grey-bg .casecardbox .card-body p.pblock.pblock1 {
+    min-height: 47% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 55% !important;
+  }
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 47% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pchat {
+    min-height: 55% !important;
+  }
+  .grey-bg .casecardbox .card-body p.psaas {
+    min-height: 57%;
+  }
+  .capability .card-webinar.card-custom {
+    margin-bottom: 0 !important;
+  }
+  .grey-bg .card-body p.pia {
+    height: 95px !important;
+    min-height: auto;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  .brochure3_mr {
+    position: relative !important;
+    top: -238px !important;
+    right: -332px !important;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 64% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech1 {
+    min-height: 20% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pblock.pblock1 {
+    min-height: 15% !important;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 20% !important;
+  }
+  .grey-bg .casecardbox .card-body p.pdriving {
+    min-height: 34% !important;
+  }
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 82% !important;
+  }
+  .capability .card-webinar.card-custom {
+    margin-bottom: 30px !important;
+  }
+  .webinar-card p.card-web {
+    min-height: auto !important;
+  }
+  .blogbox .card-custom .card-body .card-text {
+    min-height: auto !important;
+  }
+  .capability .card-custom-img {
+    height: 250px;
+    min-height: 250px;
+  }
+  p.card-101.card-text.pb-3 {
+    min-height: auto;
+  }
+  .blogbox .tab_content .card-body .card-blog.card-text {
+    min-height: auto !important;
+  }
+  .blogbox .tab_content .card-body .card-blog.card-blog1.card-text {
+    min-height: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .bodbox .col-md-4 {
+    max-width: 29.33%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .capability .card-webinar.card-custom {
+    margin-bottom: 30px;
+  }
+  .bodbox {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .breadcrumb {
+    width: 240px;
+  }
+  .modalText h1 {
+    font-size: 20px;
+    margin-top: 1rem !important;
+  }
+  .modalText h2 {
+    font-size: 16px;
+  }
+}
+
+/***************** Management Team CSS (Monika) end here ********************/
+/***************** Current Opening inner pages css start (Monika) *************/
+@media only screen and (max-width: 800px) {
+  h3.webinar-join {
+    font-size: 1.2rem;
+  }
+  .posiitionHeading {
+    text-align: left !important;
+    margin-left: 25px !important;
+  }
+  .JobDetails-opening {
+    display: block;
+  }
+  .innerdata {
+    display: block;
+    margin-bottom: 20px !important;
+  }
+  .innerdata img {
+    margin-right: 15px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .Carrersvisionbx .recentjobs {
+    margin-left: 0;
+  }
+}
+/***************** Current Opening inner pages css end (Monika) *************/
+
+@media only screen and (max-width: 640px) {
+  .mt16 {
+    margin-top: 0rem !important;
+  }
+  .right-share {
+    margin-left: 0px;
+  }
+  .aboutpage .abouttxt h2,
+  .aboutpage .abouttxt h2 p {
+    font-size: 16px;
+  }
+  .aboutpage .abouttxt {
+    left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .page_top_text .Currentopeningdetailsbox div {
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .mt16 {
+    margin-top: -1rem;
+  }
+  .right-share {
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .mt16 {
+    margin-top: -1rem !important;
+  }
+
+  .blogbox .card-custom .card-body .card-text p {
+    min-height: 63px;
+  }
+  .Award_Recognition .panel .Rightsolboxnew {
+    margin-left: 11%;
+  }
+  #sync2 {
+    width: 400px;
+  }
+  .Rightsolboxnew .owl-item .item {
+    width: 400px;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .mt16 {
+    margin-top: 7rem;
+  }
+}
+@media only screen and (max-width: 1349px) {
+  .card-custom {
+    width: 100%;
+  }
+  /* .resources_blogs .card-custom, .resources_news .card-custom{height: 400px;} */
+}
+@media (min-width: 993px) and (max-width: 1024px) {
+  .brochure3_mr {
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+  }
+  .grey-bg .casecardbox .card-body p.pecb {
+    min-height: 25%;
+  }
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 37%;
+  }
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 46%;
+  }
+  .grey-bg .casecardbox .card-body p,
+  .readmoreRed.readmorerc {
+    font-size: 13px;
+  }
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 38%;
+  }
+}
+@media (min-width: 801px) and (max-width: 1024px) {
+  .grey-bg.capability.digitaltrans {
+    padding-top: 28%;
+  }
+  .grey-bg .casecardbox .card-body p.pquality {
+    min-height: 38px;
+  }
+  .grey-bg .casecardbox .card-body p.pfintech {
+    min-height: 32%;
+  }
+  /* .grey-bg .casecardbox .card-body p.pcompliance {
+        min-height: 19%;
+    } */
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 46%;
+  }
+  .card-body h6 {
+    font-size: 1rem;
+  }
+  .grey-bg .card-body p.pia {
+    height: 72px;
+    min-height: auto;
+  }
+  .blogbox .tab_content .card-body .card-blog.card-text {
+    min-height: 88px;
+  }
+  p.card-case.card-text.pb-3 {
+    min-height: 88px;
+  }
+  .contactBtn {
+    top: 300px;
+  }
+  .share-img img {
+    margin-top: -30px !important;
+  }
+  .covidcapa .card-body h6 {
+    min-height: 30px;
+  }
+  /* .card-body h6 {
+        font-size:1.1rem;
+    } */
+  .covidcapa.grey-bg .card-body p {
+    min-height: auto;
+  }
+  /*.share-blog-fill li{
+		margin-left: 0;
+        margin-right: 0;
+	}*/
+  /* .orcimg{width: 35%;margin-left: 120px !important;} */
+  .head-40 {
+    font-size: 30px;
+  }
+  .white-bg .card-body p.pdrive {
+    height: 90px;
+    min-height: auto;
+  }
+  .tech-col {
+    height: 80px;
+  }
+  .lhai {
+    line-height: 1 !important;
+  }
+  .casestudy-banner.aboutpage .about p {
+    line-height: 1.2;
+  }
+  .video-div p:last-child {
+    width: 100%;
+    font-size: 14px;
+  }
+  .resource-overview .resources_blogs .card-text {
+    min-height: 85px;
+  }
+}
+@media only screen and (min-device-width: 1366px) and (max-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .cross-sell {
+    line-height: 1.5;
+  }
+  .impact-txt p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .covidcapa.grey-bg .card-body p {
+    min-height: 75px;
+  }
+  .wethink.cloudbbx .apimgmtright.rightAnalytistxt {
+    margin-left: 21px !important;
+    width: 32.33% !important;
+  }
+  .tradingsolution-whynseit {
+    margin-top: -72px !important;
+  }
+  .tradingsolution-whynseit.industrySolution {
+    height: 651px !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .share-img img {
+    margin-top: -30px !important;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .grey-bg .casecardbox .card-body p.psaas {
+    min-height: 20% !important;
+  }
+  .sevicesbox .Servicbx .card-body p.pdata {
+    min-height: 20% !important;
+  }
+  .sevicesbox .Servicbx .card-body p.pbustrans {
+    min-height: 24% !important;
+  }
+  .brochure3_mr {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 100%;
+  }
+  .grey-bg .casecardbox .card-body p.pquality {
+    min-height: 38px;
+  }
+  .grey-bg .card-body p.pia {
+    height: 48px !important;
+  }
+  .brochure1_mr {
+    margin-left: 14px;
+  }
+  #twocols {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+  .share-blog {
+    margin: 0 -15px;
+  }
+  .share-blog-fill li {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .share-blog-fill li a {
+    line-height: 1;
+  }
+  .elasticfont {
+    font-size: 18px;
+  }
+  .web-share,
+  .share-web:hover .web-share {
+    background-size: 50% 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .grey-bg .casecardbox .card-body p.prpa {
+    min-height: 27%;
+  }
+  .DXbx .clientdata p {
+    padding-left: 5px;
+  }
+  .getintouch .contnt {
+    padding-top: 0;
+  }
+  .visionbx .clientdata {
+    height: auto;
+  }
+  .tabbox ul li.bankingone.active {
+    background-position: -227px -522px;
+  }
+  .tabbox ul li.bankingtwo {
+    background-position: -17px -18px;
+  }
+  .tabbox ul li.bankingthree {
+    background-position: -125px -22px;
+  }
+  .tabbox ul li.servimgone.active {
+    background-position: 170px -11px;
+  }
+  .tabbox ul li.servimgthree {
+    background-position: -108px 180px;
+  }
+  .Bankingvisionbx .clientdata .contentsdv .tabbox {
+    padding: 25px 0 20px;
+    margin-left: -3px;
+  }
+  /* .ml-1.brochure-ml{margin-left: -23px !important;} */
+  .grey-bg .casecardbox .card-body p.psaas1 {
+    min-height: 29%;
+  }
+  .grey-bg.capability.digitaltrans {
+    padding-top: 125% !important;
+  }
+  .grey-bg.capability.digitaltrans1 {
+    padding-top: 160% !important;
+  }
+  .capability .card-custom-img {
+    height: 150px;
+    min-height: 150px;
+  }
+  .content-scroll {
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+  }
+  .headerMenu .white_headertxt {
+    font-size: 1.1rem;
+  }
+  .share-blog {
+    margin: 0 -5px;
+  }
+  .share-blog-fill li {
+    width: 27px;
+    height: 27px;
+    margin-left: 3px;
+    margin-right: 0;
+  }
+  .share-blog-fill li a {
+    line-height: 1;
+    padding: 4px 7px;
+  }
+  .share-blog-fill li a i[class^="flaticon-"]:before {
+    font-size: 12px;
+  }
+  .web-share,
+  .share-web:hover .web-share {
+    background-size: 30% 12px;
+    height: 12px;
+  }
+  .impact-txt span {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .client-div {
+    width: 70%;
+  }
+  .client-div .head-40 {
+    font-size: 25px;
+  }
+  .casestudy-cards h6 {
+    font-size: 1rem;
+  }
+  .casestudy-banner .heading40 {
+    font-size: 25px;
+  }
+  .casestudy-banner .heading40.heading-drive {
+    font-size: 22px !important;
+  }
+  /* .blue-bg h3, .inner-box h2 {
+                font-size:21px;
+            }
+            .head-40,.web-popup .head-40 {
+                font-size:23px;
+            }
+            .blue-bg {
+                padding:1rem;
+            }
+            .blue-bg h4{
+                font-size:16px;
+            }
+            .blue-bg #clock-div span {
+                font-size:15px;
+            }
+            .smalltext {
+                font-size:11px;
+            }
+            .casestudybtn .Button {
+                padding:1px 8px;
+            }
+            .user-img {
+                width:40%
+            }
+            .pop-speakers .user-div {
+                height:75px;
+            }
+            .blue-bg #clockdiv div {
+                padding:0 1% 0 0;
+            } */
+  .leadersdetails.MT > div {
+    margin: 0;
+    padding: 0;
+  }
+  .brouchers {
+    position: relative;
+    width: 200px;
+  }
+  .brochure1_mr {
+    margin-left: 0;
+    width: auto;
+    padding-right: 0 !important;
+  }
+  .brouchers .ml-1 .brochure1_mr.readmoreRed {
+    position: absolute;
+    top: 29%;
+  }
+  .brouchers .ml-1 .brochure3_mr.readmoreRed {
+    position: static;
+    top: auto;
+  }
+  .ml-1.brochure-ml,
+  .brochure2_mr {
+    margin-left: 0 !important;
+  }
+  .ml-1.brochure-ml img.brochure1_mr {
+    margin-bottom: 30px;
+  }
+  .ml-1.brochure-ml img.brochure3_mr {
+    margin-bottom: 0;
+  }
+  .Insurancevisionbx .tabbox ul li,
+  .Insurancevisionbx .tabbox ul li.active {
+    width: 70px !important;
+    height: 70px !important;
+    margin-right: 5px !important;
+  }
+  .tabbox ul li.insuimgone {
+    background-position: 173px 214px;
+  }
+  .tabbox ul li.insuimgone.active {
+    background-position: -10px 81px;
+  }
+  .tabbox ul li.insuimgtwo {
+    background-position: 80px -12px;
+  }
+  .tabbox ul li.insuimgtwo.active {
+    background-position: 83px -104px;
+  }
+  .tabbox ul li.insuimgthree {
+    background-position: 170px -105px;
+  }
+  .tabbox ul li.insuimgthree.active {
+    background-position: 173px -197px;
+  }
+  .Carrers_points p {
+    float: left;
+    width: 62%;
+  }
+  .bloginner_section div h3.recent_posts {
+    font-size: 18px;
+  }
+  .recent_posts + a {
+    font-size: 12px;
+    margin-top: 4px !important;
+  }
+  .Rightsolboxnew .owl-item .item img {
+    width: 90%;
+  }
+
+  .news-images iframe {
+    height: 185px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .contnt.sales-email {
+    display: inline;
+  }
+  .getintouch.mt-12 {
+    margin-top: 12rem !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .std-quality-image {
+    display: inline-block;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) and (orientation: landscape) {
+  .std-quality-image {
+    display: inline-block;
+  }
+  .stq-quality-container .mt-5 {
+    margin-top: 1.5rem !important;
+  }
+  .Standard_Quality.about-us-section {
+    height: 890px;
+  }
+  .about-us-std {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .std-quality-image {
+    display: inline-block;
+  }
+  .stq-quality-container .mt-5 {
+    margin-top: 0.5rem !important;
+  }
+  .Standard_Quality.about-us-section {
+    height: 890px;
+  }
+  .about-us-std {
+    max-width: 45% !important;
+  }
+}

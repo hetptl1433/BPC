@@ -1,0 +1,46 @@
+.bannercont_left {
+  margin-left: 81px;
+  width: 600px;
+  background: transparent;
+  position: absolute;
+  top: 215px;
+}
+
+.slick-next.tyt {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 1; /* Ensure arrows are above slides */
+  border: none; /* Example: Remove borders */
+  padding: 10px; /* Example: Adjust padding */
+  cursor: pointer;
+  background: url(../images/next.png) no-repeat !important;
+  width: 38px;
+  height: 33px;
+}
+
+.slick-prev.tyt {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 1; /* Ensure arrows are above slides */
+  border: none; /* Example: Remove borders */
+  padding: 10px; /* Example: Adjust padding */
+  cursor: pointer;
+  background: url(../images/prev.png) no-repeat !important;
+  width: 38px;
+  height: 33px;
+}
+.slick-next.tyt:before {
+  content: "" !important;
+}
+.slick-prev.tyt:before {
+  content: "" !important;
+}
+.slick-prev.tyt {
+  left: 5px; /* Example: Adjust position */
+}
+
+.slick-next.tyt {
+  right: 5px; /* Example: Adjust position */
+}
