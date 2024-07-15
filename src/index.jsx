@@ -9,6 +9,9 @@ import "bootstrap/dist/js/bootstrap";
 import Home from "./Components/Pages/Home";
 
 import "./assets/css/main.min.css";
+import Aboutus from "./Components/Pages/Aboutus";
+import Services from "./Components/Pages/Services";
+import Gallery from "./Components/Pages/Gallery";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,7 +23,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <h1>About</h1>,
+        element: <Aboutus></Aboutus>,
+      },
+      {
+        path: "/Services",
+        element: <Services></Services>,
+      },
+      {
+        path: "/Gallery",
+        element: <Gallery></Gallery>,
       },
     ],
   },

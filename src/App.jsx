@@ -14,6 +14,9 @@ import { createPopper } from "@popperjs/core";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/css/main.min.css";
+import "./assets/font-awesome-4.7.0/css/font-awesome.css";
+import "./assets/font-awesome-4.7.0/css/font-awesome.min.css";
+
 import Footer from "./Components/Section/Footer";
 
 function App() {

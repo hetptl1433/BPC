@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Container } from "react-bootstrap";
 
 const Banner3 = () => {
   var settings = {
@@ -12,7 +13,7 @@ const Banner3 = () => {
   return (
     <div>
       <section class="sevicesbox" id="nseitservice">
-        <div class="pageContainer">
+        <Container class="">
           <h3 class="heading32"> Services </h3>
           <p>We deliver services that solve problems for our customers </p>
           <div class="Servicbx justify-content-between pt-5">
@@ -99,7 +100,7 @@ const Banner3 = () => {
               </Slider>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </div>
   );

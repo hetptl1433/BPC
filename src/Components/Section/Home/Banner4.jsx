@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ReactPlayer from "react-player";
+import vid4 from "../../../assets/images/drupal/vid4.png";
 
 const Banner4 = () => {
   const [showPlayer, setShowPlayer] = useState(false);
@@ -37,10 +38,10 @@ const Banner4 = () => {
                 />
               ) : (
                 <img
-                  src="http://bpcindia.org/Content/Client/assets/images/vid4.png"
+                  src={vid4}
                   alt="Application and infra modernization solution provider"
-                  height=" 250px"
-                  width="448px"
+                  height=" 240px"
+                  width="300px"
                   onClick={handleImageClick}
                   style={{ cursor: "pointer" }}
                 />

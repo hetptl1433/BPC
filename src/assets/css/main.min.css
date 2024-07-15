@@ -137,7 +137,7 @@ table {
 }
 p {
   line-height: 1.5;
-  font-family: Roboto-Regular;
+  font-family: Roboto !important;
   color: #666;
 }
 body.new {
@@ -273,6 +273,10 @@ p {
 .regular {
   font-family: Roboto;
   font-weight: 400;
+}
+.regular-light {
+  font-family: Roboto !important;
+  font-weight: 300 !important;
 }
 .colorGraytxt {
   color: #666;
@@ -807,7 +811,7 @@ p {
   overflow: hidden;
 }
 .industrySolution .panel .letfsolbox img {
-  width: 100%;
+  width: 93%;
   display: block;
   overflow: hidden;
 }
@@ -1058,7 +1062,8 @@ p {
 .contactus {
   padding: 35px 0;
   margin-top: -20px;
-  background: url(../images/mobile-image/contact-bg.png) no-repeat;
+  background: url(http://bpcindia.org/Content/Client/assets/images/mobile-image/contact-bg.png)
+    no-repeat;
   background-position: right bottom;
   width: 100%;
   background-size: cover;

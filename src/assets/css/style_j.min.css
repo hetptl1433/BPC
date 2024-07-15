@@ -4873,7 +4873,7 @@ h4.webinar-sub {
 }
 .headerMenu .white_headertxt {
   font-size: 2rem;
-  font-family: Roboto-Light;
+  font-family: Roboto;
   padding: 0;
   font-weight: 300;
 }
@@ -4884,6 +4884,11 @@ h4.webinar-sub {
 .closemenu:hover svg {
   fill: #e86f24;
 }
+
+.col-sm-3.fgf li {
+  list-style-type: disc !important;
+}
+
 .menuContent hr {
   border-color: #fff;
 }
@@ -4898,12 +4903,21 @@ h4.webinar-sub {
   border-bottom: 1px solid #fff;
   padding-bottom: 0.75rem;
   margin-bottom: 0.875rem;
-  font-family: Roboto-Regular;
-  font-weight: 500;
+  font-family: Roboto;
+  font-weight: 400;
+}
+
+.menu-content ul {
+  padding-left: 0px !important;
 }
 .menu-content a {
   font-size: 0.97rem;
 }
+
+.row.rtr img {
+  margin-right: 5px;
+}
+
 .menu-button {
   width: 39px;
   height: 39px;
@@ -6626,4 +6640,8 @@ h4.aboutus-heading {
   margin-left: 20px;
   width: auto;
   height: auto;
+}
+
+.no-overflow {
+  overflow: hidden !important;
 }

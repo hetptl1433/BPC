@@ -32,7 +32,6 @@ const Banner2 = () => {
               </div>
             </div>
           </Col>
-          <Col md={1}></Col>
           <Col md={5} className="rightValuetxt animation-element">
             <Carousel
               id="OurcompanySlider"
