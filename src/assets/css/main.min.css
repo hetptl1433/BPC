@@ -1517,6 +1517,15 @@ p {
   width: 100%;
   padding-top: 17px;
 }
+.liDisc li {
+  font-family: "roboto" !important;
+}
+.contnt h5 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
 .getintouch .contdiv {
   width: auto !important;
 }
@@ -2029,4 +2038,12 @@ p {
 .fbook {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+}
+
+.bodbox.rr .heading18 {
+  font-weight: 400 !important;
+}
+
+.bodbox.rr .heading16 {
+  font-weight: 400 !important;
 }

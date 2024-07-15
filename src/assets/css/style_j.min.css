@@ -13,6 +13,7 @@
   font-family: Roboto-Light;
   font-size: 24px;
 }
+
 .aboutpage .right_trangle {
   position: absolute;
   right: 0;
@@ -46,6 +47,12 @@
   width: 100%;
   display: block;
   max-width: 501px;
+}
+
+.ee {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
 }
 .Standard_Quality .panel .Standard_QualityContent {
   width: 50%;
@@ -6644,4 +6651,66 @@ h4.aboutus-heading {
 
 .no-overflow {
   overflow: hidden !important;
+}
+
+.ty {
+  font-family: roboto;
+  font-weight: 300 !important;
+}
+
+.rt {
+  font-family: roboto;
+  font-weight: 300 !important;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.heading16.ee p {
+  margin-bottom: 0px;
+}
+
+.heading16.ee a {
+  font-size: 16px !important;
+}
+
+.mail_para {
+  border: 2px solid gray;
+  padding: 15px;
+}
+.mail_para p {
+  font-size: 20px;
+  color: black;
+}
+.sec_para {
+  margin: 20px 0px;
+  border: 2px solid gray;
+  padding: 15px;
+  font-weight: 600;
+}
+.sec_para p {
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+
+.third_para p {
+  color: black !important;
+}
+.peray {
+  color: #000;
+}
+
+.rrk h1 {
+  font-weight: 400 !important;
+}
+.rrfr .form-label {
+  margin-bottom: 0px;
+  margin-top: 0.5rem !important     ;
+}
+
+.ft-3 {
+  font-weight: 300 !important;
+}
+.player-wrapper {
+  height: 267px;
 }

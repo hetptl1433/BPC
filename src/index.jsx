@@ -12,6 +12,15 @@ import "./assets/css/main.min.css";
 import Aboutus from "./Components/Pages/Aboutus";
 import Services from "./Components/Pages/Services";
 import Gallery from "./Components/Pages/Gallery";
+import News from "./Components/Pages/News";
+import Contactus from "./Components/Pages/Contactus";
+import RouteActivity from "./Components/Pages/RouteActivity";
+import Courses from "./Components/Pages/Courses";
+import TeamMember from "./Components/Pages/TeamMember";
+import Vision from "./Components/Pages/Vision";
+import Activity from "./Components/Pages/Activity";
+import Program from "./Components/Pages/Program";
+import Video from "./Components/Pages/Video";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +42,43 @@ const router = createBrowserRouter([
         path: "/Gallery",
         element: <Gallery></Gallery>,
       },
+      {
+        path: "/NEWS",
+        element: <News></News>,
+      },
+      {
+        path: "/Contactus",
+        element: <Contactus></Contactus>,
+      },
+      {
+        path: "/Courses",
+        element: <Courses></Courses>,
+      },
+      {
+        path: "/TeamMember",
+        element: <TeamMember></TeamMember>,
+      },
+      {
+        path: "/Vision",
+        element: <Vision></Vision>,
+      },
+      {
+        path: "/Activity",
+        element: <Activity></Activity>,
+      },
+      {
+        path: "/Program",
+        element: <Program></Program>,
+      },
+      {
+        path: "/Video",
+        element: <Video></Video>,
+      },
     ],
+  },
+  {
+    path: "/RouteActivity",
+    element: <RouteActivity></RouteActivity>,
   },
 ]);
 

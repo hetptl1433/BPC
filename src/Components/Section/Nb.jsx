@@ -9,6 +9,11 @@ const Nb = () => {
   const toggleContact = () => {
     setContact(!contact);
   };
+
+  const handleRedirect = () => {
+    window.location.href =
+      "http://bpcindia.org/Business-Development-Professional-Wanted.html";
+  };
   const handleMenuToggle = (value) => {
     setMenu(value);
     setScrolled(false);
@@ -61,6 +66,11 @@ const Nb = () => {
                 </li>
                 <li>
                   <a href="ContactUs.html">Contact Us</a>
+                </li>
+                <li>
+                  <a onClick={handleRedirect} href="#">
+                    Career
+                  </a>
                 </li>
                 <li>
                   <a href="#">Login</a>
@@ -139,7 +149,7 @@ const Nb = () => {
                               </h4>
                               <ul>
                                 <li>
-                                  <a href="studyhabitinventory.html">
+                                  <a href="/Courses">
                                     Students of Class 8, 9, and 10
                                   </a>
                                 </li>
@@ -147,7 +157,7 @@ const Nb = () => {
                                   <a href="PAtest.html">Employees</a>
                                 </li>
                                 <li>
-                                  <a href="studyhabitinventory.html">
+                                  <a href="/RouteActivity">
                                     Routine Activity Scheet
                                   </a>
                                 </li>
@@ -168,7 +178,7 @@ const Nb = () => {
                               </h4>
                               <ul>
                                 <li>
-                                  <a href="photogallery.html">Photo Gallery</a>
+                                  <a href="/Gallery">Photo Gallery</a>
                                 </li>
                                 <li>
                                   <a href="videogallery.html">Video Gallery</a>
@@ -216,24 +226,24 @@ const Nb = () => {
                               </h4>
                               <ul>
                                 <li>
-                                  <a href="aboutus.html">Company Profile</a>
+                                  <a href="/about">Company Profile</a>
                                 </li>
                                 <li>
-                                  <a href="teammember.html">Team Members</a>
+                                  <a href="/TeamMember">Team Members</a>
                                 </li>
                                 <li>
-                                  <a href="vision-mission.html">
-                                    Vision / Mission
+                                  <a href="/Vision">Vision / Mission</a>
+                                </li>
+                                <li>
+                                  <a href="/Activity">Activities</a>
+                                </li>
+                                <li>
+                                  <a href="/Program">Programme</a>
+                                </li>
+                                <li>
+                                  <a onClick={handleRedirect} href="#">
+                                    Career
                                   </a>
-                                </li>
-                                <li>
-                                  <a href="activities.html">Activities</a>
-                                </li>
-                                <li>
-                                  <a href="programme.html">Programme</a>
-                                </li>
-                                <li>
-                                  <a href="aboutus.html">Projects</a>
                                 </li>
                               </ul>
                             </div>
