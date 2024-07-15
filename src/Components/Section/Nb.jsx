@@ -196,7 +196,7 @@ const Nb = () => {
                                   className="lazyloaded"
                                   src="assets/images/home/icon/solution.png"
                                 />
-                                <a href="#">Training Programs</a>
+                                <a href="/Training">Training Programs</a>
                               </h4>
                               <h4>
                                 <img
@@ -262,15 +262,13 @@ const Nb = () => {
                               </h4>
                               <ul>
                                 <li>
-                                  <a href="courses.html">English Improvement</a>
+                                  <a href="/English">English Improvement</a>
                                 </li>
                                 <li>
-                                  <a href="courses.html">
-                                    Human Resource Management
-                                  </a>
+                                  <a href="/Human">Human Resource Management</a>
                                 </li>
                                 <li>
-                                  <a href="courses.html">Indirect Taxation</a>
+                                  <a href="/Indirect">Indirect Taxation</a>
                                 </li>
                               </ul>
                             </div>

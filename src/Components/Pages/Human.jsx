@@ -1,16 +1,16 @@
 import React from "react";
 import CoursesBanner from "../Section/Courses/CoursesBanner";
+import HumanCourse from "../Section/HumanCourse/HumanCourse";
 import Banner6 from "../Section/Home/Banner6";
-import EngCourse from "../Section/English/EngCourse";
 
-const English = () => {
+const Human = () => {
   return (
     <div>
       <CoursesBanner></CoursesBanner>
-      <EngCourse></EngCourse>
+      <HumanCourse></HumanCourse>
       <Banner6></Banner6>
     </div>
   );
 };
 
-export default English;
+export default Human;

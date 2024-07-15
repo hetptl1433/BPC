@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import { Modal, Button, Form, Row, Col, Container } from "react-bootstrap";
 
-const EngCourse = () => {
+const HumanCourse = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,7 +11,7 @@ const EngCourse = () => {
 
   return (
     <div>
-      <section className="course">
+      <section className="course mb-5">
         <div className="pageContainer">
           <div
             className="page_top_text animation-element slide-left in-view"
@@ -26,7 +26,9 @@ const EngCourse = () => {
                 className="h1 col-lg-8 col-md-8"
                 style={{ border: "0px", paddingLeft: "0px" }}
               >
-                <h2 className="heading32 pb-3 px-3 ft-3">Indirect Texation</h2>
+                <h2 className="heading32 pb-3 px-3 ft-3">
+                  Human Resource Management
+                </h2>
               </div>
               <div className="col-lg-3 col-md-3 inner_bodybox rrk">
                 <h1 className="heading18">Duration : 3 Months</h1>
@@ -172,4 +174,4 @@ const EngCourse = () => {
   );
 };
 
-export default EngCourse;
+export default HumanCourse;

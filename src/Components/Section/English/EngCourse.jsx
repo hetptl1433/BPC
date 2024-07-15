@@ -26,7 +26,7 @@ const EngCourse = () => {
                 className="h1 col-lg-8 col-md-8"
                 style={{ border: "0px", paddingLeft: "0px" }}
               >
-                <h2 className="heading32 pb-3 px-3 ft-3">Indirect Texation</h2>
+                <h2 className="heading32 pb-3 px-3">English Improvement</h2>
               </div>
               <div className="col-lg-3 col-md-3 inner_bodybox rrk">
                 <h1 className="heading18">Duration : 3 Months</h1>
@@ -35,7 +35,7 @@ const EngCourse = () => {
                 <h1 className="heading18">Eligibility Criteria : 12th Pass</h1>
               </div>
             </div>
-            <p className="heading16 mb-4">
+            <p className="heading16 mb-4 ft-3">
               <div style={{ fontSize: "20px" }}>Methodology :</div>
               <br />
               <br />

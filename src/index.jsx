@@ -21,6 +21,11 @@ import Vision from "./Components/Pages/Vision";
 import Activity from "./Components/Pages/Activity";
 import Program from "./Components/Pages/Program";
 import Video from "./Components/Pages/Video";
+import English from "./Components/Pages/English";
+import HumanCourse from "./Components/Section/HumanCourse/HumanCourse";
+import Human from "./Components/Pages/Human";
+import Indirect from "./Components/Pages/Indirect";
+import Training from "./Components/Pages/Training";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +78,22 @@ const router = createBrowserRouter([
       {
         path: "/Video",
         element: <Video></Video>,
+      },
+      {
+        path: "/English",
+        element: <English></English>,
+      },
+      {
+        path: "/Human",
+        element: <Human></Human>,
+      },
+      {
+        path: "/Indirect",
+        element: <Indirect></Indirect>,
+      },
+      {
+        path: "/Training",
+        element: <Training></Training>,
       },
     ],
   },

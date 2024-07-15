@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import { Modal, Button, Form, Row, Col, Container } from "react-bootstrap";
 
-const EngCourse = () => {
+const IndirectCourse = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -35,8 +35,8 @@ const EngCourse = () => {
                 <h1 className="heading18">Eligibility Criteria : 12th Pass</h1>
               </div>
             </div>
-            <p className="heading16 mb-4">
-              <div style={{ fontSize: "20px" }}>Methodology :</div>
+            <p className="heading16 mb-4 ft-3">
+              <h5 style={{ fontSize: "20px" }}>Methodology :</h5>
               <br />
               <br />
               Course Highlights : Systemized Approach, Enhanced Vocabulary,
@@ -172,4 +172,4 @@ const EngCourse = () => {
   );
 };
 
-export default EngCourse;
+export default IndirectCourse;
