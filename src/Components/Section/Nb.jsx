@@ -62,10 +62,10 @@ const Nb = () => {
                   <a href="/Gallery">Gallery</a>
                 </li>
                 <li>
-                  <a href="newscategory.html">News</a>
+                  <a href="/News">News</a>
                 </li>
                 <li>
-                  <a href="ContactUs.html">Contact Us</a>
+                  <a href="/Contactus">Contact Us</a>
                 </li>
                 <li>
                   <a onClick={handleRedirect} href="#">
@@ -293,7 +293,7 @@ const Nb = () => {
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <a href="/Home/ContactUs">Contact Us</a>
+                                <a href="/ContactUs">Contact Us</a>
                               </h4>
                               <h4>
                                 <img
@@ -304,7 +304,7 @@ const Nb = () => {
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <a href="/Home/NewsEvent">News</a>
+                                <a href="/News">News</a>
                               </h4>
                             </div>
                           </div>
