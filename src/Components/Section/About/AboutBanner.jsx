@@ -1,5 +1,6 @@
 import React from "react";
-
+import ban1 from "../../../assets/images/Extra/top-banners_11.jpg";
+import ban2 from "../../../assets/images/Extra/triangleBan.png";
 const AboutBanner = () => {
   return (
     <div>
@@ -14,18 +15,18 @@ const AboutBanner = () => {
         </div>
         <div className="smallbanner">
           <img
-            data-src="http://bpcindia.org/Content/Client/assets/images/drupal/top-banners_11.jpg"
+            data-src={ban1}
             alt="banner image"
             className="lazyloaded img-fluid"
-            src="http://bpcindia.org/Content/Client/assets/images/drupal/top-banners_11.jpg"
+            src={ban1}
           />
         </div>
         <div className="right_trangle animated bounceInDown">
           <img
-            data-src="http://bpcindia.org/Content/Client/assets/images/drupal/t3.png"
+            data-src={ban2}
             alt="triangle image"
             className="lazyloaded img-fluid"
-            src="http://bpcindia.org/Content/Client/assets/images/drupal/t3.png"
+            src={ban2}
           />
         </div>
       </section>

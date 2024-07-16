@@ -12,10 +12,10 @@ const CoursesBanner = () => {
           </div>
           <div className="smallbanner">
             <img
-              data-src="http://bpcindia.org/Content/Client/assets/images/drupal/top-banners_11.jpg"
+              data-src="../../../assets/images/Extra/top-banners_11.jpg"
               alt="banner image"
               className="lazyloaded img-fluid"
-              src="http://bpcindia.org/Content/Client/assets/images/drupal/top-banners_11.jpg"
+              src="../../../assets/images/Extra/top-banners_11.jpg"
             />
           </div>
         </section>

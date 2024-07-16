@@ -1,5 +1,5 @@
 import React from "react";
-
+import ph7 from "../../../assets/images/Extra/contactus1.png";
 const ContactInfo = () => {
   return (
     <div>
@@ -14,10 +14,7 @@ const ContactInfo = () => {
                 >
                   BARODA PRODUCTIVITY COUNCIL
                 </h3>
-                <img
-                  src="http://bpcindia.org/Content/Client/assets/images/drupal/contactus1.png"
-                  alt="Contact Us"
-                />
+                <img src={ph7} alt="Contact Us" />
               </div>
             </div>
             <div className="ContactInfoContent animation-element slide-right in-view">

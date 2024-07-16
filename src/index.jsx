@@ -26,6 +26,8 @@ import HumanCourse from "./Components/Section/HumanCourse/HumanCourse";
 import Human from "./Components/Pages/Human";
 import Indirect from "./Components/Pages/Indirect";
 import Training from "./Components/Pages/Training";
+import HallBooking from "./Components/Pages/HallBooking";
+import BookNow from "./Components/Pages/BookNow";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -94,6 +96,14 @@ const router = createBrowserRouter([
       {
         path: "/Training",
         element: <Training></Training>,
+      },
+      {
+        path: "/HallBooking",
+        element: <HallBooking></HallBooking>,
+      },
+      {
+        path: "/BookNow",
+        element: <BookNow></BookNow>,
       },
     ],
   },

@@ -1,4 +1,8 @@
 import React from "react";
+import cn1 from "../../../assets/images/Extra/corporate.png";
+import cn2 from "../../../assets/images/Extra/business.png";
+import cn3 from "../../../assets/images/Extra/fax.png";
+import cn4 from "../../../assets/images/Extra/business_mail(1).png";
 
 const ContactPara = () => {
   return (
@@ -13,11 +17,7 @@ const ContactPara = () => {
               you soon
             </h5>
             <div className="getintouch">
-              <img
-                src="http://bpcindia.org/Content/Client/assets/images/drupal/corporate.png"
-                alt="corporate"
-                className="contdiv"
-              />
+              <img src={cn1} alt="corporate" className="contdiv" />
               <div className="contnt">
                 <h5>Corporate Office</h5>
                 <p>
@@ -27,11 +27,7 @@ const ContactPara = () => {
               </div>
             </div>
             <div className="getintouch">
-              <img
-                src="http://bpcindia.org/Content/Client/assets/images/drupal/business.png"
-                alt="business"
-                className="contdiv"
-              />
+              <img src={cn2} alt="business" className="contdiv" />
               <div className="contnt">
                 <h5>Business Phone</h5>
                 <p className="mb-0">9904066644</p>
@@ -39,11 +35,7 @@ const ContactPara = () => {
               </div>
             </div>
             <div className="getintouch">
-              <img
-                src="http://bpcindia.org/Content/Client/assets/images/drupal/fax.png"
-                alt="exam mail"
-                className="contdiv"
-              />
+              <img src={cn3} alt="exam mail" className="contdiv" />
               <div className="contnt">
                 <h5>For Digital Examination Enquiries</h5>
                 <div className="dexenquiries">
@@ -69,11 +61,7 @@ const ContactPara = () => {
               </div>
             </div>
             <div className="getintouch mt-12">
-              <img
-                src="http://bpcindia.org/Content/Client/assets/images/contact/business_mail(1).png"
-                alt="business mail"
-                className="contdiv"
-              />
+              <img src={cn4} alt="business mail" className="contdiv" />
               <div className="contnt sales-email">
                 <h5>For Sales related Enquiries</h5>
                 <p>info@bpcindia.org</p>

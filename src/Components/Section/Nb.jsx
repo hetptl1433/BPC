@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo1 from "../../assets/images/home/icon/50.png";
-import LazyLoad from "react-lazyload";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import ff from "../../assets/images/Extra/download_icon.png";
 const Nb = () => {
   const [scrolled, setScrolled] = useState();
   const [menu, setMenu] = useState(false);
@@ -42,7 +42,7 @@ const Nb = () => {
               className="logo"
               style={{ display: "flex", alignItems: "center" }}
             >
-              <a href="/about">
+              <a href="/">
                 <img
                   src={logo1}
                   alt=""
@@ -100,7 +100,7 @@ const Nb = () => {
                 style={{ display: "flex", alignItems: "center" }}
               >
                 {!menu && (
-                  <a href="index.html">
+                  <a href="/">
                     <img
                       src="assets/images/logonew1.png"
                       style={{
@@ -149,9 +149,7 @@ const Nb = () => {
                               </h4>
                               <ul>
                                 <li>
-                                  <a href="/Courses">
-                                    Students of Class 8, 9, and 10
-                                  </a>
+                                  <a href="/">Students of Class 8, 9, and 10</a>
                                 </li>
                                 <li>
                                   <a href="PAtest.html">Employees</a>
@@ -200,7 +198,7 @@ const Nb = () => {
                               </h4>
                               <h4>
                                 <img
-                                  src="http://bpcindia.org/Content/Client/assets/images/home/icon/download_icon.png"
+                                  src="../../assets/images/Extra/download_icon.png"
                                   alt="services"
                                   width="34px"
                                   height="30px"
@@ -214,7 +212,7 @@ const Nb = () => {
                             <div className="col-sm-4">
                               <h4>
                                 <img
-                                  data-src="assets/images/home/icon/3.png"
+                                  data-src="../../assets/images/Extra/3.png"
                                   alt="services"
                                   width="28px"
                                   height="28px"
@@ -275,18 +273,18 @@ const Nb = () => {
                             <div className="col-sm-4">
                               <h4>
                                 <img
-                                  src="http://bpcindia.org/Content/Client/assets/images/home/icon/hallbooking_icon.png"
+                                  src="../../assets/images/Extra/hallbooking_icon.png"
                                   alt="services"
                                   width="28px"
                                   height="28px"
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <a href="/Home/HallBooking">Hall Booking</a>
+                                <a href="/HallBooking">Hall Booking</a>
                               </h4>
                               <h4>
                                 <img
-                                  src="http://bpcindia.org/Content/Client/assets/images/home/icon/contact_icon.png"
+                                  src="../../assets/images/Extra/contact_icon.png"
                                   alt="services"
                                   width="28px"
                                   height="28px"
@@ -297,7 +295,7 @@ const Nb = () => {
                               </h4>
                               <h4>
                                 <img
-                                  src="http://bpcindia.org/Content/Client/assets/images/home/icon/news_icon.png"
+                                  src="../../assets/images/Extra/news_icon.png"
                                   alt="services"
                                   width="28px"
                                   height="28px"
@@ -312,7 +310,7 @@ const Nb = () => {
                         <div className="col-md-3 fgf">
                           <h4>
                             <img
-                              src="http://bpcindia.org/Content/Client/assets/images/home/icon/5.png"
+                              src="../../assets/images/Extra/5.png"
                               alt="services"
                               width="34px"
                               height="30px"
@@ -323,7 +321,7 @@ const Nb = () => {
                           </h4>
                           <ul className="main-header-menu">
                             <li>
-                              <a href="/Home/ServiceDetail/1">
+                              <a href="/Services">
                                 People and Organizational Capability Enhancement
                               </a>
                             </li>
@@ -400,7 +398,7 @@ const Nb = () => {
             <div className="container-flu">
               <a href="#" className="closeContForm" onClick={toggleContact}>
                 <img
-                  src="http://bpcindia.org/Content/Client/assets/images/close-contact.png"
+                  src="../../assets/images/Extra/close-contact.png"
                   width="45px"
                   height="43px"
                   alt="close contact us nseit"

@@ -1062,8 +1062,7 @@ p {
 .contactus {
   padding: 35px 0;
   margin-top: -20px;
-  background: url(http://bpcindia.org/Content/Client/assets/images/mobile-image/contact-bg.png)
-    no-repeat;
+  background: url(../images//Extra/contact-bg.png) no-repeat;
   background-position: right bottom;
   width: 100%;
   background-size: cover;
@@ -2046,4 +2045,14 @@ p {
 
 .bodbox.rr .heading16 {
   font-weight: 400 !important;
+}
+
+.c1 {
+  border: 3px solid #4d428a;
+  padding: 15px;
+  border-radius: 0px 18px;
+}
+
+.ft-5 {
+  font-weight: 500 !important;
 }

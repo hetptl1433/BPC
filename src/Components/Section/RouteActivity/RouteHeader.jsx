@@ -1,4 +1,6 @@
 import React from "react";
+import rh1 from "../../../assets/images/Extra/50.jpg";
+import rh2 from "../../../assets/images/Extra/bpc.jpg";
 
 const RouteHeader = () => {
   return (
@@ -16,7 +18,7 @@ const RouteHeader = () => {
               >
                 <a href="/">
                   <img
-                    src="http://bpcindia.org/Content/Client/assets/images/formimg/50.jpg"
+                    src={rh1}
                     style={{
                       width: "auto",
                       height: "110px",
@@ -47,7 +49,7 @@ const RouteHeader = () => {
                 >
                   <a href="/">
                     <img
-                      src="http://bpcindia.org/Content/Client/assets/images/formimg/bpc.jpg"
+                      src={rh2}
                       style={{
                         width: "auto",
                         height: "110px",

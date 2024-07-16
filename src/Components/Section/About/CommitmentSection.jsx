@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ff from "../../../assets/images/Extra/1.png";
 
 const CommitmentSection = () => {
   return (
@@ -10,8 +11,8 @@ const CommitmentSection = () => {
             <img
               alt="csr policy"
               className="lazyloaded img-fluid"
-              data-src="http://bpcindia.org/Content/Client/assets/images/drupal/1.png"
-              src="http://bpcindia.org/Content/Client/assets/images/drupal/1.png"
+              data-src={ff}
+              src={ff}
             />
             <p className="pt-3">
               CSR Policy (As per Section 135(4) and Rule 9 of Companies-

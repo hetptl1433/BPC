@@ -1,20 +1,21 @@
 import React from "react";
+import ph5 from "../../../assets/images/Extra/top-banners_11.jpg";
 
-const VideoBanner = () => {
+const HallBanner = () => {
   return (
     <div>
       <section className="aboutpage ">
         <div className="abouttxt ">
           <h1 className="heading40 animated bounceInDown regular-light">
-            Video Gallery
+            Hall Booking
           </h1>
         </div>
         <div className="smallbanner">
           <img
-            data-src="../../../assets/images/Extra/top-banners_11.jpg"
+            data-src={ph5}
             alt="banner image"
             className="lazyloaded img-fluid"
-            src="../../../assets/images/Extra/top-banners_11.jpg"
+            src={ph5}
           />
         </div>
       </section>
@@ -22,4 +23,4 @@ const VideoBanner = () => {
   );
 };
 
-export default VideoBanner;
+export default HallBanner;

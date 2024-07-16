@@ -1,5 +1,5 @@
 import React from "react";
-
+import ph8 from "../../../assets/images/Extra/top-banners_11.jpg";
 const ContactBanner = () => {
   return (
     <div>
@@ -14,18 +14,18 @@ const ContactBanner = () => {
         </div>
         <div className="smallbanner">
           <img
-            data-src="http://bpcindia.org/Content/Client/assets/images/drupal/top-banners_11.jpg"
+            data-src={ph8}
             alt="banner image"
             className="lazyloaded img-fluid"
-            src="http://bpcindia.org/Content/Client/assets/images/drupal/top-banners_11.jpg"
+            src={ph8}
           />
         </div>
         <div className="right_trangle animated bounceInDown">
           <img
-            data-src="http://bpcindia.org/Content/Client/assets/images/drupal/t3.png"
+            data-src="../../../assets/images/Extra/triangleBan.png"
             alt="triangle image"
             className="lazyloaded img-fluid"
-            src="http://bpcindia.org/Content/Client/assets/images/drupal/t3.png"
+            src="../../../assets/images/Extra/triangleBan.png"
           />
         </div>
       </section>

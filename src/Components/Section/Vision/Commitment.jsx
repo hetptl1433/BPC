@@ -10,8 +10,8 @@ const Commitment = () => {
               <img
                 alt="csr policy"
                 className="lazyloaded"
-                data-src="http://bpcindia.org/Content/Client/assets/images/drupal/goal1.png"
-                src="http://bpcindia.org/Content/Client/assets/images/drupal/goal1.png"
+                data-src="../../assets/images/Extra/goal1.png"
+                src="../../assets/images/Extra/goal1.png"
               />
               <p className="pt-3">The Way We Work</p>
               <a className="readmoreRed pt-3" href="#">
