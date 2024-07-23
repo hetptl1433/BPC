@@ -6,9 +6,9 @@ import "../../../assets/css/Banner2.css";
 const Banner2 = () => {
   return (
     <section className="valueSection mt-5">
-      <Container>
-        <Row>
-          <Col md={6} className="leftCommitext animation-element">
+      <Container className="xxx">
+        <Row className="ree">
+          <Col xl={6} md={5} sm={12} className="leftCommitext animation-element">
             <div className="box">
               <h2 className="heading32 mb-3">What's New</h2>
               <div className="item">
@@ -32,7 +32,7 @@ const Banner2 = () => {
               </div>
             </div>
           </Col>
-          <Col md={5} className="rightValuetxt animation-element">
+          <Col xl={4} md={5} sm={0} className="rightValuetxt animation-element">
             <Carousel
               id="OurcompanySlider"
               className="sliderValue sliderValuehome"
@@ -69,7 +69,7 @@ const Banner2 = () => {
                     Societies registration Act, 1860...
                   </p>
                   <div className="ownerbox pt-3">
-                    <h3 className="heading22 regular">Ownership</h3>
+                    <h3 className="heading24 regular">Ownership</h3>
                     <div className="txtowner mt-3">
                       <p style={{ color: "#483773", fontWeight: "bold" }}>
                         An autonomous, non-profit institution affiliated to the

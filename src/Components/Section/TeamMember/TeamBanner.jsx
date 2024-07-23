@@ -1,4 +1,6 @@
 import React from "react";
+import p32 from "../../../assets/images/Extra/triangleBan.png";
+import p33 from "../../../assets/images/Extra/top-banners_11.jpg";
 
 const TeamBanner = () => {
   return (
@@ -11,18 +13,18 @@ const TeamBanner = () => {
         </div>
         <div className="smallbanner">
           <img
-            data-src="../../../assets/images/Extra/top-banners_11.jpg"
+            data-src={p33}
             alt="banner image"
             className="lazyloaded img-fluid"
-            src="../../../assets/images/Extra/top-banners_11.jpg"
+            src={p33}
           />
         </div>
         <div className="right_trangle animated bounceInDown">
           <img
-            data-src="../../../assets/images/Extra/triangleBan.png"
+            data-src={p32}
             alt="triangle image"
             className="lazyloaded img-fluid"
-            src="../../../assets/images/Extra/triangleBan.png"
+            src={p32}
           />
         </div>
       </section>

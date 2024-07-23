@@ -6692,6 +6692,9 @@ h4.aboutus-heading {
   color: black;
   font-weight: 600;
 }
+.w-97 {
+  width: 95% !important;
+}
 
 .third_para p {
   color: black !important;
@@ -6845,4 +6848,270 @@ h4.aboutus-heading {
 
 .resource-news a {
   text-decoration: none !important;
+}
+
+.tttd .nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background: red !important;
+}
+
+.yoform {
+  .header_table {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .w-500 {
+    width: 500px !important;
+  }
+  .
+
+  .header_th {
+    font-size: 20px;
+  }
+
+  .date {
+    text-align: right;
+  }
+
+  .company_name {
+    text-align: center;
+    border: 2px solid black;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .header_bg {
+    background-color: white;
+  }
+
+  .table th {
+    padding: 5px !important;
+  }
+
+  .table td {
+    padding: 2px !important;
+  }
+
+  .card-body {
+    background-color: rgba(0, 0, 0, 0.03);
+    flex: 1 1 auto;
+    padding: 50px !important;
+    box-shadow: 0px 0px 2px 2px #80808040;
+  }
+
+  .company_input {
+    /*border: none;*/
+  }
+
+  .add_lable {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .add_new {
+    background-color: white;
+    border: 2px solid #8080804a;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .add_new:focus {
+    outline: none !important;
+  }
+
+  :focus-visible {
+    outline: none;
+  }
+
+  .chart {
+    display: flex !important;
+  }
+
+  .btn_add {
+    padding-bottom: 10px;
+    float: right;
+  }
+
+  .detail_input {
+    width: 335px !important;
+  }
+
+  .Organization_input {
+    width: 600px !important;
+    display: unset !important;
+  }
+
+  .personal_input {
+    width: 471px !important;
+  }
+
+  .form-control {
+    font-size: 14px !important;
+  }
+
+  .submit_btn {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .btn_sub {
+    background-color: white;
+    border: 2px solid #8080804a;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 600px) {
+    #mobile-screen {
+      display: none !important;
+    }
+
+    #mobile-screen1 {
+      display: none !important;
+    }
+
+    .bpc_img {
+      margin-left: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #pc-screen {
+      display: none !important;
+    }
+
+    .date {
+      text-align: unset;
+    }
+
+    .bpc_img {
+      text-align: right !important;
+    }
+
+    .input_control {
+      width: 250px !important;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .h1,
+    h1 {
+      font-size: 1.5rem !important;
+    }
+
+    .bpc_img {
+      text-align: right !important;
+      padding: 7px 12px !important;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .bpc_img {
+      margin-left: 73px;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .input_control {
+      width: 250px !important;
+    }
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #007bff;
+  }
+
+  .mail_para {
+    border: 2px solid gray;
+    padding: 15px;
+  }
+
+  .mail_para p {
+    font-size: 20px;
+    color: black;
+  }
+
+  .sec_para {
+    margin: 20px 0px;
+    border: 2px solid gray;
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 16px;
+    color: black;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  .li_new {
+    margin-left: 10px;
+  }
+
+  a {
+    color: black !important;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  button {
+    border: none;
+    margin: 6px !important;
+  }
+
+  button:focus {
+    outline: unset !important;
+  }
+
+  .btn_link {
+    background: #007bff;
+    padding: 0.5rem 1rem;
+    /*padding:8px;*/
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 0.45rem;
+    color: white !important;
+  }
+
+  .nav_btn {
+    margin-top: 10px;
+  }
+
+  a:hover {
+    text-decoration: unset !important;
+  }
+
+  .exTab1 {
+    margin: auto;
+    width: 285px;
+  }
+
+  .exTab2 {
+    margin: auto;
+    width: 250px;
+  }
+
+  .main_tab {
+    margin-bottom: 10px;
+  }
+
+  .header_bg {
+    background-color: white;
+  }
+
+  .bpc_img {
+    text-align: right !important;
+    padding: 7px 12px !important;
+  }
+}
+
+.ww100 {
+  width: 100%;
 }

@@ -44,3 +44,32 @@
 .slick-next.tyt {
   right: 5px; /* Example: Adjust position */
 }
+
+
+
+@media only screen and (max-width: 1025px)  {
+  .bannercont_left{
+     top: 160px;
+  }
+  
+
+}
+
+@media only screen and (max-width: 769px) and (min-width:427px) {
+
+  .contenthome{
+    height:487px
+  }
+  
+  
+}
+
+@media  (max-width: 426px){
+  .bannercont_left{
+        margin-left: 26px;
+    margin-top: 123px;
+    padding: 17px;
+    position: static;
+    width:90%;
+  }
+}

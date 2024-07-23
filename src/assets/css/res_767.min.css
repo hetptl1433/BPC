@@ -12,6 +12,7 @@
     min-height: auto;
     width: 100%;
   }
+
   .socialvisionbx .clientdata .heading32 {
     text-align: center;
     margin-left: 5%;
@@ -888,4 +889,15 @@
     display: block;
     border: 1px solid #cecece;
   }
+}
+
+.header_bg {
+    background-color: white;
+}
+.routin_header .header_bg {
+  border: 2px solid black;
+ 
+}
+.routin_header .header_bg th{
+   color: black !important;
 }

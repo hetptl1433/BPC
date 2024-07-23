@@ -1,5 +1,5 @@
 import React from "react";
-
+import p33 from "../../../assets/images/Extra/goal1.png";
 const Commitment = () => {
   return (
     <div>
@@ -10,8 +10,8 @@ const Commitment = () => {
               <img
                 alt="csr policy"
                 className="lazyloaded"
-                data-src="../../assets/images/Extra/goal1.png"
-                src="../../assets/images/Extra/goal1.png"
+                data-src={p33}
+                src={p33}
               />
               <p className="pt-3">The Way We Work</p>
               <a className="readmoreRed pt-3" href="#">

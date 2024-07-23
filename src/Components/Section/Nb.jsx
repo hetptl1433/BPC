@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import logo1 from "../../assets/images/home/icon/50.png";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import ff from "../../assets/images/Extra/download_icon.png";
+import gg from "../../assets/images/Extra/hallbooking_icon.png";
+import ii from "../../assets/images/Extra/contact_icon.png";
+import jj from "../../assets/images/Extra/news_icon.png";
+import hh from "../../assets/images/Extra/5.png";
+import close from '../../assets/images/Extra/close-contact.png'
+
 const Nb = () => {
   const [scrolled, setScrolled] = useState();
   const [menu, setMenu] = useState(false);
@@ -179,7 +185,7 @@ const Nb = () => {
                                   <a href="/Gallery">Photo Gallery</a>
                                 </li>
                                 <li>
-                                  <a href="videogallery.html">Video Gallery</a>
+                                  <a href="/Video">Video Gallery</a>
                                 </li>
                               </ul>
                             </div>
@@ -198,7 +204,7 @@ const Nb = () => {
                               </h4>
                               <h4>
                                 <img
-                                  src="../../assets/images/Extra/download_icon.png"
+                                  src={ff}
                                   alt="services"
                                   width="34px"
                                   height="30px"
@@ -273,7 +279,7 @@ const Nb = () => {
                             <div className="col-sm-4">
                               <h4>
                                 <img
-                                  src="../../assets/images/Extra/hallbooking_icon.png"
+                                  src={gg}
                                   alt="services"
                                   width="28px"
                                   height="28px"
@@ -284,7 +290,7 @@ const Nb = () => {
                               </h4>
                               <h4>
                                 <img
-                                  src="../../assets/images/Extra/contact_icon.png"
+                                  src={ii}
                                   alt="services"
                                   width="28px"
                                   height="28px"
@@ -295,7 +301,7 @@ const Nb = () => {
                               </h4>
                               <h4>
                                 <img
-                                  src="../../assets/images/Extra/news_icon.png"
+                                  src={jj}
                                   alt="services"
                                   width="28px"
                                   height="28px"
@@ -310,7 +316,7 @@ const Nb = () => {
                         <div className="col-md-3 fgf">
                           <h4>
                             <img
-                              src="../../assets/images/Extra/5.png"
+                              src={hh}
                               alt="services"
                               width="34px"
                               height="30px"
@@ -363,9 +369,6 @@ const Nb = () => {
                           </ul>
                         </div>
                       </div>
-                      <a href="#" className="bannerBtn_orange">
-                        Get in Touch
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -398,7 +401,7 @@ const Nb = () => {
             <div className="container-flu">
               <a href="#" className="closeContForm" onClick={toggleContact}>
                 <img
-                  src="../../assets/images/Extra/close-contact.png"
+                  src={close}
                   width="45px"
                   height="43px"
                   alt="close contact us nseit"

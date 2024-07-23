@@ -976,8 +976,9 @@ figcaption {
     margin: 0 auto;
   }
   .Commitment {
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
+    margin-bottom: 39px;
   }
   .Carrers_points > div {
     margin: 10px;
@@ -1144,7 +1145,7 @@ figcaption {
     margin: 2%;
   }
   .ContactInfo {
-    background-position: center;
+    background-position: center !important;
   }
   .cyber-security-slider .item .box {
     min-height: 315px;
@@ -1770,7 +1771,7 @@ figcaption {
   }
   .homepage:after {
     content: "";
-    /* background: url(../images/bg_img_lock-new.png) no-repeat; */
+    background: url(../images/bg_img_lock-new.png) no-repeat;
     background-position: center center;
     background-size: cover;
     height: 460px;
@@ -1809,7 +1810,7 @@ figcaption {
     width: 100%;
     margin-top: 120px;
     margin-left: 1px;
-    /* background: url(../images/mobile-img/company-value-bg.jpg) no-repeat; */
+    background: url(../images/mobile-image/company-value-bg.jpg) no-repeat;
     background-size: cover;
     height: 100;
     width: 100%;
@@ -2105,7 +2106,7 @@ figcaption {
     padding-top: 180px;
   }
   .ContactInfo .panel .ContactInfoletfsolbox {
-    /* background: url(../images/mobile-img/contactbg-mobile.png) no-repeat; */
+    background: url(../images/mobile-image/contactbg-mobile.png) no-repeat;
     background-position: center center;
     width: 100%;
     background-size: cover;
@@ -5043,6 +5044,9 @@ figcaption {
   .grey-bg .casecardbox .card-body p.pblock {
     min-height: 30%;
   }
+  .Commitment.cc {
+    background: none !important;
+  }
   .grey-bg .casecardbox .card-body p.pfintech1 {
     min-height: 57% !important;
   }
@@ -5738,5 +5742,88 @@ figcaption {
   }
   .about-us-std {
     max-width: 45% !important;
+  }
+}
+
+
+@media only screen and (max-width: 770px){
+    .industrySolution .panel .letfsolbox {
+        width: 100% !important;
+            margin-left: 10%;
+    }
+}
+
+
+@media (max-width: 426px) {
+.tnn .item{
+  margin-left: 22%;
+}
+}
+
+.company_name {
+    text-align: center;
+    border: 2px solid black;
+    margin: 0px 0px 10px 0px;
+}
+
+
+.lbf{
+  display: flex;
+  justify-content: end;
+  padding-left: 10px;
+  font-weight: 700;
+  padding-top:6px;
+}
+
+.yoform .card-body {
+    background-color: rgba(0, 0, 0, .03);
+    flex: 1 1 auto;
+    /* padding: 2.25rem; */
+    padding: 50px !important;
+    /* border: 2px solid; */
+    box-shadow: black;
+    box-shadow: 0px 0px 2px 2px #80808040;
+}
+
+.yoform .add_lable {
+    font-size: 13px;
+    font-weight: 600;
+}
+.yoform .add_lable {
+    font-size: 13px;
+    font-weight: 600;
+}
+.yoform .btn_add {
+    padding-bottom: 10px;
+    float: right;
+}
+.yoform .btn_add {
+    padding-bottom: 10px;
+    padding-top: 3px;
+    float: right;
+}
+.yoform .btn_sub {
+    background-color: white;
+    border: 2px solid #8080804a;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.yoform .submit_btn {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.yoform .submit_btn {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+@media (max-width: 426px){
+  .table-responsive.fgff{
+    overflow-x: unset !important;
   }
 }

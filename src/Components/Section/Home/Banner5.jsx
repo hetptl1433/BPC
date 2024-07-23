@@ -10,8 +10,38 @@ const Banner5 = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow:4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const clients = [
@@ -43,7 +73,7 @@ const Banner5 = () => {
   return (
     <section className="clientbx">
       <Container>
-        <Row className="clientdata  bounce-up in-view">
+        <Row className="clientdata tnn  bounce-up in-view">
           <Col>
             <h3 className="heading32">We Serve</h3>
             <p>25+ Successful Projects</p>

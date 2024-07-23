@@ -1,5 +1,5 @@
 import React from "react";
-
+import p32 from "../../../assets/images/Extra/top-banners_11.jpg";
 const VideoBanner = () => {
   return (
     <div>
@@ -11,10 +11,10 @@ const VideoBanner = () => {
         </div>
         <div className="smallbanner">
           <img
-            data-src="../../../assets/images/Extra/top-banners_11.jpg"
+            data-src={p32}
             alt="banner image"
             className="lazyloaded img-fluid"
-            src="../../../assets/images/Extra/top-banners_11.jpg"
+            src={p32}
           />
         </div>
       </section>

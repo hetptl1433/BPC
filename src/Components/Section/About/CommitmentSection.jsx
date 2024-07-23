@@ -4,10 +4,10 @@ import ff from "../../../assets/images/Extra/1.png";
 
 const CommitmentSection = () => {
   return (
-    <section className="Commitment">
-      <div className="pageContainer container">
-        <div className="panel row">
-          <div className="CommitmentContent animation-element slide-left in-view col-md-6">
+    <section className="Commitment cc">
+      <div className="pageContainer ">
+        <div className="panel ">
+          <div className="CommitmentContent animation-element slide-left in-view ">
             <img
               alt="csr policy"
               className="lazyloaded img-fluid"
@@ -22,7 +22,7 @@ const CommitmentSection = () => {
               Read More
             </a>
           </div>
-          <div className="CommitmentRightsolbox animation-element slide-right in-view col-md-6">
+          <div className="CommitmentRightsolbox animation-element slide-right in-view ">
             <h3 className="heading32 pt-3">Commitment</h3>
             <p className="pt-3">
               Within the BPC family, we recognize and share responsibilities

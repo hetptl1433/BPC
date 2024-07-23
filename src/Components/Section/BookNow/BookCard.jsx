@@ -21,7 +21,7 @@ const BookCard = () => {
                 </Carousel.Item>
               </Carousel>
             </div>
-            <div className="col-md-6 col-lg-6">
+            <div className="col-md-6 col-lg-6 tttd">
               <Tabs
                 className="custom-tabs"
                 variant="pills"
@@ -34,7 +34,7 @@ const BookCard = () => {
                 >
                   <div className="tab-content" id="pills-tabContent">
                     <div className="tab-pane fade show active" id="pills-home">
-                      <div className="row">
+                      <div className="row mt-3">
                         <div className="col-md-6">
                           <h1 className="tab-box ft-5 ">Half Day</h1>
                           <div className="bodybox mt-2">
@@ -106,7 +106,7 @@ const BookCard = () => {
                   </div>
                 </Tab>
                 <Tab eventKey="book-now" title="Book Now">
-                  <Table bordered>
+                  <Table bordered className="mt-3">
                     <thead>
                       <tr>
                         <th scope="col">Sr. No.</th>
@@ -139,15 +139,15 @@ const BookCard = () => {
                               max=""
                               value="1"
                               name="quantity_4"
-                              className="quantity-field"
-                              style={{ marginLeft: "44px" }}
+                              className="quantity-field ml47"
+                              
                             />
                             <input
                               type="button"
                               value="+"
-                              className="button-plus"
+                              className="button-plus ml103"
                               data-field="quantity_4"
-                              style={{ marginLeft: "103px" }}
+                             
                             />
                             <input
                               type="hidden"
@@ -193,15 +193,14 @@ const BookCard = () => {
                               max=""
                               value="1"
                               name="quantity_5"
-                              className="quantity-field"
-                              style={{ marginLeft: "44px" }}
+                              className="quantity-field ml47"
                             />
                             <input
                               type="button"
                               value="+"
-                              className="button-plus"
+                              className="button-plus ml103"
                               data-field="quantity_5"
-                              style={{ marginLeft: "103px" }}
+                             
                             />
                             <input
                               type="hidden"
@@ -247,15 +246,14 @@ const BookCard = () => {
                               max=""
                               value="1"
                               name="quantity_6"
-                              className="quantity-field"
-                              style={{ marginLeft: "44px" }}
+                              className="quantity-field ml47"
                             />
                             <input
                               type="button"
                               value="+"
-                              className="button-plus"
+                              className="button-plus ml103"
                               data-field="quantity_6"
-                              style={{ marginLeft: "103px" }}
+                             
                             />
                             <input
                               type="hidden"

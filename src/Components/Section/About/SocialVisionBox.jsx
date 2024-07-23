@@ -8,7 +8,7 @@ const SocialVisionBox = () => {
         <div className="clientdata">
           <div className="contentsdv pt-5">
             <h3 className="heading32">Our Work</h3>
-            <p className="heading16">
+            <p className="heading16 ft-3">
               It has an equal representation of Government with Educational
               &amp; Research Institutes, Industrial houses as well as Labor
               Organizations on its Managing Committee. It is registered under

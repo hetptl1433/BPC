@@ -9,12 +9,12 @@ import Banner6 from "../Section/Home/Banner6";
 const Aboutus = () => {
   return (
     <div>
-      <AboutBanner></AboutBanner>
-      <ParaSection></ParaSection>
-      <SocialVisionBox></SocialVisionBox>
-      <CommitmentSection></CommitmentSection>
-      <Banner5> </Banner5>
-      <Banner6></Banner6>
+      <AboutBanner />
+      <ParaSection />
+      <SocialVisionBox />
+      <CommitmentSection />
+      <Banner5 />
+      <Banner6 />
     </div>
   );
 };

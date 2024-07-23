@@ -28,6 +28,7 @@ import Indirect from "./Components/Pages/Indirect";
 import Training from "./Components/Pages/Training";
 import HallBooking from "./Components/Pages/HallBooking";
 import BookNow from "./Components/Pages/BookNow";
+import Form from "./Components/Pages/Form";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -110,6 +111,10 @@ const router = createBrowserRouter([
   {
     path: "/RouteActivity",
     element: <RouteActivity></RouteActivity>,
+  },
+  {
+    path: "/Form",
+    element: <Form></Form>,
   },
 ]);
 

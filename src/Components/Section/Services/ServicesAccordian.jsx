@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ss1 from "../../../assets/images/Extra/CSR_img.png";
 
 const ServicesAccordian = () => {
   const [activePanel, setActivePanel] = useState(null);
@@ -665,7 +666,7 @@ const ServicesAccordian = () => {
                 </p>
                 <p>
                   <img
-                    src="http://exam.bpcindia.org/Content/Client/assets/images/CSR_img.png"
+                    src={ss1}
                     style={{ marginLeft: "120px" }}
                     alt="BPC's Working Model for CSR"
                   />

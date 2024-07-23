@@ -1,0 +1,6 @@
+@media only screen and (max-width: 770px){
+    .industrySolution .panel .letfsolbox {
+        width: 100% !important;
+            margin-left: 14%;
+    }
+}

@@ -128,7 +128,7 @@ const RouteTabs = () => {
               </p>
             </div>
             <div style={{ textAlign: "center", marginBottom: "20px" }}>
-              <a href="/Home/RASEnglish" className="btn btn-primary">
+              <a href="/form" className="btn btn-primary">
                 View Form
               </a>
             </div>
@@ -205,7 +205,7 @@ const RouteTabs = () => {
               </p>
             </div>
             <div style={{ textAlign: "center", marginBottom: "20px" }}>
-              <a href="/Home/RASGujarati" className="btn btn-primary">
+              <a href="/form" className="btn btn-primary">
                 View Form
               </a>
             </div>
@@ -282,7 +282,7 @@ const RouteTabs = () => {
               </p>
             </div>
             <div class style={{ textAlign: "center", marginBottom: "20px" }}>
-              <a href="/Home/RASHindi" className="btn btn-primary">
+              <a href="/form" className="btn btn-primary">
                 View Form
               </a>
             </div>

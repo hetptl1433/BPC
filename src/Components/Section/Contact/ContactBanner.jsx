@@ -1,5 +1,7 @@
 import React from "react";
 import ph8 from "../../../assets/images/Extra/top-banners_11.jpg";
+import ph32 from "../../../assets/images/Extra/triangleBan.png";
+
 const ContactBanner = () => {
   return (
     <div>
@@ -22,10 +24,10 @@ const ContactBanner = () => {
         </div>
         <div className="right_trangle animated bounceInDown">
           <img
-            data-src="../../../assets/images/Extra/triangleBan.png"
+            data-src={ph32}
             alt="triangle image"
             className="lazyloaded img-fluid"
-            src="../../../assets/images/Extra/triangleBan.png"
+            src={ph32}
           />
         </div>
       </section>

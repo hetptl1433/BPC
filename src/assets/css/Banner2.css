@@ -23,3 +23,30 @@
 
   font-weight: 400;
 }
+
+.ree{
+  gap:38px;
+}
+
+@media only screen and (max-width: 1025px)  {
+   .ree{
+  gap:156px;
+}
+}
+
+@media only screen and (max-width: 769px){
+  .valueSection .item img {
+    width: 100%;
+  }
+ 
+
+  .xxx{
+    max-width:100% !important;
+  }
+  .rightValuetxt{
+            background: url(../images/mobile-image/company-value-bg.jpg) no-repeat;
+            padding:20px;
+            margin: 8px;
+  }
+}
+

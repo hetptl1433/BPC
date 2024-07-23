@@ -299,8 +299,10 @@ p {
   text-decoration: none !important;
   color: #e86f24;
   font-size: 14px;
-  font-family: Roboto-Regular;
+  font-family: Roboto;
 }
+
+
 .readmoreRed:hover {
   color: #fec413;
 }
@@ -2055,4 +2057,42 @@ p {
 
 .ft-5 {
   font-weight: 500 !important;
+}
+.ft-3 {
+  font-weight: 300 !important;
+}
+
+@media (max-width:1024px) {
+  .aboutpage .abouttxt{
+    top:130px !important;
+  }
+}
+
+.ml47{
+  margin-left: 44px !important;
+}
+.ml103{
+  margin-left:103px !important;
+}
+
+@media (max-width:1024px){
+  .ml47{
+  margin-left: 38px !important;
+}
+.ml103{
+  margin-left:90px !important;
+}
+}
+
+
+
+@media (max-width:768px){
+
+.resource-news .input-group input[type="button"] {
+  min-width:20px !important;
+}
+
+.resource-news .input-group .quantity-field {
+  left:-16px !important;
+}
 }

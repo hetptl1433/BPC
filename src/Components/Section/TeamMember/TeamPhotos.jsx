@@ -1,4 +1,8 @@
 import React from "react";
+import t1 from "../../../assets/images/Extra/owner.jpg";
+import t2 from "../../../assets/images/Extra/VPBPC.png";
+import t3 from "../../../assets/images/Extra/owner5.jpg";
+import t4 from "../../../assets/images/Extra/owner3.jpg";
 
 const TeamPhotos = () => {
   return (
@@ -16,8 +20,8 @@ const TeamPhotos = () => {
                 <div className="plpr">
                   <img
                     className="imgdiv lazyloaded"
-                    data-src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/owner.jpg"
-                    src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/owner.jpg"
+                    data-src={t1}
+                    src={t1}
                     alt="Shri Vipinchandra Patel"
                   />
                   <h1 className="heading20">Shri Vipinchandra Patel</h1>
@@ -46,8 +50,8 @@ const TeamPhotos = () => {
                 <div className="plpr">
                   <img
                     className="imgdiv lazyloaded"
-                    data-src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/VPBPC.png"
-                    src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/VPBPC.png"
+                    data-src={t2}
+                    src={t2}
                     alt="Shri Rajeev Yadav"
                   />
                   <h1 className="heading20">Shri Rajeev Yadav</h1>
@@ -76,8 +80,8 @@ const TeamPhotos = () => {
                 <div className="plpr">
                   <img
                     className="imgdiv lazyloaded"
-                    data-src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/owner5.jpg"
-                    src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/owner5.jpg"
+                    data-src={t3}
+                    src={t3}
                     alt="Shri Maganbhai M Patel"
                   />
                   <h1 className="heading20">Shri Maganbhai M Patel</h1>
@@ -106,8 +110,8 @@ const TeamPhotos = () => {
                 <div className="plpr">
                   <img
                     className="imgdiv lazyloaded"
-                    data-src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/owner3.jpg"
-                    src="http://bpcindia.org/Content/Client/assets/images/Managment_Team/images/owner3.jpg"
+                    data-src={t4}
+                    src={t4}
                     alt="Shri N M Shah"
                   />
                   <h1 className="heading20">Shri N M Shah</h1>

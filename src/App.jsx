@@ -5,9 +5,9 @@ import Nb from "./Components/Section/Nb";
 import $ from "jquery";
 import "./assets/css/animate.min.css";
 
-import "./assets/css/mediadata.min.css";
 import "./assets/css/picbox.css";
 import "./assets/css/style_j.min.css";
+import "./assets/css/mediadata.min.css";
 import "./assets/css/res_767.min.css";
 import { createPopper } from "@popperjs/core";
 
