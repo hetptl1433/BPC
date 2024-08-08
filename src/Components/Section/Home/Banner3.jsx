@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Container } from "react-bootstrap";
-import { serviceData } from "../../../Functions/Services";  // Adjust the path as necessary
-
-
+import { serviceData } from "../../../Functions/Services"; // Adjust the path as necessary
 
 const Banner3 = () => {
   const settings = {
@@ -69,6 +67,7 @@ const Banner3 = () => {
 
     fetchServiceData();
   }, []);
+
   return (
     <div>
       <section className="sevicesbox" id="nseitservice">
@@ -95,7 +94,16 @@ const Banner3 = () => {
                             {service.name}
                           </h3>
                           <p>{service.shortdesc}</p>
-                          <a href="#" className="readmoreRed pt-3">
+                          {/* <a
+                            href={`/Service/${service._id}`}
+                            className="readmoreRed pt-3"
+                          >
+                            Read More
+                          </a> */}
+                          <a
+                            href={`/Services`}
+                            className="readmoreRed pt-3"
+                          >
                             Read More
                           </a>
                         </div>

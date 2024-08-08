@@ -29,6 +29,8 @@ import Training from "./Components/Pages/Training";
 import HallBooking from "./Components/Pages/HallBooking";
 import BookNow from "./Components/Pages/BookNow";
 import Form from "./Components/Pages/Form";
+import ServiceDetails from "./Components/Section/Home/ServiceDetails";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,85 +38,89 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/about",
-        element: <Aboutus></Aboutus>,
+        element: <Aboutus />,
       },
       {
         path: "/Services",
-        element: <Services></Services>,
+        element: <Services />,
       },
       {
         path: "/Gallery",
-        element: <Gallery></Gallery>,
+        element: <Gallery />,
       },
       {
         path: "/NEWS",
-        element: <News></News>,
+        element: <News />,
       },
       {
         path: "/Contactus",
-        element: <Contactus></Contactus>,
+        element: <Contactus />,
       },
       {
         path: "/Courses",
-        element: <Courses></Courses>,
+        element: <Courses />,
       },
       {
         path: "/TeamMember",
-        element: <TeamMember></TeamMember>,
+        element: <TeamMember />,
       },
       {
         path: "/Vision",
-        element: <Vision></Vision>,
+        element: <Vision />,
       },
       {
         path: "/Activity",
-        element: <Activity></Activity>,
+        element: <Activity />,
       },
       {
         path: "/Program",
-        element: <Program></Program>,
+        element: <Program />,
       },
       {
         path: "/Video",
-        element: <Video></Video>,
+        element: <Video />,
       },
       {
         path: "/English",
-        element: <English></English>,
+        element: <English />,
       },
       {
         path: "/Human",
-        element: <Human></Human>,
+        element: <Human />,
       },
       {
         path: "/Indirect",
-        element: <Indirect></Indirect>,
+        element: <Indirect />,
       },
       {
         path: "/Training",
-        element: <Training></Training>,
+        element: <Training />,
       },
       {
         path: "/HallBooking",
-        element: <HallBooking></HallBooking>,
+        element: <HallBooking />,
       },
       {
         path: "/BookNow",
-        element: <BookNow></BookNow>,
+        element: <BookNow />,
+      },
+      {
+        path: "/Service/:id",
+        element: <ServiceDetails />,
       },
     ],
   },
   {
     path: "/RouteActivity",
-    element: <RouteActivity></RouteActivity>,
+    element: <RouteActivity />,
   },
   {
     path: "/Form",
-    element: <Form></Form>,
+    element: <Form />,
   },
 ]);
 
