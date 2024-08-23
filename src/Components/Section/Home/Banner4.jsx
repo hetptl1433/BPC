@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ReactPlayer from "react-player";
 import vid4 from "../../../assets/images/drupal/vid4.png";
+import { Link } from "react-router-dom";
 
 const Banner4 = () => {
   const [showPlayer, setShowPlayer] = useState(false);
@@ -64,10 +65,10 @@ const Banner4 = () => {
                       with the Open Banking ecosystem blurring boundaries and
                       NSEIT is living the change
                     </p>
-                    <a href="#" className="readmoreRed pt-3">
+                    <Link to="#" className="readmoreRed pt-3">
                       {" "}
                       Read More{" "}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -79,10 +80,10 @@ const Banner4 = () => {
                       Our DNA breeds Digital excellence for Capital Markets and
                       Non-Banking Financial Companies
                     </p>
-                    <a href="#" className="readmoreRed pt-3">
+                    <Link  to="#" className="readmoreRed pt-3">
                       {" "}
                       Read More{" "}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -95,10 +96,10 @@ const Banner4 = () => {
                       digital touch points to drive experience is the essence of
                       our portfolio
                     </p>
-                    <a href="#" className="readmoreRed pt-3">
+                    <Link to="#" className="readmoreRed pt-3">
                       {" "}
                       Read More{" "}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -25,27 +26,27 @@ const Footer = () => {
           <div className="footerlink">
             <ul>
               <li>
-                <a href="#" target="_blank" className="fbook">
+                <Link to="#" target="_blank" className="fbook">
                   <img
                     src="assets/images/1x/linkedincolor.png"
                     width="25px"
                     height="25px"
                     alt="LinkedIn"
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" target="_blank" className="fbook">
+                <Link to="#" target="_blank" className="fbook">
                   <img
                     src="assets/images/1x/facebookcolor.png"
                     alt="Facebook"
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" target="_blank" className="fbook">
+                <Link to="#" target="_blank" className="fbook">
                   <img src="assets/images/1x/youtube.png" alt="YouTube" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

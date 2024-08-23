@@ -1,37 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import cn1 from "../../../assets/images/Extra/corporate.png";
 import cn2 from "../../../assets/images/Extra/business.png";
 import cn3 from "../../../assets/images/Extra/fax.png";
 import cn4 from "../../../assets/images/Extra/business_mail(1).png";
 
+// Function to fetch contact data
+const fetchContactData = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL_BPC}/api/auth/list/CompanyProfile-details`
+    );
+    return response.data[0]; // Assuming you get a single item array
+  } catch (error) {
+    console.error("Error fetching ContactData data:", error);
+    throw error;
+  }
+};
+
 const ContactPara = () => {
+  const [contactData, setContactData] = useState(null);
+
+  useEffect(() => {
+    // Fetch data on component mount
+    const getData = async () => {
+      try {
+        const data = await fetchContactData();
+        setContactData(data);
+      } catch (error) {
+        console.error("Error setting contact data:", error);
+      }
+    };
+    getData();
+  }, []);
+
+  if (!contactData) return <p>Loading...</p>;
+
   return (
     <div>
       <section className="Cont_section" id="corporateoffice">
         <div className="pageContainer">
           <div className="page_top_text animation-element slide-left in-view">
-            <h2 className="heading32 pb-3">BARODA PRODUCTIVITY COUNCIL</h2>
+            <h2 className="heading32 pb-3">{contactData.CompanyName}</h2>
             <h5 className="heading21 pb-3 rt">
-              For growing your business with BPC India &amp; exploring
-              opportunities, please drop us a line - our experts will contact
-              you soon
+              For growing your business with us & exploring opportunities,
+              please drop us a line - our experts will contact you soon
             </h5>
             <div className="getintouch">
               <img src={cn1} alt="corporate" className="contdiv" />
               <div className="contnt">
                 <h5>Corporate Office</h5>
-                <p>
-                  2nd Floor, Productivity House, Productivity Road, Alkapuri,
-                  Vadodara-390007
-                </p>
+                <p>{contactData.Address}</p>
               </div>
             </div>
             <div className="getintouch">
               <img src={cn2} alt="business" className="contdiv" />
               <div className="contnt">
                 <h5>Business Phone</h5>
-                <p className="mb-0">9904066644</p>
-                <p>9979849825</p>
+                <p className="mb-0">{contactData.PhoneOff1}</p>
+                <p>{contactData.PhoneOff2}</p>
               </div>
             </div>
             <div className="getintouch">
@@ -42,19 +69,19 @@ const ContactPara = () => {
                   <ul className="liDisc px-0 ">
                     <li>
                       <strong>For Digital/Online Exam Sales Enquiries :</strong>{" "}
-                      pr@bpcindia.org
+                      {contactData.SalesEmail}
                     </li>
                     <li>
                       <strong>
                         For Setting up Partner Test Center Enquiries :
                       </strong>{" "}
-                      info@bpcindia.org
+                      {contactData.PartnerEmail}
                     </li>
                     <li>
                       <strong>
-                        For Enrolled Exam Candidate Support Enquires :
+                        For Enrolled Exam Candidate Support Enquiries :
                       </strong>{" "}
-                      prbpcindia5@gmail.com
+                      {contactData.SupportEmail}
                     </li>
                   </ul>
                 </div>
@@ -64,7 +91,7 @@ const ContactPara = () => {
               <img src={cn4} alt="business mail" className="contdiv" />
               <div className="contnt sales-email">
                 <h5>For Sales related Enquiries</h5>
-                <p>info@bpcindia.org</p>
+                <p>{contactData.Email}</p>
               </div>
             </div>
           </div>

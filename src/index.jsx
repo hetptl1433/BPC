@@ -22,7 +22,6 @@ import Activity from "./Components/Pages/Activity";
 import Program from "./Components/Pages/Program";
 import Video from "./Components/Pages/Video";
 import English from "./Components/Pages/English";
-import HumanCourse from "./Components/Section/HumanCourse/HumanCourse";
 import Human from "./Components/Pages/Human";
 import Indirect from "./Components/Pages/Indirect";
 import Training from "./Components/Pages/Training";
@@ -30,6 +29,10 @@ import HallBooking from "./Components/Pages/HallBooking";
 import BookNow from "./Components/Pages/BookNow";
 import Form from "./Components/Pages/Form";
 import ServiceDetails from "./Components/Section/Home/ServiceDetails";
+import NbAboutUs from "./Components/Pages/NbAboutus";
+import Download from "./Components/Pages/Download";
+import IndirectCourse from "./Components/Section/Indirect/IndirectCourse";
+import CourseData from "./Components/Pages/CourseData";
 
 const router = createBrowserRouter([
   {
@@ -112,12 +115,29 @@ const router = createBrowserRouter([
         path: "/Service/:id",
         element: <ServiceDetails />,
       },
+      {
+        path: "/about-us/:subTitle",
+        element: <NbAboutUs />,
+      },
+      {
+        path: "/course/:id",
+        element: <CourseData />,
+      },
+      {
+        path: "/download",
+        element: <Download />,
+      },
+      {
+        path: "bookNow/:id",
+        element: <BookNow />,
+      },
     ],
   },
   {
     path: "/RouteActivity",
     element: <RouteActivity />,
   },
+
   {
     path: "/Form",
     element: <Form />,
@@ -126,6 +146,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    
+      <RouterProvider router={router} />
+  
   </React.StrictMode>
 );

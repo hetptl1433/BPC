@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo1 from "../../assets/images/home/icon/50.png";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import ff from "../../assets/images/Extra/download_icon.png";
@@ -7,7 +7,9 @@ import ii from "../../assets/images/Extra/contact_icon.png";
 import jj from "../../assets/images/Extra/news_icon.png";
 import hh from "../../assets/images/Extra/5.png";
 import close from '../../assets/images/Extra/close-contact.png'
-
+import { Link } from "react-router-dom";
+import { NbAboutUs, Logo } from "../../Functions/NbAboutUs";
+import { listCourses } from "../../Functions/Courses";
 const Nb = () => {
   const [scrolled, setScrolled] = useState();
   const [menu, setMenu] = useState(false);
@@ -15,6 +17,57 @@ const Nb = () => {
   const toggleContact = () => {
     setContact(!contact);
   };
+
+   const [NbAboutUsLinks, setNbAboutUsLinks] = useState([]);
+  const [logodata, setLogodata] = useState([]);
+  const [coursesData, setCoursesData] = useState([]);
+
+  useEffect(()=>{
+    console.log("yes",coursesData)
+  }, [coursesData])
+
+
+ useEffect(() => {
+   const fetchNbAboutUs = async () => {
+     try {
+       const data = await NbAboutUs();
+       setNbAboutUsLinks(data); // Update the state with the fetched data
+     } catch (error) {
+       console.error("Error loading NbAboutUs:", error);
+     }
+   };
+    const Courses = async () => {
+      try {
+        const data = await listCourses();
+        setCoursesData(data.data);
+        // Update the state with the fetched data
+      } catch (error) {
+        console.error("Error loading Course:", error);
+      }
+    };
+     const LogoLoad = async () => {
+       try {
+         const data = await Logo();
+         console.log("Logo qwData:", data);
+             const logo = data.find(
+               (item) => item.Title === "logo" && item.IsActive
+             );
+
+             // Set the logo data in the state
+             setLogodata(logo);
+ // Log the data to the console
+       } catch (error) {
+         console.error("Error loading NbAboutUs:", error);
+       }
+     };
+
+   fetchNbAboutUs(); // Call the function
+   LogoLoad();
+   Courses();
+ }, []);
+ useState(()=>{
+  console.log("logoqwdata:", logodata);
+ }, [logodata]);
 
   const handleRedirect = () => {
     window.location.href =
@@ -48,38 +101,38 @@ const Nb = () => {
               className="logo"
               style={{ display: "flex", alignItems: "center" }}
             >
-              <a href="/">
+              <Link to="/">
                 <img
                   src={logo1}
                   alt=""
                   style={{ width: "auto", height: "110px" }}
                 />
-              </a>
+              </Link>
             </div>
             <div className="middle-menu">
               <ul className="pull-left">
                 <li>
-                  <a href="/about">About Us</a>
+                  <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                  <a href="/Services">Services</a>
+                  <Link to="/Services">Services</Link>
                 </li>
                 <li>
-                  <a href="/Gallery">Gallery</a>
+                  <Link to="/Gallery">Gallery</Link>
                 </li>
                 <li>
-                  <a href="/News">News</a>
+                  <Link to="/News">News</Link>
                 </li>
                 <li>
-                  <a href="/Contactus">Contact Us</a>
+                  <Link to="/Contactus">Contact Us</Link>
                 </li>
                 <li>
-                  <a onClick={handleRedirect} href="#">
+                  <Link onClick={handleRedirect} to="#">
                     Career
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Login</a>
+                  <Link to="#">Login</Link>
                 </li>
               </ul>
             </div>
@@ -106,9 +159,9 @@ const Nb = () => {
                 style={{ display: "flex", alignItems: "center" }}
               >
                 {!menu && (
-                  <a href="/">
+                  <Link to="/">
                     <img
-                      src="assets/images/logonew1.png"
+                      src={`${process.env.REACT_APP_API_URL_BPC}/${logodata.MediaFile}`}
                       style={{
                         width: "140px",
                         height: "auto",
@@ -116,7 +169,7 @@ const Nb = () => {
                       }}
                       alt=""
                     />
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>
@@ -131,9 +184,9 @@ const Nb = () => {
                 <div className="menuContent">
                   <div className="mainMainbox">
                     <div className="text-center">
-                      <a href="index.html" className="white_headertxt">
+                      <Link to="index.html" className="white_headertxt">
                         BARODA PRODUCTIVITY COUNCIL
-                      </a>
+                      </Link>
                     </div>
                     <hr />
                     <div className="menu-content">
@@ -155,15 +208,17 @@ const Nb = () => {
                               </h4>
                               <ul>
                                 <li>
-                                  <a href="/">Students of Class 8, 9, and 10</a>
+                                  <Link to="/">
+                                    Students of Class 8, 9, and 10
+                                  </Link>
                                 </li>
                                 <li>
-                                  <a href="PAtest.html">Employees</a>
+                                  <Link to="PAtest.html">Employees</Link>
                                 </li>
                                 <li>
-                                  <a href="/RouteActivity">
+                                  <Link to="/RouteActivity">
                                     Routine Activity Scheet
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
@@ -182,10 +237,10 @@ const Nb = () => {
                               </h4>
                               <ul>
                                 <li>
-                                  <a href="/Gallery">Photo Gallery</a>
+                                  <Link to="/Gallery">Photo Gallery</Link>
                                 </li>
                                 <li>
-                                  <a href="/Video">Video Gallery</a>
+                                  <Link to="/Video">Video Gallery</Link>
                                 </li>
                               </ul>
                             </div>
@@ -200,7 +255,7 @@ const Nb = () => {
                                   className="lazyloaded"
                                   src="assets/images/home/icon/solution.png"
                                 />
-                                <a href="/Training">Training Programs</a>
+                                <Link to="/Training">Training Programs</Link>
                               </h4>
                               <h4>
                                 <img
@@ -211,7 +266,7 @@ const Nb = () => {
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <a href="/Home/Download">Download</a>
+                                <Link to="/Home/Download">Download</Link>
                               </h4>
                             </div>
 
@@ -229,26 +284,17 @@ const Nb = () => {
                                 About Us
                               </h4>
                               <ul>
-                                <li>
-                                  <a href="/about">Company Profile</a>
-                                </li>
-                                <li>
-                                  <a href="/TeamMember">Team Members</a>
-                                </li>
-                                <li>
-                                  <a href="/Vision">Vision / Mission</a>
-                                </li>
-                                <li>
-                                  <a href="/Activity">Activities</a>
-                                </li>
-                                <li>
-                                  <a href="/Program">Programme</a>
-                                </li>
-                                <li>
-                                  <a onClick={handleRedirect} href="#">
-                                    Career
-                                  </a>
-                                </li>
+                                {NbAboutUsLinks.length > 0 ? (
+                                  NbAboutUsLinks.map((item, index) => (
+                                    <li key={index}>
+                                      <a href={`/about-us/${item.subTitle}`}>
+                                        {item.Title}
+                                      </a>
+                                    </li>
+                                  ))
+                                ) : (
+                                  <p>Loading menu items...</p>
+                                )}
                               </ul>
                             </div>
                             <div className="col-sm-4">
@@ -265,15 +311,17 @@ const Nb = () => {
                                 Courses
                               </h4>
                               <ul>
-                                <li>
-                                  <a href="/English">English Improvement</a>
-                                </li>
-                                <li>
-                                  <a href="/Human">Human Resource Management</a>
-                                </li>
-                                <li>
-                                  <a href="/Indirect">Indirect Taxation</a>
-                                </li>
+                                {coursesData
+                                  .sort((a, b) => a.SortOrder - b.SortOrder)
+                                  .map((course) => (
+                                    <li key={course._id}>
+                                      <Link
+                                        to={`course/${course._id}`}
+                                      >
+                                        {course.Name}
+                                      </Link>
+                                    </li>
+                                  ))}
                               </ul>
                             </div>
                             <div className="col-sm-4">
@@ -286,7 +334,7 @@ const Nb = () => {
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <a href="/HallBooking">Hall Booking</a>
+                                <Link to="/HallBooking">Hall Booking</Link>
                               </h4>
                               <h4>
                                 <img
@@ -297,7 +345,7 @@ const Nb = () => {
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <a href="/ContactUs">Contact Us</a>
+                                <Link to="/ContactUs">Contact Us</Link>
                               </h4>
                               <h4>
                                 <img
@@ -308,7 +356,7 @@ const Nb = () => {
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <a href="/News">News</a>
+                                <Link to="/News">News</Link>
                               </h4>
                             </div>
                           </div>
@@ -323,48 +371,48 @@ const Nb = () => {
                               style={{ verticalAlign: "middle" }}
                               className="lazyloaded"
                             />
-                            <a href="#">Services</a>
+                            <Link to="#">Services</Link>
                           </h4>
                           <ul className="main-header-menu">
                             <li>
-                              <a href="/Services">
+                              <Link to="/Services">
                                 People and Organizational Capability Enhancement
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/Home/ServiceDetail/2">
+                              <Link to="/Home/ServiceDetail/2">
                                 Industries Offerings & Solutions
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/Home/ServiceDetail/3">
+                              <Link to="/Home/ServiceDetail/3">
                                 Business Process Re-engineering
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/Home/ServiceDetail/4">
+                              <Link to="/Home/ServiceDetail/4">
                                 Time and Motion Study
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/Home/ServiceDetail/5">
+                              <Link to="/Home/ServiceDetail/5">
                                 Budgeting Process Improvement
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/Home/ServiceDetail/6">
+                              <Link to="/Home/ServiceDetail/6">
                                 Strategy Implementattion Enablers
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/Home/ServiceDetail/7">
+                              <Link to="/Home/ServiceDetail/7">
                                 Recruitment and Promotional Interviews
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/Home/ServiceDetail/8">
+                              <Link to="/Home/ServiceDetail/8">
                                 Corporate Social Responsibility (CSR)
-                              </a>
+                              </Link>
                             </li>
                           </ul>
                         </div>
@@ -399,14 +447,14 @@ const Nb = () => {
             noValidate
           >
             <div className="container-flu">
-              <a href="#" className="closeContForm" onClick={toggleContact}>
+              <Link to="#" className="closeContForm" onClick={toggleContact}>
                 <img
                   src={close}
                   width="45px"
                   height="43px"
                   alt="close contact us nseit"
                 />
-              </a>
+              </Link>
               <div className="row">
                 <div className="col-lg-4">
                   <div className="form-group">
@@ -577,14 +625,14 @@ const Nb = () => {
                     value="243ac51203b042ccb52d619c67da878a"
                   />
                   <br />
-                  <a
-                    href="#CaptchaImage"
+                  <Link
+                    to="#CaptchaImage"
                     id="fb666c7970814f13ae231d453e2d9a29"
                     onClick="______7ff92b0813174b5aa851179e688026c8________()"
                     style={{ display: "none" }}
                   >
                     Refresh
-                  </a>
+                  </Link>
                   <br />
                   Input symbols
                   <br />

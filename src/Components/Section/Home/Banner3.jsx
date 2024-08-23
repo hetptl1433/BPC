@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Container } from "react-bootstrap";
 import { serviceData } from "../../../Functions/Services"; // Adjust the path as necessary
+import { Link } from "react-router-dom";
 
 const Banner3 = () => {
   const settings = {
@@ -80,7 +81,7 @@ const Banner3 = () => {
                 {servicesData.map((service, index) => (
                   <div className="fgf" key={index}>
                     <div className="item">
-                      <a href="#">
+                      <Link to="#">
                         <div className="box service_boxhover">
                           <div className="img">
                             <img
@@ -107,7 +108,7 @@ const Banner3 = () => {
                             Read More
                           </a>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}

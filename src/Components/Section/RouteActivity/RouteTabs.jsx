@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RouteTabs = () => {
   return (
@@ -128,9 +129,9 @@ const RouteTabs = () => {
               </p>
             </div>
             <div style={{ textAlign: "center", marginBottom: "20px" }}>
-              <a href="/form" className="btn btn-primary">
+              <Link to="/form" className="btn btn-primary">
                 View Form
-              </a>
+              </Link>
             </div>
           </div>
           <div
@@ -205,9 +206,9 @@ const RouteTabs = () => {
               </p>
             </div>
             <div style={{ textAlign: "center", marginBottom: "20px" }}>
-              <a href="/form" className="btn btn-primary">
+              <Link to="/form" className="btn btn-primary">
                 View Form
-              </a>
+              </Link>
             </div>
           </div>
           <div
@@ -282,9 +283,9 @@ const RouteTabs = () => {
               </p>
             </div>
             <div class style={{ textAlign: "center", marginBottom: "20px" }}>
-              <a href="/form" className="btn btn-primary">
+              <Link to="/form" className="btn btn-primary">
                 View Form
-              </a>
+              </Link>
             </div>
           </div>
         </div>

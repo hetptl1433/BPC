@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Container, Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { fetchServeFiles } from "../../../Functions/Serve"; // Adjust the path as necessary
 
 const Banner5 = () => {
+  const [serveFiles, setServeFiles] = useState([]);
+
+  useEffect(() => {
+    const getServeFiles = async () => {
+      try {
+        const data = await fetchServeFiles();
+        setServeFiles(data);
+      } catch (error) {
+        console.error("Error fetching serve files:", error);
+      }
+    };
+
+    getServeFiles();
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -30,7 +45,7 @@ const Banner5 = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow:4,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
@@ -44,54 +59,30 @@ const Banner5 = () => {
     ],
   };
 
-  const clients = [
-    "client1.png",
-    "client2.png",
-    "client3.png",
-    "client4.png",
-    "client5.png",
-    "client6.png",
-    "client7.png",
-    "client8.png",
-    "client9.png",
-    "client10.png",
-    "client11.png",
-    "client12.png",
-    "client13.png",
-    "client14.png",
-    "client15.png",
-    "client16.png",
-    "client17.png",
-    "client18.png",
-    "client19.png",
-    "client20.png",
-    "client21.png",
-    "client22.png",
-    "client23.png",
-  ];
-
   return (
     <section className="clientbx">
       <Container>
-        <Row className="clientdata tnn  bounce-up in-view">
+        <Row className="clientdata tnn bounce-up in-view">
           <Col>
             <h3 className="heading32">We Serve</h3>
             <p>25+ Successful Projects</p>
-            <div className="box  justify-content-between pt-3">
+            <div className="box justify-content-between pt-3">
               <Slider {...settings} className="clentbox-slider">
-                {clients.map((client, index) => (
-                  <div key={index} className="item">
-                    <div className="img">
-                      <img
-                        src={`assets/images/drupal/${client}`}
-                        width="180px"
-                        height="80px"
-                        alt={`Client ${index + 1}`}
-                        style={{ opacity: 1 }}
-                      />
+                {serveFiles
+                  .sort((a, b) => a.SortOrder - b.SortOrder) // Ensure correct order
+                  .map((file) => (
+                    <div key={file._id} className="item">
+                      <div className="img">
+                        <img
+                          src={`${process.env.REACT_APP_API_URL_BPC}/${file.ServeFile}`}
+                          width="180px"
+                          height="80px"
+                          alt={file.Title}
+                          style={{ opacity: 1 }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </Slider>
             </div>
           </Col>

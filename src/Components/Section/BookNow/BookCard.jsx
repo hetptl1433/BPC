@@ -1,23 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel, Tabs, Tab, Table } from "react-bootstrap";
 import captcha from "../../../assets/images/Book/Generate.gif";
 import pht4 from "../../../assets/images/Extra/df6c785c9b5940c7ad82038028f29694.jpg";
-
+import { fetchBookNow } from "../../../Functions/BookNow";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useParams } from "react-router-dom";
 const BookCard = () => {
-  const handleCaptchaRefresh = () => {
-    // Implement your refresh captcha logic here
-    // Example: $.post("/DefaultCaptcha/Refresh", { t: $('#CaptchaDeText').val() }, function(){$('#3338f4b68e5d4c639ebdf7876552d1fb').show();});
-  };
+  const [bookdata, setBookData] = useState([]);
+  
+  const { id } = useParams();
+   useEffect(() => {
+     const fetchInnerData = async () => {
+       try {
+         const data = await fetchBookNow(id);
+         setBookData(data.data);
+         console.log("Course Data:", data.data);
+       } catch (error) {
+         console.error("Error loading course data:", error);
+       }
+     };
+     fetchInnerData();
+   }, [id]);
+
+const handleCaptchaRefresh = async () => {
+  try {
+    const captchaText = document.getElementById("CaptchaDeText").value;
+
+    // Make the POST request to refresh the captcha
+    const response = await fetch("/DefaultCaptcha/Refresh", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ t: captchaText }),
+    });
+
+    if (response.ok) {
+      // Handle successful captcha refresh (e.g., update the captcha image or show a message)
+      document.getElementById(
+        "3338f4b68e5d4c639ebdf7876552d1fb"
+      ).style.display = "block";
+      console.log("Captcha refreshed successfully");
+    } else {
+      console.error("Failed to refresh captcha");
+    }
+  } catch (error) {
+    console.error("Error refreshing captcha:", error);
+  }
+};
   return (
     <div className="resource-news">
       <section className="resources_news blogbox animation-element capability bounce-up in-view">
         <div className="pageContainer container">
-          <h3 className="heading32 pb-3">Seminar Hall</h3>
+          <h3 className="heading32 pb-3">{bookdata.Name}</h3>
           <div className="row">
             <div className="col-md-6 col-lg-6">
               <Carousel fade id="carouselExampleIndicators" className="c1">
                 <Carousel.Item className="carousel-item active">
-                  <img src={pht4} className="d-block w-100" alt="..." />
+                  <img
+                    src={`${process.env.REACT_APP_API_URL_BPC}/${bookdata.Icon}`}
+                    className="d-block w-100"
+                    alt="..."
+                  />
                 </Carousel.Item>
               </Carousel>
             </div>
@@ -38,69 +82,54 @@ const BookCard = () => {
                         <div className="col-md-6">
                           <h1 className="tab-box ft-5 ">Half Day</h1>
                           <div className="bodybox mt-2">
-                            <h1 className="heading18 ft-5">Capacity: 170</h1>
                             <h1 className="heading18 ft-5">
-                              Basic Value: 9000.00
+                              {bookdata.HalfDayCapacity}
                             </h1>
                             <h1 className="heading18 ft-5">
-                              + Central GST: 810.00
+                              Basic Value: {bookdata.HalfDayCapacity}
                             </h1>
                             <h1 className="heading18 ft-5">
-                              + State GST: 810.00
+                              + Central GST:{bookdata.HalfDayCentralGST}
                             </h1>
                             <h1 className="heading18 ft-5">
-                              Total: Rs. 10620.00
+                              + State GST:{bookdata.HalfDayStateGST}
+                            </h1>
+                            <h1 className="heading18 ft-5">
+                              Total: Rs.{bookdata.HalfDayTotal}
                             </h1>
                           </div>
                         </div>
                         <div className="col-md-6">
                           <h1 className="tab-box ft-5">Full Day</h1>
                           <div className="bodybox mt-2">
-                            <h1 className="heading18 ft-5">Capacity: 170</h1>
                             <h1 className="heading18 ft-5">
-                              Basic Value: 15000.00
+                              Capacity: {bookdata.FullDayCapacity}
                             </h1>
                             <h1 className="heading18 ft-5">
-                              + Central GST: 1350.00
+                              Basic Value: {bookdata.FullDayBasicValue}
                             </h1>
                             <h1 className="heading18 ft-5">
-                              + State GST: 1350.00
+                              + Central GST: {bookdata.FullDayCentralGST}
                             </h1>
                             <h1 className="heading18 ft-5">
-                              Total: Rs. 17700.00
+                              + State GST:{bookdata.FullDayStateGST}
+                            </h1>
+                            <h1 className="heading18 ft-5">
+                              Total: Rs. {bookdata.FullDayTotal}
                             </h1>
                           </div>
                         </div>
                       </div>
                       <div className="room_detail col-lg-12 col-mg-12 mt-3 p-4">
-                        <ul>
-                          <li style={{ fontWeight: 400, color: "#1b1918" }}>
-                            Facilities like Equipped with projector, Sound
-                            system
-                          </li>
-                          <li style={{ fontWeight: 400, color: "#1b1918" }}>
-                            Sitting Capacity 170 persons
-                          </li>
-                        </ul>
-                        <p style={{ fontWeight: 600, color: "#1b1918" }}>
-                          We have got following infrastructure facilities, which
-                          you can avail for your meetings, conferences,
-                          interviews and other business gatherings.
-                        </p>
-                        <p style={{ fontWeight: 600, color: "#1b1918" }}>
-                          We request you to do let us know your requirement plus
-                          if any extra arrangement is required to make your
-                          meetings successful.
-                        </p>
-                        <p style={{ fontWeight: 600, color: "#1b1918" }}>
-                          Contact Us Mr. Nilesh Ladva – Sr. Executive,
-                          Commercial &amp; IT (M): 7383183381; (E):
-                          info@bpcindia.org; (w): www.bpcindia.org
-                        </p>
-                        <p style={{ fontWeight: 600, color: "#1b1918" }}>
-                          <span style={{ color: "#e41f28" }}>Note:</span> For
-                          further Booking Process click on Book Now
-                        </p>
+                        {bookdata?.Desc ? (
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: bookdata.Desc,
+                            }}
+                          ></div>
+                        ) : (
+                          <p>No description available.</p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -140,14 +169,12 @@ const BookCard = () => {
                               value="1"
                               name="quantity_4"
                               className="quantity-field ml47"
-                              
                             />
                             <input
                               type="button"
                               value="+"
                               className="button-plus ml103"
                               data-field="quantity_4"
-                             
                             />
                             <input
                               type="hidden"
@@ -200,7 +227,6 @@ const BookCard = () => {
                               value="+"
                               className="button-plus ml103"
                               data-field="quantity_5"
-                             
                             />
                             <input
                               type="hidden"
@@ -253,7 +279,6 @@ const BookCard = () => {
                               value="+"
                               className="button-plus ml103"
                               data-field="quantity_6"
-                             
                             />
                             <input
                               type="hidden"
@@ -425,11 +450,7 @@ const BookCard = () => {
                         </table>
                       </div>
                       <div className="form-group col-md-6">
-                        <img
-                          src={captcha}
-                          alt="Captcha"
-                          className="captcha-img"
-                        />
+                        <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} />
                       </div>
                       <div className="form-group col-md-6">
                         <label>Total :</label>
@@ -444,34 +465,9 @@ const BookCard = () => {
                         />
                       </div>
 
-                      <div className="form-row">
-                        <div className="form-group col-md-6">
-                          <br />
-                          <a
-                            href="#CaptchaImage"
-                            id="3338f4b68e5d4c639ebdf7876552d1fb"
-                            onClick={handleCaptchaRefresh}
-                            style={{}}
-                          >
-                            Refresh
-                          </a>
-                          <br />
-                          Input symbols
-                          <br />
-                          <input
-                            autoComplete="off"
-                            autoCorrect="off"
-                            id="CaptchaInputText"
-                            name="CaptchaInputText"
-                            type="text"
-                            value=""
-                            fdprocessedid="y46on9"
-                          />
-                          <br />
-                        </div>
-                      </div>
+                      <div className="form-row"></div>
                     </div>
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary mt-2">
                       Submit
                     </button>
                   </form>

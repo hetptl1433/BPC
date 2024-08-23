@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import banner1 from "../../../assets/images/home/banner1.png";
-import banner2 from "../../../assets/images/home/banner2.png";
-import banner3 from "../../../assets/images/home/banner3.png";
-import banner4 from "../../../assets/images/home/banner4.png";
+import { Link } from "react-router-dom";
 import "../../../assets/css/Banner1.css";
+import { listBanner } from "../../../Functions/BannerImage";
 
 const Banner1 = () => {
+  const [banner, setBanner] = useState([]);
+
+
+ useEffect(() => {
+   listBanner().then((res) => {
+     console.log("datais",res.data);
+     setBanner(res.data);
+   });
+
+ }, []);
+
   const CustomPrevArrow = (props) => {
     const { onClick } = props;
     return (
@@ -26,7 +35,7 @@ const Banner1 = () => {
   };
 
   const settings = {
-    dots: false, // Remove dots
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -38,93 +47,29 @@ const Banner1 = () => {
   };
 
   return (
-    <div>
-      <section className="homepage">
-        <Slider {...settings}>
-          <div className="item">
+    <section className="homepage">
+      <Slider {...settings}>
+        {banner.map((item) => (
+          <div className="item" key={item.id}>
             <div className="contenthome">
               <div className="bannercont_left">
-                <h3 className="banner_heading">
-                  Smarter &amp; Swifter Business with Intelligent Insights
-                </h3>
-                <p className="banner_text pt-3">
-                  Unlock the value of the data and unearth your business
-                  insights
-                </p>
-                <a href="#" className="bannerBtn_orange">
+                <h3 className="banner_heading">{item.Title}</h3>
+                <p className="banner_text pt-3">{item.Text}</p>
+                <Link to="#" className="bannerBtn_orange">
                   Know More
-                </a>
-              </div>
-              <div className="img_right bounceInDown">
-                <img src={banner3} alt="Data Analytics" />
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="contenthome">
-              <div className="bannercont_left">
-                <h3 className="banner_heading">
-                  Conducting end-to-end
-                  <br />
-                  online examination services
-                </h3>
-                <p className="banner_text pt-3">
-                  India’s largest state witnessed its successful Police
-                  Recruitment Exam conducted end-to-end by us <br />
-                </p>
-                <a href="#" className="bannerBtn_orange">
-                  Know More
-                </a>
+                </Link>
               </div>
               <div className="img_right bounceInDown">
                 <img
-                  src={banner4}
-                  alt="online examination service provider NSEIT"
+                  src={`${process.env.REACT_APP_API_URL_BPC}/${item.bannerImage}`}
+                  alt={item.Title}
                 />
               </div>
             </div>
           </div>
-          <div className="item">
-            <div className="contenthome">
-              <div className="bannercont_left">
-                <h3 className="banner_heading">Ready to Build Smarter?</h3>
-                <p className="banner_text pt-3">
-                  Unlock your Digital Transformation Journey with us
-                </p>
-                <a href="#" className="bannerBtn_orange">
-                  Know More
-                </a>
-              </div>
-              <div className="img_right bounceInDown">
-                <img src={banner1} alt="Digital Transformation" />
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="contenthome">
-              <div className="bannercont_left">
-                <h3 className="banner_heading">
-                  Strategic Technology Partner for Leading Insurers
-                </h3>
-                <p className="banner_text pt-3">
-                  India's 6 out of top 10 insurers trust us for all their
-                  solution
-                </p>
-                <a href="#" className="bannerBtn_orange">
-                  Know More
-                </a>
-              </div>
-              <div className="img_right bounceInDown">
-                <img
-                  src={banner2}
-                  alt="Strategic Technology Partner for Leading Insurers"
-                />
-              </div>
-            </div>
-          </div>
-        </Slider>
-      </section>
-    </div>
+        ))}
+      </Slider>
+    </section>
   );
 };
 

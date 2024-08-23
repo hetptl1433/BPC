@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { listImages } from "../../../Functions/Gallery";
 
 const ResourceBlogs = () => {
@@ -28,65 +29,65 @@ const ResourceBlogs = () => {
           <h3 className="heading32 pb-3">Our Posts</h3>
           <div className="row pb-3">
             <div className="col-lg-12 blogtab">
-              <a
-                href="#"
+              <Link
+                to="#"
                 className={`Button ${activeTab === "all" ? "Active" : ""}`}
                 onClick={() => filterBlogs("all")}
               >
                 All
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${
                   activeTab === "Infrastructure" ? "Active" : ""
                 }`}
                 onClick={() => filterBlogs("Infrastructure")}
               >
                 Infrastructure
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${
                   activeTab === "EventRoom" ? "Active" : ""
                 }`}
                 onClick={() => filterBlogs("EventRoom")}
               >
                 Event Room
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${
                   activeTab === "digital_transTrainingProgram" ? "Active" : ""
                 }`}
                 onClick={() => filterBlogs("digital_transTrainingProgram")}
               >
                 Training Program
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${activeTab === "Award13" ? "Active" : ""}`}
                 onClick={() => filterBlogs("Award13")}
               >
                 Award Ceremony BPAIKC 2013-14
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${activeTab === "Award15" ? "Active" : ""}`}
                 onClick={() => filterBlogs("Award15")}
               >
                 Award Ceremony BPAIKC 2015-16
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${
                   activeTab === "AwardGH15" ? "Active" : ""
                 }`}
                 onClick={() => filterBlogs("AwardGH15")}
               >
                 Award Ceremony GHKC-Gre Env 2015
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${
                   activeTab === "digital_transAwardCeremonyGHKC-GreEnv2016-17"
                     ? "Active"
@@ -97,16 +98,16 @@ const ResourceBlogs = () => {
                 }
               >
                 Award Ceremony GHKC-GreEnv 2016-17
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className={`Button ${
                   activeTab === "AwardCeremony" ? "Active" : ""
                 }`}
                 onClick={() => filterBlogs("AwardCeremony")}
               >
                 Award Ceremony
-              </a>
+              </Link>
             </div>
           </div>
           <div className="row pb-75 blog-row" id="gallery">
@@ -134,12 +135,12 @@ const BlogItem = ({ imageUrl, title }) => {
     >
       <div className="card card-custom bg-white border-white">
         <div className="card-custom-img">
-          <a href={imageUrl} className="card-custom-img imgClass">
+          <Link to={imageUrl} className="card-custom-img imgClass">
             <img
               src={`${process.env.REACT_APP_API_URL_BPC}/${imageUrl}`}
               alt="Blog Image"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

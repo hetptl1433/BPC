@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TeamBody = () => {
   return (
@@ -8,10 +9,10 @@ const TeamBody = () => {
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li aria-current="page" className="breadcrumb-item active">
-                <a href="#">Leadership</a>
+                <Link to="/">Leadership</Link>
               </li>
             </ol>
           </nav>

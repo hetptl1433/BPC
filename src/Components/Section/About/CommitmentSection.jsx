@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ff from "../../../assets/images/Extra/1.png";
 
@@ -18,9 +19,9 @@ const CommitmentSection = () => {
               CSR Policy (As per Section 135(4) and Rule 9 of Companies-
               (Corporate Social Responsibility Policy) Rules, 2014)
             </p>
-            <a className="readmoreRed  regular" href="#">
+            <Link className="readmoreRed regular" to="#">
               Read More
-            </a>
+            </Link>
           </div>
           <div className="CommitmentRightsolbox animation-element slide-right in-view ">
             <h3 className="heading32 pt-3">Commitment</h3>

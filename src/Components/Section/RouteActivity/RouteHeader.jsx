@@ -1,6 +1,7 @@
 import React from "react";
 import rh1 from "../../../assets/images/Extra/50.jpg";
 import rh2 from "../../../assets/images/Extra/bpc.jpg";
+import { Link } from "react-router-dom";
 
 const RouteHeader = () => {
   return (
@@ -16,7 +17,7 @@ const RouteHeader = () => {
                 className="logo"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <a href="/">
+                <Link to="/">
                   <img
                     src={rh1}
                     style={{
@@ -29,7 +30,7 @@ const RouteHeader = () => {
                     className="lazyloaded"
                     alt="Logo 1"
                   />
-                </a>
+                </Link>
               </div>
               <div
                 className="middle-menu"
@@ -47,7 +48,7 @@ const RouteHeader = () => {
                   className="logo"
                   style={{ display: "flex", alignItems: "center" }}
                 >
-                  <a href="/">
+                  <Link to="/">
                     <img
                       src={rh2}
                       style={{
@@ -60,7 +61,7 @@ const RouteHeader = () => {
                       className="lazyloaded"
                       alt="Logo 2"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

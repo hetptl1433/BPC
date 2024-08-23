@@ -1,5 +1,6 @@
 import React from "react";
 import p33 from "../../../assets/images/Extra/goal1.png";
+import { Link } from "react-router-dom";
 const Commitment = () => {
   return (
     <div>
@@ -14,9 +15,9 @@ const Commitment = () => {
                 src={p33}
               />
               <p className="pt-3">The Way We Work</p>
-              <a className="readmoreRed pt-3" href="#">
+              <Link className="readmoreRed pt-3" to="/">
                 Read More
-              </a>
+              </Link>
             </div>
 
             <div className="CommitmentRightsolbox animation-element slide-right in-view">

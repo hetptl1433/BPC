@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <div className="">
-        <Banner1></Banner1>
+        <Banner1 />
         <Banner2></Banner2>
         <Banner3></Banner3>
         <Banner4></Banner4>

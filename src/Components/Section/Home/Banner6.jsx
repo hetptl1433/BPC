@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../../../assets/css/Banner2.css";
+import { Link } from "react-router-dom";
 const Banner6 = () => {
   return (
     <section className="contactus">
@@ -16,9 +17,9 @@ const Banner6 = () => {
               can <br />
               transform your business.
             </p>
-            <a href="#" className="bannerBtn_white mt-3 ">
+            <Link to="#" className="bannerBtn_white mt-3 ">
               Contact Us
-            </a>
+            </Link>
           </Col>
         </div>
       </div>
