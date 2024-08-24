@@ -10,7 +10,22 @@ import close from '../../assets/images/Extra/close-contact.png'
 import { Link } from "react-router-dom";
 import { NbAboutUs, Logo } from "../../Functions/NbAboutUs";
 import { listCourses } from "../../Functions/Courses";
+import { createContactForm } from "../../Functions/ContactForm";
+const initialState = {
+  Name: "",
+  Email: "",
+  Mobile: "",
+  Company: "",
+  City: "",
+  Services: "",
+  Help: "",
+  HereFrom: "",
+  KnowMore: false,
+  IsActive: false,
+};
+
 const Nb = () => {
+  const [values, setValues] = useState(initialState);
   const [scrolled, setScrolled] = useState();
   const [menu, setMenu] = useState(false);
   const [contact, setContact] = useState(false);
@@ -21,10 +36,29 @@ const Nb = () => {
    const [NbAboutUsLinks, setNbAboutUsLinks] = useState([]);
   const [logodata, setLogodata] = useState([]);
   const [coursesData, setCoursesData] = useState([]);
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Mobile, setMobile] = useState("");
+  const [Company, setCompany] = useState("");
+  const [City, setCity] = useState("");
+  const [Services, setServices] = useState("");
+  const [Help, setHelp] = useState("");
+  const [HereFrom, setHereFrom] = useState("");
+  const [KnowMore, setKnowMore] = useState(false);
+  const [IsActive, setIsActive] = useState(false);
 
-  useEffect(()=>{
-    console.log("yes",coursesData)
-  }, [coursesData])
+const [isSubmit, setIsSubmit] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+
+const [filter, setFilter] = useState(true);
+const [errName, setErrName] = useState(false);
+const [errEmail, setErrEmail] = useState(false);
+const [errMobile, setErrMobile] = useState(false);
+const [errCompany, setErrCompany] = useState(false);
+const [errCity, setErrCity] = useState(false);
+const [errServices, setErrServices] = useState(false);
+const [errHelp, setErrHelp] = useState(false);
+const [errHereFrom, setErrHereFrom] = useState(false);
 
 
  useEffect(() => {
@@ -68,11 +102,151 @@ const Nb = () => {
  useState(()=>{
   console.log("logoqwdata:", logodata);
  }, [logodata]);
+   const handleChange = (e) => {
+     setValues({ ...values, [e.target.name]: e.target.value });
+   };
+   const handleCheck = (e) => {
+     setValues({ ...values, KnowMore: e.target.checked });
+   };
+ const validate = (
+   Name,
+   Email,
+   Mobile,
+   Company,
+   City,
+   Services,
+   Help,
+   HereFrom,
+   KnowMore
+ ) => {
+   const errors = {};
+
+   // Validate MailerName
+   if (Name === "") {
+     errors.Name = "Name is required!";
+     setErrName(true);
+   } else {
+     setErrName(false);
+   }
+
+   // Validate Email
+   if (Email === "") {
+     errors.Email = "Email is required!";
+     setErrEmail(true);
+   } else {
+     setErrEmail(false);
+   }
+
+   // Validate Mobile
+   if (Mobile === "") {
+     errors.Mobile = "Mobile is required!";
+     setErrMobile(true);
+   } else {
+     setErrMobile(false);
+   }
+
+   // Validate Company
+   if (Company === "") {
+     errors.Company = "Company is required!";
+     setErrCompany(true);
+   } else {
+     setErrCompany(false);
+   }
+
+   // Validate City
+   if (City === "") {
+     errors.City = "City is required!";
+     setErrCity(true);
+   } else {
+     setErrCity(false);
+   }
+
+   // Validate Services
+   if (Services === "") {
+     errors.Services = "Services are required!";
+     setErrServices(true);
+   } else {
+     setErrServices(false);
+   }
+
+   // Validate Help
+   if (Help === "") {
+     errors.Help = "Help is required!";
+     setErrHelp(true);
+   } else {
+     setErrHelp(false);
+   }
+
+   // Validate HereFrom
+   if (HereFrom === "") {
+     errors.HereFrom = "Source of referral (Here From) is required!";
+     setErrHereFrom(true);
+   } else {
+     setErrHereFrom(false);
+   }
+
+   return errors;
+ };
 
   const handleRedirect = () => {
     window.location.href =
       "http://bpcindia.org/Business-Development-Professional-Wanted.html";
   };
+    const handleClick = (e) => {
+      e.preventDefault();
+      console.log("ydbudb");
+      setFormErrors({});
+      console.log("country", values);
+      let errors = validate(
+        Name,
+        Email,
+        Mobile,
+        Company,
+        City,
+        Services,
+        Help,
+        HereFrom
+      );
+      setFormErrors(errors);
+      setIsSubmit(true);
+
+      if (Object.keys(errors).length === 0) {
+        // setLoadingOption(true);
+        const formdata = new FormData();
+
+        formdata.append("Name", Name);
+        formdata.append("Email", Email);
+        formdata.append("Mobile", Mobile);
+        formdata.append("Company", Company);
+        formdata.append("City", City);
+        formdata.append("Services", Services);
+        formdata.append("Help", Help);
+        formdata.append("HereFrom", HereFrom);
+        formdata.append("KnowMore", KnowMore);
+        formdata.append("IsActive", IsActive);
+        createContactForm(formdata)
+          .then((res) => {
+            console.log(res);
+            setName("");
+            setEmail("");
+            setMobile("");
+            setCompany("");
+            setCity("");
+            setServices("");
+            setHelp("");
+            setHereFrom("");
+            setKnowMore(false);
+            setIsActive(false);
+
+            toggleContact();
+          })
+          .catch((err) => {
+            console.log("Error from server:", err);
+          });
+      }
+
+
+    };
   const handleMenuToggle = (value) => {
     setMenu(value);
     setScrolled(false);
@@ -92,6 +266,7 @@ const Nb = () => {
       setScrolled(false);
     }
   });
+  
   return (
     <div>
       <header id="headerMain">
@@ -315,9 +490,7 @@ const Nb = () => {
                                   .sort((a, b) => a.SortOrder - b.SortOrder)
                                   .map((course) => (
                                     <li key={course._id}>
-                                      <Link
-                                        to={`course/${course._id}`}
-                                      >
+                                      <Link to={`course/${course._id}`}>
                                         {course.Name}
                                       </Link>
                                     </li>
@@ -439,13 +612,7 @@ const Nb = () => {
       <div className={`contactPopup ${contact === true && "active"}`}>
         <div className="clientdata">
           <h3 className="heading32 pb-3">Contact Us</h3>
-          <form
-            action="/Home/ContactPopupPost"
-            encType="multipart/form-data"
-            id="Inquiryform"
-            method="post"
-            noValidate
-          >
+          <form onSubmit={handleClick}>
             <div className="container-flu">
               <Link to="#" className="closeContForm" onClick={toggleContact}>
                 <img
@@ -461,8 +628,8 @@ const Nb = () => {
                     <input
                       type="text"
                       name="Name"
-                      id="homename"
-                      aria-labelledby="fnameLabel"
+                      value={values.Name}
+                      onChange={handleChange}
                       placeholder="Name"
                       className="form-control homefname homevalidation"
                     />
@@ -472,10 +639,10 @@ const Nb = () => {
                   <div className="form-group">
                     <input
                       type="text"
-                      id="homeemailid"
                       name="Email"
-                      aria-labelledby="emailidLabel"
+                      value={values.Email}
                       placeholder="Email"
+                      onChange={handleChange}
                       className="form-control homeemail homevalidation"
                     />
                     <span
@@ -488,9 +655,9 @@ const Nb = () => {
                   <div className="form-group">
                     <input
                       type="text"
-                      id="homephonenu"
                       name="Mobile"
-                      aria-labelledby="phoneLabel"
+                      value={values.Mobile}
+                      onChange={handleChange}
                       placeholder="Mobile"
                       className="form-control homephone homevalidation"
                     />
@@ -504,9 +671,9 @@ const Nb = () => {
                   <div className="form-group">
                     <input
                       type="text"
-                      id="homedepartmentval"
                       name="Company"
-                      aria-labelledby="departmentLabel"
+                      value={values.Company}
+                      onChange={handleChange}
                       placeholder="Company"
                       className="form-control homedepartment homevalidation"
                     />
@@ -520,9 +687,9 @@ const Nb = () => {
                   <div className="form-group">
                     <input
                       type="text"
-                      id="homecityval"
                       name="City"
-                      aria-labelledby="cityLabel"
+                      value={values.City}
+                      onChange={handleChange}
                       placeholder="City"
                       className="form-control homeCity homevalidation"
                     />
@@ -532,9 +699,9 @@ const Nb = () => {
                 <div className="col-lg-4">
                   <div className="form-group">
                     <select
-                      id="homeservices"
                       name="Services"
-                      aria-labelledby="servicesLabel"
+                      value={values.Services}
+                      onChange={handleChange}
                       className="form-control homeservices homevalidation"
                     >
                       <option value="" selected>
@@ -560,9 +727,9 @@ const Nb = () => {
                       className="form-control homecomment homevalidation"
                       placeholder="How can we help you?"
                       rows="1"
-                      name="Comment"
-                      id="homecommentval"
-                      aria-labelledby="commentLabel"
+                      name="Help"
+                      onChange={handleChange}
+                      value={values.Help}
                     ></textarea>
                     <span
                       id="homelblcomment"
@@ -573,9 +740,9 @@ const Nb = () => {
                 <div className="col-lg-4">
                   <div className="form-group">
                     <select
-                      id="homehowdidyouhear"
-                      name="Know"
-                      aria-labelledby="howdidLabel"
+                      name="HereFrom"
+                      value={values.HereFrom}
+                      onChange={handleChange}
                       className="form-control homeknow homevalidation"
                     >
                       <option value="" selected>
@@ -600,53 +767,7 @@ const Nb = () => {
                   </div>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-lg-4">
-                  <script type="text/javascript">
-                    {`$(function () {$('#fb666c7970814f13ae231d453e2d9a29').show();});
-                                        function ______7ff92b0813174b5aa851179e688026c8________() { 
-                                            $('#fb666c7970814f13ae231d453e2d9a29').hide(); 
-                                            $.post("/DefaultCaptcha/Refresh", { t: $('#CaptchaDeText').val() }, function(){
-                                                $('#fb666c7970814f13ae231d453e2d9a29').show();
-                                            }); 
-                                            return false; 
-                                        }`}
-                  </script>
-                  <br />
-                  <img
-                    id="CaptchaImage"
-                    src="/DefaultCaptcha/Generate?t=243ac51203b042ccb52d619c67da878a"
-                    alt="Captcha"
-                  />
-                  <input
-                    id="CaptchaDeText"
-                    name="CaptchaDeText"
-                    type="hidden"
-                    value="243ac51203b042ccb52d619c67da878a"
-                  />
-                  <br />
-                  <Link
-                    to="#CaptchaImage"
-                    id="fb666c7970814f13ae231d453e2d9a29"
-                    onClick="______7ff92b0813174b5aa851179e688026c8________()"
-                    style={{ display: "none" }}
-                  >
-                    Refresh
-                  </Link>
-                  <br />
-                  Input symbols
-                  <br />
-                  <input
-                    autoComplete="off"
-                    autoCorrect="off"
-                    id="CaptchaInputText"
-                    name="CaptchaInputText"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                </div>
-              </div>
+
               <div className="row mt-4">
                 <div className="col-lg-12">
                   <div className="form-group">
@@ -657,10 +778,12 @@ const Nb = () => {
                       I would like to know more about your services and
                       offerings
                       <input
+                        id="homerecieveinfo"
                         type="checkbox"
                         className="homevalidation"
-                        id="homerecieveinfo"
-                        name="Terms"
+                        name="KnowMore"
+                        checked={values.KnowMore}
+                        onChange={handleCheck}
                       />
                       <span className="checkmark"></span>
                     </label>
@@ -678,6 +801,7 @@ const Nb = () => {
                       type="submit"
                       className="Button Active"
                       value="Submit"
+                      onClick={handleClick}
                     />
                   </div>
                 </div>
