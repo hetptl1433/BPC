@@ -4,11 +4,107 @@ import Banner6 from "../Section/Home/Banner6";
 import { useParams } from "react-router-dom";
 import { Modal, Button, Form, Row, Col, Container } from "react-bootstrap";
 import { listCoursedata } from "../../Functions/CouesesData";
+import ReCAPTCHA from "react-google-recaptcha";
+import { createCourseForm } from "../../Functions/CoursesForm";
 
-const CourseData = () => {
+const initialState = {
+  Email: "",
+  Mobile: "",
+  ContactPerson: "",
+  CompanyName: "",
+  CourseName: "",
+  IsActive: true,
+};
+
+const CourseForm = () => {
   const { id } = useParams();
+  const [values, setValues] = useState(initialState);
   const [courseInnerData, setCourseInnerData] = useState(null);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [captchaErr, setCaptchaErr] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
   const [show, setShow] = useState(false);
+
+  const handleChange = (e) => {
+    setValues({ ...values, CourseName: courseInnerData.Name, [e.target.name]: e.target.value });
+
+  };
+
+  const handleCheck = (e) => {
+    setValues({ ...values, IsActive: e.target.checked });
+  };
+
+  const validate = () => {
+    const errors = {};
+
+    if (!values.CourseName) {
+      errors.CourseName = "Course Name is required!";
+    }
+
+    if (!values.Email) {
+      errors.Email = "Email is required!";
+    }
+
+    if (!values.Mobile) {
+      errors.Mobile = "Mobile is required!";
+    }
+
+    if (!values.ContactPerson) {
+      errors.ContactPerson = "Contact person is required!";
+    }
+
+    if (!values.CompanyName) {
+      errors.CompanyName = "Company Name is required!";
+    }
+
+    return errors;
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    // Check CAPTCHA first
+    if (!captchaVerified) {
+      setCaptchaErr(true);
+      console.log("CAPTCHA not verified");
+      return;
+    }
+
+    const errors = validate();
+    setFormErrors(errors);
+    setIsSubmit(true);
+
+    if (Object.keys(errors).length === 0) {
+      const formdata = new FormData();
+      formdata.append("Email", values.Email);
+      formdata.append("Mobile", values.Mobile);
+      formdata.append("ContactPerson", values.ContactPerson);
+      formdata.append("CompanyName", values.CompanyName);
+      formdata.append("CourseName", courseInnerData.Name);
+      formdata.append("IsActive", values.IsActive);
+
+      console.log("Submitting form with data:", formdata);
+
+      createCourseForm(formdata)
+        .then((res) => {
+          console.log("Response from server:", res);
+          setValues(initialState);
+          handleShow();
+        })
+        .catch((err) => {
+          console.log("Error from server:", err);
+        });
+    } else {
+      console.log("Form has errors:", errors);
+    }
+  };
+
+
+  const onCaptchaChange = (token) => {
+    setCaptchaVerified(!!token);
+    setCaptchaErr(!token);
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -24,7 +120,10 @@ const CourseData = () => {
       }
     };
     fetchInnerData();
+    
   }, [id]);
+
+ 
 
   return (
     <div>
@@ -106,8 +205,17 @@ const CourseData = () => {
                             <Form.Label>Company Name:</Form.Label>
                             <Form.Control
                               type="text"
+                              name="CompanyName"
+                              value={values.CompanyName}
+                              onChange={handleChange}
                               placeholder="Enter Company Name"
+                              isInvalid={!!formErrors.CompanyName}
                             />
+                            {formErrors.CompanyName && (
+                              <Form.Control.Feedback type="invalid">
+                                {formErrors.CompanyName}
+                              </Form.Control.Feedback>
+                            )}
                           </Form.Group>
                         </Col>
                         <Col md={6}>
@@ -115,8 +223,17 @@ const CourseData = () => {
                             <Form.Label>Contact Person:</Form.Label>
                             <Form.Control
                               type="text"
+                              name="ContactPerson"
+                              value={values.ContactPerson}
+                              onChange={handleChange}
                               placeholder="Enter Your Name"
+                              isInvalid={!!formErrors.ContactPerson}
                             />
+                            {formErrors.ContactPerson && (
+                              <Form.Control.Feedback type="invalid">
+                                {formErrors.ContactPerson}
+                              </Form.Control.Feedback>
+                            )}
                           </Form.Group>
                         </Col>
                       </Row>
@@ -126,49 +243,56 @@ const CourseData = () => {
                             <Form.Label>Email Address:</Form.Label>
                             <Form.Control
                               type="email"
+                              name="Email"
+                              value={values.Email}
+                              onChange={handleChange}
                               placeholder="Enter Your Email"
+                              isInvalid={!!formErrors.Email}
                             />
+                            {formErrors.Email && (
+                              <Form.Control.Feedback type="invalid">
+                                {formErrors.Email}
+                              </Form.Control.Feedback>
+                            )}
                           </Form.Group>
                         </Col>
                         <Col md={6}>
                           <Form.Group controlId="formMobileNumber">
-                            <Form.Label>Mobile Number</Form.Label>
+                            <Form.Label>Mobile Number:</Form.Label>
                             <Form.Control
                               type="text"
-                              placeholder="Contact Number"
+                              name="Mobile"
+                              value={values.Mobile}
+                              onChange={handleChange}
+                              placeholder="Enter Your Mobile Number"
+                              isInvalid={!!formErrors.Mobile}
                             />
+                            {formErrors.Mobile && (
+                              <Form.Control.Feedback type="invalid">
+                                {formErrors.Mobile}
+                              </Form.Control.Feedback>
+                            )}
                           </Form.Group>
                         </Col>
                       </Row>
                       <Form.Group controlId="formCaptcha">
-                        <div className="d-flex align-items-center">
-                          <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA... (Captcha Image)"
-                            alt="captcha"
-                            style={{ marginRight: "10px" }}
-                          />
-                        </div>
-                        <Button variant="link" style={{ paddingLeft: "0" }}>
-                          Refresh
-                        </Button>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <Form.Label>Input symbols</Form.Label>
-                            <Form.Control
-                              type="text"
-                              placeholder="Input symbols"
-                            />
+                        <ReCAPTCHA
+                          className="mb-3"
+                          onChange={onCaptchaChange}
+                          sitekey={process.env.REACT_APP_SITE_KEY}
+                        />
+                        {captchaErr && (
+                          <div className="text-danger">
+                            Please verify the CAPTCHA
                           </div>
-                        </div>
+                        )}
                       </Form.Group>
+                      <Button variant="primary" onClick={handleClick}>
+                        Submit
+                      </Button>
                     </Form>
                   </Container>
                 </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="danger" onClick={handleClose}>
-                    Book Now
-                  </Button>
-                </Modal.Footer>
               </Modal>
             </p>
           </div>
@@ -179,4 +303,4 @@ const CourseData = () => {
   );
 };
 
-export default CourseData;
+export default CourseForm;

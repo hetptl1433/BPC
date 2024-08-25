@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import logo1 from "../../assets/images/home/icon/50.png";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import ff from "../../assets/images/Extra/download_icon.png";
@@ -11,6 +13,7 @@ import { Link } from "react-router-dom";
 import { NbAboutUs, Logo } from "../../Functions/NbAboutUs";
 import { listCourses } from "../../Functions/Courses";
 import { createContactForm } from "../../Functions/ContactForm";
+import ReCAPTCHA from "react-google-recaptcha";
 const initialState = {
   Name: "",
   Email: "",
@@ -21,7 +24,7 @@ const initialState = {
   Help: "",
   HereFrom: "",
   KnowMore: false,
-  IsActive: false,
+  IsActive: true,
 };
 
 const Nb = () => {
@@ -29,6 +32,7 @@ const Nb = () => {
   const [scrolled, setScrolled] = useState();
   const [menu, setMenu] = useState(false);
   const [contact, setContact] = useState(false);
+   const [isToastVisible, setToastVisibility] = useState(false);
   const toggleContact = () => {
     setContact(!contact);
   };
@@ -36,19 +40,10 @@ const Nb = () => {
    const [NbAboutUsLinks, setNbAboutUsLinks] = useState([]);
   const [logodata, setLogodata] = useState([]);
   const [coursesData, setCoursesData] = useState([]);
-  const [Name, setName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Mobile, setMobile] = useState("");
-  const [Company, setCompany] = useState("");
-  const [City, setCity] = useState("");
-  const [Services, setServices] = useState("");
-  const [Help, setHelp] = useState("");
-  const [HereFrom, setHereFrom] = useState("");
-  const [KnowMore, setKnowMore] = useState(false);
-  const [IsActive, setIsActive] = useState(false);
 
 const [isSubmit, setIsSubmit] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+  const [captchaVerified, setCaptchaVerified] = useState(false);
 
 const [filter, setFilter] = useState(true);
 const [errName, setErrName] = useState(false);
@@ -59,6 +54,9 @@ const [errCity, setErrCity] = useState(false);
 const [errServices, setErrServices] = useState(false);
 const [errHelp, setErrHelp] = useState(false);
 const [errHereFrom, setErrHereFrom] = useState(false);
+const [capchaErr, setCaptchaErr] = useState(false);
+
+
 
 
  useEffect(() => {
@@ -192,60 +190,54 @@ const [errHereFrom, setErrHereFrom] = useState(false);
     window.location.href =
       "http://bpcindia.org/Business-Development-Professional-Wanted.html";
   };
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
       e.preventDefault();
-      console.log("ydbudb");
-      setFormErrors({});
-      console.log("country", values);
-      let errors = validate(
-        Name,
-        Email,
-        Mobile,
-        Company,
-        City,
-        Services,
-        Help,
-        HereFrom
-      );
-      setFormErrors(errors);
-      setIsSubmit(true);
+       setFormErrors({});
+       console.log("country", values);
+       let errors = validate(
+         values.Name,
+         values.Email,
+         values.Mobile,
+         values.Company,
+         values.City,
+         values.Services,
+         values.Help,
+         values.HereFrom
+       );
+       if(!captchaVerified){
+        setCaptchaErr(true);
+       }
+       setFormErrors(errors);
+       setIsSubmit(true);
+       if (Object.keys(errors).length === 0 && captchaVerified) {
 
-      if (Object.keys(errors).length === 0) {
-        // setLoadingOption(true);
-        const formdata = new FormData();
+         try {
+           const response = await axios.post(
+             `${process.env.REACT_APP_API_URL_BPC}/api/auth/ContactForm`,
+             values
+           );
 
-        formdata.append("Name", Name);
-        formdata.append("Email", Email);
-        formdata.append("Mobile", Mobile);
-        formdata.append("Company", Company);
-        formdata.append("City", City);
-        formdata.append("Services", Services);
-        formdata.append("Help", Help);
-        formdata.append("HereFrom", HereFrom);
-        formdata.append("KnowMore", KnowMore);
-        formdata.append("IsActive", IsActive);
-        createContactForm(formdata)
-          .then((res) => {
-            console.log(res);
-            setName("");
-            setEmail("");
-            setMobile("");
-            setCompany("");
-            setCity("");
-            setServices("");
-            setHelp("");
-            setHereFrom("");
-            setKnowMore(false);
-            setIsActive(false);
-
-            toggleContact();
-          })
-          .catch((err) => {
-            console.log("Error from server:", err);
-          });
-      }
-
-
+           if (response.data.isOk) {
+             console.log(
+               "Contact form submitted successfully:",
+               response.data.data
+               
+             );
+             setToastVisibility(true);
+            setValues(initialState);
+            setContact(false);
+           } else {
+             console.error(
+               "Error submitting contact form:",
+               response.data.message
+             );
+             // Handle error (e.g., show error message)
+           }
+         } catch (error) {
+           console.error("Error creating contact form:", error);
+           // Handle network or other errors
+         }
+       }
     };
   const handleMenuToggle = (value) => {
     setMenu(value);
@@ -256,6 +248,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
       document.body.classList.remove("no-overflow");
     }
   };
+    const onCaptchaChange = (token) => {
+      if (token) {
+        setCaptchaVerified(true);
+        setCaptchaErr(false);
+
+      } else {
+        setCaptchaVerified(false);
+      }
+    };
   window.addEventListener("scroll", function () {
     var scrollTop = window.scrollY;
 
@@ -266,6 +267,7 @@ const [errHereFrom, setErrHereFrom] = useState(false);
       setScrolled(false);
     }
   });
+  
   
   return (
     <div>
@@ -351,6 +353,31 @@ const [errHereFrom, setErrHereFrom] = useState(false);
           </div>
         </div>
       </header>
+      <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 11 }}>
+        <div
+          id="liveToast"
+          className={`toast ${isToastVisible ? "show" : "hide"}`}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div className="toast-header">
+            <strong className="me-auto">BPC India</strong>
+            <small>Just now</small>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={()=>{
+                setToastVisibility(false);
+              }}
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="toast-body">
+            Your message has been submitted. Our team will contact you soon.
+          </div>
+        </div>
+      </div>
       <div className="headerMenuWrap">
         <div className={`headerMenu ${menu === true && "active-menu"}`}>
           <div className="pageContainer">
@@ -625,6 +652,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
               <div className="row">
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homename"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errName ? "d-none" : ""
+                      }`}
+                    >
+                      * Please enter name.
+                    </label>
                     <input
                       type="text"
                       name="Name"
@@ -637,6 +673,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                 </div>
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homeemail"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errEmail ? "d-none" : ""
+                      }`}
+                    >
+                      * Please enter email.
+                    </label>
                     <input
                       type="text"
                       name="Email"
@@ -653,6 +698,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                 </div>
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homemobile"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errMobile ? "d-none" : ""
+                      }`}
+                    >
+                      * Please enter mobile.
+                    </label>
                     <input
                       type="text"
                       name="Mobile"
@@ -669,6 +723,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                 </div>
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homecompany"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errCompany ? "d-none" : ""
+                      }`}
+                    >
+                      * Please enter company.
+                    </label>
                     <input
                       type="text"
                       name="Company"
@@ -685,6 +748,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                 </div>
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homecity"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errCity ? "d-none" : ""
+                      }`}
+                    >
+                      * Please enter city.
+                    </label>
                     <input
                       type="text"
                       name="City"
@@ -698,6 +770,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                 </div>
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homeservices"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errServices ? "d-none" : ""
+                      }`}
+                    >
+                      * Please select services.
+                    </label>
                     <select
                       name="Services"
                       value={values.Services}
@@ -723,6 +804,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                 </div>
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homehelp"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errHelp ? "d-none" : ""
+                      }`}
+                    >
+                      * Please enter Comment.
+                    </label>
                     <textarea
                       className="form-control homecomment homevalidation"
                       placeholder="How can we help you?"
@@ -739,6 +829,15 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                 </div>
                 <div className="col-lg-4">
                   <div className="form-group">
+                    <label
+                      htmlFor="homeherefrom"
+                      generated="true"
+                      className={`error text-danger pull-right ${
+                        !errHereFrom ? "d-none" : ""
+                      }`}
+                    >
+                      * Please enter how you heard about us.
+                    </label>
                     <select
                       name="HereFrom"
                       value={values.HereFrom}
@@ -792,6 +891,22 @@ const [errHereFrom, setErrHereFrom] = useState(false);
                     id="homelblrecieveinfo"
                     className="contactusvalidate"
                   ></span>
+                </div>
+                <div className="form-group">
+                  <label
+                    htmlFor="homehelp"
+                    generated="true"
+                    className={`error text-danger pull-right ${
+                      !capchaErr ? "d-none" : ""
+                    }`}
+                  >
+                    * Please verify capcha.
+                  </label>
+                  <ReCAPTCHA
+                    className="mb-3"
+                    onChange={onCaptchaChange}
+                    sitekey={process.env.REACT_APP_SITE_KEY}
+                  />
                 </div>
               </div>
               <div className="row">

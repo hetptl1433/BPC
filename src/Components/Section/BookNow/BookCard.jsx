@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Carousel, Tabs, Tab, Table } from "react-bootstrap";
-import captcha from "../../../assets/images/Book/Generate.gif";
 import pht4 from "../../../assets/images/Extra/df6c785c9b5940c7ad82038028f29694.jpg";
 import { fetchBookNow } from "../../../Functions/BookNow";
 import ReCAPTCHA from "react-google-recaptcha";
