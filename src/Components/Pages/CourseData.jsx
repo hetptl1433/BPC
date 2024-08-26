@@ -25,6 +25,8 @@ const CourseForm = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [show, setShow] = useState(false);
+   const [isToastVisible, setToastVisibility] = useState(false);
+
 
   const handleChange = (e) => {
     setValues({ ...values, CourseName: courseInnerData.Name, [e.target.name]: e.target.value });
@@ -89,8 +91,10 @@ const CourseForm = () => {
       createCourseForm(formdata)
         .then((res) => {
           console.log("Response from server:", res);
+           setToastVisibility(true);
           setValues(initialState);
           handleShow();
+          handleClose();
         })
         .catch((err) => {
           console.log("Error from server:", err);
@@ -127,6 +131,31 @@ const CourseForm = () => {
 
   return (
     <div>
+      <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 11 }}>
+        <div
+          id="liveToast"
+          className={`toast ${isToastVisible ? "show" : "hide"}`}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div className="toast-header">
+            <strong className="me-auto">BPC India</strong>
+            <small>Just now</small>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={() => {
+                setToastVisibility(false);
+              }}
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="toast-body">
+            Your message has been submitted. Our team will contact you soon.
+          </div>
+        </div>
+      </div>
       <CoursesBanner />
       <section className="course">
         <div className="pageContainer">
@@ -298,6 +327,7 @@ const CourseForm = () => {
           </div>
         </div>
       </section>
+
       <Banner6 />
     </div>
   );

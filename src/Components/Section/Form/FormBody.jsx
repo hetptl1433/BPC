@@ -1,7 +1,41 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-
+import { createRAS, createRASData } from "../../../Functions/RAC";
+const initialState = {
+  Organization: "",
+  EmployeeCode: 0,
+  Date: "",
+  FullName: "",
+  Designation: "",
+  Department: "",
+  Section: "",
+  EmailID: "",
+  MobileNo: 0,
+  Reporting: "",
+  DOB: "",
+  DateofJoining: "",
+  PreviousExperience: "",
+  Educational: "",
+  Achievement: "",
+  Areaofinterest: "",
+  Problem: "",
+  Additionalresponsibility: "",
+  Information: "",
+  IsActive: true, // Assuming the default value is true
+};
 const FormBody = () => {
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isToastVisible, setToastVisibility] = useState(false);
+const [activityDetails, setActivityDetails] = useState({
+  name: "",
+  frequency: "",
+  timePerFrequency: "",
+  remarks: "",
+});
+
+// State to manage the list of activities
+const [activityList, setActivityList] = useState([]);
   const [formData, setFormData] = useState({
     Organization: "",
     EmployeeCode: "0",
@@ -21,38 +55,129 @@ const FormBody = () => {
     Areaofinterest: "",
     Problem: "",
     Additionalresponsibility: "",
-    Name: "",
-    Frequency: "",
-    TimeperFrequency: "",
-    Remarks: "",
     Information: "",
+    IsActive: true,
   });
-
-  const handleChange = (e) => {
+  // Handle changes to form inputs
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setActivityDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form data submitted:", formData);
+  // Handle adding a new activity to the list
+  const handleAddActivity = () => {
+    setActivityList((prevList) => [
+      ...prevList,
+      { ...activityDetails, id: prevList.length + 1 },
+    ]);
+    setActivityDetails({
+      name: "",
+      frequency: "",
+      timePerFrequency: "",
+      remarks: "",
+    });
+  };
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const errors = validate();
+  setFormErrors(errors);
+  setIsSubmit(true);
+
+  if (Object.keys(errors).length === 0) {
+    const formdata = new FormData();
+    formdata.append("Organization", formData.Organization);
+    formdata.append("EmployeeCode", formData.EmployeeCode);
+    formdata.append("Date", formData.Date);
+    formdata.append("FullName", formData.FullName);
+    formdata.append("Designation", formData.Designation);
+    formdata.append("Department", formData.Department);
+    formdata.append("Section", formData.Section);
+    formdata.append("EmailID", formData.EmailID);
+    formdata.append("MobileNo", formData.MobileNo);
+    formdata.append("Reporting", formData.Reporting);
+    formdata.append("DOB", formData.DOB);
+    formdata.append("DateofJoining", formData.DateofJoining);
+    formdata.append("PreviousExperience", formData.PreviousExperience);
+    formdata.append("Educational", formData.Educational);
+    formdata.append("Achievement", formData.Achievement);
+    formdata.append("Areaofinterest", formData.Areaofinterest);
+    formdata.append("Problem", formData.Problem);
+    formdata.append(
+      "Additionalresponsibility",
+      formData.Additionalresponsibility
+    );
+    formdata.append("Information", formData.Information);
+    formdata.append("IsActive", formData.IsActive);
+
+    console.log("Submitting form with data:", formdata);
+
+    try {
+      const response = await createRAS(formdata);
+      console.log("Response from server:", response);
+      setToastVisibility(true);
+
+      // Send each activity in the activityList to the API
+      for (const activity of activityList) {
+        const activityFormData = new FormData();
+        activityFormData.append("EmailID", formData.EmailID);
+        activityFormData.append("Name", activity.name);
+        activityFormData.append("Frequency", activity.frequency);
+        activityFormData.append("TimeperFrequency", activity.timePerFrequency);
+        activityFormData.append("Remarks", activity.remarks);
+        activityFormData.append("IsActive", true); // Assuming all activities are active
+
+        try {
+          const activityResponse = await createRASData(activityFormData);
+          console.log("Activity Response from server:", activityResponse);
+        } catch (activityError) {
+          console.error("Error posting activity:", activityError);
+        }
+      }
+
+      // Optionally, clear the form data and activity list after submission
+      // setFormData(initialState);
+      // setActivityList([]);
+    } catch (error) {
+      console.log("Error from server:", error);
+    }
+  } else {
+    console.log("Form has errors:", errors);
+  }
+};
+
+  const validate = () => {
+    const errors = {};
+
+    if (!formData.Organization) {
+      errors.Organization = "Organization Name is required!";
+    }
+
+    if (!formData.EmailID) {
+      errors.Email = "Email is required!";
+    }
+
+    if (!formData.MobileNo) {
+      errors.Mobile = "Mobile is required!";
+    }
+
+    if (!formData.FullName) {
+      errors.FullName = "Full Name is required!";
+    }
+
+    return errors;
   };
 
   return (
     <Container className="yoform">
-      <form
-        action="/Home/AddRASEnglish"
-        enctype="multipart/form-data"
-        id="AddNewsform"
-        method="post"
-        onSubmit={handleSubmit}
-      >
-        <input
-          name="__RequestVerificationToken"
-          type="hidden"
-          value="it6KJKB1rLXE8NTqFbyIl3dpqeDd7YeltiLP9fkOGMOIuRlfPYCSl-J2GTh1tg0BNBJC-Y5ZCdRqaf5EW91sflqIi6GuXRDJvfZpAeZBjkQ1"
-        />
+      <form id="AddNewsform" onSubmit={handleSubmit}>
+        <input name="__RequestVerificationToken" type="hidden" />
         {/* Header Start */}
         <section>
           <div className="container">
@@ -298,10 +423,11 @@ const FormBody = () => {
                     <td>
                       <input
                         className="form-control input_control"
-                        id="txtdateofbirth"
                         name="DOB"
                         placeholder="Enter DOB &amp; Age"
                         type="text"
+                        value={formData.DOB}
+                        onChange={handleChange}
                       />
                     </td>
                   </tr>
@@ -318,6 +444,8 @@ const FormBody = () => {
                         name="DateofJoining"
                         placeholder="Enter Date of Joining"
                         type="text"
+                        value={formData.DateofJoining}
+                        onChange={handleChange}
                       />
                     </td>
                   </tr>
@@ -332,6 +460,8 @@ const FormBody = () => {
                         className="form-control input_control "
                         id="txtexperience"
                         name="PreviousExperience"
+                        value={formData.PreviousExperience}
+                        onChange={handleChange}
                         placeholder="Enter Previous Experience"
                         type="text"
                       />
@@ -346,10 +476,11 @@ const FormBody = () => {
                     <td>
                       <input
                         className="form-control input_control "
-                        id="txteducational"
                         name="Educational"
                         placeholder="Enter Educational Qualification"
                         type="text"
+                        value={formData.Educational}
+                        onChange={handleChange}
                       />
                     </td>
                   </tr>
@@ -362,8 +493,9 @@ const FormBody = () => {
                     <td>
                       <input
                         className="form-control input_control "
-                        id="txtachievement"
                         name="Achievement"
+                        value={formData.Achievement}
+                        onChange={handleChange}
                         placeholder="Enter Achievement"
                         type="text"
                       />
@@ -380,6 +512,8 @@ const FormBody = () => {
                         className="form-control input_control "
                         id="txtareaofinterest"
                         name="Areaofinterest"
+                        value={formData.Areaofinterest}
+                        onChange={handleChange}
                         placeholder="Enter Area of interest"
                         type="text"
                       />
@@ -397,6 +531,8 @@ const FormBody = () => {
                         id="txtproblem"
                         name="Problem"
                         placeholder="Enter problem"
+                        value={formData.Problem}
+                        onChange={handleChange}
                         type="text"
                       />
                     </td>
@@ -417,6 +553,8 @@ const FormBody = () => {
                         name="Additionalresponsibility"
                         placeholder="Enter additional responsibility"
                         type="text"
+                        value={formData.Additionalresponsibility}
+                        onChange={handleChange}
                       />
                     </td>
                   </tr>
@@ -485,9 +623,11 @@ const FormBody = () => {
                     <input
                       className="form-control"
                       id="txtName"
-                      name="Name"
+                      name="name"
                       placeholder="Enter Name of activity"
                       type="text"
+                      value={activityDetails.name}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -499,9 +639,11 @@ const FormBody = () => {
                     <input
                       className="form-control"
                       id="txtFrequency"
-                      name="Frequency"
+                      name="frequency"
                       placeholder="Enter Frequency"
                       type="text"
+                      value={activityDetails.frequency}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -514,9 +656,11 @@ const FormBody = () => {
                     <input
                       className="form-control"
                       id="txtTimeperFrequency"
-                      name="TimeperFrequency"
+                      name="timePerFrequency"
                       placeholder="Enter Time per Frequency"
                       type="text"
+                      value={activityDetails.timePerFrequency}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -526,9 +670,11 @@ const FormBody = () => {
                     <input
                       className="form-control"
                       id="txtRemarks"
-                      name="Remarks"
+                      name="remarks"
                       placeholder="Enter Remarks"
                       type="text"
+                      value={activityDetails.remarks}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -544,9 +690,7 @@ const FormBody = () => {
                     marginTop: "0px",
                   }}
                   id="addrow"
-                  onClick={() => {
-                    /* Add your function here */
-                  }}
+                  onClick={handleAddActivity}
                   name="Submit"
                   value="Add New Activity"
                   type="button"
@@ -577,7 +721,17 @@ const FormBody = () => {
                     </th>
                   </tr>
                 </thead>
-                <tbody id="dvdata">{/* Populate table rows here */}</tbody>
+                <tbody>
+                  {activityList.map((activity) => (
+                    <tr key={activity.id}>
+                      <td>{activity.id}</td>
+                      <td>{activity.name}</td>
+                      <td>{activity.frequency}</td>
+                      <td>{activity.timePerFrequency}</td>
+                      <td>{activity.remarks}</td>
+                    </tr>
+                  ))}
+                </tbody>
               </table>
             </div>
             <div className="form-group">
@@ -587,6 +741,8 @@ const FormBody = () => {
                 cols="20"
                 id="txtinformation"
                 name="Information"
+                value={formData.Information}
+                onChange={handleChange}
                 placeholder="Enter Additional Information"
                 rows="2"
               ></textarea>

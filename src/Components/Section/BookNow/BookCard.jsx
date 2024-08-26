@@ -1,12 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Carousel, Tabs, Tab, Table } from "react-bootstrap";
 import pht4 from "../../../assets/images/Extra/df6c785c9b5940c7ad82038028f29694.jpg";
-import { fetchBookNow } from "../../../Functions/BookNow";
+import { fetchBookNow , fetchExtraBook} from "../../../Functions/BookNow";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useParams } from "react-router-dom";
+import { createCourseForm } from "../../../Functions/CoursesForm";
+const initialState = {
+  Bookdate: "",
+  Email: "",
+  Mobile: "",
+  ContactPerson: "",
+  CompanyName: "",
+  HallName: "",
+
+  IsActive: true,
+  Bookfull:false,
+  HalfdayPrice: "",
+  FulldayPrice: ""
+};
 const BookCard = () => {
   const [bookdata, setBookData] = useState([]);
-  
+  const [show, setShow] = useState(false);
+
+  const [extraBookData, setExtraBookData] = useState([]);
+  const [quantities, setQuantities] = useState({});
+   const [addedItems, setAddedItems] = useState([]);
+  const [isSubmit, setIsSubmit] = useState(false);
+
+   const [isToastVisible, setToastVisibility] = useState(false);
+  const [values, setValues] = useState(initialState);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [captchaErr, setCaptchaErr] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+
   const { id } = useParams();
    useEffect(() => {
      const fetchInnerData = async () => {
@@ -15,38 +41,144 @@ const BookCard = () => {
          setBookData(data.data);
          console.log("Course Data:", data.data);
        } catch (error) {
-         console.error("Error loading course data:", error);
+         console.error("Error loading Booking data:", error);
        }
      };
+       const fetchExtraBooks = async () => {
+         try {
+           const data = await fetchExtraBook();
+
+           setExtraBookData(data.data);
+             const initialQuantities = {};
+      data.forEach(item => {
+        initialQuantities[item._id] = 1; // Default quantity is 1
+      });
+      setQuantities(initialQuantities);
+    
+           console.log("Course Data:", data.data);
+         } catch (error) {
+           console.error("Error loading course data:", error);
+         }
+       };
+
+       
+       fetchExtraBooks();
      fetchInnerData();
+
+
+     
    }, [id]);
+     const handleQuantityChange = (id, delta) => {
+       setQuantities((prevQuantities) => {
+         const newQuantity = Math.max(1, (prevQuantities[id] || 1) + delta); // Ensure quantity doesn't go below 1
+         return { ...prevQuantities, [id]: newQuantity };
+       });
+     };
+       const handleDeleteClick = (id) => {
+         setAddedItems((prevItems) =>
+           prevItems.filter((item) => item._id !== id)
+         );
+       };
+       const handleAddClick = (item) => {
+         setAddedItems((prevItems) => {
+           if (!prevItems.find((addedItem) => addedItem._id === item._id)) {
+             return [...prevItems, item];
+           }
+           return prevItems;
+         });
+       };
 
-const handleCaptchaRefresh = async () => {
-  try {
-    const captchaText = document.getElementById("CaptchaDeText").value;
+     const calculateTotal = (id, price) => {
+       const quantity = quantities[id] || 1; // Default to 1 if quantity is not set yet
+       return quantity * price;
+     };
 
-    // Make the POST request to refresh the captcha
-    const response = await fetch("/DefaultCaptcha/Refresh", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ t: captchaText }),
-    });
+      const handleChange = (e) => {
+        setValues({
+          ...values,
+          HallName: bookdata.Name,
+          [e.target.name]: e.target.value,
+        });
+      };
 
-    if (response.ok) {
-      // Handle successful captcha refresh (e.g., update the captcha image or show a message)
-      document.getElementById(
-        "3338f4b68e5d4c639ebdf7876552d1fb"
-      ).style.display = "block";
-      console.log("Captcha refreshed successfully");
-    } else {
-      console.error("Failed to refresh captcha");
-    }
-  } catch (error) {
-    console.error("Error refreshing captcha:", error);
-  }
+      const handleCheck = (e) => {
+        setValues({ ...values, Bookfull: e.target.checked });
+      };
+
+      const validate = () => {
+        const errors = {};
+
+        if (!values.HallName) {
+          errors.HallName = "Course Name is required!";
+        }
+
+        if (!values.Email) {
+          errors.Email = "Email is required!";
+        }
+
+        if (!values.Mobile) {
+          errors.Mobile = "Mobile is required!";
+        }
+
+        if (!values.ContactPerson) {
+          errors.ContactPerson = "Contact person is required!";
+        }
+
+        if (!values.CompanyName) {
+          errors.CompanyName = "Company Name is required!";
+        }
+         if (!values.Bookdate) {
+           errors.bookdata = "Book data is required!";
+         }
+
+
+        return errors;
+      };
+
+      const handleClick = (e) => {
+        e.preventDefault();
+
+        // Check CAPTCHA first
+        if (!captchaVerified) {
+          setCaptchaErr(true);
+          console.log("CAPTCHA not verified");
+          return;
+        }
+
+        const errors = validate();
+        setFormErrors(errors);
+        setIsSubmit(true);
+
+        if (Object.keys(errors).length === 0) {
+          const formdata = new FormData();
+          formdata.append("Email", values.Email);
+          formdata.append("Mobile", values.Mobile);
+          formdata.append("ContactPerson", values.ContactPerson);
+          formdata.append("CompanyName", values.CompanyName);
+          formdata.append("HallName", bookdata.Name);
+          formdata.append("IsActive", values.IsActive);
+
+          console.log("Submitting form with data:", formdata);
+
+          createCourseForm(formdata)
+            .then((res) => {
+              console.log("Response from server:", res);
+              setToastVisibility(true);
+              setValues(initialState);
+            })
+            .catch((err) => {
+              console.log("Error from server:", err);
+            });
+        } else {
+          console.log("Form has errors:", errors);
+        }
+      };
+
+const onCaptchaChange = (token) => {
+  setCaptchaVerified(!!token);
+  setCaptchaErr(!token);
 };
+
   return (
     <div className="resource-news">
       <section className="resources_news blogbox animation-element capability bounce-up in-view">
@@ -134,7 +266,7 @@ const handleCaptchaRefresh = async () => {
                   </div>
                 </Tab>
                 <Tab eventKey="book-now" title="Book Now">
-                  <Table bordered className="mt-3">
+                  <table className="table table-bordered mt-3">
                     <thead>
                       <tr>
                         <th scope="col">Sr. No.</th>
@@ -145,168 +277,66 @@ const handleCaptchaRefresh = async () => {
                         </th>
                         <th scope="col">Total</th>
                         <th scope="col">Action</th>
-                        <th style={{ display: "none" }}></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>LCD Projector (8 Hrs.)</td>
-                        <td>2124.00</td>
-                        <td>
-                          <div className="input-group">
+                      {extraBookData.map((item, index) => (
+                        <tr key={item._id}>
+                          <td>{index + 1}</td>
+                          <td>{item.Name}</td>
+                          <td>{item.Price.toFixed(2)}</td>
+                          <td>
+                            <div className="input-group">
+                              <input
+                                type="button"
+                                value="-"
+                                className="button-minus"
+                                onClick={() =>
+                                  handleQuantityChange(item._id, -1)
+                                }
+                              />
+                              <input
+                                type="number"
+                                step="1"
+                                value={quantities[item._id] || 1}
+                                readOnly
+                                className="quantity-field ml47"
+                              />
+                              <input
+                                type="button"
+                                value="+"
+                                className="button-plus ml103"
+                                onClick={() =>
+                                  handleQuantityChange(item._id, 1)
+                                }
+                              />
+                            </div>
+                          </td>
+                          <td>
                             <input
+                              type="text"
+                              readOnly
+                              value={calculateTotal(
+                                item._id,
+                                item.Price
+                              ).toFixed(2)}
+                              className="form-control"
+                            />
+                          </td>
+                          <td>
+                            <button
                               type="button"
-                              value="-"
-                              className="button-minus"
-                              data-field="quantity_4"
-                            />
-                            <input
-                              type="number"
-                              step="1"
-                              max=""
-                              value="1"
-                              name="quantity_4"
-                              className="quantity-field ml47"
-                            />
-                            <input
-                              type="button"
-                              value="+"
-                              className="button-plus ml103"
-                              data-field="quantity_4"
-                            />
-                            <input
-                              type="hidden"
-                              id="mainprice_4"
-                              value="2124.00"
-                            />
-                          </div>
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            readOnly
-                            id="Price_4"
-                            value="2124.00"
-                            className="form-control"
-                          />
-                        </td>
-                        <td>
-                          <button
-                            type="button"
-                            className="btn btn-warning btn-xs ml-2"
-                          >
-                            Add
-                          </button>
-                        </td>
-                        <td style={{ display: "none" }}>4</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>LCD Projector (4 Hrs.)</td>
-                        <td>1180.00</td>
-                        <td>
-                          <div className="input-group">
-                            <input
-                              type="button"
-                              value="-"
-                              className="button-minus"
-                              data-field="quantity_5"
-                            />
-                            <input
-                              type="number"
-                              step="1"
-                              max=""
-                              value="1"
-                              name="quantity_5"
-                              className="quantity-field ml47"
-                            />
-                            <input
-                              type="button"
-                              value="+"
-                              className="button-plus ml103"
-                              data-field="quantity_5"
-                            />
-                            <input
-                              type="hidden"
-                              id="mainprice_5"
-                              value="1180.00"
-                            />
-                          </div>
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            readOnly
-                            id="Price_5"
-                            value="1180.00"
-                            className="form-control"
-                          />
-                        </td>
-                        <td>
-                          <button
-                            type="button"
-                            className="btn btn-warning btn-xs ml-2"
-                          >
-                            Add
-                          </button>
-                        </td>
-                        <td style={{ display: "none" }}>5</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sub Staff Charges (8 Hrs.)</td>
-                        <td>472.00</td>
-                        <td>
-                          <div className="input-group">
-                            <input
-                              type="button"
-                              value="-"
-                              className="button-minus"
-                              data-field="quantity_6"
-                            />
-                            <input
-                              type="number"
-                              step="1"
-                              max=""
-                              value="1"
-                              name="quantity_6"
-                              className="quantity-field ml47"
-                            />
-                            <input
-                              type="button"
-                              value="+"
-                              className="button-plus ml103"
-                              data-field="quantity_6"
-                            />
-                            <input
-                              type="hidden"
-                              id="mainprice_6"
-                              value="472.00"
-                            />
-                          </div>
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            readOnly
-                            id="Price_6"
-                            value="472.00"
-                            className="form-control"
-                          />
-                        </td>
-                        <td>
-                          <button
-                            type="button"
-                            className="btn btn-warning btn-xs ml-2"
-                          >
-                            Add
-                          </button>
-                        </td>
-                        <td style={{ display: "none" }}>6</td>
-                      </tr>
+                              className="btn btn-warning btn-xs ml-2"
+                              onClick={() => handleAddClick(item)}
+                            >
+                              Add
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
-                  </Table>
+                  </table>
+
                   <form
                     action="/Home/BookPost"
                     encType="multipart/form-data"
@@ -333,7 +363,9 @@ const handleCaptchaRefresh = async () => {
                           value="HalfDay"
                           defaultChecked
                         />
-                        <h1 className="tab-box">Half Day Rs. 10620.00</h1>
+                        <h1 className="tab-box">
+                          Half Day Rs.{bookdata.HalfDayTotal}
+                        </h1>
                       </div>
                       <div className="form-group col-md-6">
                         <input
@@ -342,7 +374,9 @@ const handleCaptchaRefresh = async () => {
                           type="radio"
                           value="FullDay"
                         />
-                        <h1 className="tab-box">Full Day Rs. 17700.00</h1>
+                        <h1 className="tab-box">
+                          Full Day Rs. {bookdata.FullDayTotal}
+                        </h1>
                       </div>
                       <input
                         id="BookingType"
@@ -371,6 +405,13 @@ const handleCaptchaRefresh = async () => {
                       <div className="form-group col-md-6"></div>
                       <div className="form-group col-md-6">
                         <label htmlFor="BookingMaster_CompanyName">
+                          <label
+                            for="txtCompanyName"
+                            generated="true"
+                            class="error text-danger pull-right"
+                          >
+                            * Please enter company.
+                          </label>
                           Company Name
                         </label>
                         <input
@@ -383,6 +424,13 @@ const handleCaptchaRefresh = async () => {
                       <div className="form-group col-md-6">
                         <label htmlFor="BookingMaster_Email">
                           Contact Person
+                        </label>
+                        <label
+                          for="txtContactPerson"
+                          generated="true"
+                          class="error text-danger pull-right"
+                        >
+                          * Please enter name.
                         </label>
                         <input
                           className="form-control"
@@ -402,6 +450,13 @@ const handleCaptchaRefresh = async () => {
                         <label htmlFor="BookingMaster_ContactNo">
                           Email Address
                         </label>
+                        <label
+                          for="txtEmail"
+                          generated="true"
+                          class="error text-danger pull-right"
+                        >
+                          * Please enter email.
+                        </label>
                         <input
                           className="form-control"
                           data-val="true"
@@ -419,6 +474,13 @@ const handleCaptchaRefresh = async () => {
                       <div className="form-group col-md-6">
                         <label htmlFor="BookingMaster_Address">
                           Mobile Number
+                        </label>
+                        <label
+                          for="txtMobile"
+                          generated="true"
+                          class="error text-danger pull-right"
+                        >
+                          * Please enter mobile.
                         </label>
                         <input
                           className="form-control"
@@ -444,7 +506,24 @@ const handleCaptchaRefresh = async () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {/* Render your table rows dynamically here if needed */}
+                            {addedItems.map((item, index) => (
+                              <tr key={item._id}>
+                                <td>{item.Name}</td>
+                                <td>{item.Price.toFixed(2)}</td>
+                                <td>{quantities[item._id] || 1}</td>  
+                                <td>
+                                  {calculateTotal(item._id, item.Price).toFixed(
+                                    2
+                                  )}
+                                </td>
+                                <button
+                                  className="btn btn-warning btn-xs m-2 bg-danger text-white "
+                                  onClick={() => handleDeleteClick(item._id)}
+                                >
+                                  Delete
+                                </button>
+                              </tr>
+                            ))}
                           </tbody>
                         </table>
                       </div>
