@@ -4,17 +4,15 @@ import { Link } from "react-router-dom";
 import "../../../assets/css/Banner1.css";
 import { listBanner } from "../../../Functions/BannerImage";
 
-const Banner1 = () => {
+const Carosouel = () => {
   const [banner, setBanner] = useState([]);
 
-
- useEffect(() => {
-   listBanner().then((res) => {
-     console.log("datais",res.data);
-     setBanner(res.data);
-   });
-
- }, []);
+  useEffect(() => {
+    listBanner().then((res) => {
+      console.log("datais", res.data);
+      setBanner(res.data);
+    });
+  }, []);
 
   const CustomPrevArrow = (props) => {
     const { onClick } = props;
@@ -73,4 +71,4 @@ const Banner1 = () => {
   );
 };
 
-export default Banner1;
+export default Carosouel;

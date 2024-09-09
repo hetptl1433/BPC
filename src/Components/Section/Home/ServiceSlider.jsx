@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { serviceData } from "../../../Functions/Services"; // Adjust the path as necessary
 import { Link } from "react-router-dom";
 
-const Banner3 = () => {
+const ServiceSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -101,12 +101,12 @@ const Banner3 = () => {
                           >
                             Read More
                           </a> */}
-                          <a
-                            href={`/Services`}
+                          <Link
+                            to="/Services"
                             className="readmoreRed pt-3"
                           >
                             Read More
-                          </a>
+                          </Link>
                         </div>
                       </Link>
                     </div>
@@ -121,4 +121,4 @@ const Banner3 = () => {
   );
 };
 
-export default Banner3;
+export default ServiceSlider;

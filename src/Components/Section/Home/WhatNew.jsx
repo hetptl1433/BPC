@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import img1 from "../../../assets/images/drupal/whatsnew_2.jpg";
 import "../../../assets/css/Banner2.css";
 
-const Banner2 = () => {
+const WhatNew = () => {
   return (
     <section className="valueSection mt-5">
       <Container className="xxx">
@@ -113,4 +113,4 @@ const Banner2 = () => {
   );
 };
 
-export default Banner2;
+export default WhatNew;

@@ -4,15 +4,15 @@ import { fetchHallBooking } from "../../../Functions/HallBooking";
 
 const HallBookingCard = ({ id, imageSrc, title, bookNowUrl }) => (
   <div className="col-lg-3 col-md-3 col-xl-3 col-sm-6 all digital tab_content flex-container">
-    <Link to={`/Home/HallBookingDetail/${id}`} className="custom-card"></Link>
+    <Link to={`/BookNow/${id}`} className="custom-card"></Link>
     <div className="card card-custom bg-white border-white">
-      <Link to={`/Home/HallBookingDetail/${id}`} className="custom-card">
+      <Link to={`/BookNow/${id}`} className="custom-card">
         <div className="card-custom-img">
           <img src={imageSrc} alt={title} />
         </div>
       </Link>
       <div className="card-body" style={{ overflowY: "auto" }}>
-        <Link to={`/Home/HallBookingDetail/${id}`} className="custom-card">
+        <Link to={`/BookNow/${id}`} className="custom-card">
           <div className="card-text">
             <p>{title}</p>
           </div>

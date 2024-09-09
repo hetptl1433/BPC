@@ -6,7 +6,7 @@ import ReactPlayer from "react-player";
 import vid4 from "../../../assets/images/drupal/vid4.png";
 import { Link } from "react-router-dom";
 
-const Banner4 = () => {
+const IndustrySolution = () => {
   const [showPlayer, setShowPlayer] = useState(false);
 
   const settings = {
@@ -111,4 +111,4 @@ const Banner4 = () => {
   );
 };
 
-export default Banner4;
+export default IndustrySolution;

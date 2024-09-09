@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container, Modal } from "react-bootstrap";
 import { createRAS, createRASData } from "../../../Functions/RAC";
 const initialState = {
   Organization: "",
@@ -27,6 +27,7 @@ const FormBody = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [isToastVisible, setToastVisibility] = useState(false);
+  const [submiited, setSubmitted]= useState(false);
 const [activityDetails, setActivityDetails] = useState({
   name: "",
   frequency: "",
@@ -83,6 +84,7 @@ const [activityList, setActivityList] = useState([]);
       [e.target.name]: e.target.value,
     });
   };
+  const handleClose = () => setSubmitted(false);
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -142,8 +144,9 @@ const handleSubmit = async (e) => {
       }
 
       // Optionally, clear the form data and activity list after submission
-      // setFormData(initialState);
-      // setActivityList([]);
+      setFormData(initialState);
+      setActivityList([]);
+      setSubmitted(true);
     } catch (error) {
       console.log("Error from server:", error);
     }
@@ -159,13 +162,20 @@ const handleSubmit = async (e) => {
       errors.Organization = "Organization Name is required!";
     }
 
-    if (!formData.EmailID) {
-      errors.Email = "Email is required!";
-    }
+   if (!formData.EmailID) {
+     errors.EmailID = "Required";
+   } else if (
+     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.EmailID)
+   ) {
+     errors.EmailID = "Invalid email address";
+   }
 
-    if (!formData.MobileNo) {
-      errors.Mobile = "Mobile is required!";
-    }
+   if (!formData.MobileNo) {
+     errors.MobileNo = "Required";
+   } else if (!/^\d{10}$/.test(formData.MobileNo)) {
+     errors.MobileNo = "Mobile number must be 10 digits long";
+   }
+
 
     if (!formData.FullName) {
       errors.FullName = "Full Name is required!";
@@ -176,6 +186,18 @@ const handleSubmit = async (e) => {
 
   return (
     <Container className="yoform">
+      <Modal show={submiited} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Form Submitted</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="m-3">your data is sent to our team , thank you for completing form</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        
+        </Modal.Footer>
+      </Modal>
       <form id="AddNewsform" onSubmit={handleSubmit}>
         <input name="__RequestVerificationToken" type="hidden" />
         {/* Header Start */}
@@ -222,7 +244,6 @@ const handleSubmit = async (e) => {
             >
               <div className="row">
                 <div className="col-md-4">
-                  {" "}
                   <label className="lbf">
                     <b>Name of the Organization:</b>
                     <small style={{ color: "red" }}>*</small>
@@ -238,6 +259,11 @@ const handleSubmit = async (e) => {
                     value={formData.Organization}
                     onChange={handleChange}
                   />
+                  {formErrors.Organization && (
+                    <span className="has-error text-danger pull-right">
+                      {formErrors.Organization}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -296,6 +322,11 @@ const handleSubmit = async (e) => {
                         value={formData.FullName}
                         onChange={handleChange}
                       />
+                      {formErrors.FullName && (
+                        <span className="has-error text-danger">
+                          {formErrors.FullName}
+                        </span>
+                      )}
                     </td>
                     <th className="header_bg" scope="row">
                       Designation
@@ -360,7 +391,13 @@ const handleSubmit = async (e) => {
                         value={formData.EmailID}
                         onChange={handleChange}
                       />
+                      {formErrors.EmailID && (
+                        <span className="has-error text-danger">
+                          {formErrors.EmailID}
+                        </span>
+                      )}
                     </td>
+
                     <th className="header_bg" scope="row">
                       Mobile No. <small style={{ color: "red" }}>*</small>
                     </th>
@@ -368,9 +405,6 @@ const handleSubmit = async (e) => {
                     <td>
                       <input
                         className="form-control input_control detail_input"
-                        data-val="true"
-                        data-val-number="The field MobileNo must be a number."
-                        data-val-required="The MobileNo field is required."
                         id="txtmobile"
                         name="MobileNo"
                         placeholder="Enter Mobile No"
@@ -378,6 +412,11 @@ const handleSubmit = async (e) => {
                         value={formData.MobileNo}
                         onChange={handleChange}
                       />
+                      {formErrors.MobileNo && (
+                        <span className="has-error text-danger">
+                          {formErrors.MobileNo}
+                        </span>
+                      )}
                     </td>
                   </tr>
                   <tr>

@@ -17,7 +17,7 @@ const Banner6 = () => {
               can <br />
               transform your business.
             </p>
-            <Link to="#" className="bannerBtn_white mt-3 ">
+            <Link to="/ContactUs" className="bannerBtn_white mt-3 ">
               Contact Us
             </Link>
           </Col>

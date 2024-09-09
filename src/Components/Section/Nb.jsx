@@ -8,6 +8,7 @@ import gg from "../../assets/images/Extra/hallbooking_icon.png";
 import ii from "../../assets/images/Extra/contact_icon.png";
 import jj from "../../assets/images/Extra/news_icon.png";
 import hh from "../../assets/images/Extra/5.png";
+import contactImg from "../../assets/images/home-banner-btn.png";
 import close from '../../assets/images/Extra/close-contact.png'
 import { Link } from "react-router-dom";
 import { NbAboutUs, Logo } from "../../Functions/NbAboutUs";
@@ -367,7 +368,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
             <button
               type="button"
               className="btn-close"
-              onClick={()=>{
+              onClick={() => {
                 setToastVisibility(false);
               }}
               aria-label="Close"
@@ -410,7 +411,10 @@ const [capchaErr, setCaptchaErr] = useState(false);
                               </h4>
                               <ul>
                                 <li>
-                                  <Link to="/">
+                                  <Link
+                                    to="/"
+                                    onClick={() => handleMenuToggle(!menu)}
+                                  >
                                     Students of Class 8, 9, and 10
                                   </Link>
                                 </li>
@@ -418,9 +422,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   <Link to="PAtest.html">Employees</Link>
                                 </li>
                                 <li>
-                                  <Link to="/RouteActivity">
+                                  <a
+                                    href="/RouteActivity"
+                                    onClick={() => handleMenuToggle(!menu)}
+                                  >
                                     Routine Activity Scheet
-                                  </Link>
+                                  </a>
                                 </li>
                               </ul>
                             </div>
@@ -439,10 +446,20 @@ const [capchaErr, setCaptchaErr] = useState(false);
                               </h4>
                               <ul>
                                 <li>
-                                  <Link to="/Gallery">Photo Gallery</Link>
+                                  <Link
+                                    to="/Gallery"
+                                    onClick={() => handleMenuToggle(!menu)}
+                                  >
+                                    Photo Gallery
+                                  </Link>
                                 </li>
                                 <li>
-                                  <Link to="/Video">Video Gallery</Link>
+                                  <Link
+                                    to="/Video"
+                                    onClick={() => handleMenuToggle(!menu)}
+                                  >
+                                    Video Gallery
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
@@ -457,7 +474,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   className="lazyloaded"
                                   src="assets/images/home/icon/solution.png"
                                 />
-                                <Link to="/Training">Training Programs</Link>
+                                <Link
+                                  to="/Training"
+                                  onClick={() => handleMenuToggle(!menu)}
+                                >
+                                  Training Programs
+                                </Link>
                               </h4>
                               <h4>
                                 <img
@@ -468,7 +490,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <Link to="/Home/Download">Download</Link>
+                                <Link
+                                  to="/Home/Download"
+                                  onClick={() => handleMenuToggle(!menu)}
+                                >
+                                  Download
+                                </Link>
                               </h4>
                             </div>
 
@@ -489,9 +516,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                 {NbAboutUsLinks.length > 0 ? (
                                   NbAboutUsLinks.map((item, index) => (
                                     <li key={index}>
-                                      <a href={`/about-us/${item.subTitle}`}>
+                                      <Link
+                                        to={`/about-us/${item.subTitle}`}
+                                        onClick={() => handleMenuToggle(!menu)}
+                                      >
                                         {item.Title}
-                                      </a>
+                                      </Link>
                                     </li>
                                   ))
                                 ) : (
@@ -517,7 +547,10 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   .sort((a, b) => a.SortOrder - b.SortOrder)
                                   .map((course) => (
                                     <li key={course._id}>
-                                      <Link to={`course/${course._id}`}>
+                                      <Link
+                                        to={`course/${course._id}`}
+                                        onClick={() => handleMenuToggle(!menu)}
+                                      >
                                         {course.Name}
                                       </Link>
                                     </li>
@@ -534,7 +567,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <Link to="/HallBooking">Hall Booking</Link>
+                                <Link
+                                  to="/HallBooking"
+                                  onClick={() => handleMenuToggle(!menu)}
+                                >
+                                  Hall Booking
+                                </Link>
                               </h4>
                               <h4>
                                 <img
@@ -545,7 +583,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <Link to="/ContactUs">Contact Us</Link>
+                                <Link
+                                  to="/ContactUs"
+                                  onClick={() => handleMenuToggle(!menu)}
+                                >
+                                  Contact Us
+                                </Link>
                               </h4>
                               <h4>
                                 <img
@@ -556,7 +599,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
                                 />
-                                <Link to="/News">News</Link>
+                                <Link
+                                  to="/News"
+                                  onClick={() => handleMenuToggle(!menu)}
+                                >
+                                  News
+                                </Link>
                               </h4>
                             </div>
                           </div>
@@ -575,42 +623,42 @@ const [capchaErr, setCaptchaErr] = useState(false);
                           </h4>
                           <ul className="main-header-menu">
                             <li>
-                              <Link to="/Services">
+                              <Link to="/Services" onClick={() => handleMenuToggle(!menu)}>
                                 People and Organizational Capability Enhancement
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/2">
+                              <Link to="/Home/ServiceDetail/2" onClick={() => handleMenuToggle(!menu)}>
                                 Industries Offerings & Solutions
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/3">
+                              <Link to="/Home/ServiceDetail/3" onClick={() => handleMenuToggle(!menu)}>
                                 Business Process Re-engineering
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/4">
+                              <Link to="/Home/ServiceDetail/4" onClick={() => handleMenuToggle(!menu)}>
                                 Time and Motion Study
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/5">
+                              <Link to="/Home/ServiceDetail/5" onClick={() => handleMenuToggle(!menu)}>
                                 Budgeting Process Improvement
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/6">
+                              <Link to="/Home/ServiceDetail/6" onClick={() => handleMenuToggle(!menu)}>
                                 Strategy Implementattion Enablers
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/7">
+                              <Link to="/Home/ServiceDetail/7" onClick={() => handleMenuToggle(!menu)}>
                                 Recruitment and Promotional Interviews
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/8">
+                              <Link to="/Home/ServiceDetail/8" onClick={() => handleMenuToggle(!menu)}>
                                 Corporate Social Responsibility (CSR)
                               </Link>
                             </li>
@@ -628,7 +676,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
 
       <div className="contactBtn animated bounce">
         <img
-          src="assets/images/home-banner-btn.png"
+          src={contactImg}
           width="54px"
           height="129px"
           alt="contact us nseit"

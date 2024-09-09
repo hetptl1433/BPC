@@ -4,34 +4,70 @@ import pht4 from "../../../assets/images/Extra/df6c785c9b5940c7ad82038028f29694.
 import { fetchBookNow , fetchExtraBook} from "../../../Functions/BookNow";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useParams } from "react-router-dom";
-import { createCourseForm } from "../../../Functions/CoursesForm";
+import { createBookingDetails, createExtraBookingDetails } from "../../../Functions/BookingDetails";
 const initialState = {
-  Bookdate: "",
+  BookDate: "",
   Email: "",
   Mobile: "",
   ContactPerson: "",
   CompanyName: "",
   HallName: "",
-
+  BookTime: "HalfDay",
   IsActive: true,
-  Bookfull:false,
-  HalfdayPrice: "",
-  FulldayPrice: ""
 };
 const BookCard = () => {
   const [bookdata, setBookData] = useState([]);
-  const [show, setShow] = useState(false);
+  const[ total, setTotal]= useState(0);
+  const [bookTime, setBookTime] = useState("Half Day");
+  
 
   const [extraBookData, setExtraBookData] = useState([]);
   const [quantities, setQuantities] = useState({});
    const [addedItems, setAddedItems] = useState([]);
   const [isSubmit, setIsSubmit] = useState(false);
+  const [extraprice, setextraprice] = useState(null);
 
    const [isToastVisible, setToastVisibility] = useState(false);
   const [values, setValues] = useState(initialState);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaErr, setCaptchaErr] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+const [selectedPrice, setSelectedPrice] = useState(0); // Default to Half Day price
+
+
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log("no errors");
+    }
+  }, [formErrors, isSubmit]);
+ 
+useEffect(()=>{
+console.log(addedItems);
+}, [addedItems])
+
+useEffect(() => {
+  setSelectedPrice(Number(bookdata.HalfDayTotal));
+  setTotal(Number(bookdata.HalfDayTotal));
+}, [bookdata]);
+
+
+const handleOptionChange = (e) => {
+  const value =
+    e.target.value === "HalfDay"
+      ? Number(bookdata.HalfDayTotal)
+      : Number(bookdata.FullDayTotal);
+  setSelectedPrice(value);
+  if (value == Number(bookdata.HalfDayTotal)){
+    setBookTime("Half Day");
+  }else{
+    setBookTime("Full Day");
+  }
+   setTotal(value);
+   setAddedItems([]);
+
+};
+
 
   const { id } = useParams();
    useEffect(() => {
@@ -74,19 +110,50 @@ const BookCard = () => {
          return { ...prevQuantities, [id]: newQuantity };
        });
      };
-       const handleDeleteClick = (id) => {
-         setAddedItems((prevItems) =>
-           prevItems.filter((item) => item._id !== id)
-         );
-       };
-       const handleAddClick = (item) => {
-         setAddedItems((prevItems) => {
-           if (!prevItems.find((addedItem) => addedItem._id === item._id)) {
-             return [...prevItems, item];
-           }
-           return prevItems;
-         });
-       };
+     const handleDeleteClick = (itemId) => {
+       setAddedItems((prevItems) => {
+         // Find the item to remove
+         const itemToRemove = prevItems.find((item) => item._id === itemId);
+
+         if (itemToRemove) {
+           // Calculate the total price to subtract
+           const totalPriceToSubtract =
+             itemToRemove.Price * (quantities[itemId] || 1);
+
+           // Remove the item from the list
+           const updatedItems = prevItems.filter((item) => item._id !== itemId);
+
+           // Update the total price
+           setTotal((prevTotal) => prevTotal - totalPriceToSubtract);
+
+           return updatedItems;
+         }
+
+         return prevItems;
+       });
+     };
+
+ const handleAddClick = (item) => {
+   setAddedItems((prevItems) => {
+     if (!prevItems.find((addedItem) => addedItem._id === item._id)) {
+       setTotal(
+         (prevTotal) =>
+           prevTotal + item.Price * (quantities[item._id] || 1) 
+         
+       );
+       setextraprice(total);
+       return [...prevItems, item];
+     }
+     return prevItems;
+   });
+ };
+ const onCaptchaChange = (token) => {
+   setCaptchaVerified(!!token);
+   setCaptchaErr(!token);
+ };
+
+
+
 
      const calculateTotal = (id, price) => {
        const quantity = quantities[id] || 1; // Default to 1 if quantity is not set yet
@@ -109,16 +176,23 @@ const BookCard = () => {
         const errors = {};
 
         if (!values.HallName) {
-          errors.HallName = "Course Name is required!";
+          errors.HallName = "Hall Name is required!";
         }
 
-        if (!values.Email) {
-          errors.Email = "Email is required!";
-        }
+       if (!values.Email) {
+         errors.Email = "Email is required!";
+       } else if (
+         !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(values.Email)
+       ) {
+         errors.Email = "Enter a valid email address!";
+       }
 
-        if (!values.Mobile) {
-          errors.Mobile = "Mobile is required!";
-        }
+       // Mobile number validation
+       if (!values.Mobile) {
+         errors.Mobile = "Mobile is required!";
+       } else if (!/^\d{10}$/.test(values.Mobile)) {
+         errors.Mobile = "Mobile number must be exactly 10 digits!";
+       }
 
         if (!values.ContactPerson) {
           errors.ContactPerson = "Contact person is required!";
@@ -127,15 +201,15 @@ const BookCard = () => {
         if (!values.CompanyName) {
           errors.CompanyName = "Company Name is required!";
         }
-         if (!values.Bookdate) {
-           errors.bookdata = "Book data is required!";
+         if (!values.BookDate) {
+           errors.BookDate = "Book data is required!";
          }
 
 
         return errors;
       };
 
-      const handleClick = (e) => {
+      const handleClick = async (e) => {
         e.preventDefault();
 
         // Check CAPTCHA first
@@ -152,35 +226,87 @@ const BookCard = () => {
         if (Object.keys(errors).length === 0) {
           const formdata = new FormData();
           formdata.append("Email", values.Email);
+          formdata.append("BookDate", values.BookDate);
           formdata.append("Mobile", values.Mobile);
           formdata.append("ContactPerson", values.ContactPerson);
           formdata.append("CompanyName", values.CompanyName);
           formdata.append("HallName", bookdata.Name);
           formdata.append("IsActive", values.IsActive);
+          formdata.append("BookTime", bookTime);
+          formdata.append("Total", total);
 
           console.log("Submitting form with data:", formdata);
 
-          createCourseForm(formdata)
-            .then((res) => {
-              console.log("Response from server:", res);
-              setToastVisibility(true);
-              setValues(initialState);
-            })
-            .catch((err) => {
-              console.log("Error from server:", err);
-            });
+          try {
+            const res = await createBookingDetails(formdata);
+            console.log("Response from server:", res.data._id);
+
+            // Loop through extraBookData and post each item
+            for (const item of extraBookData) {
+              const extraBookDataFormData = new FormData();
+              extraBookDataFormData.append("OrderId", res.data._id);
+              extraBookDataFormData.append("Name", item.Name); // Corrected to match item properties
+              extraBookDataFormData.append("Price", item.Price);
+
+              // Fetch quantity from the quantities state using item._id
+              const itemQuantity = quantities[item._id] || 1; // Default to 1 if not set
+              extraBookDataFormData.append("Quantity", itemQuantity);
+
+              extraBookDataFormData.append("SortOrder", item.SortOrder); // Ensure this field exists
+              extraBookDataFormData.append("IsActive", true); // Assuming all activities are active
+
+              try {
+                const extraBookResponse = await createExtraBookingDetails(
+                  extraBookDataFormData
+                );
+                console.log(
+                  "extraBook Response from server:",
+                  extraBookResponse
+                );
+              } catch (extraBookError) {
+                console.error("Error posting extraBook:", extraBookError);
+              }
+            }
+            setAddedItems([]);
+            setToastVisibility(true);
+            setValues(initialState);
+          } catch (err) {
+            console.log("Error from server:", err);
+          }
         } else {
           console.log("Form has errors:", errors);
         }
       };
 
-const onCaptchaChange = (token) => {
-  setCaptchaVerified(!!token);
-  setCaptchaErr(!token);
-};
+
 
   return (
     <div className="resource-news">
+      <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 11 }}>
+        <div
+          id="liveToast"
+          className={`toast ${isToastVisible ? "show" : "hide"}`}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div className="toast-header">
+            <strong className="me-auto">BPC India</strong>
+            <small>Just now</small>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={() => {
+                setToastVisibility(false);
+              }}
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="toast-body">
+            Your message has been submitted. Our team will contact you soon.
+          </div>
+        </div>
+      </div>
       <section className="resources_news blogbox animation-element capability bounce-up in-view">
         <div className="pageContainer container">
           <h3 className="heading32 pb-3">{bookdata.Name}</h3>
@@ -266,6 +392,36 @@ const onCaptchaChange = (token) => {
                   </div>
                 </Tab>
                 <Tab eventKey="book-now" title="Book Now">
+                  <div className="row mt-5">
+                    <div className="form-group col-md-6">
+                      <input
+                        id="SelectPaymentMethod"
+                        name="BookingMaster.DayBooking"
+                        type="radio"
+                        value="HalfDay"
+                        defaultChecked
+                        onChange={handleOptionChange}
+                      />
+                      <h1 className="tab-box">
+                        Half Day Rs. {bookdata.HalfDayTotal}
+                      </h1>
+                    </div>
+                    <div className="form-group col-md-6">
+                      <input
+                        id="SelectPaymentMethod"
+                        name="BookingMaster.DayBooking"
+                        type="radio"
+                        value="FullDay"
+                        checked={
+                          selectedPrice === Number(bookdata.FullDayTotal)
+                        }
+                        onChange={handleOptionChange}
+                      />
+                      <h1 className="tab-box">
+                        Full Day Rs. {bookdata.FullDayTotal}
+                      </h1>
+                    </div>
+                  </div>
                   <table className="table table-bordered mt-3">
                     <thead>
                       <tr>
@@ -346,39 +502,6 @@ const onCaptchaChange = (token) => {
                   >
                     <div className="row form-row">
                       <input
-                        type="hidden"
-                        id="hdfHalfDayTotal"
-                        value="10620.00"
-                      />
-                      <input
-                        type="hidden"
-                        id="hdfFullDayTotal"
-                        value="17700.00"
-                      />
-                      <div className="form-group col-md-6">
-                        <input
-                          id="SelectPaymentMethod"
-                          name="BookingMaster.DayBooking"
-                          type="radio"
-                          value="HalfDay"
-                          defaultChecked
-                        />
-                        <h1 className="tab-box">
-                          Half Day Rs.{bookdata.HalfDayTotal}
-                        </h1>
-                      </div>
-                      <div className="form-group col-md-6">
-                        <input
-                          id="SelectPaymentMethod"
-                          name="BookingMaster.DayBooking"
-                          type="radio"
-                          value="FullDay"
-                        />
-                        <h1 className="tab-box">
-                          Full Day Rs. {bookdata.FullDayTotal}
-                        </h1>
-                      </div>
-                      <input
                         id="BookingType"
                         name="BookingMaster.BookingType"
                         type="hidden"
@@ -388,36 +511,40 @@ const onCaptchaChange = (token) => {
                         <label htmlFor="BookingMaster_BookingDate">
                           Book Date
                         </label>
+                        {formErrors.BookDate && (
+                          <label
+                            generated="true"
+                            class="error text-danger pull-right"
+                          >
+                            * Please enter date
+                          </label>
+                        )}
                         <input
                           className="form-control"
-                          data-val="true"
-                          data-val-date="The field BookingDate must be a date."
-                          id="BookingMaster_BookingDate"
-                          name="BookingMaster.BookingDate"
+                          name="BookDate"
                           type="date"
+                          value={values.BookDate}
+                          onChange={handleChange}
                         />
-                        <span
-                          className="field-validation-valid"
-                          data-valmsg-for="BookingMaster.BookingDate"
-                          data-valmsg-replace="true"
-                        ></span>
                       </div>
                       <div className="form-group col-md-6"></div>
                       <div className="form-group col-md-6">
                         <label htmlFor="BookingMaster_CompanyName">
-                          <label
-                            for="txtCompanyName"
-                            generated="true"
-                            class="error text-danger pull-right"
-                          >
-                            * Please enter company.
-                          </label>
+                          {formErrors.CompanyName && (
+                            <label
+                              generated="true"
+                              class="error text-danger pull-right"
+                            >
+                              * Please enter company Name
+                            </label>
+                          )}
                           Company Name
                         </label>
                         <input
                           className="form-control"
-                          id="BookingMaster_CompanyName"
-                          name="BookingMaster.CompanyName"
+                          name="CompanyName"
+                          value={values.CompanyName}
+                          onChange={handleChange}
                           type="text"
                         />
                       </div>
@@ -425,45 +552,40 @@ const onCaptchaChange = (token) => {
                         <label htmlFor="BookingMaster_Email">
                           Contact Person
                         </label>
-                        <label
-                          for="txtContactPerson"
-                          generated="true"
-                          class="error text-danger pull-right"
-                        >
-                          * Please enter name.
-                        </label>
+                        {formErrors.ContactPerson && (
+                          <label
+                            generated="true"
+                            class="error text-danger pull-right"
+                          >
+                            * Please enter Contact Person
+                          </label>
+                        )}
                         <input
                           className="form-control"
-                          data-val="true"
-                          data-val-required="This field is required."
-                          id="BookingMaster_Email"
-                          name="BookingMaster.Email"
-                          type="email"
+                          name="ContactPerson"
+                          value={values.ContactPerson}
+                          onChange={handleChange}
+                          type="text"
                         />
-                        <span
-                          className="field-validation-valid"
-                          data-valmsg-for="BookingMaster.Email"
-                          data-valmsg-replace="true"
-                        ></span>
                       </div>
                       <div className="form-group col-md-6">
                         <label htmlFor="BookingMaster_ContactNo">
                           Email Address
                         </label>
-                        <label
-                          for="txtEmail"
-                          generated="true"
-                          class="error text-danger pull-right"
-                        >
-                          * Please enter email.
-                        </label>
+                        {formErrors.Email && (
+                          <label
+                            generated="true"
+                            class="error text-danger pull-right"
+                          >
+                            <span>'{formErrors.Email}'</span>
+                          </label>
+                        )}
                         <input
                           className="form-control"
-                          data-val="true"
-                          data-val-required="This field is required."
-                          id="BookingMaster_ContactNo"
-                          name="BookingMaster.ContactNo"
-                          type="text"
+                          name="Email"
+                          value={values.Email}
+                          onChange={handleChange}
+                          type="email"
                         />
                         <span
                           className="field-validation-valid"
@@ -475,17 +597,20 @@ const onCaptchaChange = (token) => {
                         <label htmlFor="BookingMaster_Address">
                           Mobile Number
                         </label>
-                        <label
-                          for="txtMobile"
-                          generated="true"
-                          class="error text-danger pull-right"
-                        >
-                          * Please enter mobile.
-                        </label>
+                        {formErrors.Mobile && (
+                          <label
+                            generated="true"
+                            class="error text-danger pull-right"
+                          >
+                            {formErrors.Mobile}
+                          </label>
+                        )}
                         <input
                           className="form-control"
-                          id="BookingMaster_Address"
-                          name="BookingMaster.Address"
+                          name="Mobile"
+                          type="number"
+                          value={values.Mobile}
+                          onChange={handleChange}
                         ></input>
                       </div>
                       <div className="cart-table table-responsive">
@@ -510,7 +635,7 @@ const onCaptchaChange = (token) => {
                               <tr key={item._id}>
                                 <td>{item.Name}</td>
                                 <td>{item.Price.toFixed(2)}</td>
-                                <td>{quantities[item._id] || 1}</td>  
+                                <td>{quantities[item._id] || 1}</td>
                                 <td>
                                   {calculateTotal(item._id, item.Price).toFixed(
                                     2
@@ -528,7 +653,24 @@ const onCaptchaChange = (token) => {
                         </table>
                       </div>
                       <div className="form-group col-md-6">
-                        <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} />
+                        {formErrors.Capcha && (
+                          <label
+                            generated="true"
+                            class="error text-danger pull-right"
+                          >
+                            * Capcha is not valid
+                          </label>
+                        )}
+                        <ReCAPTCHA
+                          className="mb-3"
+                          onChange={onCaptchaChange}
+                          sitekey={process.env.REACT_APP_SITE_KEY}
+                        />
+                        {captchaErr && (
+                          <div className="text-danger">
+                            Please verify the CAPTCHA
+                          </div>
+                        )}
                       </div>
                       <div className="form-group col-md-6">
                         <label>Total :</label>
@@ -537,7 +679,7 @@ const onCaptchaChange = (token) => {
                           name="BookingMaster.Total"
                           readOnly
                           id="Total"
-                          value="10620.00"
+                          value={total}
                           className="form-control vvv"
                           fdprocessedid="ceggv"
                         />
@@ -545,7 +687,11 @@ const onCaptchaChange = (token) => {
 
                       <div className="form-row"></div>
                     </div>
-                    <button type="submit" className="btn btn-primary mt-2">
+                    <button
+                      type="submit"
+                      onClick={handleClick}
+                      className="btn btn-primary mt-2"
+                    >
                       Submit
                     </button>
                   </form>
