@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+  import { ToastContainer, toast } from "react-toastify";
+
 
 import logo1 from "../../assets/images/home/icon/50.png";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Alert, Modal } from "react-bootstrap";
 import ff from "../../assets/images/Extra/download_icon.png";
 import gg from "../../assets/images/Extra/hallbooking_icon.png";
 import ii from "../../assets/images/Extra/contact_icon.png";
@@ -13,7 +15,8 @@ import close from '../../assets/images/Extra/close-contact.png'
 import { Link } from "react-router-dom";
 import { NbAboutUs, Logo } from "../../Functions/NbAboutUs";
 import { listCourses } from "../../Functions/Courses";
-import { createContactForm } from "../../Functions/ContactForm";
+// import { createContactForm } from "../../Functions/ContactForm";
+
 import ReCAPTCHA from "react-google-recaptcha";
 const initialState = {
   Name: "",
@@ -28,7 +31,10 @@ const initialState = {
   IsActive: true,
 };
 
+
 const Nb = () => {
+
+
   const [values, setValues] = useState(initialState);
   const [scrolled, setScrolled] = useState();
   const [menu, setMenu] = useState(false);
@@ -93,11 +99,16 @@ const [capchaErr, setCaptchaErr] = useState(false);
          console.error("Error loading NbAboutUs:", error);
        }
      };
+ 
+
+
 
    fetchNbAboutUs(); // Call the function
    LogoLoad();
    Courses();
  }, []);
+
+ 
  useState(()=>{
   console.log("logoqwdata:", logodata);
  }, [logodata]);
@@ -224,7 +235,9 @@ const [capchaErr, setCaptchaErr] = useState(false);
                response.data.data
                
              );
-             setToastVisibility(true);
+             toast.success("Sent Successfully", {
+              position: "bottom-right",
+             })
             setValues(initialState);
             setContact(false);
            } else {
@@ -272,8 +285,14 @@ const [capchaErr, setCaptchaErr] = useState(false);
   
   return (
     <div>
+      <ToastContainer />
+
       <header id="headerMain">
-        <div className={`header ${scrolled === true && "active"}`}>
+        <div
+          className={`header ${
+            scrolled === true && menu === false && "active"
+          }`}
+        >
           <div className="pageContainer d-flex justify-content-between">
             <div
               className="logo"
@@ -391,7 +410,9 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         BARODA PRODUCTIVITY COUNCIL
                       </Link>
                     </div>
+
                     <hr />
+
                     <div className="menu-content">
                       <div className="row rtr">
                         <div className="col-sm-9">
@@ -405,7 +426,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   height="28px"
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
-                                  src="assets/images/home/icon/9.png"
+                                  src="../../assets/images/home/icon/9.png"
                                 />
                                 Career Planning
                               </h4>
@@ -440,7 +461,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   height="29px"
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
-                                  src="assets/images/home/icon/8.png"
+                                  src="../../assets/images/home/icon/8.png"
                                 />
                                 Gallery
                               </h4>
@@ -466,13 +487,12 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             <div className="col-sm-4">
                               <h4>
                                 <img
-                                  data-src="assets/images/home/icon/solution.png"
                                   alt="services"
                                   width="34px"
                                   height="30px"
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
-                                  src="assets/images/home/icon/solution.png"
+                                  src="../../assets/images/home/icon/solution.png"
                                 />
                                 <Link
                                   to="/Training"
@@ -491,7 +511,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   className="lazyloaded"
                                 />
                                 <Link
-                                  to="/Home/Download"
+                                  to="/Download"
                                   onClick={() => handleMenuToggle(!menu)}
                                 >
                                   Download
@@ -508,7 +528,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   height="28px"
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
-                                  src="assets/images/home/icon/3.png"
+                                  src="../../assets/images/home/icon/3.png"
                                 />
                                 About Us
                               </h4>
@@ -527,6 +547,9 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                 ) : (
                                   <p>Loading menu items...</p>
                                 )}
+                                <li>
+                                  <Link>career</Link>
+                                </li>
                               </ul>
                             </div>
                             <div className="col-sm-4">
@@ -538,7 +561,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   height="28px"
                                   style={{ verticalAlign: "middle" }}
                                   className="lazyloaded"
-                                  src="assets/images/home/icon/6.png"
+                                  src="../../assets/images/home/icon/6.png"
                                 />
                                 Courses
                               </h4>
@@ -623,42 +646,66 @@ const [capchaErr, setCaptchaErr] = useState(false);
                           </h4>
                           <ul className="main-header-menu">
                             <li>
-                              <Link to="/Services" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 People and Organizational Capability Enhancement
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/2" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 Industries Offerings & Solutions
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/3" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 Business Process Re-engineering
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/4" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 Time and Motion Study
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/5" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 Budgeting Process Improvement
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/6" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 Strategy Implementattion Enablers
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/7" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 Recruitment and Promotional Interviews
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Home/ServiceDetail/8" onClick={() => handleMenuToggle(!menu)}>
+                              <Link
+                                to="/Services"
+                                onClick={() => handleMenuToggle(!menu)}
+                              >
                                 Corporate Social Responsibility (CSR)
                               </Link>
                             </li>

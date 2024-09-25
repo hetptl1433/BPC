@@ -6,6 +6,8 @@ import { Modal, Button, Form, Row, Col, Container } from "react-bootstrap";
 import { listCoursedata } from "../../Functions/CouesesData";
 import ReCAPTCHA from "react-google-recaptcha";
 import { createCourseForm } from "../../Functions/CoursesForm";
+  import { ToastContainer, toast } from "react-toastify";
+
 
 const initialState = {
   Email: "",
@@ -39,6 +41,8 @@ const CourseForm = () => {
 
   const validate = () => {
     const errors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobileRegex = /^\d{10}$/;
 
     if (!values.CourseName) {
       errors.CourseName = "Course Name is required!";
@@ -46,10 +50,15 @@ const CourseForm = () => {
 
     if (!values.Email) {
       errors.Email = "Email is required!";
+    } else if (!emailRegex.test(values.Email)) {
+      errors.Email = "Email is not valid!";
     }
 
+    // Mobile number validation
     if (!values.Mobile) {
       errors.Mobile = "Mobile is required!";
+    } else if (!mobileRegex.test(values.Mobile)) {
+      errors.Mobile = "Mobile number must be 10 digits!";
     }
 
     if (!values.ContactPerson) {
@@ -65,6 +74,9 @@ const CourseForm = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+     const errors = validate();
+     setFormErrors(errors);
+     setIsSubmit(true);
 
     // Check CAPTCHA first
     if (!captchaVerified) {
@@ -73,9 +85,7 @@ const CourseForm = () => {
       return;
     }
 
-    const errors = validate();
-    setFormErrors(errors);
-    setIsSubmit(true);
+   
 
     if (Object.keys(errors).length === 0) {
       const formdata = new FormData();
@@ -91,7 +101,10 @@ const CourseForm = () => {
       createCourseForm(formdata)
         .then((res) => {
           console.log("Response from server:", res);
-           setToastVisibility(true);
+          //  setToastVisibility(true);
+            toast.success("Sent Successfully", {
+              position: "bottom-right",
+            });
           setValues(initialState);
           handleShow();
           handleClose();
@@ -131,6 +144,7 @@ const CourseForm = () => {
 
   return (
     <div>
+      <ToastContainer />
       <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 11 }}>
         <div
           id="liveToast"

@@ -19,15 +19,10 @@ const DownloadSection = () => {
   return (
     <section className="bod_section mb-5">
       <Container className="pageContainer animation-element slide-left in-view">
-        <Breadcrumb>
-          <Breadcrumb.Item href="index.html">Home</Breadcrumb.Item>
-          <Breadcrumb.Item active aria-current="page">
-            <a href="#">Downloads</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
+     
 
-        <div className="bod_top_text">
-          <h2 className="heading32 pb-3 lh-1">Download Category</h2>
+        <div className="bod_top_text mt-5">
+          <h2 className="heading32 pb-3 lh-1">Download </h2>
 
           {downloadData.length > 0 ? (
             downloadData.map((download) => (

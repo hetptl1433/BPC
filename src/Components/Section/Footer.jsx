@@ -19,7 +19,11 @@ const Footer = () => {
                 Powered by
               </span>
               <span style={{ color: "#e86f24", fontWeight: "bold" }}>
-                Barodaweb The E-Catalogue Designer
+                <a href="https://www.barodaweb.com" target="_blank">
+                  {" "}
+                  Barodaweb The E-Catalogue
+                </a>
+                Designer
               </span>
             </p>
           </div>
@@ -28,7 +32,7 @@ const Footer = () => {
               <li>
                 <Link to="#" target="_blank" className="fbook">
                   <img
-                    src="assets/images/1x/linkedincolor.png"
+                    src="../../assets/images/1x/linkedincolor.png"
                     width="25px"
                     height="25px"
                     alt="LinkedIn"
@@ -38,14 +42,14 @@ const Footer = () => {
               <li>
                 <Link to="#" target="_blank" className="fbook">
                   <img
-                    src="assets/images/1x/facebookcolor.png"
+                    src="../../assets/images/1x/facebookcolor.png"
                     alt="Facebook"
                   />
                 </Link>
               </li>
               <li>
                 <Link to="#" target="_blank" className="fbook">
-                  <img src="assets/images/1x/youtube.png" alt="YouTube" />
+                  <img src="../../assets/images/1x/youtube.png" alt="YouTube" />
                 </Link>
               </li>
             </ul>
@@ -53,7 +57,7 @@ const Footer = () => {
         </div>
         <div className="nseColorflow">
           <img
-            src="assets/images/footer-strip.png"
+            src="../../assets/images/footer-strip.png"
             width="1283px"
             height="10px"
             alt="Footer Strip"

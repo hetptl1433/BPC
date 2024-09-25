@@ -7,7 +7,7 @@ const NewsBanner = () => {
       <section className="aboutpage ">
         <div className="abouttxt ">
           <h1 className="heading40 animated bounceInDown regular-light">
-            News Event
+            News & Events
           </h1>
         </div>
         <div className="smallbanner">

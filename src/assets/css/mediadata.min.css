@@ -5827,3 +5827,8 @@ figcaption {
     overflow-x: unset !important;
   }
 }
+@media (min-width: 1200px){
+  .container.servicc{
+    max-width: 1320px !important;
+  }
+}

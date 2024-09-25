@@ -18,12 +18,16 @@ import "./assets/font-awesome-4.7.0/css/font-awesome.css";
 import "./assets/font-awesome-4.7.0/css/font-awesome.min.css";
 
 import Footer from "./Components/Section/Footer";
+import ScrollToTop from "./Components/Common/ScrollToTop ";
+import GlobalTooltip from "./Components/Common/GlobalToolTip";
 
 function App() {
   return (
     <>
       <div className="tyt">
         <Nb></Nb>
+        {/* <GlobalTooltip/> */}
+        <ScrollToTop/>
         <Outlet></Outlet>
         <Footer></Footer>
       </div>

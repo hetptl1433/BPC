@@ -57,10 +57,10 @@ const WhatNew = () => {
                     this deadly enemy, let's pool our learning and ideas for
                     rebuilding the Nation by registering for "Productivity in
                     COVID Uncertainty Contest 2020"
+                    <Link to="#" className="readmoreRed1 pt-3">
+                      Read More
+                    </Link>
                   </p>
-                  <Link to="#" className="readmoreRed1 pt-3">
-                    Read More
-                  </Link>
                 </div>
               </Carousel.Item>
               <Carousel.Item>
@@ -81,10 +81,10 @@ const WhatNew = () => {
                         An autonomous, non-profit institution affiliated with
                         the National Productivity Council, New Delhi, and Asian
                         Productivity Organization, Tokyo.
+                        <Link to="#" className="readmoreRed1 pt-3">
+                          Read More
+                        </Link>
                       </p>
-                      <Link to="#" className="readmoreRed1 pt-3">
-                        Read More
-                      </Link>
                     </div>
                   </div>
                 </div>
@@ -98,11 +98,11 @@ const WhatNew = () => {
                   <p style={{ color: "#483773", fontWeight: "bold" }}>
                     An equal representation of Government, Industry, and Labor
                     Organizations on its Managing Committee. Registered under
-                    the Societies Registration Act, 1860...
+                    the Societies Registration Act, 1860... <br/>
+                    <Link to="#" className="readmoreRed1 pt-3">
+                      Read More
+                    </Link>
                   </p>
-                  <Link to="#" className="readmoreRed1 pt-3">
-                    Read More
-                  </Link>
                 </div>
               </Carousel.Item>
             </Carousel>

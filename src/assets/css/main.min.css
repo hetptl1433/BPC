@@ -2096,3 +2096,17 @@ p {
   left:-16px !important;
 }
 }
+
+
+ .valueSection .carousel-indicators [data-bs-target] {
+  background-color: #c4c0d7;
+  height: 9px;
+  width:20px;
+}
+.valueSection .carousel-indicators .active   {
+  background-color:  #3a2e7e !important
+} 
+
+.valueSection .carousel-item{
+  height: 470px;
+}

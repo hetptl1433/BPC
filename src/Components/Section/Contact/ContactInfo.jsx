@@ -23,8 +23,8 @@ const ContactInfo = () => {
                 style={{ display: "block" }}
               >
                 <h3 className="heading32 pb-3">India - Vadodara</h3>
-                <h1>Office</h1>
-                <p>Vadodara</p>
+                <p>Office <br/>
+               Vadodara</p>
                 <span>
                   2nd Floor, Productivity House, Productivity Road, Alkapuri,
                   Vadodara-390007

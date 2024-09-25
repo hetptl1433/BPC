@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const SocialVisionBox = () => {
+const   SocialVisionBox = () => {
   return (
     <section className="socialvisionbx">
       <div className="pageContainer animation-element bounce-up in-view">

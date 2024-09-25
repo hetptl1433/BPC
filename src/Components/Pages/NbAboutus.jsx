@@ -6,6 +6,8 @@ import p32 from "../../assets/images/Extra/top-banners_11.jpg";
 import p33 from "../../assets/images/Extra/trangle-banner_1.png";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import ServiceSlider from "../Section/Home/ServiceSlider";
+import Banner5 from "../Section/Home/Banner5";
 
 const NbAboutUs = () => {
   const { subTitle } = useParams(); // Extract subTitle from URL
@@ -61,8 +63,8 @@ const NbAboutUs = () => {
           </div>
         </section>
       </div>
-      <section className="para_section">
-        <div className="pageContainer">
+      <section>
+        <div>
           <div className="page_top_text animation-element slide-left in-view">
             <div
               dangerouslySetInnerHTML={{
@@ -72,9 +74,10 @@ const NbAboutUs = () => {
           </div>
         </div>
       </section>
-      <SocialVision></SocialVision>
-      <Commitment></Commitment>
-      <Banner6></Banner6>
+      {/* <SocialVision></SocialVision> */}
+      {/* <Commitment></Commitment> */}
+      <Banner5 />
+      <Banner6 />
     </div>
   );
 };

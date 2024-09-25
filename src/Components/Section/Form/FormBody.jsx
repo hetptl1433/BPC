@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Container, Modal } from "react-bootstrap";
 import { createRAS, createRASData } from "../../../Functions/RAC";
+import { toast, ToastContainer } from "react-toastify";
 const initialState = {
   Organization: "",
   EmployeeCode: 0,
@@ -66,7 +67,23 @@ const [activityList, setActivityList] = useState([]);
   };
 
   // Handle adding a new activity to the list
+  
   const handleAddActivity = () => {
+    const errors = validateActivity();
+
+    // If there are validation errors, display them as alerts
+    if (Object.keys(errors).length > 0) {
+      if (errors.ActivityName) {
+        alert(errors.ActivityName);
+      } else if (errors.frequency) {
+        alert(errors.frequency);
+      } else if (errors.timePerFrequency) {
+        alert(errors.timePerFrequency);
+      }
+      return; // Prevent further execution if validation fails
+    }
+
+    // If no errors, proceed to add the activity
     setActivityList((prevList) => [
       ...prevList,
       { ...activityDetails, id: prevList.length + 1 },
@@ -84,7 +101,6 @@ const [activityList, setActivityList] = useState([]);
       [e.target.name]: e.target.value,
     });
   };
-  const handleClose = () => setSubmitted(false);
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -123,7 +139,7 @@ const handleSubmit = async (e) => {
     try {
       const response = await createRAS(formdata);
       console.log("Response from server:", response);
-      setToastVisibility(true);
+      toast.success("Your data is submmited successfully");
 
       // Send each activity in the activityList to the API
       for (const activity of activityList) {
@@ -183,21 +199,26 @@ const handleSubmit = async (e) => {
 
     return errors;
   };
+  const validateActivity = () => {
+    const errors = {};
+
+    if (!activityDetails.name) {
+      errors.ActivityName = "Activity Name is required!";
+    }
+    if (!activityDetails.frequency) {
+      errors.frequency = "Activity Frequency is required!";
+    }
+    if (!activityDetails.timePerFrequency) {
+      errors.timePerFrequency = "Activity Time Per Frequency is required!";
+    }
+
+    return errors;
+  };
 
   return (
     <Container className="yoform">
-      <Modal show={submiited} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Form Submitted</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="m-3">your data is sent to our team , thank you for completing form</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        
-        </Modal.Footer>
-      </Modal>
+      <ToastContainer/>
+   
       <form id="AddNewsform" onSubmit={handleSubmit}>
         <input name="__RequestVerificationToken" type="hidden" />
         {/* Header Start */}

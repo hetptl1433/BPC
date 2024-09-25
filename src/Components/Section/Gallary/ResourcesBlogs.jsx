@@ -25,7 +25,7 @@ const ResourceBlogs = () => {
   return (
     <div className="resource-blogs">
       <section className="resources_blogs blogbox animation-element capability bounce-up in-view">
-        <div className="pageContainer container">
+        <div className="pageContainer ">
           <h3 className="heading32 pb-3">Our Posts</h3>
           <div className="row pb-3">
             <div className="col-lg-12 blogtab">

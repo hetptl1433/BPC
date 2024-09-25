@@ -5,6 +5,7 @@ import { fetchBookNow , fetchExtraBook} from "../../../Functions/BookNow";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useParams } from "react-router-dom";
 import { createBookingDetails, createExtraBookingDetails } from "../../../Functions/BookingDetails";
+import { toast, ToastContainer } from "react-toastify";
 const initialState = {
   BookDate: "",
   Email: "",
@@ -263,12 +264,15 @@ const handleOptionChange = (e) => {
                   "extraBook Response from server:",
                   extraBookResponse
                 );
+                 
               } catch (extraBookError) {
                 console.error("Error posting extraBook:", extraBookError);
               }
             }
             setAddedItems([]);
-            setToastVisibility(true);
+           toast.success("Sent Successfully", {
+             position: "bottom-right",
+           });
             setValues(initialState);
           } catch (err) {
             console.log("Error from server:", err);
@@ -282,6 +286,7 @@ const handleOptionChange = (e) => {
 
   return (
     <div className="resource-news">
+      <ToastContainer />
       <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 11 }}>
         <div
           id="liveToast"
@@ -340,7 +345,7 @@ const handleOptionChange = (e) => {
                           <h1 className="tab-box ft-5 ">Half Day</h1>
                           <div className="bodybox mt-2">
                             <h1 className="heading18 ft-5">
-                              {bookdata.HalfDayCapacity}
+                              Capacity: {bookdata.HalfDayCapacity}
                             </h1>
                             <h1 className="heading18 ft-5">
                               Basic Value: {bookdata.HalfDayCapacity}
@@ -652,7 +657,7 @@ const handleOptionChange = (e) => {
                           </tbody>
                         </table>
                       </div>
-                      <div className="form-group col-md-6">
+                      <div className="form-group col-md-5">
                         {formErrors.Capcha && (
                           <label
                             generated="true"
@@ -672,7 +677,8 @@ const handleOptionChange = (e) => {
                           </div>
                         )}
                       </div>
-                      <div className="form-group col-md-6">
+                      <div className="col-md-2"></div>
+                      <div className="form-group col-md-5">
                         <label>Total :</label>
                         <input
                           type="text"

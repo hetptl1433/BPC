@@ -14,7 +14,7 @@ const Commitment = () => {
                 data-src={p33}
                 src={p33}
               />
-              <p className="pt-3">The Way We Work</p>
+              <p className="pt-3">Commitment</p>
               <Link className="readmoreRed pt-3" to="/">
                 Read More
               </Link>
@@ -23,18 +23,13 @@ const Commitment = () => {
             <div className="CommitmentRightsolbox animation-element slide-right in-view">
               <h3 className="heading32 pt-3">BPC Goal</h3>
               <p className="pt-3">
-                To create Indian and international treasury of time and motion
-                standards. To become leader in Industrial Dispute settlement.
-                <br />
-                To become a reliable employment exchange both for employer and
-                employee.
-                <br />
-                To become path finder for academic and career counseling for the
-                youth, students and parents (they do not become dream stealer)
-                <br />
-                To become rural folk enabler of their livelihoods by sustaining
-                their personal productivity through existing and renewed
-                cooperative movement.
+                Within the BPC family, we recognize and share responsibilities
+                enabling continuous improvement of its operations. Baroda
+                Productivity Council is a multi-activity proactive & innovative
+                learning organization having pioneered the HR movement in
+                Gujarat in 1959 through Education, Corporate Training &
+                Management Development Activities with a gradual shift & focus
+                on HRD, PROGRAMMES, INDUSTRIAL CONSULTANCY & RECRUITMENT.
               </p>
             </div>
           </div>
