@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Carousel, Tabs, Tab, Table } from "react-bootstrap";
 import pht4 from "../../../assets/images/Extra/df6c785c9b5940c7ad82038028f29694.jpg";
-import { fetchBookNow , fetchExtraBook} from "../../../Functions/BookNow";
+import { fetchBookNow , fetchDataByTitles, fetchExtraBook, fetchExtraBookImage} from "../../../Functions/BookNow";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useParams } from "react-router-dom";
 import { createBookingDetails, createExtraBookingDetails } from "../../../Functions/BookingDetails";
@@ -18,271 +18,258 @@ const initialState = {
 };
 const BookCard = () => {
   const [bookdata, setBookData] = useState([]);
-  const[ total, setTotal]= useState(0);
+  const [BookDataImage, setBookDataImage] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [id, setId] = useState(null); 
   const [bookTime, setBookTime] = useState("Half Day");
-  
 
   const [extraBookData, setExtraBookData] = useState([]);
   const [quantities, setQuantities] = useState({});
-   const [addedItems, setAddedItems] = useState([]);
+  const [addedItems, setAddedItems] = useState([]);
   const [isSubmit, setIsSubmit] = useState(false);
   const [extraprice, setextraprice] = useState(null);
-
-   const [isToastVisible, setToastVisibility] = useState(false);
+  const [isToastVisible, setToastVisibility] = useState(false);
   const [values, setValues] = useState(initialState);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaErr, setCaptchaErr] = useState(false);
   const [formErrors, setFormErrors] = useState({});
-const [selectedPrice, setSelectedPrice] = useState(0); // Default to Half Day price
+  const [selectedPrice, setSelectedPrice] = useState(0); // Default to Half Day price
+
+  useEffect(() => {
+    setSelectedPrice(Number(bookdata.HalfDayTotal));
+    setTotal(Number(bookdata.HalfDayTotal));
+  }, [bookdata]);
+
+  const { title } = useParams();
+  const sanitizedTitle = title.replace(/\s+/g, ""); // Removes all spaces
+
+  const handleOptionChange = (e) => {
+    const value =
+      e.target.value === "HalfDay"
+        ? Number(bookdata.HalfDayTotal)
+        : Number(bookdata.FullDayTotal);
+    setSelectedPrice(value);
+    if (value == Number(bookdata.HalfDayTotal)) {
+      setBookTime("Half Day");
+    } else {
+      setBookTime("Full Day");
+    }
+    setTotal(value);
+    setAddedItems([]);
+  };
 
 
   useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log("no errors");
+    fetchExtraBooks();
+    fetchInnerData();
+    fetchDataByTitle();
+    fetchInnerDataImage();
+  }, [id]);
+
+  const fetchInnerDataImage = async () => {
+    try {
+      const data = await fetchExtraBookImage(id);
+      setBookDataImage(data.data);
+    } catch (error) {
+      console.error("Error loading Booking data:", error);
     }
-  }, [formErrors, isSubmit]);
- 
-useEffect(()=>{
-console.log(addedItems);
-}, [addedItems])
+  };
 
-useEffect(() => {
-  setSelectedPrice(Number(bookdata.HalfDayTotal));
-  setTotal(Number(bookdata.HalfDayTotal));
-}, [bookdata]);
+  const fetchInnerData = async () => {
+    try {
+      const data = await fetchBookNow(id);
+      setBookData(data.data);
+    } catch (error) {
+      console.error("Error loading Booking data:", error);
+    }
+  };
+  const fetchDataByTitle = async () => {
+    try {
+      const data = await fetchDataByTitles(title);
+      console.log("aj joie che",data.data._id);
+    setId(data.data._id);
+    } catch (error) {
+      console.error("Error loading Booking data:", error);
+    }
+  };
+  const fetchExtraBooks = async () => {
+    try {
+      const data = await fetchExtraBook();
 
-
-const handleOptionChange = (e) => {
-  const value =
-    e.target.value === "HalfDay"
-      ? Number(bookdata.HalfDayTotal)
-      : Number(bookdata.FullDayTotal);
-  setSelectedPrice(value);
-  if (value == Number(bookdata.HalfDayTotal)){
-    setBookTime("Half Day");
-  }else{
-    setBookTime("Full Day");
-  }
-   setTotal(value);
-   setAddedItems([]);
-
-};
-
-
-  const { id } = useParams();
-   useEffect(() => {
-     const fetchInnerData = async () => {
-       try {
-         const data = await fetchBookNow(id);
-         setBookData(data.data);
-         console.log("Course Data:", data.data);
-       } catch (error) {
-         console.error("Error loading Booking data:", error);
-       }
-     };
-       const fetchExtraBooks = async () => {
-         try {
-           const data = await fetchExtraBook();
-
-           setExtraBookData(data.data);
-             const initialQuantities = {};
-      data.forEach(item => {
+      setExtraBookData(data.data);
+      const initialQuantities = {};
+      data.forEach((item) => {
         initialQuantities[item._id] = 1; // Default quantity is 1
       });
       setQuantities(initialQuantities);
-    
-           console.log("Course Data:", data.data);
-         } catch (error) {
-           console.error("Error loading course data:", error);
-         }
-       };
+    } catch (error) {
+      console.error("Error loading course data:", error);
+    }
+  };
 
-       
-       fetchExtraBooks();
-     fetchInnerData();
+  const handleQuantityChange = (id, delta) => {
+    setQuantities((prevQuantities) => {
+      const newQuantity = Math.max(1, (prevQuantities[id] || 1) + delta); // Ensure quantity doesn't go below 1
+      return { ...prevQuantities, [id]: newQuantity };
+    });
+  };
+  const handleDeleteClick = (itemId) => {
+    setAddedItems((prevItems) => {
+      // Find the item to remove
+      const itemToRemove = prevItems.find((item) => item._id === itemId);
 
+      if (itemToRemove) {
+        // Calculate the total price to subtract
+        const totalPriceToSubtract =
+          itemToRemove.Price * (quantities[itemId] || 1);
 
-     
-   }, [id]);
-     const handleQuantityChange = (id, delta) => {
-       setQuantities((prevQuantities) => {
-         const newQuantity = Math.max(1, (prevQuantities[id] || 1) + delta); // Ensure quantity doesn't go below 1
-         return { ...prevQuantities, [id]: newQuantity };
-       });
-     };
-     const handleDeleteClick = (itemId) => {
-       setAddedItems((prevItems) => {
-         // Find the item to remove
-         const itemToRemove = prevItems.find((item) => item._id === itemId);
+        // Remove the item from the list
+        const updatedItems = prevItems.filter((item) => item._id !== itemId);
 
-         if (itemToRemove) {
-           // Calculate the total price to subtract
-           const totalPriceToSubtract =
-             itemToRemove.Price * (quantities[itemId] || 1);
+        // Update the total price
+        setTotal((prevTotal) => prevTotal - totalPriceToSubtract);
 
-           // Remove the item from the list
-           const updatedItems = prevItems.filter((item) => item._id !== itemId);
+        return updatedItems;
+      }
 
-           // Update the total price
-           setTotal((prevTotal) => prevTotal - totalPriceToSubtract);
+      return prevItems;
+    });
+  };
 
-           return updatedItems;
-         }
+  const handleAddClick = (item) => {
+    setAddedItems((prevItems) => {
+      if (!prevItems.find((addedItem) => addedItem._id === item._id)) {
+        setTotal(
+          (prevTotal) => prevTotal + item.Price * (quantities[item._id] || 1)
+        );
+        setextraprice(total);
+        return [...prevItems, item];
+      }
+      return prevItems;
+    });
+  };
+  const onCaptchaChange = (token) => {
+    setCaptchaVerified(!!token);
+    setCaptchaErr(!token);
+  };
 
-         return prevItems;
-       });
-     };
+  const calculateTotal = (id, price) => {
+    const quantity = quantities[id] || 1; // Default to 1 if quantity is not set yet
+    return quantity * price;
+  };
 
- const handleAddClick = (item) => {
-   setAddedItems((prevItems) => {
-     if (!prevItems.find((addedItem) => addedItem._id === item._id)) {
-       setTotal(
-         (prevTotal) =>
-           prevTotal + item.Price * (quantities[item._id] || 1) 
-         
-       );
-       setextraprice(total);
-       return [...prevItems, item];
-     }
-     return prevItems;
-   });
- };
- const onCaptchaChange = (token) => {
-   setCaptchaVerified(!!token);
-   setCaptchaErr(!token);
- };
+  const handleChange = (e) => {
+    setValues({
+      ...values,
+      HallName: bookdata.Name,
+      [e.target.name]: e.target.value,
+    });
+  };
 
+  const handleCheck = (e) => {
+    setValues({ ...values, Bookfull: e.target.checked });
+  };
 
+  const validate = () => {
+    const errors = {};
 
+    if (!values.HallName) {
+      errors.HallName = "Hall Name is required!";
+    }
 
-     const calculateTotal = (id, price) => {
-       const quantity = quantities[id] || 1; // Default to 1 if quantity is not set yet
-       return quantity * price;
-     };
+    if (!values.Email) {
+      errors.Email = "Email is required!";
+    } else if (
+      !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(values.Email)
+    ) {
+      errors.Email = "Enter a valid email address!";
+    }
 
-      const handleChange = (e) => {
-        setValues({
-          ...values,
-          HallName: bookdata.Name,
-          [e.target.name]: e.target.value,
-        });
-      };
+    // Mobile number validation
+    if (!values.Mobile) {
+      errors.Mobile = "Mobile is required!";
+    } else if (!/^\d{10}$/.test(values.Mobile)) {
+      errors.Mobile = "Mobile number must be exactly 10 digits!";
+    }
 
-      const handleCheck = (e) => {
-        setValues({ ...values, Bookfull: e.target.checked });
-      };
+    if (!values.ContactPerson) {
+      errors.ContactPerson = "Contact person is required!";
+    }
 
-      const validate = () => {
-        const errors = {};
+    if (!values.CompanyName) {
+      errors.CompanyName = "Company Name is required!";
+    }
+    if (!values.BookDate) {
+      errors.BookDate = "Book data is required!";
+    }
 
-        if (!values.HallName) {
-          errors.HallName = "Hall Name is required!";
-        }
+    return errors;
+  };
 
-       if (!values.Email) {
-         errors.Email = "Email is required!";
-       } else if (
-         !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(values.Email)
-       ) {
-         errors.Email = "Enter a valid email address!";
-       }
+  const handleClick = async (e) => {
+    e.preventDefault();
 
-       // Mobile number validation
-       if (!values.Mobile) {
-         errors.Mobile = "Mobile is required!";
-       } else if (!/^\d{10}$/.test(values.Mobile)) {
-         errors.Mobile = "Mobile number must be exactly 10 digits!";
-       }
+    // Check CAPTCHA first
+    if (!captchaVerified) {
+      setCaptchaErr(true);
+      console.log("CAPTCHA not verified");
+      return;
+    }
 
-        if (!values.ContactPerson) {
-          errors.ContactPerson = "Contact person is required!";
-        }
+    const errors = validate();
+    setFormErrors(errors);
+    setIsSubmit(true);
 
-        if (!values.CompanyName) {
-          errors.CompanyName = "Company Name is required!";
-        }
-         if (!values.BookDate) {
-           errors.BookDate = "Book data is required!";
-         }
+    if (Object.keys(errors).length === 0) {
+      const formdata = new FormData();
+      formdata.append("Email", values.Email);
+      formdata.append("BookDate", values.BookDate);
+      formdata.append("Mobile", values.Mobile);
+      formdata.append("ContactPerson", values.ContactPerson);
+      formdata.append("CompanyName", values.CompanyName);
+      formdata.append("HallName", bookdata.Name);
+      formdata.append("IsActive", values.IsActive);
+      formdata.append("BookTime", bookTime);
+      formdata.append("Total", total);
 
+      console.log("Submitting form with data:", formdata);
 
-        return errors;
-      };
+      try {
+        const res = await createBookingDetails(formdata);
 
-      const handleClick = async (e) => {
-        e.preventDefault();
+        // Loop through extraBookData and post each item
+        for (const item of extraBookData) {
+          const extraBookDataFormData = new FormData();
+          extraBookDataFormData.append("OrderId", res.data._id);
+          extraBookDataFormData.append("Name", item.Name); // Corrected to match item properties
+          extraBookDataFormData.append("Price", item.Price);
 
-        // Check CAPTCHA first
-        if (!captchaVerified) {
-          setCaptchaErr(true);
-          console.log("CAPTCHA not verified");
-          return;
-        }
+          // Fetch quantity from the quantities state using item._id
+          const itemQuantity = quantities[item._id] || 1; // Default to 1 if not set
+          extraBookDataFormData.append("Quantity", itemQuantity);
 
-        const errors = validate();
-        setFormErrors(errors);
-        setIsSubmit(true);
-
-        if (Object.keys(errors).length === 0) {
-          const formdata = new FormData();
-          formdata.append("Email", values.Email);
-          formdata.append("BookDate", values.BookDate);
-          formdata.append("Mobile", values.Mobile);
-          formdata.append("ContactPerson", values.ContactPerson);
-          formdata.append("CompanyName", values.CompanyName);
-          formdata.append("HallName", bookdata.Name);
-          formdata.append("IsActive", values.IsActive);
-          formdata.append("BookTime", bookTime);
-          formdata.append("Total", total);
-
-          console.log("Submitting form with data:", formdata);
+          extraBookDataFormData.append("SortOrder", item.SortOrder); // Ensure this field exists
+          extraBookDataFormData.append("IsActive", true); // Assuming all activities are active
 
           try {
-            const res = await createBookingDetails(formdata);
-            console.log("Response from server:", res.data._id);
-
-            // Loop through extraBookData and post each item
-            for (const item of extraBookData) {
-              const extraBookDataFormData = new FormData();
-              extraBookDataFormData.append("OrderId", res.data._id);
-              extraBookDataFormData.append("Name", item.Name); // Corrected to match item properties
-              extraBookDataFormData.append("Price", item.Price);
-
-              // Fetch quantity from the quantities state using item._id
-              const itemQuantity = quantities[item._id] || 1; // Default to 1 if not set
-              extraBookDataFormData.append("Quantity", itemQuantity);
-
-              extraBookDataFormData.append("SortOrder", item.SortOrder); // Ensure this field exists
-              extraBookDataFormData.append("IsActive", true); // Assuming all activities are active
-
-              try {
-                const extraBookResponse = await createExtraBookingDetails(
-                  extraBookDataFormData
-                );
-                console.log(
-                  "extraBook Response from server:",
-                  extraBookResponse
-                );
-                 
-              } catch (extraBookError) {
-                console.error("Error posting extraBook:", extraBookError);
-              }
-            }
-            setAddedItems([]);
-           toast.success("Sent Successfully", {
-             position: "bottom-right",
-           });
-            setValues(initialState);
-          } catch (err) {
-            console.log("Error from server:", err);
+            const extraBookResponse = await createExtraBookingDetails(
+              extraBookDataFormData
+            );
+            console.log("extraBook Response from server:", extraBookResponse);
+          } catch (extraBookError) {
+            console.error("Error posting extraBook:", extraBookError);
           }
-        } else {
-          console.log("Form has errors:", errors);
         }
-      };
-
-
+        setAddedItems([]);
+        toast.success("Sent Successfully");
+        setValues(initialState);
+      } catch (err) {
+        console.log("Error from server:", err);
+      }
+    } else {
+      console.log("Form has errors:", errors);
+    }
+  };
 
   return (
     <div className="resource-news">
@@ -318,13 +305,20 @@ const handleOptionChange = (e) => {
           <div className="row">
             <div className="col-md-6 col-lg-6">
               <Carousel fade id="carouselExampleIndicators" className="c1">
-                <Carousel.Item className="carousel-item active">
-                  <img
-                    src={`${process.env.REACT_APP_API_URL_BPC}/${bookdata.Icon}`}
-                    className="d-block w-100"
-                    alt="..."
-                  />
-                </Carousel.Item>
+                {BookDataImage.map((bookdata, index) => (
+                  <Carousel.Item
+                    key={index}
+                    className={
+                      index === 0 ? "carousel-item active" : "carousel-item"
+                    }
+                  >
+                    <img
+                      src={`${process.env.REACT_APP_API_URL_BPC}/${bookdata.productImage}`}
+                      className="d-block w-100"
+                      alt="..."
+                    />
+                  </Carousel.Item>
+                ))}
               </Carousel>
             </div>
             <div className="col-md-6 col-lg-6 tttd">

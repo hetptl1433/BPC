@@ -17,14 +17,10 @@ import News from "./Components/Pages/News";
 import Contactus from "./Components/Pages/Contactus";
 import RouteActivity from "./Components/Pages/RouteActivity";
 import Courses from "./Components/Pages/Courses";
-import TeamMember from "./Components/Pages/TeamMember";
-import Vision from "./Components/Pages/Vision";
 import Activity from "./Components/Pages/Activity";
 import Program from "./Components/Pages/Program";
 import Video from "./Components/Pages/Video";
-import English from "./Components/Pages/English";
-import Human from "./Components/Pages/Human";
-import Indirect from "./Components/Pages/Indirect";
+
 import Training from "./Components/Pages/Training";
 import HallBooking from "./Components/Pages/HallBooking";
 import BookNow from "./Components/Pages/BookNow";
@@ -32,7 +28,6 @@ import Form from "./Components/Pages/Form";
 import ServiceDetails from "./Components/Section/Home/ServiceDetails";
 import NbAboutUs from "./Components/Pages/NbAboutus";
 import Download from "./Components/Pages/Download";
-import IndirectCourse from "./Components/Section/Indirect/IndirectCourse";
 import CourseData from "./Components/Pages/CourseData";
 
 const router = createBrowserRouter([
@@ -68,14 +63,7 @@ const router = createBrowserRouter([
         path: "/Courses",
         element: <Courses />,
       },
-      {
-        path: "/TeamMember",
-        element: <TeamMember />,
-      },
-      {
-        path: "/Vision",
-        element: <Vision />,
-      },
+    
       {
         path: "/Activity",
         element: <Activity />,
@@ -88,18 +76,8 @@ const router = createBrowserRouter([
         path: "/Video",
         element: <Video />,
       },
-      {
-        path: "/English",
-        element: <English />,
-      },
-      {
-        path: "/Human",
-        element: <Human />,
-      },
-      {
-        path: "/Indirect",
-        element: <Indirect />,
-      },
+    
+   
       {
         path: "/Training",
         element: <Training />,
@@ -121,7 +99,7 @@ const router = createBrowserRouter([
         element: <NbAboutUs />,
       },
       {
-        path: "/course/:id",
+        path: "/course/:Name",
         element: <CourseData />,
       },
       {
@@ -129,7 +107,7 @@ const router = createBrowserRouter([
         element: <Download />,
       },
       {
-        path: "bookNow/:id",
+        path: "bookNow/:title",
         element: <BookNow />,
       },
     ],

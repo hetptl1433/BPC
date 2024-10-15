@@ -10,7 +10,7 @@ const DownloadSection = () => {
           const loadData = () => {
             DownloadData().then((data) => {
               setDownloadData(data);
-              console.log(data.data);
+             
             });
           };
           loadData();

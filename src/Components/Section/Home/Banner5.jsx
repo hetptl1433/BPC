@@ -61,7 +61,7 @@ const Banner5 = () => {
 
   return (
     <section className="clientbx">
-      <Container>
+      <div className="pageContainer">
         <Row className="clientdata tnn bounce-up in-view">
           <Col>
             <h3 className="heading32">We Serve</h3>
@@ -87,7 +87,7 @@ const Banner5 = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
     </section>
   );
 };

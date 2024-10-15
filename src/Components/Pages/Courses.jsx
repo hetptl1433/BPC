@@ -6,9 +6,9 @@ import ConCourses from "../Section/Courses/ConCourses";
 const Courses = () => {
   return (
     <div>
-      <CoursesBanner></CoursesBanner>
-      <ConCourses></ConCourses>
-      <Banner6></Banner6>
+      <CoursesBanner/>
+      <ConCourses/>
+      <Banner6  />
     </div>
   );
 };

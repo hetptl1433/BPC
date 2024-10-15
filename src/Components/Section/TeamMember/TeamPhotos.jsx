@@ -1,6 +1,6 @@
 import React from "react";
 import t1 from "../../../assets/images/Extra/owner.jpg";
-import t2 from "../../../assets/images/Extra/VPBPC.png";
+import t2 from "../../../assets/images/Extra/VPBPC.jpg";
 import t3 from "../../../assets/images/Extra/owner5.jpg";
 import t4 from "../../../assets/images/Extra/owner3.jpg";
 

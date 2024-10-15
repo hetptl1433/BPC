@@ -73,7 +73,7 @@ const EngCourse = () => {
                 onClick={handleShow}
                 style={{
                   float: "right",
-                  padding: "0px 8px",
+                  padding: "8px",
                   backgroundColor: "#4d428a",
                   borderRadius: "9px",
                   color: "#fff",

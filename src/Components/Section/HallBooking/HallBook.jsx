@@ -4,15 +4,15 @@ import { fetchHallBooking } from "../../../Functions/HallBooking";
 
 const HallBookingCard = ({ id, imageSrc, title, bookNowUrl }) => (
   <div className="col-lg-3 col-md-3 col-xl-3 col-sm-6 all digital tab_content flex-container">
-    <Link to={`/BookNow/${id}`} className="custom-card"></Link>
+    <Link to={`/BookNow/${title}`} className="custom-card"></Link>
     <div className="card card-custom bg-white border-white">
-      <Link to={`/BookNow/${id}`} className="custom-card">
+      <Link to={`/BookNow/${title}`} className="custom-card">
         <div className="card-custom-img">
           <img src={imageSrc} alt={title} />
         </div>
       </Link>
       <div className="card-body" style={{ overflowY: "auto" }}>
-        <Link to={`/BookNow/${id}`} className="custom-card">
+        <Link to={`/BookNow/${title}`} className="custom-card">
           <div className="card-text">
             <p>{title}</p>
           </div>
@@ -20,14 +20,14 @@ const HallBookingCard = ({ id, imageSrc, title, bookNowUrl }) => (
         <Link
           className="readmoreRed"
           style={{ width: "50%", textAlign: "right" }}
-          to={`/BookNow/${id}`}
+          to={`/BookNow/${title}`}
         >
           Rate Card
         </Link>
         <Link
           className="readmoreRed"
           style={{ width: "50%", float: "left" }}
-          to={`/BookNow/${id}`}
+          to={`/BookNow/${title}`}
         >
           Book Now
         </Link>

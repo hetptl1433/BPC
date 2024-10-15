@@ -1,0 +1,93 @@
+.team-grid-sec {
+  width: 80%;
+  padding: 0px 50px;
+}
+.team-grid-main-div {
+  display: flex;
+  padding-top: 100px;
+  background-color: white;
+}
+.team-grid-name {
+  transform: rotate(270deg);
+  height: 50px;
+  top: 0px;
+  margin: 70px -50px 0px 0px;
+}
+.team-card-img-div {
+  position: relative;
+}
+.team-card-contact {
+  justify-content: space-between;
+  background-color: #163f81;
+  align-items: center;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  width: 0%;
+  overflow: hidden;
+  transition: width 0.1s linear;
+}
+.team-cont-p {
+  margin: 0px;
+  font-weight: bold;
+}
+.team-cont-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+.team-cont-desg {
+  font-size: 14px;
+  font-weight: bold;
+}
+.team-main-card {
+  cursor: pointer;
+}
+.team-main-card:hover .team-card-contact {
+  width: 100%;
+  padding: 5px;
+}
+h1.team-grid-name {
+  color: #163f81;
+}
+.team-grid-sec {
+  border-left: 2px solid #163f81;
+}
+.modal-wrapper {
+  margin-top: 40px;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  background-color: #485978d6;
+  z-index: 1000;
+}
+.modal-content {
+  width: 70%;
+  height: 80vh;
+  border-radius: 7px;
+  background-color: white;
+}
+.modal-header {
+  padding: 10px;
+  display: flex;
+  justify-content: end;
+}
+.modal-body {
+  display: flex;
+  height: 90%;
+  overflow-y: scroll;
+}
+.modal-profile {
+  width: 30%;
+  padding: 0px 40px;
+}
+.team-cont-name {
+  font-size: 2vw;
+  font-weight: bold;
+  color: #163f81;
+}

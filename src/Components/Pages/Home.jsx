@@ -3,33 +3,30 @@ import Carosouel from "../Section/Home/Carosouel";
 import IndustrySolution from "../Section/Home/IndustrySolution";
 import Banner5 from "../Section/Home/Banner5";
 
-
 import Banner6 from "../Section/Home/Banner6";
 import WhatNew from "../Section/Home/WhatNew";
 import ServiceSlider from "../Section/Home/ServiceSlider";
 import { Modal } from "react-bootstrap";
 import { PopUpData } from "../../Functions/PopUp";
 
-
 const Home = () => {
-   const [showIntialPopup, setShowPopUp] = useState(true);
-   const handleClosePopUp = () => setShowPopUp(false);
-   const [popUpData, setPopUpData] = useState([]);
+  const [showIntialPopup, setShowPopUp] = useState(true);
+  const handleClosePopUp = () => setShowPopUp(false);
+  const [popUpData, setPopUpData] = useState([]);
 
-   useEffect(()=>{
-const LoadPopUpData = async () => {
-  try {
-    const data = await PopUpData();
-    setPopUpData(data);
-    // Update the state with the fetched data
-  } catch (error) {
-    console.error("Error loading PopUp data:", error);
-  }
-};
-   LoadPopUpData();
+  useEffect(() => {
+    LoadPopUpData();
+  }, []);
 
-   },[])
-
+  const LoadPopUpData = async () => {
+    try {
+      const data = await PopUpData();
+      setPopUpData(data);
+      // Update the state with the fetched data
+    } catch (error) {
+      console.error("Error loading PopUp data:", error);
+    }
+  };
 
   return (
     <div>
@@ -38,8 +35,9 @@ const LoadPopUpData = async () => {
           show={showIntialPopup}
           onHide={handleClosePopUp}
           size="xl"
-          style={{ zIndex: 5000000000 }}
-          className="mt-5"
+          style={{ zIndex: 5000000000, marginTop: "120px" }}
+
+          
         >
           <Modal.Body>
             {" "}

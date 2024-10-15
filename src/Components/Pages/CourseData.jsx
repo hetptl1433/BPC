@@ -19,7 +19,8 @@ const initialState = {
 };
 
 const CourseForm = () => {
-  const { id } = useParams();
+  const { Name } = useParams();
+  const [id, setId] = useState(null);
   const [values, setValues] = useState(initialState);
   const [courseInnerData, setCourseInnerData] = useState(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
@@ -100,10 +101,10 @@ const CourseForm = () => {
 
       createCourseForm(formdata)
         .then((res) => {
-          console.log("Response from server:", res);
+   
           //  setToastVisibility(true);
             toast.success("Sent Successfully", {
-              position: "bottom-right",
+              zIndex: "1000000",
             });
           setValues(initialState);
           handleShow();
@@ -129,9 +130,10 @@ const CourseForm = () => {
   useEffect(() => {
     const fetchInnerData = async () => {
       try {
-        const data = await listCoursedata(id);
+
+        const data = await listCoursedata(Name);
         setCourseInnerData(data.data);
-        console.log("Course Data:", data.data);
+        
       } catch (error) {
         console.error("Error loading course data:", error);
       }
@@ -171,7 +173,7 @@ const CourseForm = () => {
         </div>
       </div>
       <CoursesBanner />
-      <section className="course">
+      <section className="course mb-5">
         <div className="pageContainer">
           <div
             className="page_top_text animation-element slide-left in-view"
@@ -192,16 +194,16 @@ const CourseForm = () => {
               </div>
               <div className="col-lg-3 col-md-3 inner_bodybox rrk">
                 <h1 className="heading18">
-                  Duration : {courseInnerData?.Duration || "N/A"}
+                  Duration : {courseInnerData?.Duration }
                 </h1>
                 <h1 className="heading18">
-                  Timing : {courseInnerData?.Timing || "N/A"}
+                  Timing : {courseInnerData?.Timing }
                 </h1>
                 <h1 className="heading18">
-                  Fees : {courseInnerData?.Fees || "N/A"}
+                  Fees : {courseInnerData?.Fees }
                 </h1>
                 <h1 className="heading18">
-                  Eligibility Criteria : {courseInnerData?.Eligibility || "N/A"}
+                  Eligibility Criteria : {courseInnerData?.Eligibility }
                 </h1>
               </div>
             </div>
@@ -303,7 +305,7 @@ const CourseForm = () => {
                           <Form.Group controlId="formMobileNumber">
                             <Form.Label>Mobile Number:</Form.Label>
                             <Form.Control
-                              type="text"
+                              type="number"
                               name="Mobile"
                               value={values.Mobile}
                               onChange={handleChange}
@@ -330,7 +332,7 @@ const CourseForm = () => {
                           </div>
                         )}
                       </Form.Group>
-                      <Button variant="primary" onClick={handleClick}>
+                      <Button variant="primary" className="mb-2" onClick={handleClick}>
                         Submit
                       </Button>
                     </Form>

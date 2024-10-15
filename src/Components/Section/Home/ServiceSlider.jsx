@@ -12,7 +12,7 @@ const ServiceSlider = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true, 
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1440,
@@ -74,7 +74,7 @@ const ServiceSlider = () => {
   return (
     <div>
       <section className="sevicesbox" id="nseitservice">
-        <div className="container servicc">
+        <div className="pageContainer servicc">
           <h3 className="heading32"> Services </h3>
           <p>We deliver services that solve problems for our customers </p>
           <div className="Servicbx justify-content-between pt-5">
@@ -103,10 +103,7 @@ const ServiceSlider = () => {
                           >
                             Read More
                           </a> */}
-                          <Link
-                            to="/Services"
-                            className="readmoreRed pt-3"
-                          >
+                          <Link to="/Services" className="readmoreRed pt-3">
                             Read More
                           </Link>
                         </div>

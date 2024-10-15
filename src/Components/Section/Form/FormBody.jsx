@@ -134,11 +134,11 @@ const handleSubmit = async (e) => {
     formdata.append("Information", formData.Information);
     formdata.append("IsActive", formData.IsActive);
 
-    console.log("Submitting form with data:", formdata);
+
 
     try {
       const response = await createRAS(formdata);
-      console.log("Response from server:", response);
+   
       toast.success("Your data is submmited successfully");
 
       // Send each activity in the activityList to the API
@@ -153,7 +153,7 @@ const handleSubmit = async (e) => {
 
         try {
           const activityResponse = await createRASData(activityFormData);
-          console.log("Activity Response from server:", activityResponse);
+         
         } catch (activityError) {
           console.error("Error posting activity:", activityError);
         }

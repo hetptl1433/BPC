@@ -7,7 +7,7 @@ import "../../../assets/css/Banner2.css";
 const WhatNew = () => {
   return (
     <section className="valueSection mt-5">
-      <Container className="xxx">
+      <div className="xxx pageContainer">
         <Row className="ree">
           <Col
             xl={6}
@@ -98,7 +98,7 @@ const WhatNew = () => {
                   <p style={{ color: "#483773", fontWeight: "bold" }}>
                     An equal representation of Government, Industry, and Labor
                     Organizations on its Managing Committee. Registered under
-                    the Societies Registration Act, 1860... <br/>
+                    the Societies Registration Act, 1860... <br />
                     <Link to="#" className="readmoreRed1 pt-3">
                       Read More
                     </Link>
@@ -108,7 +108,7 @@ const WhatNew = () => {
             </Carousel>
           </Col>
         </Row>
-      </Container>
+      </div>
     </section>
   );
 };

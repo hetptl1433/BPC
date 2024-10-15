@@ -13,7 +13,7 @@ const BookCard = () => {
       try {
         const data = await fetchBookNow(id);
         setBookData(data.data);
-        console.log("Course Data:", data.data);
+      
       } catch (error) {
         console.error("Error loading course data:", error);
       }

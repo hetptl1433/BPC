@@ -1,6 +1,6 @@
 import React from "react";
 import ph8 from "../../../assets/images/Extra/top-banners_11.jpg";
-import ph32 from "../../../assets/images/Extra/triangleBan.png";
+import ph32 from "../../../assets/images/Extra/t1.png";
 
 const ContactBanner = () => {
   return (

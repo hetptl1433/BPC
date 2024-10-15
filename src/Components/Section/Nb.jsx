@@ -140,16 +140,28 @@ const [capchaErr, setCaptchaErr] = useState(false);
    }
 
    // Validate Email
+   // Regular expression for validating email format
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+   // Validate Email
    if (Email === "") {
-     errors.Email = "Email is required!";
+     errors.Email = "This field is required!";
+     setErrEmail(true);
+   } else if (!emailRegex.test(Email)) {
+     errors.Email = "Email is not valid!";
      setErrEmail(true);
    } else {
      setErrEmail(false);
    }
 
    // Validate Mobile
+   const mobileRegex = /^[0-9]{10}$/; // Adjust based on your requirements (e.g., length)
+
    if (Mobile === "") {
      errors.Mobile = "Mobile is required!";
+     setErrMobile(true);
+   } else if (!mobileRegex.test(Mobile)) {
+     errors.Mobile = "Mobile number is not valid!";
      setErrMobile(true);
    } else {
      setErrMobile(false);
@@ -235,9 +247,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                response.data.data
                
              );
-             toast.success("Sent Successfully", {
-              position: "bottom-right",
-             })
+             toast.success("Sent Successfully")
             setValues(initialState);
             setContact(false);
            } else {
@@ -440,7 +450,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link to="PAtest.html">Employees</Link>
+                                  <Link to="/">Employees</Link>
                                 </li>
                                 <li>
                                   <a
@@ -571,7 +581,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                                   .map((course) => (
                                     <li key={course._id}>
                                       <Link
-                                        to={`course/${course._id}`}
+                                        to={`course/${course.Name}`}
                                         onClick={() => handleMenuToggle(!menu)}
                                       >
                                         {course.Name}
@@ -754,7 +764,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errName ? "d-none" : ""
                       }`}
                     >
-                      * Please enter name.
+                      * This field is required.
                     </label>
                     <input
                       type="text"
@@ -775,7 +785,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errEmail ? "d-none" : ""
                       }`}
                     >
-                      * Please enter email.
+                      {formErrors.Email}
                     </label>
                     <input
                       type="text"
@@ -800,7 +810,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errMobile ? "d-none" : ""
                       }`}
                     >
-                      * Please enter mobile.
+                      {formErrors.Mobile}
                     </label>
                     <input
                       type="text"
@@ -825,7 +835,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errCompany ? "d-none" : ""
                       }`}
                     >
-                      * Please enter company.
+                      * This field is required.
                     </label>
                     <input
                       type="text"
@@ -850,7 +860,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errCity ? "d-none" : ""
                       }`}
                     >
-                      * Please enter city.
+                      * This field is required.
                     </label>
                     <input
                       type="text"
@@ -872,7 +882,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errServices ? "d-none" : ""
                       }`}
                     >
-                      * Please select services.
+                      * This field is required.
                     </label>
                     <select
                       name="Services"
@@ -906,7 +916,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errHelp ? "d-none" : ""
                       }`}
                     >
-                      * Please enter Comment.
+                      * This field is required
                     </label>
                     <textarea
                       className="form-control homecomment homevalidation"
@@ -931,7 +941,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                         !errHereFrom ? "d-none" : ""
                       }`}
                     >
-                      * Please enter how you heard about us.
+                      * This field is required
                     </label>
                     <select
                       name="HereFrom"
@@ -987,16 +997,16 @@ const [capchaErr, setCaptchaErr] = useState(false);
                     className="contactusvalidate"
                   ></span>
                 </div>
+                <label
+                  htmlFor="homehelp"
+                  generated="true"
+                  className={`error text-danger pull-right ${
+                    !capchaErr ? "d-none" : ""
+                  }`}
+                >
+                  * Please verify capcha.
+                </label>
                 <div className="form-group">
-                  <label
-                    htmlFor="homehelp"
-                    generated="true"
-                    className={`error text-danger pull-right ${
-                      !capchaErr ? "d-none" : ""
-                    }`}
-                  >
-                    * Please verify capcha.
-                  </label>
                   <ReCAPTCHA
                     className="mb-3"
                     onChange={onCaptchaChange}

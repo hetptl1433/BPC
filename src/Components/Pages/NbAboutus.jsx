@@ -3,7 +3,7 @@ import SocialVision from "../Section/Vision/SocialVision";
 import Commitment from "../Section/Vision/Commitment";
 import Banner6 from "../Section/Home/Banner6";
 import p32 from "../../assets/images/Extra/top-banners_11.jpg";
-import p33 from "../../assets/images/Extra/trangle-banner_1.png";
+import p33 from "../../assets/images/drupal/t3.png";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ServiceSlider from "../Section/Home/ServiceSlider";
@@ -27,7 +27,7 @@ const NbAboutUs = () => {
   
       fetchData();
     
-  }, []);
+  }, [subTitle]);
   useEffect(() => {
     console.log("Current Data State:", data.Title);
      // Log current data state
@@ -55,10 +55,18 @@ const NbAboutUs = () => {
           </div>
           <div className="right_trangle animated bounceInDown">
             <img
-              data-src={p33}
+              data-src={
+                subTitle === "OurActivities"
+                  ? "../../assets/images/drupal/t2.png"
+                  : p33
+              }
               alt="triangle image"
               className="lazyloaded img-fluid"
-              src={p33}
+              src={
+                subTitle === "OurActivities"
+                  ? "../../assets/images/drupal/t2.png"
+                  : p33
+              }
             />
           </div>
         </section>
@@ -68,7 +76,7 @@ const NbAboutUs = () => {
           <div className="page_top_text animation-element slide-left in-view">
             <div
               dangerouslySetInnerHTML={{
-                __html: data.Desc || "N/A",
+                __html: data.Desc ,
               }}
             />
           </div>
