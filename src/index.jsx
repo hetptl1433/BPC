@@ -29,6 +29,7 @@ import ServiceDetails from "./Components/Section/Home/ServiceDetails";
 import NbAboutUs from "./Components/Pages/NbAboutus";
 import Download from "./Components/Pages/Download";
 import CourseData from "./Components/Pages/CourseData";
+import RACPDF from "./Components/Pages/RACPDF";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <Aboutus />,
+      },
+      {
+        path: "/Services/:Name",
+        element: <Services />,
       },
       {
         path: "/Services",
@@ -63,7 +68,7 @@ const router = createBrowserRouter([
         path: "/Courses",
         element: <Courses />,
       },
-    
+
       {
         path: "/Activity",
         element: <Activity />,
@@ -76,8 +81,7 @@ const router = createBrowserRouter([
         path: "/Video",
         element: <Video />,
       },
-    
-   
+
       {
         path: "/Training",
         element: <Training />,
@@ -115,6 +119,10 @@ const router = createBrowserRouter([
   {
     path: "/RouteActivity",
     element: <RouteActivity />,
+  },
+  {
+    path: "RACPDF/:id",
+    element: <RACPDF />,
   },
 
   {

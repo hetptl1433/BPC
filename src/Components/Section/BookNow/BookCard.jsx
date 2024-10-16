@@ -314,7 +314,8 @@ const BookCard = () => {
                   >
                     <img
                       src={`${process.env.REACT_APP_API_URL_BPC}/${bookdata.productImage}`}
-                      className="d-block w-100"
+                      className="d-block w-100 "
+                      style={{height:"400px"}}
                       alt="..."
                     />
                   </Carousel.Item>

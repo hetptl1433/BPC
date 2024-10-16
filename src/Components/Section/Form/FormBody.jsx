@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Button, Container, Modal } from "react-bootstrap";
 import { createRAS, createRASData } from "../../../Functions/RAC";
 import { toast, ToastContainer } from "react-toastify";
+import { useLocation } from "react-router-dom";
+
 const initialState = {
   Organization: "",
   EmployeeCode: 0,
+  Language: "",
   Date: "",
   FullName: "",
   Designation: "",
@@ -25,6 +28,10 @@ const initialState = {
   IsActive: true, // Assuming the default value is true
 };
 const FormBody = () => {
+   const location = useLocation();
+   
+   const query = new URLSearchParams(location.search);
+   const language = query.get("language");
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [isToastVisible, setToastVisibility] = useState(false);
@@ -112,6 +119,7 @@ const handleSubmit = async (e) => {
     const formdata = new FormData();
     formdata.append("Organization", formData.Organization);
     formdata.append("EmployeeCode", formData.EmployeeCode);
+    formdata.append("language", language);
     formdata.append("Date", formData.Date);
     formdata.append("FullName", formData.FullName);
     formdata.append("Designation", formData.Designation);
@@ -217,8 +225,8 @@ const handleSubmit = async (e) => {
 
   return (
     <Container className="yoform">
-      <ToastContainer/>
-   
+      <ToastContainer />
+
       <form id="AddNewsform" onSubmit={handleSubmit}>
         <input name="__RequestVerificationToken" type="hidden" />
         {/* Header Start */}
@@ -240,7 +248,8 @@ const handleSubmit = async (e) => {
                           fontSize: "22px",
                         }}
                       >
-                        ROUTINE ACTIVITY SHEET (ENGLISH)
+                        ROUTINE ACTIVITY SHEET {" "}
+                        <p>Selected Language: {language}</p>
                       </th>
                       <td style={{ padding: "0px" }}>Revision </td>
                       <td>C</td>
@@ -266,7 +275,16 @@ const handleSubmit = async (e) => {
               <div className="row">
                 <div className="col-md-4">
                   <label className="lbf">
-                    <b>Name of the Organization:</b>
+                    <b>
+                      <span id="orgName">
+                        {language === "Hindi"
+                          ? "संगठन का नाम"
+                          : language === "Gujarati"
+                          ? "સંસ્થા નું નામ"
+                          : "Name of the Organization"}
+                      </span>
+                    </b>
+
                     <small style={{ color: "red" }}>*</small>
                   </label>
                 </div>
@@ -275,7 +293,13 @@ const handleSubmit = async (e) => {
                     className="input_control form-control Organization_input"
                     id="txtorganization"
                     name="Organization"
-                    placeholder="Enter Organization Name"
+                    placeholder={
+                      language === "Hindi"
+                        ? "संस्थान का नाम दर्ज करें"
+                        : language === "Gujarati"
+                        ? "સંસ્થાનું નામ દાખલ કરો"
+                        : "Enter Organization Name"
+                    }
                     type="text"
                     value={formData.Organization}
                     onChange={handleChange}
@@ -290,7 +314,14 @@ const handleSubmit = async (e) => {
             </div>
             <div className="row">
               <div className="col-lg-6 col-sm-12 col-md-6">
-                <label style={{ fontWeight: 400 }}>Employee Code:</label>
+                <label style={{ fontWeight: 400 }}>
+                  {language === "Hindi"
+                    ? "कर्मचारी कोड:"
+                    : language === "Gujarati"
+                    ? "કર્મચારી કોડ:"
+                    : "Employee Code:"}
+                </label>
+
                 <input
                   autoComplete="off"
                   data-val="true"
@@ -298,18 +329,37 @@ const handleSubmit = async (e) => {
                   data-val-required="The EmployeeCode field is required."
                   id="txtemployeecode"
                   name="EmployeeCode"
-                  placeholder="Enter Employee Code"
+                  placeholder={
+                    language === "Hindi"
+                      ? "कर्मचारी कोड दर्ज करें"
+                      : language === "Gujarati"
+                      ? "કર્મચારી કોડ દાખલ કરો"
+                      : "Enter Employee Code"
+                  }
                   type="text"
                   value={formData.EmployeeCode}
                   onChange={handleChange}
                 />
               </div>
               <div className="col-lg-6 col-sm-12 col-md-6 date d-flex justify-end">
-                <label style={{ fontWeight: 400 }}>Date:</label>
+                <label style={{ fontWeight: 400 }}>
+                  {language === "Hindi"
+                    ? "तारीख:"
+                    : language === "Gujarati"
+                    ? "તારીખ:"
+                    : "Date:"}
+                </label>
+
                 <input
                   id="txtdate"
                   name="Date"
-                  placeholder="Enter Date"
+                  placeholder={
+                    language === "Hindi"
+                      ? "तारीख दर्ज करें"
+                      : language === "Gujarati"
+                      ? "તારીખ દાખલ કરો"
+                      : "Enter Date"
+                  }
                   type="date"
                   value={formData.Date}
                   onChange={handleChange}
@@ -330,19 +380,32 @@ const handleSubmit = async (e) => {
                 <tbody>
                   <tr>
                     <th className="header_bg" scope="row">
-                      Full Name <small style={{ color: "red" }}>*</small>
+                      {language === "Hindi"
+                        ? "पूरा नाम"
+                        : language === "Gujarati"
+                        ? "पूरું નામ"
+                        : "Full Name"}
+                      <small style={{ color: "red" }}>*</small>
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control detail_input"
                         id="txtfname"
                         name="FullName"
-                        placeholder="Enter Full Name"
+                        placeholder={
+                          language === "Hindi"
+                            ? "पूरा नाम दर्ज करें"
+                            : language === "Gujarati"
+                            ? "પૂર્ણ નામ દાખલ કરો"
+                            : "Enter Full Name"
+                        }
                         type="text"
                         value={formData.FullName}
                         onChange={handleChange}
                       />
+
                       {formErrors.FullName && (
                         <span className="has-error text-danger">
                           {formErrors.FullName}
@@ -350,15 +413,26 @@ const handleSubmit = async (e) => {
                       )}
                     </td>
                     <th className="header_bg" scope="row">
-                      Designation
+                      {language === "Hindi"
+                        ? "पद"
+                        : language === "Gujarati"
+                        ? "હોદ્દો"
+                        : "Designation"}
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control detail_input"
                         id="txtdesignation"
                         name="Designation"
-                        placeholder="Enter Designation"
+                        placeholder={
+                          language === "Hindi"
+                            ? "पद दर्ज करें"
+                            : language === "Gujarati"
+                            ? "પદ દાખલ કરો"
+                            : "Enter Designation"
+                        }
                         type="text"
                         value={formData.Designation}
                         onChange={handleChange}
@@ -367,30 +441,52 @@ const handleSubmit = async (e) => {
                   </tr>
                   <tr>
                     <th className="header_bg" scope="row">
-                      Department
+                      {language === "Hindi"
+                        ? "विभाग"
+                        : language === "Gujarati"
+                        ? "વિભાગ"
+                        : "Department"}
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control detail_input"
                         id="txtdepartment"
                         name="Department"
-                        placeholder="Enter Department"
+                        placeholder={
+                          language === "Hindi"
+                            ? "विभाग दर्ज करें"
+                            : language === "Gujarati"
+                            ? "વિભાગ દાખલ કરો"
+                            : "Enter Department"
+                        }
                         type="text"
                         value={formData.Department}
                         onChange={handleChange}
                       />
                     </td>
                     <th className="header_bg" scope="row">
-                      Section
+                      {language === "Hindi"
+                        ? "अनुभाग"
+                        : language === "Gujarati"
+                        ? "વિભાગ"
+                        : "Section"}
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control detail_input"
                         id="txtsection"
                         name="Section"
-                        placeholder="Enter Section"
+                        placeholder={
+                          language === "Hindi"
+                            ? "खंड दर्ज करें"
+                            : language === "Gujarati"
+                            ? "વિભાગ દાખલ કરો"
+                            : "Enter Section"
+                        }
                         type="text"
                         value={formData.Section}
                         onChange={handleChange}
@@ -399,15 +495,27 @@ const handleSubmit = async (e) => {
                   </tr>
                   <tr>
                     <th className="header_bg" scope="row">
-                      Email ID <small style={{ color: "red" }}>*</small>
+                      {language === "Hindi"
+                        ? "ईमेल आईडी"
+                        : language === "Gujarati"
+                        ? "ઈમેલ આઈડી"
+                        : "Email ID"}
+                      <small style={{ color: "red" }}>*</small>
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control detail_input"
                         id="txtemail"
                         name="EmailID"
-                        placeholder="Enter Email"
+                        placeholder={
+                          language === "Hindi"
+                            ? "ईमेल दर्ज करें"
+                            : language === "Gujarati"
+                            ? "ઇમેલ દાખલ કરો"
+                            : "Enter Email"
+                        }
                         type="email"
                         value={formData.EmailID}
                         onChange={handleChange}
@@ -420,15 +528,27 @@ const handleSubmit = async (e) => {
                     </td>
 
                     <th className="header_bg" scope="row">
-                      Mobile No. <small style={{ color: "red" }}>*</small>
+                      {language === "Hindi"
+                        ? "मोबाइल नंबर"
+                        : language === "Gujarati"
+                        ? "મોબાઇલ નંબર"
+                        : "Mobile No."}
+                      <small style={{ color: "red" }}>*</small>
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control detail_input"
                         id="txtmobile"
                         name="MobileNo"
-                        placeholder="Enter Mobile No"
+                        placeholder={
+                          language === "Hindi"
+                            ? "मोबाइल नंबर दर्ज करें"
+                            : language === "Gujarati"
+                            ? "મોબાઇલ નંબર દાખલ કરો"
+                            : "Enter Mobile No"
+                        }
                         type="text"
                         value={formData.MobileNo}
                         onChange={handleChange}
@@ -442,15 +562,26 @@ const handleSubmit = async (e) => {
                   </tr>
                   <tr>
                     <th className="header_bg" scope="row">
-                      Reporting to whom:(Name and Designation)
+                      {language === "Hindi"
+                        ? "किसे रिपोर्ट करें: (नाम और पद)"
+                        : language === "Gujarati"
+                        ? "કાંએ રિપોર્ટ કરવું: (નામ અને હોદ્દો)"
+                        : "Reporting to whom: (Name and Designation)"}
                     </th>
+
                     <td>:</td>
                     <td colSpan={4}>
                       <input
                         className=" w-97 form-control input_control   "
                         id="txtreporting"
                         name="Reporting"
-                        placeholder="Enter Reporting To"
+                        placeholder={
+                          language === "Hindi"
+                            ? "जिसे रिपोर्ट करें उसका नाम दर्ज करें"
+                            : language === "Gujarati"
+                            ? "જેને રિપોર્ટ કરો તેનું નામ દાખલ કરો"
+                            : "Enter Reporting To"
+                        }
                         type="text"
                         value={formData.Reporting}
                         onChange={handleChange}
@@ -467,7 +598,13 @@ const handleSubmit = async (e) => {
             <div className="table-responsive">
               <div style={{ marginTop: "10px" }}>
                 <label>
-                  <b>Personal Data:</b>
+                  <b>
+                    {language === "Hindi"
+                      ? "व्यक्तिगत डेटा:"
+                      : language === "Gujarati"
+                      ? "વ્યક્તિગત ડેટા:"
+                      : "Personal Data:"}
+                  </b>
                 </label>
               </div>
               <table className="table table-bordered">
@@ -477,14 +614,25 @@ const handleSubmit = async (e) => {
                       1
                     </th>
                     <th className="header_bg">
-                      Date of Birth &amp; Age in years
+                      {language === "Hindi"
+                        ? "जन्मतिथि और वर्ष में आयु"
+                        : language === "Gujarati"
+                        ? "જન્મતારીખ અને વર્ષોમાં વય"
+                        : "Date of Birth & Age in years"}
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control"
                         name="DOB"
-                        placeholder="Enter DOB &amp; Age"
+                        placeholder={
+                          language === "Hindi"
+                            ? "जन्म तिथि और आयु दर्ज करें"
+                            : language === "Gujarati"
+                            ? "જન્મ તારીખ અને વય દાખલ કરો"
+                            : "Enter DOB & Age"
+                        }
                         type="text"
                         value={formData.DOB}
                         onChange={handleChange}
@@ -495,14 +643,27 @@ const handleSubmit = async (e) => {
                     <th className="header_bg mahiti" scope="row">
                       2
                     </th>
-                    <th className="header_bg">Date of Joining</th>
+                    <th className="header_bg">
+                      {language === "Hindi"
+                        ? "जोइनिंग की तारीख"
+                        : language === "Gujarati"
+                        ? "જોડાણની તારીખ"
+                        : "Date of Joining"}
+                    </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control "
                         id="txtdateofjoining"
                         name="DateofJoining"
-                        placeholder="Enter Date of Joining"
+                        placeholder={
+                          language === "Hindi"
+                            ? "जॉइनिंग की तारीख दर्ज करें"
+                            : language === "Gujarati"
+                            ? "જોઇનિંગ ની તારીખ દાખલ કરો"
+                            : "Enter Date of Joining"
+                        }
                         type="text"
                         value={formData.DateofJoining}
                         onChange={handleChange}
@@ -513,7 +674,14 @@ const handleSubmit = async (e) => {
                     <th className="header_bg mahiti" scope="row">
                       3
                     </th>
-                    <th className="header_bg">Previous Experience if any</th>
+                    <th className="header_bg">
+                      {language === "Hindi"
+                        ? "यदि कोई पिछला अनुभव"
+                        : language === "Gujarati"
+                        ? "જો કોઈ અગાઉનો અનુભવ"
+                        : "Previous Experience if any"}
+                    </th>
+
                     <td>:</td>
                     <td>
                       <input
@@ -522,7 +690,13 @@ const handleSubmit = async (e) => {
                         name="PreviousExperience"
                         value={formData.PreviousExperience}
                         onChange={handleChange}
-                        placeholder="Enter Previous Experience"
+                        placeholder={
+                          language === "Hindi"
+                            ? "पिछला अनुभव दर्ज करें"
+                            : language === "Gujarati"
+                            ? "અગાઉનો અનુભવ દાખલ કરો"
+                            : "Enter Previous Experience"
+                        }
                         type="text"
                       />
                     </td>
@@ -531,13 +705,26 @@ const handleSubmit = async (e) => {
                     <th className="header_bg mahiti" scope="row">
                       4
                     </th>
-                    <th className="header_bg">Educational Qualification</th>
+                    <th className="header_bg">
+                      {language === "Hindi"
+                        ? "शैक्षिक योग्यता"
+                        : language === "Gujarati"
+                        ? "શૈક્ષણિક કવલિફિકેશન"
+                        : "Educational Qualification"}
+                    </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control "
                         name="Educational"
-                        placeholder="Enter Educational Qualification"
+                        placeholder={
+                          language === "Hindi"
+                            ? "शैक्षणिक योग्यता दर्ज करें"
+                            : language === "Gujarati"
+                            ? "શૈક્ષણિક લાયકાત દાખલ કરો"
+                            : "Enter Educational Qualification"
+                        }
                         type="text"
                         value={formData.Educational}
                         onChange={handleChange}
@@ -548,7 +735,14 @@ const handleSubmit = async (e) => {
                     <th className="header_bg mahiti" scope="row">
                       5
                     </th>
-                    <th className="header_bg">Any special Achievement</th>
+                    <th className="header_bg">
+                      {language === "Hindi"
+                        ? "कोई विशेष उपलब्धि"
+                        : language === "Gujarati"
+                        ? "કોઈ વિશેષ સિદ્ધિ"
+                        : "Any Special Achievement"}
+                    </th>
+
                     <td>:</td>
                     <td>
                       <input
@@ -556,7 +750,13 @@ const handleSubmit = async (e) => {
                         name="Achievement"
                         value={formData.Achievement}
                         onChange={handleChange}
-                        placeholder="Enter Achievement"
+                        placeholder={
+                          language === "Hindi"
+                            ? "उपलब्धि दर्ज करें"
+                            : language === "Gujarati"
+                            ? "સફળતા દાખલ કરો"
+                            : "Enter Achievement"
+                        }
                         type="text"
                       />
                     </td>
@@ -565,7 +765,14 @@ const handleSubmit = async (e) => {
                     <th className="header_bg mahiti" scope="row">
                       6
                     </th>
-                    <th className="header_bg">Area of interest</th>
+                    <th className="header_bg">
+                      {language === "Hindi"
+                        ? "रुचि का क्षेत्र"
+                        : language === "Gujarati"
+                        ? "રુચીનું ક્ષેત્ર"
+                        : "Area of Interest"}
+                    </th>
+
                     <td>:</td>
                     <td>
                       <input
@@ -574,7 +781,13 @@ const handleSubmit = async (e) => {
                         name="Areaofinterest"
                         value={formData.Areaofinterest}
                         onChange={handleChange}
-                        placeholder="Enter Area of interest"
+                        placeholder={
+                          language === "Hindi"
+                            ? "रुचि का क्षेत्र दर्ज करें"
+                            : language === "Gujarati"
+                            ? "હિત જ્હોય દાખલ કરો"
+                            : "Enter Area of Interest"
+                        }
                         type="text"
                       />
                     </td>
@@ -583,14 +796,27 @@ const handleSubmit = async (e) => {
                     <th className="header_bg mahiti" scope="row">
                       7
                     </th>
-                    <th className="header_bg">Any problem being faced</th>
+                    <th className="header_bg">
+                      {language === "Hindi"
+                        ? "किसी समस्या का सामना करना"
+                        : language === "Gujarati"
+                        ? "કોઈ સમસ્યાનો સામનો"
+                        : "Any Problem Being Faced"}
+                    </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control input_control "
                         id="txtproblem"
                         name="Problem"
-                        placeholder="Enter problem"
+                        placeholder={
+                          language === "Hindi"
+                            ? "समस्या दर्ज करें"
+                            : language === "Gujarati"
+                            ? "સમસ્યા દાખલ કરો"
+                            : "Enter Problem"
+                        }
                         value={formData.Problem}
                         onChange={handleChange}
                         type="text"
@@ -602,16 +828,26 @@ const handleSubmit = async (e) => {
                       8
                     </th>
                     <th className="header_bg" style={{ whiteSpace: "nowrap" }}>
-                      Any idea or any change suggested / any additional
-                      responsibility you want to share?
+                      {language === "Hindi"
+                        ? "कोई विचार या कोई बदलाव सुझावित / कोई अतिरिक्त जिम्मेदारी जो आप साझा करना चाहते हैं?"
+                        : language === "Gujarati"
+                        ? "કોઈ વિચાર અથવા કોઈ ફેરફાર સૂચવ્યો / કોઈ વધારાની જવાબદારી જે તમે શેર કરવા માગો છો?"
+                        : "Any idea or any change suggested / any additional responsibility you want to share?"}
                     </th>
+
                     <td>:</td>
                     <td>
                       <input
                         className="form-control  w-500"
                         id="txtresponsibility"
                         name="Additionalresponsibility"
-                        placeholder="Enter additional responsibility"
+                        placeholder={
+                          language === "Hindi"
+                            ? "अतिरिक्त जिम्मेदारी दर्ज करें"
+                            : language === "Gujarati"
+                            ? "અતિરિક્ત જવાબદારી દાખલ કરો"
+                            : "Enter Additional Responsibility"
+                        }
                         type="text"
                         value={formData.Additionalresponsibility}
                         onChange={handleChange}
@@ -627,7 +863,13 @@ const handleSubmit = async (e) => {
           <div className="container">
             <div>
               <label>
-                <b>Routine Activity Chart:</b>
+                <b>
+                  {language === "Hindi"
+                    ? "रूटीन गतिविधि चार्ट:"
+                    : language === "Gujarati"
+                    ? "રૂટિન પ્રવૃત્તિ ચાર્ટ:"
+                    : "Routine Activity Chart:"}
+                </b>
               </label>
             </div>
             <div className="table-responsive">
@@ -635,7 +877,13 @@ const handleSubmit = async (e) => {
                 <div className="row w-100">
                   <div className="col-md-1">
                     {" "}
-                    <label style={{ marginRight: "30px" }}>Frequency:</label>
+                    <label style={{ marginRight: "30px" }}>
+                      {language === "Hindi"
+                        ? "आवृत्ति:"
+                        : language === "Gujarati"
+                        ? "આવૃત્તિ:"
+                        : "Frequency:"}
+                    </label>
                   </div>
                   <div className="col-md-8">
                     <div>
@@ -669,9 +917,13 @@ const handleSubmit = async (e) => {
               </div>
             </div>
             <p style={{ color: "black", margin: "10px 0px" }}>
-              Remark: <b>C</b>=Computer  <b>M</b>= Manual <b>COM</b>=
-              Combination &nbsp;of &nbsp;Computer &nbsp; + &nbsp;Manual
+              {language === "Hindi"
+                ? "टिप्पणी: <b>C</b>=कंप्यूटर  <b>M</b>= मैनुअल <b>COM</b>= कंप्यूटर + मैनुअल का संयोजन"
+                : language === "Gujarati"
+                ? "Remark: <b>C</b>=કંપ્યુટર  <b>M</b>= મેન્યુઅલ <b>COM</b>= કમ્પ્યુટર + મેન્યુઅલ નું સંયોજન"
+                : "Remark: <b>C</b>=Computer  <b>M</b>= Manual <b>COM</b>= Combination &nbsp;of &nbsp;Computer &nbsp; + &nbsp;Manual"}
             </p>
+
             <div className="card-body">
               <div className="row">
                 <div className="col-md-6 col-sm-6 col-lg-3">
@@ -684,7 +936,13 @@ const handleSubmit = async (e) => {
                       className="form-control"
                       id="txtName"
                       name="name"
-                      placeholder="Enter Name of activity"
+                      placeholder={
+                        language === "Hindi"
+                          ? "गतिविधि का नाम दर्ज करें"
+                          : language === "Gujarati"
+                          ? "ક્રિયા નું નામ દાખલ કરો"
+                          : "Enter Name of Activity"
+                      }
                       type="text"
                       value={activityDetails.name}
                       onChange={handleInputChange}
@@ -694,13 +952,25 @@ const handleSubmit = async (e) => {
                 <div className="col-md-6 col-sm-6 col-lg-3">
                   <div className="form-group">
                     <label className="add_lable">
-                      Frequency: <small style={{ color: "red" }}>*</small>
+                      {language === "Hindi"
+                        ? "आवृत्ति:"
+                        : language === "Gujarati"
+                        ? "આવૃત્તિ:"
+                        : "Frequency:"}
+                      <small style={{ color: "red" }}>*</small>
                     </label>
+
                     <input
                       className="form-control"
                       id="txtFrequency"
                       name="frequency"
-                      placeholder="Enter Frequency"
+                      placeholder={
+                        language === "Hindi"
+                          ? "आवृत्ति दर्ज करें"
+                          : language === "Gujarati"
+                          ? "આવર્તન દાખલ કરો"
+                          : "Enter Frequency"
+                      }
                       type="text"
                       value={activityDetails.frequency}
                       onChange={handleInputChange}
@@ -710,14 +980,25 @@ const handleSubmit = async (e) => {
                 <div className="col-md-6 col-sm-6 col-lg-3">
                   <div className="form-group">
                     <label className="add_lable">
-                      Time per Frequency:{" "}
+                      {language === "Hindi"
+                        ? "आवृत्ति के अनुसार समय:"
+                        : language === "Gujarati"
+                        ? "આવૃત્તિ અનુસાર સમય:"
+                        : "Time per Frequency:"}
                       <small style={{ color: "red" }}>*</small>
                     </label>
+
                     <input
                       className="form-control"
                       id="txtTimeperFrequency"
                       name="timePerFrequency"
-                      placeholder="Enter Time per Frequency"
+                      placeholder={
+                        language === "Hindi"
+                          ? "प्रत्येक आवृत्ति के लिए समय दर्ज करें"
+                          : language === "Gujarati"
+                          ? "આવર્તન માટેનો સમય દાખલ કરો"
+                          : "Enter Time per Frequency"
+                      }
                       type="text"
                       value={activityDetails.timePerFrequency}
                       onChange={handleInputChange}
@@ -726,12 +1007,25 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="col-md-6 col-sm-6 col-lg-3">
                   <div className="form-group">
-                    <label className="add_lable">Remarks:</label>
+                    <label className="add_lable">
+                      {language === "Hindi"
+                        ? "टिप्पणियाँ:"
+                        : language === "Gujarati"
+                        ? "ટિપ્પણીઓ:"
+                        : "Remarks:"}
+                    </label>
+
                     <input
                       className="form-control"
                       id="txtRemarks"
                       name="remarks"
-                      placeholder="Enter Remarks"
+                      placeholder={
+                        language === "Hindi"
+                          ? "टिप्पणियाँ दर्ज करें"
+                          : language === "Gujarati"
+                          ? "ટીકાઓ દાખલ કરો"
+                          : "Enter Remarks"
+                      }
                       type="text"
                       value={activityDetails.remarks}
                       onChange={handleInputChange}
@@ -765,19 +1059,39 @@ const handleSubmit = async (e) => {
                 <thead>
                   <tr>
                     <th scope="col" className="header_bg">
-                      Sr No.
+                      {language === "Hindi"
+                        ? "क्रम संख्या"
+                        : language === "Gujarati"
+                        ? "ક્રમ નંબર"
+                        : "Sr No."}
                     </th>
                     <th scope="col" className="header_bg">
-                      Name of activity
+                      {language === "Hindi"
+                        ? "गतिविधि का नाम"
+                        : language === "Gujarati"
+                        ? "ક્રિયાની નામ"
+                        : "Name of activity"}
                     </th>
                     <th scope="col" className="header_bg">
-                      Frequency
+                      {language === "Hindi"
+                        ? "आवृत्ति"
+                        : language === "Gujarati"
+                        ? "આવૃત્તિ"
+                        : "Frequency"}
                     </th>
                     <th scope="col" className="header_bg">
-                      Time per Frequency in minutes
+                      {language === "Hindi"
+                        ? "आवृत्ति के अनुसार समय (मिनटों में)"
+                        : language === "Gujarati"
+                        ? "આવૃત્તિ મુજબ સમય (મિનિટમાં)"
+                        : "Time per Frequency in minutes"}
                     </th>
                     <th scope="col" className="header_bg">
-                      Remarks
+                      {language === "Hindi"
+                        ? "टिप्पणियाँ"
+                        : language === "Gujarati"
+                        ? "ટિપ્પણીઓ"
+                        : "Remarks"}
                     </th>
                   </tr>
                 </thead>
@@ -795,7 +1109,14 @@ const handleSubmit = async (e) => {
               </table>
             </div>
             <div className="form-group">
-              <label className="add_lable">Additional Information:</label>
+              <label className="add_lable">
+                {language === "Hindi"
+                  ? "अतिरिक्त जानकारी:"
+                  : language === "Gujarati"
+                  ? "અતિરિક્ત માહિતી:"
+                  : "Additional Information:"}
+              </label>
+
               <textarea
                 className="form-control"
                 cols="20"
@@ -803,7 +1124,13 @@ const handleSubmit = async (e) => {
                 name="Information"
                 value={formData.Information}
                 onChange={handleChange}
-                placeholder="Enter Additional Information"
+                placeholder={
+                  language === "Hindi"
+                    ? "अतिरिक्त जानकारी दर्ज करें"
+                    : language === "Gujarati"
+                    ? "અતિરિક્ત માહિતી દાખલ કરો"
+                    : "Enter Additional Information"
+                }
                 rows="2"
               ></textarea>
             </div>

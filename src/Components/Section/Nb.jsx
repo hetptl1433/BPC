@@ -657,7 +657,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                           <ul className="main-header-menu">
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/People and Organizational Capability Enhancement"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 People and Organizational Capability Enhancement
@@ -665,7 +665,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             </li>
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/Industries Offerings & Solutions"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 Industries Offerings & Solutions
@@ -673,7 +673,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             </li>
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/Business Process Re-engineering"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 Business Process Re-engineering
@@ -681,7 +681,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             </li>
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/Time and Motion Study"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 Time and Motion Study
@@ -689,7 +689,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             </li>
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/Budgeting Process Improvement"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 Budgeting Process Improvement
@@ -697,7 +697,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             </li>
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/Strategy Implementattion Enablers"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 Strategy Implementattion Enablers
@@ -705,7 +705,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             </li>
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/Recruitment and Promotional Interviews"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 Recruitment and Promotional Interviews
@@ -713,7 +713,7 @@ const [capchaErr, setCaptchaErr] = useState(false);
                             </li>
                             <li>
                               <Link
-                                to="/Services"
+                                to="/Services/Corporate Social Responsibility (CSR)"
                                 onClick={() => handleMenuToggle(!menu)}
                               >
                                 Corporate Social Responsibility (CSR)

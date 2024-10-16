@@ -678,7 +678,7 @@ p {
   background: #3a2e7e !important;
 }
 .sevicesbox {
-  margin-top: 115px;
+  margin-top: 78px;
   z-index: 9;
   position: relative;
 }
@@ -2109,4 +2109,14 @@ p {
 
 .valueSection .carousel-item{
   height: 470px;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 10000000 !important; /* Increase the value as necessary */
 }

@@ -34,7 +34,7 @@ const ContactPara = () => {
     getData();
   }, []);
 
-  if (!contactData) return <p>Loading...</p>;
+  if (!contactData) return <p></p>;
 
   return (
     <div>

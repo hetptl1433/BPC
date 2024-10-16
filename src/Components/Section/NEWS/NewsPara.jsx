@@ -37,7 +37,7 @@ const NewsPara = () => {
               </div>
             ))
           ) : (
-            <p>No news available</p>
+            <p></p>
           )}
         </div>
       </section>

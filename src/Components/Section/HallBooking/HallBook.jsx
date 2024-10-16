@@ -72,7 +72,7 @@ const HallBook = () => {
                 />
               ))
             ) : (
-              <p>No hall bookings available.</p>
+              <p></p>
             )}
           </div>
         </div>

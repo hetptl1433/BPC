@@ -19,3 +19,14 @@ export const createRASData= async (data) => {
     },
   });
 };
+
+export const getRAC = async (_id) => {
+  return await axios.get(
+    `${process.env.REACT_APP_API_URL_BPC}/api/auth/get/RAS/${_id}`
+  );
+};
+export const getRACData = async (EmailID) => {
+  return await axios.get(
+    `${process.env.REACT_APP_API_URL_BPC}/api/auth/get/email/RASData/${EmailID}`
+  );
+};

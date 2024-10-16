@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ss1 from "../../../assets/images/Extra/CSR_img.png";
+import { useParams } from "react-router-dom";
 
 const ServicesAccordian = () => {
   const [activePanel, setActivePanel] = useState(null);
+  const {Name} =useParams();
+
+  useEffect(()=>{
+    setActivePanel(Name);
+  },[Name])
+ 
 
   const togglePanel = (panelId) => {
     setActivePanel(activePanel === panelId ? null : panelId);
@@ -15,11 +22,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_1" ? "" : "collapsed"
+                activePanel === "People and Organizational Capability Enhancement" ? "" : "collapsed"
               }`}
-              id="heading_1"
-              onClick={() => togglePanel("heading_1")}
-              aria-expanded={activePanel === "heading_1"}
+              id="People and Organizational Capability Enhancement"
+              onClick={() => togglePanel("People and Organizational Capability Enhancement")}
+              aria-expanded={activePanel === "People and Organizational Capability Enhancement"}
               data-target="#collapse_1"
               aria-controls="collapse_1"
               style={{ cursor: "pointer" }}
@@ -37,7 +44,7 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_1" ? "fa-minus" : "fa-plus"
+                      activePanel === "People and Organizational Capability Enhancement" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
                   People and Organizational Capability Enhancement
@@ -47,9 +54,9 @@ const ServicesAccordian = () => {
             <div
               id="collapse_1"
               className={`collapse ${
-                activePanel === "heading_1" ? "show" : ""
+                activePanel === "People and Organizational Capability Enhancement" ? "show" : ""
               }`}
-              aria-labelledby="heading_1"
+              aria-labelledby="People and Organizational Capability Enhancement"
               data-parent="#accordionExample"
             >
               <div className="card-body">
@@ -71,11 +78,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_2" ? "" : "collapsed"
+                activePanel === "Industries Offerings & Solutions" ? "" : "collapsed"
               }`}
-              id="heading_2"
-              onClick={() => togglePanel("heading_2")}
-              aria-expanded={activePanel === "heading_2"}
+              id="Industries Offerings & Solutions"
+              onClick={() => togglePanel("Industries Offerings & Solutions")}
+              aria-expanded={activePanel === "Industries Offerings & Solutions"}
               data-target="#collapse_2"
               aria-controls="collapse_2"
               style={{ cursor: "pointer" }}
@@ -93,7 +100,7 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_2" ? "fa-minus" : "fa-plus"
+                      activePanel === "Industries Offerings & Solutions" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
                   Industries Offerings & Solutions
@@ -103,9 +110,9 @@ const ServicesAccordian = () => {
             <div
               id="collapse_2"
               className={`collapse ${
-                activePanel === "heading_2" ? "show" : ""
+                activePanel === "Industries Offerings & Solutions" ? "show" : ""
               }`}
-              aria-labelledby="heading_2"
+              aria-labelledby="Industries Offerings & Solutions"
               data-parent="#accordionExample"
             >
               <div className="card-body">
@@ -117,11 +124,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_3" ? "" : "collapsed"
+                activePanel === "Business Process Re-engineering" ? "" : "collapsed"
               }`}
-              id="heading_3"
-              onClick={() => togglePanel("heading_3")}
-              aria-expanded={activePanel === "heading_3"}
+              id="Business Process Re-engineering"
+              onClick={() => togglePanel("Business Process Re-engineering")}
+              aria-expanded={activePanel === "Business Process Re-engineering"}
               data-target="#collapse_3"
               aria-controls="collapse_3"
               style={{ cursor: "pointer" }}
@@ -139,7 +146,7 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_3" ? "fa-minus" : "fa-plus"
+                      activePanel === "Business Process Re-engineering" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
                   Business Process Re-engineering
@@ -149,9 +156,9 @@ const ServicesAccordian = () => {
             <div
               id="collapse_3"
               className={`collapse ${
-                activePanel === "heading_3" ? "show" : ""
+                activePanel === "Business Process Re-engineering" ? "show" : ""
               }`}
-              aria-labelledby="heading_3"
+              aria-labelledby="Business Process Re-engineering"
               data-parent="#accordionExample"
             >
               <div className="card-body">
@@ -216,11 +223,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_4" ? "" : "collapsed"
+                activePanel === "Time and Motion Study" ? "" : "collapsed"
               }`}
-              id="heading_4"
-              onClick={() => togglePanel("heading_4")}
-              aria-expanded={activePanel === "heading_4"}
+              id="Time and Motion Study"
+              onClick={() => togglePanel("Time and Motion Study")}
+              aria-expanded={activePanel === "Time and Motion Study"}
               data-target="#collapse_4"
               aria-controls="collapse_4"
               style={{ cursor: "pointer" }}
@@ -238,7 +245,7 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_4" ? "fa-minus" : "fa-plus"
+                      activePanel === "Time and Motion Study" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
                   Time and Motion Study
@@ -248,9 +255,9 @@ const ServicesAccordian = () => {
             <div
               id="collapse_4"
               className={`collapse ${
-                activePanel === "heading_4" ? "show" : ""
+                activePanel === "Time and Motion Study" ? "show" : ""
               }`}
-              aria-labelledby="heading_4"
+              aria-labelledby="Time and Motion Study"
               data-parent="#accordionExample"
             >
               <div className="card-body">
@@ -339,11 +346,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_5" ? "" : "collapsed"
+                activePanel === "Budgeting Process Improvement" ? "" : "collapsed"
               }`}
-              id="heading_5"
-              onClick={() => togglePanel("heading_5")}
-              aria-expanded={activePanel === "heading_5"}
+              id="Budgeting Process Improvement"
+              onClick={() => togglePanel("Budgeting Process Improvement")}
+              aria-expanded={activePanel === "Budgeting Process Improvement"}
               data-target="#collapse_1"
               aria-controls="collapse_1"
               style={{ cursor: "pointer" }}
@@ -361,7 +368,7 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_5" ? "fa-minus" : "fa-plus"
+                      activePanel === "Budgeting Process Improvement" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
                   Budgeting Process Improvement
@@ -371,9 +378,9 @@ const ServicesAccordian = () => {
             <div
               id="collapse_1"
               className={`collapse ${
-                activePanel === "heading_5" ? "show" : ""
+                activePanel === "Budgeting Process Improvement" ? "show" : ""
               }`}
-              aria-labelledby="heading_5"
+              aria-labelledby="Budgeting Process Improvement"
               data-parent="#accordionExample"
             >
               <div className="card-body">
@@ -409,11 +416,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_6" ? "" : "collapsed"
+                activePanel === "Strategy Implementattion Enablers" ? "" : "collapsed"
               }`}
-              id="heading_6"
-              onClick={() => togglePanel("heading_6")}
-              aria-expanded={activePanel === "heading_6"}
+              id="Strategy Implementattion Enablers"
+              onClick={() => togglePanel("Strategy Implementattion Enablers")}
+              aria-expanded={activePanel === "Strategy Implementattion Enablers"}
               data-target="#collapse_1"
               aria-controls="collapse_1"
               style={{ cursor: "pointer" }}
@@ -431,19 +438,19 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_6" ? "fa-minus" : "fa-plus"
+                      activePanel === "Strategy Implementattion Enablers" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
-                  Strategy Implementattion Enablers
+                  Strategy Implementattion Enablerss
                 </button>
               </h5>
             </div>
             <div
               id="collapse_1"
               className={`collapse ${
-                activePanel === "heading_6" ? "show" : ""
+                activePanel === "Strategy Implementattion Enablers" ? "show" : ""
               }`}
-              aria-labelledby="heading_6"
+              aria-labelledby="Strategy Implementattion Enablers"
               data-parent="#accordionExample"
             >
               <div className="card-body">
@@ -467,11 +474,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_7" ? "" : "collapsed"
+                activePanel === "Recruitment and Promotional Interviews" ? "" : "collapsed"
               }`}
-              id="heading_7"
-              onClick={() => togglePanel("heading_7")}
-              aria-expanded={activePanel === "heading_7"}
+              id="Recruitment and Promotional Interviews"
+              onClick={() => togglePanel("Recruitment and Promotional Interviews")}
+              aria-expanded={activePanel === "Recruitment and Promotional Interviews"}
               data-target="#collapse_1"
               aria-controls="collapse_1"
               style={{ cursor: "pointer" }}
@@ -489,19 +496,19 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_7" ? "fa-minus" : "fa-plus"
+                      activePanel === "Recruitment and Promotional Interviews" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
-                  Recruitment and Promotional Interviews
+                  Recruitment and Promotional Interviewss
                 </button>
               </h5>
             </div>
             <div
               id="collapse_1"
               className={`collapse ${
-                activePanel === "heading_7" ? "show" : ""
+                activePanel === "Recruitment and Promotional Interviews" ? "show" : ""
               }`}
-              aria-labelledby="heading_7"
+              aria-labelledby="Recruitment and Promotional Interviews"
               data-parent="#accordionExample"
             >
               <div className="card-body">
@@ -533,11 +540,11 @@ const ServicesAccordian = () => {
           <div className="card">
             <div
               className={`card-header ${
-                activePanel === "heading_8" ? "" : "collapsed"
+                activePanel === "Corporate Social Responsibility (CSR)" ? "" : "collapsed"
               }`}
-              id="heading_8"
-              onClick={() => togglePanel("heading_8")}
-              aria-expanded={activePanel === "heading_8"}
+              id="Corporate Social Responsibility (CSR)"
+              onClick={() => togglePanel("Corporate Social Responsibility (CSR)")}
+              aria-expanded={activePanel === "Corporate Social Responsibility (CSR)"}
               data-target="#collapse_4"
               aria-controls="collapse_4"
               style={{ cursor: "pointer" }}
@@ -555,7 +562,7 @@ const ServicesAccordian = () => {
                 >
                   <i
                     className={`fa ${
-                      activePanel === "heading_8" ? "fa-minus" : "fa-plus"
+                      activePanel === "Corporate Social Responsibility (CSR)" ? "fa-minus" : "fa-plus"
                     } me-3`}
                   ></i>
                   Corporate Social Responsibility (CSR)
@@ -565,9 +572,9 @@ const ServicesAccordian = () => {
             <div
               id="collapse_4"
               className={`collapse ${
-                activePanel === "heading_8" ? "show" : ""
+                activePanel === "Corporate Social Responsibility (CSR)" ? "show" : ""
               }`}
-              aria-labelledby="heading_8"
+              aria-labelledby="Corporate Social Responsibility (CSR)"
               data-parent="#accordionExample"
             >
               <div className="card-body">

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const RouteTabs = () => {
+  // State to track the selected language
+  const [selectedLanguage, setSelectedLanguage] = useState("English");
+
   return (
     <div>
       <div className="container">
@@ -22,6 +25,7 @@ const RouteTabs = () => {
                 role="tab"
                 aria-controls="pills-home"
                 aria-selected="true"
+                onClick={() => setSelectedLanguage("English")}
               >
                 English
               </button>
@@ -36,6 +40,7 @@ const RouteTabs = () => {
                 role="tab"
                 aria-controls="pills-profile"
                 aria-selected="false"
+                onClick={() => setSelectedLanguage("Gujarati")}
               >
                 Gujarati
               </button>
@@ -50,6 +55,7 @@ const RouteTabs = () => {
                 role="tab"
                 aria-controls="pills-contact"
                 aria-selected="false"
+                onClick={() => setSelectedLanguage("Hindi")}
               >
                 Hindi
               </button>
@@ -57,6 +63,7 @@ const RouteTabs = () => {
           </ul>
         </div>
         <div className="tab-content" id="pills-tabContent">
+          {/* English Tab Content */}
           <div
             className="tab-pane fade show active"
             id="pills-home"
@@ -99,41 +106,46 @@ const RouteTabs = () => {
                 4. Any special achievement during the life of the employee shall
                 reveal the personality traits such as leadership, perseverance,
                 ambition, creativity (not taking things for granted or believing
-                in status quo)
+                in status quo).
               </p>
               <p>
-                5. The problem faced to perform his duties enable bring forth
-                the genuine (perceived) problems. To improve upon any system, it
-                is utmost important to identify the problem. The mother of
-                improvement is problem. If the problem is identified and root
-                cause of the problem is analyzed, it is easy to find the
-                solution. As such the problem can be defined as the gap between
-                the actual v/s expected.
+                5. The problem faced to perform his duties enables bringing
+                forth the genuine (perceived) problems. To improve upon any
+                system, it is utmost important to identify the problem. The
+                mother of improvement is the problem. If the problem is
+                identified and root cause of the problem is analyzed, it is easy
+                to find the solution. As such, the problem can be defined as the
+                gap between the actual vs. expected.
               </p>
               <p>
-                6. The idea for any change reflects the person’s creativity, he
-                is sensitive to the environment and is keen observant.
+                6. The idea for any change reflects the person’s creativity; he
+                is sensitive to the environment and is a keen observer.
               </p>
             </div>
             <div className="third_para">
               <p style={{ fontSize: "20px" }}>
-                The RAS are studied and analyzed for the person’s role in value
-                addition in the process or he is just a head count in the
+                The RAS is studied and analyzed for the person’s role in value
+                addition in the process or he is just a headcount in the
                 organization.
               </p>
               <p style={{ fontSize: "20px" }}>
-                <b> Personal discussion:</b> For each of the position, the
+                <b> Personal discussion:</b> For each of the positions, the
                 faculty will have a personal discussion with the person so as to
                 understand his activities, his role in the value chain, time
-                element and frequency of the activity.
+                element, and frequency of the activity.
               </p>
             </div>
             <div style={{ textAlign: "center", marginBottom: "20px" }}>
-              <Link to="/form" className="btn btn-primary">
+              {/* Link with the selected language as a query parameter */}
+              <Link
+                to={`/form?language=${selectedLanguage}`}
+                className="btn btn-primary"
+              >
                 View Form
               </Link>
             </div>
           </div>
+          {/* Gujarati Tab Content */}
           <div
             className="tab-pane fade"
             id="pills-profile"
@@ -176,41 +188,45 @@ const RouteTabs = () => {
                 4. Any special achievement during the life of the employee shall
                 reveal the personality traits such as leadership, perseverance,
                 ambition, creativity (not taking things for granted or believing
-                in status quo)
+                in status quo).
               </p>
               <p>
-                5. The problem faced to perform his duties enable bring forth
-                the genuine (perceived) problems. To improve upon any system, it
-                is utmost important to identify the problem. The mother of
-                improvement is problem. If the problem is identified and root
-                cause of the problem is analyzed, it is easy to find the
-                solution. As such the problem can be defined as the gap between
-                the actual v/s expected.
+                5. The problem faced to perform his duties enables bringing
+                forth the genuine (perceived) problems. To improve upon any
+                system, it is utmost important to identify the problem. The
+                mother of improvement is the problem. If the problem is
+                identified and root cause of the problem is analyzed, it is easy
+                to find the solution. As such, the problem can be defined as the
+                gap between the actual vs. expected.
               </p>
               <p>
-                6. The idea for any change reflects the person’s creativity, he
-                is sensitive to the environment and is keen observant.
+                6. The idea for any change reflects the person’s creativity; he
+                is sensitive to the environment and is a keen observer.
               </p>
             </div>
             <div className="third_para">
               <p style={{ fontSize: "20px" }}>
-                The RAS are studied and analyzed for the person’s role in value
-                addition in the process or he is just a head count in the
+                The RAS is studied and analyzed for the person’s role in value
+                addition in the process or he is just a headcount in the
                 organization.
               </p>
               <p style={{ fontSize: "20px" }}>
-                <b> Personal discussion:</b> For each of the position, the
+                <b> Personal discussion:</b> For each of the positions, the
                 faculty will have a personal discussion with the person so as to
                 understand his activities, his role in the value chain, time
-                element and frequency of the activity.
+                element, and frequency of the activity.
               </p>
             </div>
             <div style={{ textAlign: "center", marginBottom: "20px" }}>
-              <Link to="/form" className="btn btn-primary">
+              <Link
+                to={`/form?language=${selectedLanguage}`}
+                className="btn btn-primary"
+              >
                 View Form
               </Link>
             </div>
           </div>
+          {/* Hindi Tab Content */}
           <div
             className="tab-pane fade"
             id="pills-contact"
@@ -253,37 +269,40 @@ const RouteTabs = () => {
                 4. Any special achievement during the life of the employee shall
                 reveal the personality traits such as leadership, perseverance,
                 ambition, creativity (not taking things for granted or believing
-                in status quo)
+                in status quo).
               </p>
               <p>
-                5. The problem faced to perform his duties enable bring forth
-                the genuine (perceived) problems. To improve upon any system, it
-                is utmost important to identify the problem. The mother of
-                improvement is problem. If the problem is identified and root
-                cause of the problem is analyzed, it is easy to find the
-                solution. As such the problem can be defined as the gap between
-                the actual v/s expected.
+                5. The problem faced to perform his duties enables bringing
+                forth the genuine (perceived) problems. To improve upon any
+                system, it is utmost important to identify the problem. The
+                mother of improvement is the problem. If the problem is
+                identified and root cause of the problem is analyzed, it is easy
+                to find the solution. As such, the problem can be defined as the
+                gap between the actual vs. expected.
               </p>
               <p>
-                6. The idea for any change reflects the person’s creativity, he
-                is sensitive to the environment and is keen observant.
+                6. The idea for any change reflects the person’s creativity; he
+                is sensitive to the environment and is a keen observer.
               </p>
             </div>
-            <div className="third_pera">
-              <p className="peray" style={{ fontSize: "20px", color: "black" }}>
-                The RAS are studied and analyzed for the person’s role in value
-                addition in the process or he is just a head count in the
+            <div className="third_para">
+              <p style={{ fontSize: "20px" }}>
+                The RAS is studied and analyzed for the person’s role in value
+                addition in the process or he is just a headcount in the
                 organization.
               </p>
-              <p style={{ fontSize: "20px", color: "black" }}>
-                <b> Personal discussion:</b> For each of the position, the
+              <p style={{ fontSize: "20px" }}>
+                <b> Personal discussion:</b> For each of the positions, the
                 faculty will have a personal discussion with the person so as to
                 understand his activities, his role in the value chain, time
-                element and frequency of the activity.
+                element, and frequency of the activity.
               </p>
             </div>
-            <div class style={{ textAlign: "center", marginBottom: "20px" }}>
-              <Link to="/form" className="btn btn-primary">
+            <div style={{ textAlign: "center", marginBottom: "20px" }}>
+              <Link
+                to={`/form?language=${selectedLanguage}`}
+                className="btn btn-primary"
+              >
                 View Form
               </Link>
             </div>
