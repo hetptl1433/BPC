@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="">
+      <div className="fpop">
         <Modal
           show={showIntialPopup}
           onHide={handleClosePopUp}
@@ -39,9 +39,9 @@ const Home = () => {
 
           
         >
-          <Modal.Body>
+          <Modal.Body >
             {" "}
-            <div className="pt-4">
+            <div className="pt-4" style={{marginLeft: "4%", marginRight: "2%"}}>
               {popUpData
                 .sort((a, b) => a.SortOrder - b.SortOrder) // Sort directly inside map
                 .map((popup) => (
@@ -63,7 +63,7 @@ const Home = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-2"
-                      style={{ color: "#3a2e7e", display: "table-cell" }}
+                      style={{ color: "#3a2e7e", display: "table-cell ", fontFamily: "roboto", fontWeight: "400" }}
                     >
                       {popup.Title}
                     </a>

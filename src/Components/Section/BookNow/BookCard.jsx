@@ -315,7 +315,7 @@ const BookCard = () => {
                     <img
                       src={`${process.env.REACT_APP_API_URL_BPC}/${bookdata.productImage}`}
                       className="d-block w-100 "
-                      style={{height:"400px"}}
+                      style={{ height: "400px" }}
                       alt="..."
                     />
                   </Carousel.Item>
@@ -343,7 +343,7 @@ const BookCard = () => {
                               Capacity: {bookdata.HalfDayCapacity}
                             </h1>
                             <h1 className="heading18 ft-5">
-                              Basic Value: {bookdata.HalfDayCapacity}
+                              Basic Value: {bookdata.HalfDayBasicValue}
                             </h1>
                             <h1 className="heading18 ft-5">
                               + Central GST:{bookdata.HalfDayCentralGST}
@@ -691,7 +691,7 @@ const BookCard = () => {
                     <button
                       type="submit"
                       onClick={handleClick}
-                      className="btn btn-primary mt-2"
+                      className="btn btn-danger mt-2"
                     >
                       Submit
                     </button>

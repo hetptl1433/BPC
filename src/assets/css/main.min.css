@@ -2112,11 +2112,28 @@ p {
 }
 
 @media print {
+  @page {
+    size: A2 landscape; /* A4 paper size in landscape */
+    margin: 0; 
+  }
+
+  
   .no-print {
-    display: none !important;
+    display: none;
   }
 }
 
+
+
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
   z-index: 10000000 !important; /* Increase the value as necessary */
+}
+
+.modal-dialog.modal-xl .modal-content {
+  border-radius: 0 !important;
+}
+
+.modal-dialog.modal-xl{
+  width: 50% !important;
+ 
 }
