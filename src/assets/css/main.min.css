@@ -2133,7 +2133,10 @@ p {
   border-radius: 0 !important;
 }
 
-.modal-dialog.modal-xl{
+@media screen and  (min-width: 426px) {
+
+  .modal-dialog.modal-xl{
   width: 50% !important;
  
+}
 }
